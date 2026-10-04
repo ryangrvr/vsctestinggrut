@@ -33,31 +33,39 @@ extra information. No escape.
 **Analysis.** This is the claim the original execution relied on implicitly,
 and it is **false as a universal statement**. Established mathematics:
 
-- **Unique ergodicity.** There are deterministic dynamical systems for which
-  exactly one invariant probability measure exists (irrational rotations on
-  the circle; more generally, systems with trivial invariant-measure
-  structure). For such systems, the dynamics *itself* determines the only
-  possible ensemble measure. Any ensemble of initial conditions, evolved
-  forward, converges (in distribution) to that unique measure. The dynamics
-  has selected the measure — not inserted it.
-- **Physical (SRB) measures.** For broad classes of chaotic systems
-  (uniformly hyperbolic maps/flows, and conjecturally far more generally),
-  there exists a distinguished measure μ_SRB such that for a
-  **positive-measure (often full) set of initial conditions** with respect
-  to *any* absolutely continuous reference, time averages converge to
-  μ_SRB-averages. This is a theorem (Pesin; Young; Ledrappier–Young). The
-  measure is selected by the dynamics plus the *structural requirement* "the
-  physically realized set of initial conditions has positive Lebesgue
-  measure" — a condition on the initial-condition ensemble, but one that is
-  generic rather than tuned, and arguably motivated independently (physical
-  ensembles are spread over states, not concentrated on fractal
-  zero-measure sets).
-- **Equivariant uniqueness (the Bohmian precedent).** In the Bohmian
-  dynamics, the collection {dynamics, position-map} admits exactly one
-  measure on configuration space that is equivariant: `|ψ|²`. This is a
-  uniqueness theorem (the quantum equilibrium distribution is the unique
-  equivariant measure). The dynamics plus a *structural invariance
-  requirement* (equivariance) uniquely selects `|ψ|²`. No measure was
+- **Unique ergodicity.** In a uniquely ergodic topological dynamical system
+  there is a unique invariant probability measure (e.g., irrational
+  rotations on the circle; more generally, systems with trivial
+  invariant-measure structure). Under the standard compact/continuous
+  hypotheses, empirical measures — equivalently, time averages of continuous
+  observables — converge to that measure **for every initial point**. This
+  does **not** imply that the ordinary pushforward of every arbitrary
+  initial ensemble converges weakly to the invariant measure. The hostile
+  value of the comparator stands: deterministic dynamics can possess a
+  uniquely distinguished invariant statistical structure. The dynamics has
+  selected the measure — not inserted it.
+- **Physical (SRB) measures.** For a uniformly hyperbolic attractor of an
+  appropriate smooth deterministic system, there is a distinguished SRB/
+  physical invariant measure such that time averages for
+  Lebesgue-almost-every initial point **in the attractor's basin** converge
+  to averages under that measure (Pesin; Young; Ledrappier–Young). For more
+  general dynamical systems, uniqueness and full-basin convergence are not
+  implied unless the relevant class establishes them. The point retained:
+  deterministic dynamics can select physically distinguished invariant
+  statistics for positive/full-measure sets of initial conditions in
+  suitable classes. The measure is selected by the dynamics plus a
+  structural requirement on the physical ensemble (spread over states rather
+  than concentrated on zero-measure sets) — generic rather than tuned, and
+  motivated independently.
+- **Equivariant uniqueness (the Bohmian precedent).** For standard Bohmian
+  dynamics, `|ψ|²` is equivariant. Goldstein–Struyve establish its
+  uniqueness **within the class of equivariant distributions that are local
+  functionals of the wavefunction**. This is sufficient as a hostile
+  counterexample to the unrestricted assertion that deterministic dynamics
+  plus independently stated structural restrictions can never single out a
+  distinguished measure. It does not establish uniqueness among all
+  conceivable equivariant distributions and does not furnish a GRUT
+  mechanism. No measure was
   inserted; the measure follows from the dynamics plus the requirement that
   the ensemble distribution be preserved by the dynamics.
 
