@@ -123,7 +123,7 @@ terminal (§8) only after all sixteen entries.
 4. **H2:** Is there a same-rule witness — one unchanged specification, multiple instances differing in the outcome rule? The candidate would be: quantum framework (unitary evolution) + different outcome rules (GRW flash vs. Everett counting vs. Bohm position). But these are **different theories** in the accepted record's own framing, not instances of one specification. No same-rule witness exists against A-7's LAW status in the admissible record.
 5. **H3 (charter-designated pressure point — measurement-model counterargument taken seriously):** The counterargument: the outcome rule is part of the *measurement model* (environment + access), downstream of A-11/A-13 — i.e., a model choice within a broader unchanged framework. Analysis: the measurement model can explain *which* pointer basis, *when* decoherence completes, *how* records form — but the record's own closure states that within the tested branch-preserving unitary class, "decoherence is not outcome selection" (`GRUT_PROGRAM_CLOSURE_01.md:38-43`). That is an accepted-record statement that the framework's own dynamics **does not determine** outcomes — the outcome rule is genuinely additional, not internal. The measurement-model reduction would require the environment+access structure to *select* outcomes, and the record's tested result is that it does not. H3 therefore does not break A-7: the reduction route is closed by accepted evidence, not merely untested.
 6. **H4:** Not meaningfully bundled (outcome rule, Born weights treated as one rule; the record does not split them into divergent-status subcomponents).
-7. **H5:** Not a price of another item; the closure states the tested derivation route fails, which is evidence of independence, not dependence.
+7. **H5:** Not a price of another item; the closure states the tested derivation route fails, which supports **non-derivation at the tested scope** — not evidence of universal independence, and not proof that no deeper theory could derive outcomes or Born weights. (Scope qualification recorded; see final findings.)
 8. **H6:** Original Q1/Q2 did not merely noun-match: they cited the accepted closure verdict (P15/decoherence failure) as the reason the rule is additional. The record's evidence supports "rule-determining and not internally derivable," which is what LAW requires at this grain.
 9. **H7:** Counterargument (instrumentalist: outcome rule downstream of A-11/A-13) — would it flip Q1/Q2 if accepted? It would *relocate* the rule's origin but not its rule-determining character; and the relocation route is closed by the accepted record at the tested scope. The original entry did not explicitly answer it, but the closure verdict it cited IS the answer at the accepted scope. Not an unresolved criterion conflict. **No demotion.**
 
@@ -301,7 +301,7 @@ terminal (§8) only after all sixteen entries.
 | A-4 | INDET | INDET | MIXED | non-generative |
 | A-5 | INDET | INDET | MIXED | non-generative |
 | A-6 | SOLUTION | SOLUTION | SOLUTION-LIKE | — |
-| A-7 | **LAW** | **LAW** | **LAW-LIKE** | **G2-ELIGIBLE** |
+| A-7 | **LAW** | **LAW** | **LAW-LIKE** | **G2-ELIGIBLE (sole survivor)** |
 | A-8 | INDET | INDET | MIXED | non-generative |
 | A-9 | SOLUTION | SOLUTION | SOLUTION-LIKE | — |
 | A-10 | INDET | INDET | MIXED | non-generative |
@@ -313,9 +313,9 @@ terminal (§8) only after all sixteen entries.
 | A-16 | INDET | INDET | MIXED | non-generative |
 
 **Before → After:**
-- LAW-LIKE: 6 → **2**
+- LAW-LIKE: 6 → **1**
 - GENERATIVE-MIXED: 2 → **0**
-- Non-generative MIXED: 3 → **10**
+- Non-generative MIXED: 3 → **11**
 - SOLUTION-LIKE: 5 → **4**
 
 ## SURVIVING G2-ELIGIBLE TARGETS
@@ -340,7 +340,7 @@ terminal (§8) only after all sixteen entries.
 
 1. **A-11 (mandated):** Original Q1/Q2 materially depended on P-17/P-18 (`playground/SCOUT_0/probes/P17_RESULT.md` — self-declared "NEW HYPOTHESIS CLASS — DOES NOT ALTER OLD TERMINAL. Candidate physics, never GRUT physics"). **Inadmissible under the frozen provenance firewall.** Both answers demoted to INDETERMINATE per charter §3 (no-repair rule). The demotion is procedural, not substantive; a future admissible-only re-run is a legitimate owner action.
 2. **A-1:** P-01 citation also SCOUT-0 (inadmissible), but admissible support (class-scope ruling) was already present in the original entry and carries the answer — no demotion (charter §3's "unless" clause).
-3. **Systematic pattern (recorded for the owner):** every demoted LAW verdict failed the same way — the item is rule-determining **for a declared model**, and the accepted record itself contains the framework/model distinction (S5-1, NONUNIQUE-LIFT, GR2-a family nonuniqueness, analyst-declared access) that the original reasoning did not confront. The two demotion-free survivors are exactly the items where the record shows no framework admitting them as instances: the Born rule (closure verdict: dynamics does not determine outcomes) and — before its H4 demotion — the gravitational quadruple.
+3. **Systematic pattern (recorded for the owner):** every demoted LAW verdict failed the same way — the item is rule-determining **for a declared model**, and the accepted record itself contains the framework/model distinction (S5-1, NONUNIQUE-LIFT, GR2-a family nonuniqueness, analyst-declared access) that the original reasoning did not confront. **A-7 is the only final LAW-LIKE survivor**: it is exactly the item where the record shows no framework admitting it as an instance — the Born rule (closure verdict: dynamics does not determine outcomes). A-8 retained law-flavored subcomponents through several attacks (spin/reach/cone are theory-level), but was ultimately demoted under H4 because the frozen A-8 unit contains coupling behavior (GR2-a family nonuniqueness, model-level) that diverges from spin/reach/cone behavior, making one atomic answer incoherent.
 
 ## HOSTILE-REVIEW TERMINAL
 
