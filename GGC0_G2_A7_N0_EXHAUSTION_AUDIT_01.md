@@ -74,10 +74,15 @@ universal claim*: there, the "right structure" (`|ψ|²`) follows from
 equivariance, and equivariance is arguably not "tuning to Born" but a
 generic conservation-of-ensemble-structure condition.
 
-**Disposition: FALSE as a universal claim.** There exist deterministic
-dynamics that uniquely select a probability measure via structural
-requirements. Whether any such dynamics exists *within the declared
-F-class at the relevant scope* is a separate question (see T4).
+**Disposition: FALSE as an unrestricted universal statement about
+deterministic dynamical systems; UNPROVED at the declared Γ-space/F-class
+scope.** Established deterministic counterexamples (unique ergodicity; SRB
+measures; equivariant uniqueness within the Goldstein–Struyve class) show
+that "deterministic dynamics can never select a measure" is false generally.
+But the audit has not constructed or proved the existence of such a
+measure-selecting dynamics on GRUT's actual full influence hierarchy. This
+distinction does not rescue N0: exhaustion requires ruling out that
+possibility, which `9ea0ed8` did not do.
 
 ### N0-T3 — "Any F whose natural/invariant measure pushes forward to Born is necessarily fine-tuned relocation."
 
@@ -113,10 +118,14 @@ equivariance" already a disguised Born-importation? Honest assessment:
   is unresolved.
 
 **Disposition: UNPROVED as a universal claim.** "Necessarily fine-tuned" was
-asserted, not established. The Bohmian case demonstrates the logical
-possibility of non-fine-tuned Born-selection (dynamics + structural
-condition → Born), even though the historical co-design of that particular
-pair softens its force as a precedent for *independent* selection.
+asserted, not established. The Bohmian comparator demonstrates a logical
+route of `dynamics + structural restriction → distinguished |ψ|²
+distribution` within a specific theory/class — it defeats "necessarily
+relocation" as an established theorem. It does not prove that this route was
+independently discovered without Born motivating the dynamics (the
+historical co-design caveat stands), nor that an analogous GRUT F exists.
+Thus it furnishes no positive candidate — but it removes the universal
+presumption the original execution relied on.
 
 ### N0-T4 — "There exists no admissible structural condition on F that singles out a Born-compatible measure without importing A-7."
 
@@ -197,18 +206,37 @@ does not establish Born.**
 
 Type-(5): equivariance within a declared functional class. The Bohmian
 precedent lives here. Uniqueness of the equivariant measure is a real
-theorem in that case. Whether any F in the declared Γ-class has a unique
-equivariant measure whose outcome-pushforward is Born: unexamined.
-**Invalidates the universal premise; does not establish Born.**
+theorem in that case — with the scope qualification recorded in Control 5:
+uniqueness holds within the class of equivariant distributions that are
+local functionals of the wavefunction (Goldstein–Struyve), not among every
+conceivable equivariant probability distribution. Whether any F in the
+declared Γ-class has a unique equivariant measure whose outcome-pushforward
+is Born: unexamined. **Invalidates the universal premise; does not establish
+Born.**
 
 ### Control 5: The Bohmian `|ψ|²` equivariance example (hostile comparator only)
 
-Strictly as a comparator: it demonstrates that (i) a deterministic dynamics
-can admit a unique equivariant measure, (ii) that measure can be `|ψ|²`,
-(iii) the derivation of `|ψ|²` there requires no inserted probability
-postulate — it follows from equivariance. It therefore refutes the universal
-form of T2/T3 outright. **But** it does not show that GRUT's declared
-F-class contains such a mechanism: Bohmian dynamics is not of the form
+Strictly as a comparator. The precise result: for standard Bohmian
+dynamics, `|ψ|²` is equivariant, and Goldstein–Struyve establish uniqueness
+**within the class of equivariant distributions that are local functionals
+of the wavefunction**. The comparator therefore demonstrates that:
+
+> deterministic dynamics plus an independently stated structural
+> restriction can, in at least some mathematical frameworks, single out a
+> distinguished measure.
+
+It does **NOT** establish:
+- uniqueness among every conceivable equivariant probability distribution;
+- that equivariance alone derives Born (the derivation relies on the
+  specific structure of the Schrödinger flow and the configuration-space
+  representation);
+- that GRUT has such a mechanism.
+
+With those qualifications, the comparator refutes the universal form of
+T2/T3: no insertion of a probability postulate is involved — the
+distinguished measure follows from the dynamics plus the structural
+restriction. **But** it does not show that GRUT's declared F-class contains
+such a mechanism: Bohmian dynamics is not of the form
 `F[Γ, Φ, access, state]` (it is a velocity field on configuration space
 defined directly from the wavefunction, with the outcome map the identity on
 positions), and its equivariance relies on the specific structure of the
@@ -258,25 +286,31 @@ those families?**
 
 It did not consider:
 
-- **physical/SRB measures of the Γ-dynamics itself** — for a nonlinear
-  Γ-dynamics with attractor structure, the physically relevant measure is
-  the SRB measure of the flow, not the initial Lebesgue measure. The
-  basin-statistics of an SRB-measure-distributed ensemble can differ
-  radically from Lebesgue-distributed ones. The original execution's
-  "measure of the basin" computation implicitly used the wrong measure.
+- **SRB/physical measures in systems with suitable hyperbolic structure** —
+  such measures demonstrate that deterministic dynamics can select
+  distinguished statistics for typical initial states. **However, in a
+  multiple-attractor outcome model, separate SRB measures on separate
+  attractors do not by themselves determine relative probabilities of
+  entering their basins.** A global initial-distribution or additional
+  global physical-measure structure may still be required. The audit does
+  NOT establish that SRB dynamics actually provides such a measure.
 - **equivariant measures within the declared functional class** —
   unexamined.
 - **structural conditions tying h_F to F** (e.g., if the outcome map is
   definable from the same structural data as the dynamics, the pair may
   admit a uniquely selected measure whose pushforward is constrained by the
   same structure) — unexamined, and this is the class of mechanism the
-  Bohmian comparator instantiates.
+  Bohmian comparator instantiates (within its recorded scope limits).
 
 **C4/C5 exhaustion verdict: NOT ESTABLISHED.** The measure objection
 presented in 9ea0ed8 suffices to show that *naive* measure choices fail, not
-that the families are exhausted. C4 and C5's substantive status is unchanged
-by this audit (they remain unproven candidates, not positive results), but
-the *family-level exhaustion* claimed on their basis is not earned.
+that the families are exhausted. The legitimate remaining loophole is the
+narrower one: **9ea0ed8 did not establish that no admissible Γ-dynamics can
+possess a canonical global physical/equivariant measure whose pushforward
+through its outcome map is Born.** C4 and C5's substantive status is
+unchanged by this audit (they remain unproven candidates, not positive
+results), but the *family-level exhaustion* claimed on their basis is not
+earned.
 
 ---
 
