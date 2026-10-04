@@ -118,8 +118,8 @@ Purpose: block the paper-derivation failure mode identified in the record
 
 The classification applies to the residual/supplied inventory as recorded in
 `GRUT_WORKING_PARTNERSHIP_SYNTHESIS_01.md` Q3 (`GRUT_WORKING_THEORY_SYNTHESIS_01.md`
-Q3, "All of Ledger A") and cross-checked against `GRUT_ONTOLOGY_RECONSTRUCTION_01.md`
-and the owner rulings. The units are exactly:
+Q3, "All of Ledger A") and cross-checked against `GRUT_ONTOLOGY_RECONSTRUCTION_01.md`.
+The units are exactly:
 
 1. the static substrate and the local net;
 2. the temporal generator and its orientation;
