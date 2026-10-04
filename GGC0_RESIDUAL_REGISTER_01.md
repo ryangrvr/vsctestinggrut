@@ -56,8 +56,9 @@ are non-load-bearing for G1 and need not be imported before it.
    UNCLASSIFIED for every row. This is not a gap; it is the discipline.
 2. **Status phrases are quoted, not paraphrased upward** (synthesis §0
    admissibility rule). Any new entry cites the governing ruling and line.
-3. **The register never merges or splits record units** (classification
-   charter §3 prohibitions apply here already).
+3. **The register never merges or splits G1 classification units.** L1–L9
+   are non-verdict architectural roll-ups of the atomic A-n units and may
+   summarize, but never replace, their classifications.
 4. **MIXED is a permitted terminal class** once classification is authorized.
 5. **Every status change is dated and owner-adjudicated**, with the ruling
    cited in a dated addendum appended below (append-only).

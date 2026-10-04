@@ -125,6 +125,25 @@ because it supports a desired bin.
   No tie-breaking judgment is permitted in execution. MIXED is a real bin
   and may be a final classification.
 
+**GENERATIVE-MIXED (mechanical definition; frozen before any classification
+is viewed).** A MIXED / UNRESOLVED item is GENERATIVE-MIXED if and only if
+at least one of Q1 or Q2 returns LAW-LIKE. Q3 is advisory and never
+determines generative eligibility.
+
+| Q1 | Q2 | Generative? |
+|---|---|---|
+| LAW-LIKE | INDETERMINATE | GENERATIVE-MIXED |
+| INDETERMINATE | LAW-LIKE | GENERATIVE-MIXED |
+| LAW-LIKE | SOLUTION-LIKE | GENERATIVE-MIXED |
+| SOLUTION-LIKE | LAW-LIKE | GENERATIVE-MIXED |
+| INDETERMINATE | INDETERMINATE | non-generative MIXED |
+| SOLUTION-LIKE | INDETERMINATE | non-generative MIXED |
+| INDETERMINATE | SOLUTION-LIKE | non-generative MIXED |
+
+No post-classification judgment call is permitted. Equivalent mechanical
+condition: **G1-PASS iff ∃ A_i (i = 1…16) such that Q1_i = LAW-LIKE or
+Q2_i = LAW-LIKE.**
+
 **Explicit prohibitions during classification.**
 - No item may be moved to SOLUTION-LIKE because moving it would help GGC0
   (or to LAW-LIKE because it would help a candidate law). Motive-blindness
@@ -205,17 +224,20 @@ approval.
    citations and adversarial counterarguments, into
    `GGC0_LEDGER_A_CLASSIFICATION_01.md`.
 4. After all sixteen atomic classifications are frozen, the tally is computed
-   and one of exactly three G1 outcomes is recorded:
-   - **G1-PASS:** at least one LAW-LIKE or defensibly generative MIXED target
-     survives. G2 may open on those targets only (hostile-baseline search
-     per the parent GGC0 charter).
-   - **G1-S:** all sixteen items classify SOLUTION-LIKE. G2 does not open;
-     the supplied inventory is classified as solution-like at the recorded
-     scope.
-   - **G1-U:** no defensible generative target survives, but at least one
-     item remains MIXED / UNRESOLVED. G2 does not open. This is an
-     unresolved classification terminal and must NOT be described as
+   by the following **exhaustive, mutually exclusive algorithm**:
+   - **G1-PASS:** at least one A-1…A-16 item has Q1 = LAW-LIKE or
+     Q2 = LAW-LIKE. G2 may open only on atomic LAW-LIKE items and
+     GENERATIVE-MIXED items (hostile-baseline search per the parent GGC0
+     charter).
+   - **G1-S:** no item has a LAW-LIKE Q1/Q2 component and all sixteen atomic
+     verdicts are SOLUTION-LIKE. G2 does not open; the supplied inventory is
+     classified as solution-like at the recorded scope.
+   - **G1-U:** no item has a LAW-LIKE Q1/Q2 component and at least one atomic
+     verdict is MIXED / UNRESOLVED. G2 does not open. This is an unresolved
+     classification terminal and must NOT be described as
      "solution-data-only."
+   These three outcomes are exhaustive and mutually exclusive. No judgment
+   call is permitted after classification.
 5. BRI1 remains `UNREPRODUCED-IN-REPO` and non-load-bearing until its frozen
    source artifacts are imported or independently reproduced; it is a
    potential downstream consumer (G4) of a candidate law, never its premise,

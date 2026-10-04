@@ -45,17 +45,20 @@ already built the three things any claim of a theory of reality must survive:
 Each gate is a pre-registered, two-sided question. A gate can fail; a
 failure is itself a recorded result, not a defeat.
 
-- **G1 — Classification.** Owner approves or amends the criterion; Ledger A
+- **G1 — Classification.** Owner ratifies the criterion; Ledger A
   is classified **atomically (A-1…A-16)** with Q1/Q2/Q3 answers and
   adversarial counterarguments, then tallied and rolled up (never over-written)
-  by the L1–L9 layers. *Pass (G1-PASS):* a defensible set of LAW-LIKE or
-  generatively-relevant MIXED targets exists.
-  *Null G1-S:* all sixteen items SOLUTION-LIKE → solution-data-only at
-  recorded scope.
-  *Null G1-U:* no generative LAW-LIKE target survives but one or more items
-  remain MIXED/UNRESOLVED → G2 does not open, and the record is **not**
-  certified solution-data-only; the terminal is recorded as unresolved
-  classification. Both nulls are real structural findings.
+  by the L1–L9 layers. The terminal is purely mechanical:
+  *G1-PASS:* at least one item has Q1 = LAW-LIKE or Q2 = LAW-LIKE; G2 opens
+  only on atomic LAW-LIKE and GENERATIVE-MIXED items.
+  *G1-S:* no item has a LAW-LIKE Q1/Q2 component and all sixteen verdicts
+  are SOLUTION-LIKE → solution-data-only at recorded scope.
+  *G1-U:* no item has a LAW-LIKE Q1/Q2 component and at least one verdict is
+  MIXED/UNRESOLVED → G2 does not open, and the record is **not** certified
+  solution-data-only; the terminal is recorded as unresolved classification.
+  The three outcomes are exhaustive and mutually exclusive; a MIXED item
+  with a LAW-LIKE Q1/Q2 component produces G1-PASS, not G1-U. Both nulls
+  are real structural findings.
   *Sequencing:* G1 runs entirely from the accepted in-repo Ledger-A record;
   BRI1 and the TRUE COMPRESSION accounting stay out (non-load-bearing) so no
   downstream evidence contaminates the classification.
