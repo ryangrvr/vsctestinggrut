@@ -42,6 +42,14 @@ workspace; entries marked [live-only] are not verified here.
 | TRUE COMPRESSION = 0 accounting [live-only] | Residual branch, `residual_synthesis/MASTER_RESIDUAL_LEDGER.md` — not verified in this workspace | UNCLASSIFIED | Import into this repo or independent verification | Governs whether the residual set has any internal compression at all |
 | Card #1 (DESI-facing downstream conjecture) | Running under frozen charter (live side) | Not a register unit (downstream test, not supplied input) | Outcome cannot move GGC0 either way (pre-registered in the GGC0 charter) | Conjecture-Mode evidence only |
 
+**Register note (2026-10-04, owner ruling AMEND-BEFORE-APPROVAL).** The
+L1–L9 layers in Part 1 are **architectural roll-ups only, not G1
+classification units**. G1 classifies the sixteen atomic Ledger-A entries
+A-1…A-16 individually (see `GGC0_LAW_SOLUTION_CLASSIFICATION_CHARTER_01.md`
+§5, as amended); this register's roll-up may summarize the atomic verdicts
+afterward but may never overwrite them. BRI1 and the TRUE COMPRESSION entry
+are non-load-bearing for G1 and need not be imported before it.
+
 ## Part 3 — Register rules
 
 1. **No bins without an approved criterion.** The Classification column is

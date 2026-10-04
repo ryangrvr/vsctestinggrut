@@ -34,10 +34,11 @@ already built the three things any claim of a theory of reality must survive:
    being supplied. This converts "the theory has 16 inputs" into a finite,
    contract-bound work list.
 3. **A classification discipline that runs before any generative search.**
-   The criterion (`GGC0_LAW_SOLUTION_CLASSIFICATION_CHARTER_01.md`, PROPOSED)
-   is frozen before application, with the standing falsifier that kills
-   paper-derivations. This is the mechanism that decides what the ultimate
-   question's answer would even have to explain.
+   The criterion (`GGC0_LAW_SOLUTION_CLASSIFICATION_CHARTER_01.md`, PROPOSED
+   as amended) is frozen before application; the paper-derivation firewall
+   (GGC0-R) remains governing in the parent GGC0 charter. This is the
+   mechanism that decides what the ultimate question's answer would even
+   have to explain.
 
 ## 2. The gate chain from here to a theory of reality
 
@@ -45,12 +46,19 @@ Each gate is a pre-registered, two-sided question. A gate can fail; a
 failure is itself a recorded result, not a defeat.
 
 - **G1 — Classification.** Owner approves or amends the criterion; Ledger A
-  is classified with Q1/Q2/Q3 answers and adversarial counterarguments.
-  *Pass:* a defensible set of LAW-LIKE/MIXED targets exists.
-  *Fail (equally valuable):* no such target exists — the residual set is
-  then certified to be solution-data-only at this scope, and the ultimate
-  question's answer becomes "GRUT's supplied set is of the same kind as
-  GR/QFT's initial data," a real structural finding.
+  is classified **atomically (A-1…A-16)** with Q1/Q2/Q3 answers and
+  adversarial counterarguments, then tallied and rolled up (never over-written)
+  by the L1–L9 layers. *Pass (G1-PASS):* a defensible set of LAW-LIKE or
+  generatively-relevant MIXED targets exists.
+  *Null G1-S:* all sixteen items SOLUTION-LIKE → solution-data-only at
+  recorded scope.
+  *Null G1-U:* no generative LAW-LIKE target survives but one or more items
+  remain MIXED/UNRESOLVED → G2 does not open, and the record is **not**
+  certified solution-data-only; the terminal is recorded as unresolved
+  classification. Both nulls are real structural findings.
+  *Sequencing:* G1 runs entirely from the accepted in-repo Ledger-A record;
+  BRI1 and the TRUE COMPRESSION accounting stay out (non-load-bearing) so no
+  downstream evidence contaminates the classification.
 - **G2 — Hostile-baseline search.** For each surviving target, search for a
   minimal law on influence structures that is not SD/2PI/nPI/fRG/Mori–Zwanzig
   at declared scope. *Pass:* a candidate satisfying GGC0-P and GGC0-R.
