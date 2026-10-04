@@ -539,16 +539,17 @@ Assessment against the four terminals:
   unique ergodicity) are *untested* against the Γ-dynamics because the
   Γ-dynamics as a flow does not exist on the record yet. **N0 is not
   available.**
-- **G2-A7-CHAIN-OPEN:** no positive result earned; routes remain
-  mathematically unresolved (S1, S3 undecidable on the current record
-  without inventing new structure). **Matches.**
+- **G2-A7-CHAIN-OPEN:** no positive result earned; S1 remains unresolved on
+  the current record (its required Γ-flow objects are not established);
+  S2 and S3 are STRUCTURAL-FAIL; S4 is RELOCATED. Because S1 remains
+  unresolved, this is the mechanically correct terminal. **Matches.**
 
 # **G2-A7-CHAIN-OPEN**
 
 Per charter §12: this is a valid terminal and is not a failure of the
-campaign. No positive claim follows. The two genuinely disposed routes
-(S2, S4) are negative; the two unresolved routes (S1, S3) are undecidable
-on the current record.
+campaign. No positive claim follows. S1 remains unresolved on the current
+record; S2 and S3 are STRUCTURAL-FAIL; S4 is RELOCATED. Because S1 remains
+unresolved, the terminal is mechanically correct.
 
 **The campaign's net structural finding, recorded for adjudication:** the
 canonical-measure route to Born is blocked on the current record at a
