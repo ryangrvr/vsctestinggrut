@@ -1,0 +1,79 @@
+{
+  "campaign": "F0_PHYS02_PRIMITIVE_ACCESS",
+  "date": "2026-10-05",
+  "repository": "ryangrvr/vsctestinggrut",
+  "branch": "ggc0-f0-phys02-primitive-access-0",
+  "parent": "aa9c2b3077b4bd2748aad6c729f8e43274df53d4",
+  "parent_lineage": "aa9c2b3 (banked exec01) -> e3f1ab4 -> f45fb90 -> bef8b948 (frozen charter)",
+  "authorization": "F0-PHYS-02 only",
+  "prohibited": ["R_Gamma", "A_Gamma", "Cl_Gamma", "S", "U", "access_law_searches",
+                 "fixed_point_searches", "born_rule", "geometry", "gravity", "third_phys_campaign", "merge_to_main"],
+  "artifacts": [
+    "F0_PHYS02_CHARTER.md",
+    "F0_PHYS02_LEDGER.md",
+    "F0_PHYS02_PRIMITIVE_CANDIDATES_01.md",
+    "F0_PHYS02_CONSTRUCTOR_BASELINE_01.md",
+    "F0_PHYS02_INFORMATION_PRICE_01.md",
+    "f0_phys02_toy.py",
+    "F0_PHYS02_RESULT.md",
+    "F0_PHYS02_STATUS.json"
+  ],
+  "primary_question": "What is the smallest observer-independent primitive structure sufficient to make physical accessibility well-defined, what information price does it carry, and can it be connected to the operational context structure without simply declaring the answer?",
+  "terminal": "F0-PHYS-CONSTRUCTOR-RESTATED",
+  "terminal_meaning": "the strongest primitive-access formulation reduces at the tested scope to constructor-theoretic possible/impossible task structure plus standard empirical-model mathematics; F0 adds no additional relation yet; scientifically useful: identifies a known piece GRUT may need to contain",
+  "noun_verdicts": {
+    "intervention": "RETRACTED as physics claim; defensible candidate = constructor-theoretic task",
+    "influence": "RETRACTED as physics claim; current Gamma is an empirical model (context statistics); deeper Gamma object = future requirement, not built"
+  },
+  "candidates": {
+    "surviving_observer_independent": "task-possibility structure (possible/impossible tasks on substrates + serial/parallel composition) = constructor theory at tested scope",
+    "primitive_but_unexplanatory": ["binary compatibility relation (3 arbitrary bits at n=3, no higher-order jointness)",
+                                     "arbitrary context hypergraph (7 arbitrary bits at n=3, isomorphic to arbitrary C)"],
+    "physical_candidate": "task-possibility structure: composition constrains instance data (declared possible tasks must close under composition; inconsistent tables exactly detectable)",
+    "unresolved": ["physical transformation without supplied formalism", "state-transition specs", "deeper Gamma objects (B-1/B-2)", "transformation algebra (M-5)"]
+  },
+  "information_price_table": {
+    "pair_table_n3": "3 bits, all arbitrary, no self-constraint",
+    "hypergraph_n3": "7 binary decisions, all arbitrary, no self-constraint",
+    "task_possibility_with_composition": "raw 7 decisions but composition closure forces consistency; free decisions in all-possible instance = 0; primitives paid: substrate, attribute, task, possibility predicate, serial+parallel composition",
+    "constructor_theory_package": "5 primitives, priced explicitly"
+  },
+  "law_vs_state_classification": {
+    "universal_law": "possibility predicate + composition laws",
+    "solution_state": "which tasks exist on which substrates; instance compatibility facts (NOT a failure to derive)",
+    "boundary_initial": "selection of realized instance",
+    "representational": "written hypergraph/pair-table forms"
+  },
+  "constructor_comparison": "see F0_PHYS02_CONSTRUCTOR_BASELINE_01.md comparison table; key reduction: C = family of jointly possible task sets under the parallel-composite reading; F0's task-possibility access candidate reduces to CT possibility + Exec-01 empirical-model mathematics",
+  "future_requirement_recorded_not_built": "the Gamma <-> C coupling: objective possibility structure <-> empirical influence structure; whether a principled coupling forces constraints beyond CT + empirical-model mathematics is the distinctive-content question for a later campaign",
+  "q_tests": "Q1-Q10 applied to all surviving candidates (F0_PHYS02_PRIMITIVE_CANDIDATES_01.md); task-possibility passes Q1-Q5, plausible Q6, pays Q7 (5 CT primitives), splits Q8, records Q9 mismatch (compositional primitive vs flat empirical model), yields Q10 forecast",
+  "toy_model": {
+    "file": "f0_phys02_toy.py",
+    "result": "exact arithmetic; consistent table passes composition closure; inconsistent table (T1,T2 possible, {T1,T2} impossible) flagged; price counts match the price doc; Exec-01 K2 hypergraph embeds as jointly-possible task sets",
+    "not_done": ["evolution", "transition law", "fixed points", "fitting"]
+  },
+  "not_earned": [
+    "no access-transition law",
+    "no positive selection",
+    "no dynamics",
+    "no quantum mechanics",
+    "no Born rule",
+    "no geometry",
+    "no gravity",
+    "no GRUT novelty claim",
+    "no theory of reality"
+  ],
+  "supplied_or_postulated": [
+    "constructor-theoretic primitives (substrate, attribute, task, possibility predicate, serial+parallel composition) — priced, if adopted",
+    "empirical-model scope for Gamma (declared scope, unchanged)"
+  ],
+  "strongest_hostile_failure": "bare compatibility-table candidates: observer-independent only vacuously, compositionally inert, pure restatement of the phenomenon as unconstrained data",
+  "firewall_confirmation": {
+    "no_access_transition_law_implemented": true,
+    "no_R_Gamma_A_Gamma_Cl_Gamma_S_U": true,
+    "no_searches_or_optimizations": true,
+    "execution01_artifacts_unmodified": true,
+    "frozen_charter_unmodified": true
+  },
+  "stop": "STOP FOR OWNER REVIEW; no F0-B; no third PHYS campaign automatically; no merge to main"
+}
