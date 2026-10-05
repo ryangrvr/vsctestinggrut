@@ -1,0 +1,77 @@
+{
+  "campaign": "F0_I0_TASK_CONTEXT_INTERFACE",
+  "date": "2026-10-05",
+  "repository": "ryangrvr/vsctestinggrut",
+  "branch": "ggc0-f0-i0-task-context-interface-0",
+  "parent_bank_sha": "1a1edd53ec82b1f6c9231edbcb907d020f69172c",
+  "bank_lineage": "1a1edd5 (PHYS-02 bank seal) -> 986fbfc (final record repair) -> 6e9b5d6 (interface repair) -> 6a97712 (PHYS-02 campaign) -> aa9c2b3 (banked exec01) -> e3f1ab4 -> f45fb90 -> bef8b948 (frozen charter)",
+  "authorization": "F0-I0 only (static interface)",
+  "prohibited": ["R_Gamma", "A_Gamma", "Cl_Gamma", "S", "U", "access_evolution", "fixed_points",
+                 "gamma_statistics_coupling", "born_rule", "geometry", "gravity",
+                 "fitting_quantum_data", "merge_to_main"],
+  "artifacts": [
+    "F0_I0_CHARTER.md",
+    "F0_I0_LEDGER.md",
+    "F0_I0_CT_MEASUREMENT_BASELINE_01.md",
+    "F0_I0_INTERFACE_DEFINITION_01.md",
+    "F0_I0_COMPARATOR_AUDIT_01.md",
+    "F0_I0_FINITE_CONTROLS_01.md",
+    "f0_i0_controls.py",
+    "F0_I0_RESULT.md",
+    "F0_I0_STATUS.json"
+  ],
+  "central_question": "When does a family of constructor-theoretic measurer tasks define exactly a contextual compatibility complex?",
+  "terminal": "F0_I0-SUBSIDIARY-REQUIRED",
+  "secondary_scope_finding": "F0-I0-JOINT-MEASUREMENT-RESTATED (the interface at its declared scope is standard parent-measurement mathematics in CT language)",
+  "decisive_answers": {
+    "what_is_a_ct_measurer": "a constructor that, for a measurable variable X={X_j} of a substrate, outputs a substrate carrying the information that S had X_j (the task {X_j->X'_j} over all j is possible, X'_j distinguishable)",
+    "what_is_a_ct_joint_measurer": "NOT defined in the audited CT paper (only implicit in 'simultaneous measurement'); the I0 working definition — one possible measurement task with joint output variable and allowed coarse-grainings recovering each measurement — is CONSTRUCTED for I0, mirroring parent measurement",
+    "joint_measurer_in_ct_or_constructed": "CONSTRUCTED/SUPPLIED (priced)",
+    "downward_closed_complex": "YES — proved as a theorem of the declared interface definition; mechanically verified on every control instance; NOT a new physical prediction",
+    "specker_triangle_representable": "YES at the interface, but ONLY via declared subsidiary-theory possibility facts (general POVM-type); base CT alone cannot represent it",
+    "ct_prohibition_or_subsidiary_absence": "absence of subsidiary-theory detail, not a CT prohibition — the same interface yields pairwise=>triple under projective-type facts (I0-K4) and the triangle under POVM-type facts (I0-K2)",
+    "subsidiary_must_supply": "joint-measurability possibility facts for the relevant measurement families (the content quantum joint-measurability theory already computes)",
+    "novel_or_standard": "standard joint measurability at the declared scope (RESTATED there); the subsidiary-dependence is the genuinely new architectural finding",
+    "originality_burden_moves_to": ["downstream Gamma coupling (prohibited until owner authorizes)", "a possible CT-internal unsharp-measurement extension (not attempted, not authorized by I0)"]
+  },
+  "ct_source_findings": {
+    "theorem_used": "complementary information observables in superinformation media cannot be simultaneously measured (pairwise incompatibility statement about constructors)",
+    "no_higher_order_hierarchy_in_base_ct": true,
+    "no_unsharp_calculus_in_base_ct": true,
+    "sharp_values_vs_simultaneous_measurement_kept_distinct": true,
+    "no_premature_povm_translation": true
+  },
+  "finite_controls": {
+    "file": "f0_i0_controls.py",
+    "results": {
+      "I0-K0 complete complex": true,
+      "I0-K1 incompatible pair": true,
+      "I0-K2 specker triangle (pairs, no triple)": true,
+      "I0-K3 four-cycle": true,
+      "I0-K4 sharp control (pairwise=>triple)": true,
+      "K2/K4 contrast (same interface, different subsidiary facts => different complexes)": true
+    },
+    "downward_closure_theorem_mechanically_verified": true,
+    "not_done": ["Gamma coupling", "probabilities", "dynamics", "fitting", "born rule"]
+  },
+  "not_earned": ["no access-transition law", "no positive selection", "no dynamics",
+                  "no Gamma/statistics coupling", "no quantum mechanics derivation",
+                  "no born rule", "no geometry", "no gravity", "no GRUT novelty claim",
+                  "no theory of reality"],
+  "supplied_or_postulated": [
+    "interface components: joint output variable (CONSTRUCTED), classical output processing (SUPPLIED, imported), restriction consistency (SUPPLIED, imported)",
+    "per-control possibility facts (which joint measurers exist) — declared model inputs standing in for subsidiary-theory facts (SUPPLIED)",
+    "CT primitives inherited from PHYS-02 (priced there)"
+  ],
+  "unresolved": ["whether a CT-internal unsharp-measurement extension could generate the joint-measurability hierarchy (new campaign, not attempted)",
+                  "the downstream Gamma coupling (prohibited until owner authorization)",
+                  "other subsidiary theories through the same interface (open, not pursued)"],
+  "firewall_confirmation": {
+    "no_gamma_coupling_built": true,
+    "no_f0_b_law_implemented": true,
+    "no_probabilities_in_controls": true,
+    "no_searches_or_fixed_points": true,
+    "banked_phys02_branch_untouched": true
+  },
+  "stop": "STOP FOR OWNER REVIEW; no Gamma coupling; no F0-B; no merge to main"
+}
