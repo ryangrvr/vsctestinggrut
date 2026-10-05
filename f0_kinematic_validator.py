@@ -116,7 +116,12 @@ def overlaps(C, ctx):
 def relabel(obj, perm, outperm=None):
     """Representation equivalence moves 1–2 (§7): relabel interventions/outcomes.
     perm: bijection on X. outperm: dict x -> permutation of O_x (as dict old->new).
-    R4 repair: the outcome-permutation path is now correct and separately tested."""
+    V1 fix (final repair): the transformed assignment is built by (1) reading source
+    values in sorted(c) order, (2) associating each value with its renamed target
+    intervention perm[x], (3) applying the outcome permutation for that intervention,
+    (4) emitting the target tuple in sorted(c2) (target-context) coordinate order.
+    Previously the tuple was left in source-coordinate order, which is wrong whenever
+    perm does not preserve the sorted order (e.g. a swap)."""
     X2 = {perm[x] for x in obj.X}
     if outperm is None:
         O2 = {perm[x]: sorted(obj.O[x]) for x in obj.X}
@@ -127,12 +132,14 @@ def relabel(obj, perm, outperm=None):
     for c, dist in obj.gamma.items():
         c2 = frozenset(perm[x] for x in c)
         order_old = sorted(c)          # coordinate order in the source context
-        order_new = sorted(c2)         # coordinate order in the target context
+        order_new = sorted(c2)         # coordinate order in the TARGET context
         d = {}
         for s, v in dist.items():
-            vals = {order_old[i]: (outperm[order_old[i]][s[i]] if outperm else s[i])
+            # step 1-2: value of each source intervention, keyed by RENAMED label
+            vals = {perm[order_old[i]]: (outperm[order_old[i]][s[i]] if outperm else s[i])
                     for i in range(len(c))}
-            s2 = tuple(vals[x] for x in order_old)  # coordinate order unchanged; keys relabeled via c2
+            # step 4: emit in target-context coordinate order
+            s2 = tuple(vals[x] for x in order_new)
             d[s2] = d.get(s2, Fr(0)) + v
         g2[c2] = d
     return KinematicObject(X2, O2, C2, g2)
@@ -313,34 +320,89 @@ def test_global_extension():
             ok = False
     return (k2_ext is False) and ok
 
+# ---------------------------------------------------- asymmetric calibration (V1/V2)
+
+def _asym_object():
+    """Deliberately ASYMMETRIC calibration object: p_ab = (1/10, 2/10, 3/10, 4/10) on
+    (a,b), with exactly derived singleton marginals p_a=(1/10+2/10, ...). Under
+    a<->b the probability table must TRANSPOSE; a broken relabel() that keeps source
+    coordinate order produces a visibly different (wrong) table, so this cannot pass
+    accidentally (V1/V2; the previous Bell/triangle distributions were symmetric)."""
+    X = ["a", "b"]
+    ctx = [frozenset(s) for s in ["a", "b", "ab"]]
+    alph = {x: [0, 1] for x in X}
+    g = {
+        frozenset("ab"): {(0, 0): Fr(1, 10), (0, 1): Fr(2, 10),
+                          (1, 0): Fr(3, 10), (1, 1): Fr(4, 10)},
+        # exactly derived singleton marginals
+        frozenset("a"): {(0,): Fr(3, 10), (1,): Fr(7, 10)},
+        frozenset("b"): {(0,): Fr(4, 10), (1,): Fr(6, 10)},
+    }
+    return KinematicObject(X, alph, ctx, g)
+
 def test_relabel_invariance():
-    k1 = suite_k1_bell()
-    perm = {"a": "d", "b": "a", "c": "b", "d": "c"}
-    k1r = relabel(k1, perm)
-    return (down_closure_ok(k1r.C) and
-            sorted(sorted(m) for m in maximal_contexts(k1r.C)) ==
-            sorted(sorted(perm[x] for x in m) for m in maximal_contexts(k1.C)) and
-            _gamma_ok(k1r) and _compat_ok(k1r))
+    """V1: intervention relabeling verified on the ASYMMETRIC calibration object.
+    Under a<->b, p'_ab(s1,s2) must equal p_ab(s2,s1) — the table TRANSPOSES. With the
+    broken pre-repair implementation (source order kept) the transformed table would
+    be p(s1,s2)=p(s1,s2), which fails the explicit check. Also: if relabel were the
+    identity (ignoring perm), the same failure occurs, so this test is non-vacuous."""
+    k = _asym_object()
+    k_swap = relabel(k, {"a": "b", "b": "a"})
+    p_ab = k.gamma[frozenset("ab")]
+    p_ba = k_swap.gamma[frozenset("ab")]
+    # exact transposition check
+    ok_transpose = all(p_ba.get((s2, s1)) == v for (s1, s2), v in p_ab.items())
+    # singleton marginals must follow the relabeled interventions
+    ok_sing = (k_swap.gamma[frozenset("a")] == k.gamma[frozenset("b")] and
+               k_swap.gamma[frozenset("b")] == k.gamma[frozenset("a")])
+    # structure
+    ok_struct = (down_closure_ok(k_swap.C) and
+                 sorted(sorted(m) for m in maximal_contexts(k_swap.C)) ==
+                 sorted(sorted(m) for m in maximal_contexts(k.C)) and
+                 _gamma_ok(k_swap) and _compat_ok(k_swap))
+    # non-vacuity: an identity-transformed object would FAIL the transpose check
+    p_ident = p_ab  # what the identity (broken) transform would leave on "ab"
+    non_vacuous = any(p_ident.get((s2, s1)) != v for (s1, s2), v in p_ab.items())
+    return ok_transpose and ok_sing and ok_struct and non_vacuous
 
 def test_outcome_relabel_invariance():
-    """R4 repair: explicit test for the outcome-label permutation move (§7 move 2).
-    Previously only the intervention permutation was exercised."""
-    k1 = suite_k1_bell()
-    outperm = {x: {0: 1, 1: 0} for x in k1.X}  # flip every outcome alphabet
-    k1r = relabel(k1, {x: x for x in k1.X}, outperm)
-    ok_struct = (sorted(sorted(m) for m in maximal_contexts(k1r.C)) ==
-                 sorted(sorted(m) for m in maximal_contexts(k1.C)))
-    # Γ must correspond exactly: p'_k1(b,x)(s) == p_k1(x)(outperm^{-1} s)
-    ok_gamma = True
-    for c in k1.C:
-        d1, d2 = k1.gamma[c], k1r.gamma[c]
-        for s, v in d1.items():
-            s2 = tuple(outperm[x][s[i]] for i, x in enumerate(sorted(c)))
-            if d2.get(s2) != v:
-                ok_gamma = False
-        if sum(d2.values()) != 1:
-            ok_gamma = False
-    return ok_struct and ok_gamma and _gamma_ok(k1r) and _compat_ok(k1r)
+    """V2: outcome-label permutation verified on the ASYMMETRIC calibration object.
+    Flip ONLY the b-alphabet (0<->1): p'_ab(s1,s2) must equal p_ab(s1, 1-s2) — an
+    observably different table (the old symmetric all-flip on p(00)=p(11)=1/2 was
+    invariant, so a broken implementation passed vacuously). Exact table check.
+    Non-vacuous: identity transform would fail."""
+    k = _asym_object()
+    outperm = {"a": {0: 0, 1: 1}, "b": {0: 1, 1: 0}}  # flip b only
+    k_flip = relabel(k, {x: x for x in k.X}, outperm)
+    p_ab = k.gamma[frozenset("ab")]
+    p_f = k_flip.gamma[frozenset("ab")]
+    ok_exact = all(p_f.get((s1, outperm["b"][s2])) == v for (s1, s2), v in p_ab.items())
+    ok_sing = (k_flip.gamma[frozenset("a")] == k.gamma[frozenset("a")] and
+               k_flip.gamma[frozenset("b")] == {(0,): Fr(6, 10), (1,): Fr(4, 10)})
+    non_vacuous = any(p_ab.get((s1, outperm["b"][s2])) != v for (s1, s2), v in p_ab.items())
+    return ok_exact and ok_sing and non_vacuous and _gamma_ok(k_flip) and _compat_ok(k_flip)
+
+def test_combined_relabel_invariance():
+    """V2: combined intervention + outcome relabeling, exact table check on the
+    asymmetric calibration. perm swaps a<->b; outperm is keyed by OLD intervention:
+    old a (carried by new b) keeps its outcomes; old b (carried by new a) is flipped.
+    Implementation semantics (verified by direct inspection): source event (x_a,x_b)
+    maps to target tuple (new_a,new_b) = (outperm_b(x_b), x_a); equivalently
+    p'_ab(s1,s2) = p_ab(s2, 1-s1). Singletons: new a = flipped old-b marginal
+    (4/10,6/10)->(3/5,2/5); new b = old-a marginal (3/10,7/10). Non-vacuous."""
+    k = _asym_object()
+    perm = {"a": "b", "b": "a"}
+    outperm = {"a": {0: 0, 1: 1}, "b": {0: 1, 1: 0}}  # flip b's outcomes
+    k_c = relabel(k, perm, outperm)
+    p_ab = k.gamma[frozenset("ab")]
+    p_c = k_c.gamma[frozenset("ab")]
+    ok_exact = all(p_c.get((s1, s2)) == p_ab.get((s2, 1 - s1)) for (s1, s2) in p_c)
+    ok_sing = (k_c.gamma[frozenset("a")] == {(0,): Fr(3, 5), (1,): Fr(2, 5)} and
+               k_c.gamma[frozenset("b")] == k.gamma[frozenset("a")])
+    # non-vacuity measured against the IDENTITY output: the untransformed table must
+    # differ from the transformed one (it does, since p_ab is asymmetric).
+    non_vacuous = any(p_ab[s] != p_c[s] for s in p_c)
+    return ok_exact and ok_sing and non_vacuous and _gamma_ok(k_c) and _compat_ok(k_c)
 
 def test_hypergraph_roundtrip():
     for s in (suite_k0_path(), suite_k1_bell(), suite_k2_triangle(), suite_k3_complete()):
@@ -438,13 +500,20 @@ def test_negative_nonnormalized_gamma():
     return not _gamma_ok(bad)
 
 def test_negative_probability():
+    """V3: the malformed distribution sums EXACTLY to 1 but contains a negative value,
+    so rejection exercises the POSITIVITY branch specifically (the previous control
+    broke normalization first, so the positivity branch was never tested)."""
     k1 = suite_k1_bell()
     bad = KinematicObject(k1.X, k1.O, k1.C, k1.gamma)
-    c = next(iter(bad.C))
+    c = frozenset("ab")
     bad.gamma = dict(bad.gamma)
     bad.gamma[c] = dict(bad.gamma[c])
-    bad.gamma[c][next(iter(bad.gamma[c]))] = Fr(-1, 4)
-    return not _gamma_ok(bad)
+    # p(00) -= 1/4, p(01) += 1/4, p(11) -= ... : net sum stays exactly 1, one entry negative
+    bad.gamma[c][(0, 0)] = Fr(-1, 4)                 # negative entry
+    bad.gamma[c][(0, 1)] = Fr(1, 2) + Fr(1, 4)       # compensation keeps sum == 1
+    return (sum(bad.gamma[c].values()) == 1           # normalization intact
+            and any(v < 0 for v in bad.gamma[c].values())  # negativity present
+            and not _gamma_ok(bad))
 
 def test_negative_overlap_incompatible():
     """Hostile: singleton marginals that contradict the pair data must FAIL."""
@@ -468,8 +537,9 @@ if __name__ == "__main__":
     test("test_presheaf_functoriality  (§5.1)", test_presheaf_functoriality)
     test("test_gamma_wellformed        (§6.1 conds 1–2)", test_gamma_wellformed)
     test("test_overlap_compatibility   (§6.1 cond 3)", test_overlap_compatibility)
-    test("test_relabel_invariance      (§7 move 1)", test_relabel_invariance)
-    test("test_outcome_relabel        (§7 move 2, R4)", test_outcome_relabel_invariance)
+    test("test_relabel_invariance      (§7 move 1, V1 asymmetric)", test_relabel_invariance)
+    test("test_outcome_relabel        (§7 move 2, V2 asymmetric, flip-b)", test_outcome_relabel_invariance)
+    test("test_combined_relabel       (moves 1+2, V2 composition)", test_combined_relabel_invariance)
     test("test_hypergraph_roundtrip    (§4.4–4.5)", test_hypergraph_roundtrip)
     test("test_gluing                  (§8, R2: pair extension exists; family may fail)", test_gluing)
     test("test_global_extension        (R1: K2 no global dist; K3 has one)", test_global_extension)
@@ -479,7 +549,7 @@ if __name__ == "__main__":
     print("\n== NEGATIVE CONTROLS (malformed objects must be REJECTED) ==")
     test("neg: malformed downward closure FAILS", test_negative_malformed_downward_closure)
     test("neg: non-normalized Gamma FAILS", test_negative_nonnormalized_gamma)
-    test("neg: negative probability FAILS", test_negative_probability)
+    test("neg: negative probability FAILS (sums to 1, V3)", test_negative_probability)
     test("neg: overlap-incompatible Gamma FAILS", test_negative_overlap_incompatible)
     test("neg/cal: contextual K2 passes local, FAILS global", test_negative_k2_global)
     neg = list(RESULTS)

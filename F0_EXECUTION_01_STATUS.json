@@ -40,7 +40,7 @@
     "composition": "DEFINED, NON-AUTOMATIC (gluing != physical joint accessibility)",
     "validator": {
       "file": "f0_kinematic_validator.py",
-      "result": "12/12 PASS (positive) + 5/5 PASS (negative controls, all reject)",
+      "result": "13/13 PASS (positive) + 5/5 PASS (negative controls, all reject)",
       "positive_tests_passed": [
         "test_downward_closure",
         "test_maximal_contexts",
@@ -50,6 +50,7 @@
         "test_overlap_compatibility",
         "test_relabel_invariance",
         "test_outcome_relabel",
+        "test_combined_relabel",
         "test_hypergraph_roundtrip",
         "test_gluing",
         "test_global_extension",
@@ -58,10 +59,11 @@
       "negative_controls_passed": [
         "malformed downward closure rejected",
         "non-normalized Gamma rejected",
-        "negative probability rejected",
+        "negative probability rejected (sums exactly to 1; positivity branch isolated, V3)",
         "overlap-incompatible Gamma rejected",
         "contextual K2: local compatible, global NOT extendable (exact rational check)"
       ],
+      "mutation_verification_V5": "with relabel replaced by identity, the intervention, outcome, and combined relabel tests all FAIL (non-vacuity verified programmatically); all relabel tests use the asymmetric calibration p_ab=(1/10,2/10,3/10,4/10)",
       "suites": ["K0 path/tree", "K1 Bell four-cycle", "K2 Specker triangle (anti-correlated, genuinely nonextendable)", "K3 complete context"]
     },
     "unresolved_kinematic_ambiguities": [
@@ -110,7 +112,7 @@
     "sharpness notion (P7 requirement)"
   ],
   "postulated_inputs": [
-    "classical-probabilistic scope for Gamma (declared scope restriction, not a claim that probability is fundamental)"
+    "finite ordinary probability-valued empirical-model scope for Gamma (declared scope restriction, not a claim that probability is fundamental or globally noncontextual)"
   ],
   "unresolved_issues": [
     "existence of an observer-independent physical access notion (the gate itself)",

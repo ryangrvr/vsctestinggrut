@@ -68,6 +68,36 @@ execution-01 commit. **No new science; no F0-B; frozen charter untouched.**
   terminal (`F0-PHYS-OPEN`) ≠ operational meanings (`F0-OPERATIONAL-ONLY`) ≠ relocated
   failure modes (`F0-PHYS-RELOCATED`).
 
+## Final verification repair (V1–V5, branch `ggc0-f0-exec01-validator-final-0` from
+## `003ffcdd35822513be5f6e5aeeaa004331760b2b`)
+
+- **V1 — intervention relabeling corrected.** `relabel()` kept tuples in source-coordinate
+  order; now it maps old-coordinate values to renamed labels and emits the target tuple in
+  sorted target-context order. Verified on a deliberately **asymmetric calibration object**
+  (`p_ab = (1/10, 2/10, 3/10, 4/10)` with exactly derived singleton marginals): under
+  `a↔b` the probability table must **transpose** — the previous symmetric Bell
+  distributions could not expose the bug.
+- **V2 — non-vacuous outcome/combined tests.** Outcome-flip now flips **only b's**
+  alphabet on the asymmetric table (the old all-flip on p(00)=p(11)=½ was invariant, so a
+  broken implementation passed vacuously); exact table checks, not just
+  normalization/compatibility. A **combined** intervention+outcome test added, with its
+  exact derived semantics (`p'_ab(s1,s2) = p_ab(s2, 1−s1)`).
+- **V3 — positivity isolated.** The negative-probability control now sums **exactly to 1**
+  while containing a negative entry, so rejection exercises the positivity branch
+  specifically; the separate non-normalization control is retained.
+- **V4 — terminology:** status JSON scope renamed "finite ordinary probability-valued
+  empirical-model scope"; baseline B5 corrected (contexts = compatible
+  measurement/intervention sets; `E(C)` = local sections/outcome assignments); B7 source
+  corrected to CDP **quantum combs / quantum networks** (not Oreshkov-style process
+  matrices).
+- **V5 — verification standard:** all three relabel tests (intervention, outcome,
+  combined) are asymmetric and each carries an explicit **non-vacuity check**: each test
+  verifies that replacing the transform with the identity would fail it. Retained all
+  prior positive/negative controls. Full suite: **13 positive + 5 negative, all PASS.**
+
+No terminal change: **`F0-PHYS-OPEN` stands.** No F0-B; no F0-PHYS-02 authorization
+implied; frozen charter untouched.
+
 ## Firewall confirmation
 
 No `R_Gamma`, `A_Gamma`, `Cl_Gamma`, `S`, or `U` implemented; no access-law or fixed-point
