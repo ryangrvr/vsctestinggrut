@@ -11,19 +11,23 @@ possible — the earlier count wrongly counted present singletons as "forced").
 | object | exact free decisions at n=3 | status |
 |---|---|---|
 | **arbitrary Boolean subset table** (one bit per nonempty subset, no closure) | **7 free bits** (2^7 = 128 tables, exact) | not the F0-A object; shown for contrast only |
-| **F0-A context complex** (downward-closed family / simplicial complex on 3 labeled vertices) | **exactly 20 distinct families enumerated** (exact count by program); decisions coupled: a present pair forces its singleton subcontexts; decision-tree structure: 3 singleton bits, then 3 pair bits (only among existing singletons), then 1 triple bit (only if any pair exists) | the actual F0-A object |
+| **F0-A context complex** (downward-closed family on 3 labeled vertices, **frozen F0-A convention**: nonempty contexts, closure through nonempty subcontexts, coverage not required) | **exactly 19 families if the empty family is allowed; 18 if a nonempty-family condition were imposed** (both enumerated exactly by the program). The earlier 'exactly 20' claim was the full-Boolean-lattice/Dedekind count (empty face included) imported without matching conventions — **withdrawn (FR1)**. Decisions remain coupled by closure: a present pair forces its singleton subcontexts | the actual F0-A object |
 | **CT task-possibility structure** (possibility values on a declared task algebra with serial/parallel closure) | **3 genuinely free singleton decisions** (T1, T2, T3 possible or not — composition does not force them), plus conditional constraints on composites once the substrate model is fixed; further free decisions depend on which composite substrates are defined | composition constrains composites conditionally; does NOT fix singletons |
 | **CT-PARALLEL with all composite substrates defined** (the strongest closure regime) | 3 free singleton bits + forced closure of all composites | this is the regime in which K2 cannot be represented (see interface control) |
 
 ## 2. The exact enumeration (R5, no artificial number)
 
 The downward-closed families on 3 labeled vertices were **enumerated exactly by the
-program** (`f0_phys02_toy.py::prices_n3`): the count is computed, not asserted. The
-previous conflations — comparing a Boolean table's 7 bits against a complex, or counting
-composition-forced singletons — are withdrawn. Where a principled finite information
-measure for the CT task algebra is not available (it depends on the declared task set
-and substrate model), **partial counts are reported rather than an artificial exact
-number**, per the ruling.
+program** (`f0_phys02_toy.py::prices_n3`) **under the frozen F0-A convention** (nonempty
+contexts, closure through nonempty subcontexts, coverage not required): the count is
+computed, not asserted. **FR1 result:** 19 (empty family allowed — the frozen definition
+does not explicitly exclude it) / 18 (if a nonempty-family condition were added). The
+previously reported 20 was the Dedekind number for the *full* Boolean-lattice convention
+(empty face included) and is withdrawn. Where a principled finite information measure for
+the CT task algebra is not available (it depends on the declared task set and substrate
+model), **partial counts are reported rather than an artificial exact number**, per the
+ruling. The convention question (allow or exclude the empty family) is flagged for a
+future numbered repair if desired.
 
 ## 3. What composition does and does not constrain (corrected)
 

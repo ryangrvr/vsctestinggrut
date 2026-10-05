@@ -111,41 +111,76 @@ def k2_interface_control():
                     "substrates, K2's pair contexts force the triple context; K2 has "
                     "none. CONTEXT-COMPATIBLE != CT-PARALLEL possibility."),
         "escape_routes_examined": [
-            "declare triple substrate undefined: unavailable — K2's pair substrates are defined and coexist on the same underlying scenario",
+            "declare the triple composite substrate undefined: a POSSIBLE way the two structures differ, but NOT 'unavailable' — pairwise contextual compatibility does not by itself establish existence of a three-way CT composite substrate, especially for alternative observables/tasks on ONE substrate (FR2: the previous 'unavailable' claim is withdrawn); understanding when a joint contextual measurement corresponds to a CT-composite or CT-measurer structure is exactly the F0-I0 problem",
             "weaken composition: FORBIDDEN (would modify CT to save the reduction)",
             "restrict to independent substrates: yields at most a restricted one-way implication, not the general reduction (R2 analysis)"
         ],
+        "fr2_note": ("the proved statement is: IF K2 contexts are identified with CT "
+                      "parallel-composite task sets AND the triple composite substrate is "
+                      "declared available, THEN CT closure forces the triple. That "
+                      "refutes the naive identification. The stronger 'substrate undefined "
+                      "is unavailable' claim is WITHDRAWN (FR2). The violation count (12) "
+                      "is checker output, not invariant scientific content; existence and "
+                      "type of the violation is what matters"),
     }
 
 # --------------------------------------------------------- price accounting (R5)
 
 def prices_n3():
-    """R5: SEPARATE accounting for DISTINCT objects; withdrawn claims:
+    """R5 + FR1: SEPARATE accounting for DISTINCT objects; withdrawn claims:
     'arbitrary n=3 context structure = 7 independent bits' (an arbitrary Boolean
-    table is NOT the F0-A object) and 'composition reduces the all-possible instance
-    to 0 free decisions' (composition constrains COMPOSITES conditionally; it does
-    not force singleton tasks to be possible)."""
-    # exact enumeration of downward-closed families (simplicial complexes) on 3 labeled vertices
-    count = 0
+    table is NOT the F0-A object), 'composition reduces the all-possible instance
+    to 0 free decisions', and (FR1) the imported Dedekind count 'exactly 20' —
+    which used the full-Boolean-lattice/downset convention including the empty face.
+    The FROZEN F0-A convention (Formulation §4.1-4.2) is: contexts are NONEMPTY
+    subsets; downward closure applies only to NONEMPTY subcontexts; C need not
+    cover all labels; the empty CONTEXT is excluded (the empty FAMILY is not
+    explicitly addressed — both counts reported)."""
+    def dc_ok_frozen(fam):
+        """FROZEN F0-A convention: nonempty contexts, downward closure through
+        nonempty subcontexts only."""
+        for s in fam:
+            if len(s) > 1:
+                for x in s:
+                    if frozenset(s - {x}) not in fam:
+                        return False
+        return True
+    count_frozen = 0        # empty family allowed
+    has_empty_family = False
     for mask in range(128):
         fam = {SUBSETS[i] for i in range(7) if mask >> i & 1}
-        if all(all(frozenset(s - {x}) in fam for x in s) for s in fam):
-            count += 1
+        if dc_ok_frozen(fam):
+            count_frozen += 1
+            if not fam:
+                has_empty_family = True
+    count_nonempty_family = count_frozen - (1 if has_empty_family else 0)
     return {
         "arbitrary_boolean_table": "one Boolean per queried subset, no downward-closure assumption: 7 free bits per instance (2^7 = 128 tables); this is NOT the F0-A object",
-        "f0a_context_complex": (f"downward-closed families (simplicial complexes) on 3 "
-                                 f"labeled vertices: exactly {count} (exact enumeration) "
-                                 f"=> log2({count}) bits, NOT 7; subset decisions are "
-                                 f"COUPLED by downward closure (a present pair forces its "
-                                 f"singleton subcontexts)"),
+        "f0a_context_complex": (f"FROZEN F0-A convention (nonempty contexts, closure "
+                                 f"through nonempty subcontexts, coverage not required): "
+                                 f"exactly {count_frozen} downward-closed families if the "
+                                 f"empty family is allowed ({count_nonempty_family} if an "
+                                 f"additional nonempty-family condition were imposed); "
+                                 f"empty family present in enumeration: {has_empty_family}. "
+                                 f"The imported Dedekind count 20 used the full-"
+                                 f"Boolean-lattice convention (empty face included) and is "
+                                 f"WITHDRAWN (FR1). Subset decisions remain COUPLED by "
+                                 f"downward closure"),
+        "f0a_convention_answer": ("F0-A as frozen excludes the empty CONTEXT but does "
+                                   "not explicitly exclude the empty FAMILY; the primary "
+                                   "count is therefore " + str(count_frozen) + " (empty "
+                                   "family allowed), with " + str(count_nonempty_family) +
+                                   " as the alternative if a nonempty-family condition "
+                                   "were added. Convention fix belongs to a future "
+                                   "numbered repair if desired"),
         "ct_task_possibility": ("possibility values on a declared task algebra with "
                                  "serial/parallel closure; composition constrains "
                                  "COMPOSITE possibility CONDITIONALLY — it does NOT "
                                  "force primitive singleton tasks to be possible "
                                  "(3 singleton decisions remain genuinely free); the "
                                  "previous '0 free decisions' claim is WITHDRAWN"),
-        "comparison_note": ("the three objects are DISTINCT; their prices are not "
-                            "inter-comparable as previously stated (R5)")
+        "comparison_note": ("the objects are DISTINCT; their prices are not "
+                            "inter-comparable as previously stated (R5)"),
     }
 
 if __name__ == "__main__":

@@ -49,18 +49,19 @@ most a **restricted one-way implication under an explicit independent-substrate
 assumption**; **no general reduction**; general case **unresolved**. No answer was favored;
 the K2 control forced this one.
 
-## 4. Information price (R5 — corrected)
+## 4. Information price (R5 corrected; FR1 count corrected)
 
 - The "7 free bits for n=3" claim counted an **arbitrary Boolean table — a different
   object** from the F0-A complex. Withdrawn.
 - The "composition reduces the all-possible instance to 0 free decisions" claim wrongly
   counted present singletons as forced. Withdrawn: composition constrains composites
   **conditionally**; the 3 singleton decisions remain genuinely free.
-- Corrected counts (exact): F0-A complex on 3 labeled vertices = **20 downward-closed
-  families** (enumerated exactly by the program); CT task algebra = 3 free singleton
-  decisions + conditional composite constraints + declared substrate model. The objects
-  are distinct; their prices are not inter-comparable as previously stated. Full detail:
-  revised `F0_PHYS02_INFORMATION_PRICE_01.md`.
+- The "exactly 20 downward-closed families" claim (previous version of this repair)
+  imported the Dedekind count under the full-Boolean-lattice convention (empty face
+  included) — **withdrawn (FR1)**. Under the **frozen F0-A convention**: **19** families
+  (empty family allowed) / **18** (if nonempty-family required); enumerated exactly.
+- The objects are distinct; their prices are not inter-comparable as previously stated.
+  Full detail: revised `F0_PHYS02_INFORMATION_PRICE_01.md`.
 
 ## 5. CT law/state classification (R6 — corrected)
 
@@ -69,6 +70,34 @@ content** (CT's core claim — laws expressed as possible/impossible task statem
 earlier wholesale "solution/state" classification was backwards and is withdrawn.
 Corrected split: substrate state/attribute instantiation = state; task definition =
 representational/specification; task possibility = law; task occurrence = history.
+
+## 5b. K2 conclusion weakened to exactly what was proved (FR2)
+
+**Proved:** *if* K2 contexts are identified with CT parallel-composite task sets **and**
+the triple composite substrate is declared available, CT closure forces the triple — the
+naive identification fails. **Withdrawn (FR2):** "declaring the triple substrate undefined
+is unavailable because pair substrates coexist." Pairwise contextual compatibility does
+**not** by itself establish existence of a three-way CT composite substrate — especially
+when the contextual measurements may be alternative observables on the **same** physical
+substrate. That is precisely the interface to be understood. Recorded instead:
+
+> Making the triple composite undefined is a possible way the two structures differ;
+> understanding when a joint contextual measurement corresponds to a CT-composite or
+> CT-measurer structure is the F0-I0 problem.
+
+The violation count (12) is checker output, not invariant scientific content; existence
+and type of the violation is what matters.
+
+## 5c. Corrected price count (FR1)
+
+The 'exactly 20' enumeration was the Dedekind count for the full Boolean-lattice
+convention (empty face included), imported without matching conventions — withdrawn.
+**Under the frozen F0-A convention** (nonempty contexts, closure through nonempty
+subcontexts, coverage not required): **19 downward-closed families on 3 labeled vertices
+if the empty family is allowed; 18 if a nonempty-family condition were imposed** (both
+enumerated exactly; empty family present in the enumeration). F0-A as frozen excludes the
+empty *context* but does not explicitly address the empty *family*; the convention fix
+belongs to a future numbered repair if desired. Full detail: revised price doc.
 
 ## 6. Constructor Theory of Probability (R7 — audited)
 
