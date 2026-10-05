@@ -130,5 +130,5 @@
   "campaign_parent": "aa9c2b3077b4bd2748aad6c729f8e43274df53d4",
   "immediate_parent": "6e9b5d628e83d0a3b539b730e09069f4d40442a3",
   "lineage": "986fbfc (final record repair) -> 6e9b5d6 (interface repair) -> 6a97712 (PHYS-02 campaign) -> aa9c2b3 (banked exec01) -> e3f1ab4 -> f45fb90 -> bef8b948 (frozen charter)",
-  "bank_boundary": "set after bank-seal commit"
+  "bank_boundary": "1a1edd53ec82b1f6c9231edbcb907d020f69172c"
 }
