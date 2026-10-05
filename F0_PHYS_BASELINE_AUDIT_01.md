@@ -25,8 +25,12 @@ on "what makes two interventions jointly realizable" are included.
 
 ## Findings
 
-1. **No comparator provides an observer-independent, structure-supplying-free definition of
-   joint realizability.** Every formalism either (a) is operational/theory-relative
+**R6 precision: this audit was deliberately targeted, not exhaustive. "Not found" here
+means "not found in this targeted audit", not "does not exist".**
+
+1. **No comparator providing an observer-independent, structure-supplying-free definition of
+   joint realizability was found in this targeted audit (NOT FOUND, not DOES NOT EXIST).**
+   Every formalism either (a) is operational/theory-relative
    (B1, B2, B4, B7, B3) or (b) buys precision with spacetime, factorization, or process
    algebra (B6, B8, B9, B10). This is the audit's central result and matches the
    physicality doc's §8 ledger.
@@ -42,8 +46,8 @@ on "what makes two interventions jointly realizable" are included.
 4. **`RESTATED` applies (per R9) only where claimed:** the operational layer of
    F0-PHYS is RESTATED (B1/B2/B4); the kinematic layer is RESTATED in content (B5); the
    *physicality question* as posed — primitive intervention, objective joint realizability
-   — is **not answered by any comparator**, hence the campaign terminal `F0-PHYS-OPEN`
-   (with the relocation pattern documented).
+   — was **not answered by any comparator found in this targeted audit**, hence the
+   campaign terminal `F0-PHYS-OPEN` (with the relocation pattern documented).
 
 ## Source verification
 

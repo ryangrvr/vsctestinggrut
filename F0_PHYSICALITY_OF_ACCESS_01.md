@@ -114,11 +114,28 @@ The same physical world supports, simultaneously and consistently:
   measurements (B3);
 - pairwise joint measurability implying triplewise joint measurability for **sharp**
   measurements (B2/B3, the Specker structure at the sharp scope);
-- different `C` for the same observables under different instruments (P1/P3).
+- different operational `C` for **differently specified operational interventions**
+  (P1/P3).
+
+**R5 precision:** a noisy or coarse-grained version of a measurement is generally a
+**different operational intervention** (a different POVM), not merely a different written
+presentation of "the same physical measurement" — joint measurability itself is defined
+via coarse-grainings of a common POVM (B7/baseline). So P1/P3 do not show that one
+physical intervention acquires two incompatible fundamental `C`'s. The earned, narrower
+statement is:
+
+> Operational access depends on the physically/operationally specified intervention,
+> including apparatus, sharpness, noise and coarse-graining, and therefore cannot
+> automatically be identified with a deeper structure-free access relation.
+
+This is enough for the gate to bite: operational compatibility is specification-relative,
+so it cannot be promoted to proto-geometry without further argument. What P1/P3 do **not**
+establish is that the specification-relative `C`'s are incompatible descriptions of one
+fundamental fact — that stronger reading is withdrawn.
 
 So `C` as a *fact about the world* and `C` as a *fact about the laboratory* demonstrably
-come apart. F0 must know which one it is holding before anything is built on it. That is
-the gate.
+come apart at the operational level. F0 must know which one it is holding before anything
+is built on it. That is the gate.
 
 ## 7. Hostile physicality tests
 
@@ -127,12 +144,16 @@ ledger; **fails are recorded as `STRUCTURAL-FAIL` with reasons** — they are re
 embarrassments.
 
 ### P1 — apparatus dependence (`STRUCTURAL-FAIL` for fundamental status)
-*Same physics, different apparatus.* Take the same physical system and two instrument
-families: coarse jointly-measurable POVMs vs. sharp individual measurements. Meaning 1 and
-Meaning 2 give **different** `C` for the **same** underlying world. If `C` changed solely
-because equipment changed, then either `C` is the menu (and not physical), or there are
-*two different* `C`-facts and the fundamental one is not the operational one. **Reason
-recorded:** the operational `C` is demonstrably not invariant under instrumentation;
+*Same underlying physical system, different operational interventions.* Take the same
+physical system and two intervention specifications: coarse jointly-measurable POVMs vs.
+sharp individual measurements. Meanings 1 and 2 give **different operational `C`** for the
+differently specified interventions. **R5 precision:** these are different operational
+interventions (different POVMs), not two presentations of one "same physical measurement";
+what the test establishes is that **operational `C` depends on the physical/operational
+specification of the intervention** (apparatus, sharpness, noise, coarse-graining), and
+therefore cannot automatically be identified with a deeper structure-free access relation.
+It does **not** establish that one physical intervention acquires two incompatible
+fundamental `C`'s. **Reason recorded:** the operational `C` is specification-relative;
 therefore the fundamental relation, if any, is not the operational one.
 
 ### P2 — relabeling invariance (`DERIVED`, negative)
@@ -141,13 +162,15 @@ representation equivalence (Formulation §7) already quotients relabeling, and P
 the quotient — the two `C`'s are inequivalent objects, related by no declared move. The
 dependence is *substantive*, not notational.
 
-### P3 — coarse vs. fine graining (`STRUCTURAL-FAIL` for fundamental status)
-The same physical measurement can be presented coarse (jointly measurable) or fine
-(paired but not jointly measurable). Under Meaning 2 the two presentations give different
-compatibility facts for the *same* physical measurement. A fundamental notion cannot vary
-under a change of presentation. **Reason:** Meaning 2 conflates presentation with content;
-only a meaning that fixes a canonical physical presentation could survive — and no such
-canon was found without a supplied theory.
+### P3 — coarse vs. fine specification (`STRUCTURAL-FAIL` for fundamental status)
+The same underlying observable can be specified operationally in a coarse
+(jointly-measurable) or fine (not jointly-measurable) version. These are generally
+different operational interventions (different POVMs), not different presentations of one
+intervention (R5). Under Meanings 1–2 the different specifications give different
+compatibility facts. A fundamental notion cannot vary with the operational specification
+of its inputs. **Reason:** Meaning 2 conflates the operational specification with the
+underlying physical content; only a meaning that fixes a canonical physical intervention
+could survive — and no such canon was found without a supplied theory.
 
 ### P4 — observer-ignorance probe (`DERIVED`, negative)
 Can we rescue observer-independence by "bracketing" the observer — defining joint
@@ -211,6 +234,10 @@ This is the central result of the campaign, and it is negative.
    constraint for any future candidate relation.
 
 ## 10. Terminal
+
+**R5 precision:** the terminal is `OPEN`, not `IMPOSSIBLE`. This campaign **did not find**
+an observer-independent, structure-free definition of physical access; it did **not prove
+that none exists**. The audit was targeted, not exhaustive.
 
 Applying the charter's F0-PHYS terminals:
 
