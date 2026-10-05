@@ -1,7 +1,7 @@
 {
   "build": {
     "tool": "manuscript/Makefile",
-    "repo_head_at_check": "7baf2f13b9524da75b217c0c64a687ff22b4c1a5",
+    "repo_head_at_check": "ca0f4d5c79a2be6663f7057b8ddd544163bbed3e",
     "header": "Working draft — not for submission. AI-assisted; disclosure statements pending.",
     "section_order": [
       "00_front.md",
@@ -16,10 +16,10 @@
       "S0_supplement_front.md",
       "S1_theorem_and_notation.md",
       "S2_t7_check.md",
-      "S3_mechanism_map.md",
-      "S4_classes_proofs.md",
-      "S5_numerical_tables.md",
-      "S6_methods_and_provenance.md"
+      "S3_class_hierarchy_and_mechanism_map.md",
+      "S4_reservoir_limit_proof.md",
+      "S5_numerical_methods_and_convergence.md",
+      "S6_second_code_path_and_reproducibility.md"
     ]
   },
   "record": {
@@ -34,8 +34,8 @@
   "findings": [
     {
       "id": "F1",
-      "type": "BLUEPRINT-MISSING",
-      "finding": "Blueprint v1.1 is not present in ryangrvr/vsctestinggrut or in any branch of ryangrvr/TestingGRUT. The binding constraints quoted in the build prompt were applied; section-level placement that only the full blueprint can settle is marked BLUEPRINT-UNVERIFIED (S4 contents: competitor-class proofs; S6 contents: methods, verification history, provenance). No record-vs-blueprint disagreement can be assessed until the blueprint is supplied."
+      "type": "BLUEPRINT",
+      "finding": "Blueprint v1.1 is not present in either repository. Commit ca0f4d5 inferred S4/S6 contents and mis-assigned the supplements. After the owner's conformance review of ca0f4d5, the supplement architecture follows the frozen structure stated in that review: S1 theorem and notation; S2 small-time check; S3 proved class hierarchy and mechanism non-escapes; S4 reservoir-limit proof; S5 numerical methods and convergence; S6 second numerical code path and reproducibility. These titles and their order are enforced by make check (C10). Blueprint 'patch items' not restated in the prompt or the review remain unverifiable."
     },
     {
       "id": "F2",
@@ -76,6 +76,21 @@
       "id": "F9",
       "type": "INDEPENDENT-CHECK",
       "finding": "The leading-order prediction N_B*gamma1 -> K(t)/m2^{3/2}, computed with this build's fresh small-time code, agrees with the record's finite-N_B numerics to 1.3e-7 relative at t_star = 0.5 and 2.0e-8 at t = 0.25."
+    },
+    {
+      "id": "F10",
+      "type": "RECORD-GAP",
+      "finding": "The record's archived ladder logs are incomplete: authoritative.log holds 7 of 9 cells (gamma_1 to 7 significant figures; nx=480 dt=5e-4 logged without output, nx=480 dt=2.5e-4 absent) and v3_r2.log holds 8 of 9 (5 significant figures; nx=480 dt=2.5e-4 logged without output). S5 reports exactly the archived cells and marks the finest cell as not archived; nothing was recomputed for the manuscript."
+    },
+    {
+      "id": "F11",
+      "type": "GOVERNANCE",
+      "finding": "Commit ca0f4d5 carries an AI Co-Authored-By trailer. From the repair commit onward no AI co-author trailer is used; a Claude-Session link is kept as tool provenance. AI_USE_LOG.md records AI use. Squashing the working history before publication is left to the author."
+    },
+    {
+      "id": "F12",
+      "type": "SCOPE",
+      "finding": "Per the owner's scope rule for the repair pass (repair the manuscript from the frozen evidence; do not re-open numerical verification), a convergence ladder computed during this pass is archived only, under data/reproducibility/ with the label MANUSCRIPT REPRODUCIBILITY CHECK — NOT PART OF FROZEN SCIENTIFIC EVIDENCE, and is used by no theorem, disposition, fitted result, table, figure or claim. The second implementation is a manuscript-stage cross-check; it agrees with the frozen data (max relative difference 1.4e-7 in gamma_1, signs equal) and changes nothing."
     }
   ],
   "items": {
@@ -136,7 +151,7 @@
       "label": "Definition 1 / Section 2 parent Hamiltonian",
       "manuscript_locations": [
         "src/02_model.md:3",
-        "src/S1_theorem_and_notation.md:48"
+        "src/S1_theorem_and_notation.md:49"
       ],
       "sources": [
         {
@@ -268,7 +283,7 @@
       "kind": "definition",
       "label": "Definition 2 (admissible clamps)",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:70"
+        "src/S1_theorem_and_notation.md:71"
       ],
       "sources": [
         {
@@ -295,7 +310,7 @@
       "kind": "definition",
       "label": "Definition 3",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:78"
+        "src/S1_theorem_and_notation.md:79"
       ],
       "sources": [
         {
@@ -323,7 +338,7 @@
       "label": "Definition 4 / Section 3 nested ladder",
       "manuscript_locations": [
         "src/03_classes.md:5",
-        "src/S1_theorem_and_notation.md:81"
+        "src/S1_theorem_and_notation.md:82"
       ],
       "sources": [
         {
@@ -358,8 +373,8 @@
       "kind": "definition",
       "label": "E2± (signed causal scale, prefix consistency)",
       "manuscript_locations": [
-        "src/03_classes.md:9",
-        "src/S1_theorem_and_notation.md:85"
+        "src/03_classes.md:11",
+        "src/S1_theorem_and_notation.md:86"
       ],
       "sources": [
         {
@@ -394,8 +409,8 @@
       "kind": "proposition",
       "label": "characterisation of E2± (Section 3; Proposition S4.3)",
       "manuscript_locations": [
-        "src/03_classes.md:22",
-        "src/S4_classes_proofs.md:15"
+        "src/03_classes.md:28",
+        "src/S3_class_hierarchy_and_mechanism_map.md:38"
       ],
       "sources": [
         {
@@ -423,15 +438,15 @@
           "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "blueprint": "MATCHES-REVIEW: §3 statement; S3 proof",
       "notes": "Repaired (§R2) statement used; it supersedes §R."
     },
     "lem.e2pm_necessity": {
       "kind": "lemma",
       "label": "Lemma 6 / Section 3 invariant",
       "manuscript_locations": [
-        "src/03_classes.md:25",
-        "src/S1_theorem_and_notation.md:141"
+        "src/03_classes.md:31",
+        "src/S1_theorem_and_notation.md:142"
       ],
       "sources": [
         {
@@ -466,8 +481,8 @@
       "kind": "proposition",
       "label": "nested ladder strict (Section 3; S1)",
       "manuscript_locations": [
-        "src/03_classes.md:17",
-        "src/S1_theorem_and_notation.md:89"
+        "src/03_classes.md:19",
+        "src/S1_theorem_and_notation.md:90"
       ],
       "sources": [
         {
@@ -477,16 +492,24 @@
           "section": "§R BRI-O8",
           "quote": "So **E₁ ⊊ E₂± ⊊ E_univ.**",
           "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_FINAL_SYNTHESIS.md",
+          "section": "ladder",
+          "quote": "**The ladder:** 𝓗 ⊂ E₁ ⊊ E₂± ⊊ E_univ.",
+          "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "blueprint": "MATCHES-REVIEW: H ⊂ E1 ⊊ E2± ⊊ E_univ displayed in §3",
       "notes": ""
     },
     "prop.ladder_strict": {
       "kind": "proposition",
       "label": "Proposition S4.4",
       "manuscript_locations": [
-        "src/S4_classes_proofs.md:23"
+        "src/S3_class_hierarchy_and_mechanism_map.md:46"
       ],
       "sources": [
         {
@@ -506,16 +529,16 @@
           "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "BLUEPRINT-UNVERIFIED: S4 contents inferred (blueprint v1.1 not available)",
+      "blueprint": "MATCHES-REVIEW: S3 proved class hierarchy",
       "notes": ""
     },
     "prop.upper": {
       "kind": "proposition",
       "label": "universal upper bound (Section 3; Proposition S4.5)",
       "manuscript_locations": [
-        "src/03_classes.md:19",
-        "src/S1_theorem_and_notation.md:91",
-        "src/S4_classes_proofs.md:28"
+        "src/03_classes.md:25",
+        "src/S1_theorem_and_notation.md:92",
+        "src/S3_class_hierarchy_and_mechanism_map.md:51"
       ],
       "sources": [
         {
@@ -543,14 +566,14 @@
           "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT (statement in §3); BLUEPRINT-UNVERIFIED (S4 placement)",
+      "blueprint": "MATCHES-REVIEW: §3 statement; S3 proof",
       "notes": ""
     },
     "prop.vacuity": {
       "kind": "proposition",
       "label": "Proposition S4.1 (single-protocol vacuity)",
       "manuscript_locations": [
-        "src/S4_classes_proofs.md:5"
+        "src/S3_class_hierarchy_and_mechanism_map.md:10"
       ],
       "sources": [
         {
@@ -562,14 +585,14 @@
           "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "BLUEPRINT-UNVERIFIED: S4 contents inferred",
+      "blueprint": "MATCHES-REVIEW: S3 proved class hierarchy",
       "notes": ""
     },
     "prop.c1": {
       "kind": "proposition",
       "label": "Proposition S4.2 (characterisation of E1)",
       "manuscript_locations": [
-        "src/S4_classes_proofs.md:10"
+        "src/S3_class_hierarchy_and_mechanism_map.md:33"
       ],
       "sources": [
         {
@@ -581,14 +604,14 @@
           "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "BLUEPRINT-UNVERIFIED: S4 contents inferred",
+      "blueprint": "MATCHES-REVIEW: S3 proved class hierarchy",
       "notes": ""
     },
     "def.c": {
       "kind": "definition",
       "label": "Definition 5: y1, c(t), K(t)",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:94"
+        "src/S1_theorem_and_notation.md:95"
       ],
       "sources": [
         {
@@ -623,7 +646,7 @@
       "kind": "equation",
       "label": "Gibbs moment identity",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:105"
+        "src/S1_theorem_and_notation.md:106"
       ],
       "sources": [
         {
@@ -651,7 +674,7 @@
       "label": "Lemma 1 / eq. (star)",
       "manuscript_locations": [
         "src/04_main_result.md:5",
-        "src/S1_theorem_and_notation.md:116"
+        "src/S1_theorem_and_notation.md:117"
       ],
       "sources": [
         {
@@ -679,7 +702,7 @@
       "label": "Lemma 2",
       "manuscript_locations": [
         "src/04_main_result.md:11",
-        "src/S1_theorem_and_notation.md:122"
+        "src/S1_theorem_and_notation.md:123"
       ],
       "sources": [
         {
@@ -707,7 +730,7 @@
       "label": "Lemma 3 (first-order third cumulant; record LEMMA BRI1-R1)",
       "manuscript_locations": [
         "src/04_main_result.md:14",
-        "src/S1_theorem_and_notation.md:125"
+        "src/S1_theorem_and_notation.md:126"
       ],
       "sources": [
         {
@@ -743,7 +766,7 @@
       "label": "Lemma 4 / eq. c(t) small-time",
       "manuscript_locations": [
         "src/04_main_result.md:21",
-        "src/S1_theorem_and_notation.md:131"
+        "src/S1_theorem_and_notation.md:132"
       ],
       "sources": [
         {
@@ -786,7 +809,7 @@
       "kind": "lemma",
       "label": "Lemma 5",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:138"
+        "src/S1_theorem_and_notation.md:139"
       ],
       "sources": [
         {
@@ -806,7 +829,8 @@
       "label": "Proposition 1 / Section 5",
       "manuscript_locations": [
         "src/05_reservoir_limit.md:3",
-        "src/S1_theorem_and_notation.md:144"
+        "src/S1_theorem_and_notation.md:145",
+        "src/S4_reservoir_limit_proof.md:5"
       ],
       "sources": [
         {
@@ -842,7 +866,7 @@
           "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT: reservoir limit stated as E1-type finite-dimensional convergence, not the harmonic class",
+      "blueprint": "MATCHES-REVIEW: §5 statement; S1 statement; S4 proof",
       "notes": "The record's narrowed (§T4-R) wording supersedes T4/T6 and is the one used."
     },
     "eq.C0": {
@@ -868,7 +892,8 @@
       "kind": "scope",
       "label": "reservoir-limit scope (Section 5)",
       "manuscript_locations": [
-        "src/05_reservoir_limit.md:16"
+        "src/05_reservoir_limit.md:16",
+        "src/S4_reservoir_limit_proof.md:40"
       ],
       "sources": [
         {
@@ -888,14 +913,14 @@
           "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT: not the harmonic class",
+      "blueprint": "MATCHES-REVIEW: E1-type finite-dimensional convergence, not H; effective-harmonic only as literature connection",
       "notes": ""
     },
     "scope.theorem": {
       "kind": "scope",
       "label": "pointwise quantifier and no data fishing (Section 4)",
       "manuscript_locations": [
-        "src/04_main_result.md:35"
+        "src/04_main_result.md:36"
       ],
       "sources": [
         {
@@ -915,7 +940,7 @@
       "label": "what is not claimed (S1.5, Section 7)",
       "manuscript_locations": [
         "src/07_discussion.md:6",
-        "src/S1_theorem_and_notation.md:273"
+        "src/S1_theorem_and_notation.md:271"
       ],
       "sources": [
         {
@@ -1024,7 +1049,7 @@
       "label": "finite-N_B computation (Section 6; S6)",
       "manuscript_locations": [
         "src/06_numerical_illustration.md:6",
-        "src/S6_methods_and_provenance.md:3"
+        "src/S5_numerical_methods_and_convergence.md:3"
       ],
       "sources": [
         {
@@ -1044,14 +1069,15 @@
           "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "BLUEPRINT-UNVERIFIED for S6 placement",
+      "blueprint": "MATCHES-REVIEW: S5 numerical methods",
       "notes": "Numerical parameters (L, nx, dt, 1-D node count) are rendered from values.json, parsed from the record script whose output schema matches the authoritative JSON."
     },
     "num.controls": {
       "kind": "result",
       "label": "numerical controls (Section 6)",
       "manuscript_locations": [
-        "src/06_numerical_illustration.md:9"
+        "src/06_numerical_illustration.md:9",
+        "src/S5_numerical_methods_and_convergence.md:8"
       ],
       "sources": [
         {
@@ -1109,14 +1135,14 @@
           "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "ADDITION (not in prompt): independent check computed by this build",
+      "blueprint": "§6 and S6; claim relations asserted in tools/gen_values.py",
       "notes": "Uses data/t7_check.json and data/constants.json."
     },
     "num.tables": {
       "kind": "result",
       "label": "S5 tables",
       "manuscript_locations": [
-        "src/S5_numerical_tables.md:3"
+        "src/S5_numerical_methods_and_convergence.md:24"
       ],
       "sources": [
         {
@@ -1128,42 +1154,14 @@
           "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT: S5 tables from the JSON",
-      "notes": ""
-    },
-    "num.history": {
-      "kind": "method",
-      "label": "verification history (S6)",
-      "manuscript_locations": [
-        "src/S6_methods_and_provenance.md:6"
-      ],
-      "sources": [
-        {
-          "repo": "ryangrvr/TestingGRUT",
-          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
-          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
-          "section": "§11",
-          "quote": "**Failed Monte Carlo:** the original preregistered MC visualization failed because the theorem's small-time signal was orders of magnitude below feasible sampling noise.",
-          "quote_verified_verbatim": true
-        },
-        {
-          "repo": "ryangrvr/TestingGRUT",
-          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
-          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
-          "section": "§11",
-          "quote": "It was caught because the P0 Gibbs variance violated stationarity and an exact moment identity.",
-          "quote_verified_verbatim": true
-        }
-      ],
-      "blueprint": "BLUEPRINT-UNVERIFIED for S6 contents",
+      "blueprint": "MATCHES-REVIEW: S5 tables",
       "notes": ""
     },
     "check.t7": {
       "kind": "check",
       "label": "S2 small-time consistency check",
       "manuscript_locations": [
-        "src/S2_t7_check.md:3",
-        "src/S6_methods_and_provenance.md:9"
+        "src/S2_t7_check.md:3"
       ],
       "sources": [
         {
@@ -1175,7 +1173,7 @@
           "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT: S2 check at t = 0.1, 0.2, 0.25, 0.5 with fresh code",
+      "blueprint": "MATCHES-PROMPT-EXTRACT: S2 check",
       "notes": "Values computed by tools/check_t7.py; the expected ratios quoted in the prompt were not used."
     },
     "check.symbolic": {
@@ -1197,65 +1195,11 @@
       "blueprint": "ADDITION (not in prompt)",
       "notes": "tools/gen_constants.py reproduces all eight logged coefficients exactly."
     },
-    "mech.parity": {
-      "kind": "statement",
-      "label": "S3 expansion and parity",
-      "manuscript_locations": [
-        "src/S3_mechanism_map.md:5"
-      ],
-      "sources": [
-        {
-          "repo": "ryangrvr/TestingGRUT",
-          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
-          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
-          "section": "§4.2",
-          "quote": "By induction, **y_k is odd in x₀ for even k and even in x₀ for odd k**:",
-          "quote_verified_verbatim": true
-        }
-      ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT: mechanism map in S3",
-      "notes": ""
-    },
-    "mech.orders": {
-      "kind": "statement",
-      "label": "S3 order table",
-      "manuscript_locations": [
-        "src/S3_mechanism_map.md:8"
-      ],
-      "sources": [
-        {
-          "repo": "ryangrvr/TestingGRUT",
-          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
-          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
-          "section": "§4.4",
-          "quote": "| n | N_B^{(1−n)/2} for odd n; N_B^{−n/2} for even n | |",
-          "quote_verified_verbatim": true
-        },
-        {
-          "repo": "ryangrvr/TestingGRUT",
-          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
-          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
-          "section": "§4.3 ASSUMPTION R",
-          "quote": "**Not proved\n  here.**",
-          "quote_verified_verbatim": true
-        },
-        {
-          "repo": "ryangrvr/TestingGRUT",
-          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
-          "path": "backreaction_identifiability_0/BRI1_PF4Q.md",
-          "section": "§1 scope",
-          "quote": "The all-orders ASSUMPTION R remains unproved and is not needed here.",
-          "quote_verified_verbatim": true
-        }
-      ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT",
-      "notes": "Rows other than the third cumulant are labelled as resting on the unproved all-orders expansion, as in the record."
-    },
     "mech.physical": {
       "kind": "statement",
-      "label": "S3 physical mechanism; Section 4 physical reading",
+      "label": "Section 4 interpretation of the sign of c(t)",
       "manuscript_locations": [
-        "src/S3_mechanism_map.md:23"
+        "src/04_main_result.md:28"
       ],
       "sources": [
         {
@@ -1267,14 +1211,14 @@
           "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "blueprint": "Interpretation paragraph in §4 (sign of c(t) is what is proved)",
       "notes": ""
     },
     "mech.control": {
       "kind": "statement",
       "label": "S3 nonlinear-coupling harmonic control",
       "manuscript_locations": [
-        "src/S3_mechanism_map.md:26"
+        "src/S3_class_hierarchy_and_mechanism_map.md:75"
       ],
       "sources": [
         {
@@ -1294,14 +1238,14 @@
           "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "blueprint": "MATCHES-REVIEW: S3 mechanism non-escape (multiplicative modulation stays in E2±)",
       "notes": ""
     },
     "proof.lem1": {
       "kind": "proof",
       "label": "proof of Lemma 1",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:155"
+        "src/S1_theorem_and_notation.md:156"
       ],
       "sources": [
         {
@@ -1320,7 +1264,7 @@
       "kind": "proof",
       "label": "proof of Lemma 2",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:166"
+        "src/S1_theorem_and_notation.md:167"
       ],
       "sources": [
         {
@@ -1339,7 +1283,7 @@
       "kind": "proof",
       "label": "proof of Lemma 3",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:171"
+        "src/S1_theorem_and_notation.md:172"
       ],
       "sources": [
         {
@@ -1366,7 +1310,7 @@
       "kind": "proof",
       "label": "proof of Lemma 4",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:192"
+        "src/S1_theorem_and_notation.md:193"
       ],
       "sources": [
         {
@@ -1401,7 +1345,7 @@
       "kind": "proof",
       "label": "proof of Lemma 5",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:233"
+        "src/S1_theorem_and_notation.md:234"
       ],
       "sources": [
         {
@@ -1420,7 +1364,7 @@
       "kind": "proof",
       "label": "proof of Lemma 6",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:238"
+        "src/S1_theorem_and_notation.md:239"
       ],
       "sources": [
         {
@@ -1439,8 +1383,8 @@
       "kind": "proof",
       "label": "proof of Theorem 1",
       "manuscript_locations": [
-        "src/04_main_result.md:32",
-        "src/S1_theorem_and_notation.md:249"
+        "src/04_main_result.md:33",
+        "src/S1_theorem_and_notation.md:250"
       ],
       "sources": [
         {
@@ -1467,7 +1411,7 @@
       "kind": "proof",
       "label": "proof of Proposition 1",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:263"
+        "src/S4_reservoir_limit_proof.md:8"
       ],
       "sources": [
         {
@@ -1487,14 +1431,14 @@
           "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "blueprint": "MATCHES-REVIEW: S4 reservoir-limit proof",
       "notes": ""
     },
     "build.provenance": {
       "kind": "method",
       "label": "build provenance (S6)",
       "manuscript_locations": [
-        "src/S6_methods_and_provenance.md:12"
+        "src/S6_second_code_path_and_reproducibility.md:19"
       ],
       "sources": [
         {
@@ -1506,7 +1450,7 @@
           "quote_verified_verbatim": true
         }
       ],
-      "blueprint": "BLUEPRINT-UNVERIFIED for S6 contents",
+      "blueprint": "MATCHES-REVIEW: S6 reproducibility statement",
       "notes": ""
     },
     "disclosure.ack": {
@@ -1523,10 +1467,10 @@
       "kind": "placeholder",
       "label": "AI-use disclosure, methods/supplement",
       "manuscript_locations": [
-        "src/S6_methods_and_provenance.md:15"
+        "src/S6_second_code_path_and_reproducibility.md:22"
       ],
       "sources": [],
-      "blueprint": "PROMPT §7",
+      "blueprint": "PROMPT §7; located in S6 (Supplement)",
       "notes": "Text deliberately not drafted."
     },
     "ref.1": {
@@ -1604,6 +1548,344 @@
       ],
       "blueprint": "PROMPT §5: verified in record",
       "notes": "Record verification level: search-level inspection. The record's heading misspells the first author as 'Carcarra'; the source line spells 'Carcaterra'."
+    },
+    "def.H": {
+      "kind": "definition",
+      "label": "class H (Section 3; S3)",
+      "manuscript_locations": [
+        "src/03_classes.md:8",
+        "src/S3_class_hierarchy_and_mechanism_map.md:7"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§1 inherited P-17",
+          "quote": "coupling linear in the bath coordinates **and** in the system coordinate, with counterterm",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§1 inherited P-17",
+          "quote": "the free-force law does not depend on the system's initial state",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_FINAL_SYNTHESIS.md",
+          "section": "ladder",
+          "quote": "**The ladder:** 𝓗 ⊂ E₁ ⊊ E₂± ⊊ E_univ.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: frozen ladder H ⊂ E1 ⊊ E2± ⊊ E_univ displayed in the main text",
+      "notes": ""
+    },
+    "prop.affine_bath": {
+      "kind": "lemma",
+      "label": "Lemma S3.2 (harmonic bath coupled through A(q))",
+      "manuscript_locations": [
+        "src/S3_class_hierarchy_and_mechanism_map.md:15"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§2 PROP BRI1-C1",
+          "quote": "ξ(t) := Σ_j c_j [x_j(0) cos ω_j t + (p_j(0)/ω_j) sin ω_j t];",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§2 proof",
+          "quote": "Variation of constants plus one integration by parts give",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§2 proof",
+          "quote": "This is\n   P-17's proof with q replaced by A(q).",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: S3 proved class hierarchy",
+      "notes": "Stated for general smooth A with A(0)=0; A(q)=q gives class H, A(q)=q+q^3/3 gives the record's control."
+    },
+    "prop.H_in_E1": {
+      "kind": "proposition",
+      "label": "Proposition S3.3 (H ⊂ E1)",
+      "manuscript_locations": [
+        "src/S3_class_hierarchy_and_mechanism_map.md:28"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§5.2 PROP BRI-H",
+          "quote": "the clamped force is F_q(t) = F_free(t) − ∫₀ᵗ γ(t − s) q̇(s) ds.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§5.2 PROP BRI-H",
+          "quote": "So M_t[q] = −∫γ q̇ and ξ = F_free.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: S3 proved class hierarchy",
+      "notes": ""
+    },
+    "mech.map": {
+      "kind": "statement",
+      "label": "S3 mechanism map (proof-backed assignments)",
+      "manuscript_locations": [
+        "src/S3_class_hierarchy_and_mechanism_map.md:63"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_FINAL_SYNTHESIS.md",
+          "section": "§1",
+          "quote": "**P-17's class 𝓗** (harmonic bath, coupling linear in bath and system coordinates, system-independent free-force law)\n  **lies in E₁** under clamping (PROP BRI-H).",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_FINAL_SYNTHESIS.md",
+          "section": "§2",
+          "quote": "**C1** (harmonic bath, nonlinear system coupling A(q) = q + q³/3) **lies in E₂± exactly** (PROP BRI1-C1).",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_FINAL_SYNTHESIS.md",
+          "section": "§2",
+          "quote": "**X1** (a finite reciprocal Duffing bath with coupling 1/√N_B) **escapes E₂±** for every sufficiently large finite N_B",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§R BRI-O7",
+          "quote": "**No environment in the declared continuous-time deterministic parent class escapes E_univ.**",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: mechanism map H / E1 / E2± non-escape / Duffing escape / E_univ, each proof-backed",
+      "notes": "Replaces the perturbative order table of ca0f4d5 (removed: it relied on an unproved all-orders expansion)."
+    },
+    "mean.response": {
+      "kind": "statement",
+      "label": "S4.3 the mean (linear response)",
+      "manuscript_locations": [
+        "src/S4_reservoir_limit_proof.md:35"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T4 limit law",
+          "quote": "E F_{q,N} = √N_B·E X^ε → E y₁ is the linear (FDT) response, absorbed by M.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§4.4",
+          "quote": "The O(1) term is the equilibrium linear response, E y₁(t) = ∫₀ᵗ χ(t − s) q(s) ds.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: S4 reservoir-limit proof",
+      "notes": "The O(1/N_B) correction to the mean is derived from Lemma 3(iii) and oddness; the record states it under ASSUMPTION R, which is not needed for that order."
+    },
+    "num.convergence": {
+      "kind": "result",
+      "label": "S5.3 archived convergence ladder (extracted, not recomputed)",
+      "manuscript_locations": [
+        "src/S5_numerical_methods_and_convergence.md:15"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+          "section": "line 3",
+          "quote": "P1 t*=0.5 gamma1: 4:-5.338286e-06 8:-2.669143e-06 16:-1.334572e-06 32:-6.672858e-07 64:-3.336429e-07 128:-1.668214e-07",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log",
+          "section": "cell nx120_dt0.001",
+          "quote": "P0 var drift: 1.189e-08  k3 max: 7.792e-17  mean max: 5.551e-17",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_FIGURE_REPORT_03.md",
+          "section": "§1",
+          "quote": "Quadrature resolutions: **nx ∈ {120, 240, 480}**",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§12 NG-2",
+          "quote": "Resolution/step-size convergence demonstrates stability of the implemented calculation, not correctness of the implementation.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: S5 numerical methods + convergence, from frozen evidence (extracted from archived logs; no recomputation)",
+      "notes": "tools/extract_frozen_convergence.py parses authoritative.log and v3_r2.log with line numbers. The finest cell is absent from both archives and is reported as not archived. A separately computed ladder exists only as an archived reproducibility check (data/reproducibility/, labelled NOT PART OF FROZEN SCIENTIFIC EVIDENCE) and is not used."
+    },
+    "num.second": {
+      "kind": "result",
+      "label": "S6.1 second numerical code path",
+      "manuscript_locations": [
+        "src/S6_second_code_path_and_reproducibility.md:3"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_FIGURE_REPORT_03.md",
+          "section": "§10",
+          "quote": "A separately written implementation (DOP853, rtol = 1e-12, 160-point tensor GL grid on [-6,6]^2) reproduced the following repository values to all printed digits:",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: S6 second numerical code path, framed as reproducibility artifact",
+      "notes": "Manuscript-stage numerical cross-check of the frozen result (reproducibility artifact): not a new verification lane, not external replication, no evidence-grade change. gen_values.py stops the build on a material contradiction with the frozen data (sign mismatch or relative difference above 1e-4)."
+    },
+    "repro.statement": {
+      "kind": "result",
+      "label": "S6.2 reproducibility",
+      "manuscript_locations": [
+        "src/S6_second_code_path_and_reproducibility.md:14"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§12 NG-3",
+          "quote": "No manual transcription when generation is possible.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§12 NG-5",
+          "quote": "A pushed task is complete only after remote verification confirms",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: S6 clean reproducibility statement and pointer; no verification-history narrative",
+      "notes": "Numbers from data/repro_record.json (tools/repro_record.py)."
+    },
+    "intro.contributions": {
+      "kind": "statement",
+      "label": "Introduction: three-item contribution list",
+      "manuscript_locations": [
+        "src/01_introduction.md:11"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§7",
+          "quote": "can generate environmental force laws across interventions that cannot all be represented by a single shared causal signed-affine exogenous process",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§9",
+          "quote": "the witness decays asymptotically as O(1/N_B);",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: concise three-item contribution list",
+      "notes": ""
+    },
+    "intro.ingredients": {
+      "kind": "statement",
+      "label": "Introduction: Established ingredients | Contribution here table",
+      "manuscript_locations": [
+        "src/01_introduction.md:18"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§5",
+          "quote": "**Known (do not claim novelty):** anharmonic/nonlinear environments can generate non-Gaussian forces",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§5",
+          "quote": "**Surviving contribution:** the constructive physical/dynamical instantiation",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_NOVELTY_POSITIONING_AUDIT_SUPPLEMENT_01.md",
+          "section": "final adjudication",
+          "quote": "**V2 disposition (supplemental): KNOWN-RESULT-NEW-FRAMING**",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: explicit Established ingredients | Contribution here table",
+      "notes": ""
+    },
+    "intro.dictionary": {
+      "kind": "statement",
+      "label": "Introduction: causal/physics dictionary table",
+      "manuscript_locations": [
+        "src/01_introduction.md:32"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_NOVELTY_POSITIONING_AUDIT_SUPPLEMENT_01.md",
+          "section": "Comparator A Q1",
+          "quote": "Mapping X := q (protocol/history variable), f := M, g := G, N := ξ gives exactly the LSNM functional form.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: causal/physics dictionary table",
+      "notes": ""
     }
   },
   "values": {
@@ -1620,8 +1902,7 @@
         "section": "authoritative numerical output (reference resolution)"
       },
       "used_in": [
-        "06_numerical_illustration.md",
-        "S6_methods_and_provenance.md"
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "num.dt": {
@@ -1638,8 +1919,7 @@
         "section": "authoritative numerical output (reference resolution)"
       },
       "used_in": [
-        "06_numerical_illustration.md",
-        "S6_methods_and_provenance.md"
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "num.t_star": {
@@ -1669,7 +1949,8 @@
         "section": "authoritative numerical output (reference resolution)"
       },
       "used_in": [
-        "06_numerical_illustration.md"
+        "06_numerical_illustration.md",
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "num.t_diag_2": {
@@ -1685,7 +1966,8 @@
         "section": "authoritative numerical output (reference resolution)"
       },
       "used_in": [
-        "06_numerical_illustration.md"
+        "06_numerical_illustration.md",
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "num.t_diag_3": {
@@ -1701,7 +1983,9 @@
         "section": "authoritative numerical output (reference resolution)"
       },
       "used_in": [
-        "06_numerical_illustration.md"
+        "06_numerical_illustration.md",
+        "S5_numerical_methods_and_convergence.md",
+        "S6_second_code_path_and_reproducibility.md"
       ]
     },
     "num.nb_min": {
@@ -1759,8 +2043,7 @@
         "note": "script whose output schema matches the authoritative JSON"
       },
       "used_in": [
-        "06_numerical_illustration.md",
-        "S6_methods_and_provenance.md"
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "num.gl_1d": {
@@ -1776,7 +2059,7 @@
         "note": "script whose output schema matches the authoritative JSON"
       },
       "used_in": [
-        "06_numerical_illustration.md"
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "num.ref_var_t0": {
@@ -1810,7 +2093,8 @@
         ]
       },
       "used_in": [
-        "06_numerical_illustration.md"
+        "06_numerical_illustration.md",
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "num.ref_k3_max": {
@@ -1862,7 +2146,7 @@
       },
       "used_in": [
         "06_numerical_illustration.md",
-        "S5_numerical_tables.md"
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "num.ind1d_m2": {
@@ -1880,7 +2164,7 @@
       },
       "used_in": [
         "06_numerical_illustration.md",
-        "S5_numerical_tables.md"
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "num.ind1d_m4": {
@@ -1897,7 +2181,7 @@
         "section": "authoritative numerical output (reference resolution)"
       },
       "used_in": [
-        "S5_numerical_tables.md"
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "num.ref_rel_disc": {
@@ -2139,10 +2423,10 @@
       ]
     },
     "num.local_p_min": {
-      "text": "1.000000",
+      "text": "0.9999999999",
       "fmt": [
         "fixed",
-        6
+        10
       ],
       "provenance": {
         "repo": "ryangrvr/TestingGRUT",
@@ -2156,10 +2440,10 @@
       ]
     },
     "num.local_p_max": {
-      "text": "1.000000",
+      "text": "1.0000000002",
       "fmt": [
         "fixed",
-        6
+        10
       ],
       "provenance": {
         "repo": "ryangrvr/TestingGRUT",
@@ -2186,7 +2470,7 @@
         ]
       },
       "used_in": [
-        "06_numerical_illustration.md"
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "num.odd_sum_max": {
@@ -2216,9 +2500,7 @@
         "json_path": "odd_epsilon keys",
         "section": "authoritative numerical output (reference resolution)"
       },
-      "used_in": [
-        "06_numerical_illustration.md"
-      ]
+      "used_in": []
     },
     "const.m2": {
       "text": "0.467919916974",
@@ -2232,7 +2514,7 @@
       },
       "used_in": [
         "06_numerical_illustration.md",
-        "S5_numerical_tables.md"
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "const.m4": {
@@ -2246,7 +2528,7 @@
         "method": "mpmath.quad on (-inf,0,inf), 40 digits"
       },
       "used_in": [
-        "S5_numerical_tables.md"
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "const.var_x0sq": {
@@ -2261,7 +2543,7 @@
       },
       "used_in": [
         "06_numerical_illustration.md",
-        "S5_numerical_tables.md"
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "const.identity_residual": {
@@ -2288,7 +2570,7 @@
         "section": "T1 step 6"
       },
       "used_in": [
-        "S5_numerical_tables.md"
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "const.C7": {
@@ -2302,7 +2584,7 @@
         "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}"
       },
       "used_in": [
-        "S5_numerical_tables.md"
+        "S5_numerical_methods_and_convergence.md"
       ]
     },
     "sym.C7": {
@@ -2983,9 +3265,7 @@
           "x.obs"
         ]
       },
-      "used_in": [
-        "06_numerical_illustration.md"
-      ]
+      "used_in": []
     },
     "x.pred_tstar": {
       "text": "-2.13531\\times 10^{-5}",
@@ -3039,6 +3319,357 @@
       "used_in": [
         "06_numerical_illustration.md"
       ]
+    },
+    "conv.cells_sevenfig": {
+      "text": "7",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "logs": {
+          "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+          "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+        },
+        "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+        "output": "data/frozen_convergence.json"
+      },
+      "used_in": [
+        "S5_numerical_methods_and_convergence.md"
+      ]
+    },
+    "conv.cells_fivefig": {
+      "text": "8",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "logs": {
+          "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+          "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+        },
+        "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+        "output": "data/frozen_convergence.json"
+      },
+      "used_in": [
+        "S5_numerical_methods_and_convergence.md"
+      ]
+    },
+    "conv.spread_sevenfig": {
+      "text": "0",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "logs": {
+          "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+          "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+        },
+        "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+        "output": "data/frozen_convergence.json"
+      },
+      "used_in": []
+    },
+    "conv.spread_fivefig": {
+      "text": "0",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "logs": {
+          "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+          "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+        },
+        "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+        "output": "data/frozen_convergence.json"
+      },
+      "used_in": []
+    },
+    "conv.ref_drift_max": {
+      "text": "1.2\\times 10^{-8}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "logs": {
+          "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+          "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+        },
+        "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+        "output": "data/frozen_convergence.json"
+      },
+      "used_in": [
+        "S5_numerical_methods_and_convergence.md"
+      ]
+    },
+    "conv.nx_list": {
+      "text": "120, 240, 480",
+      "fmt": [
+        "text"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "logs": {
+          "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+          "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+        },
+        "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+        "output": "data/frozen_convergence.json"
+      },
+      "used_in": [
+        "S5_numerical_methods_and_convergence.md"
+      ]
+    },
+    "conv.dt_list": {
+      "text": "1.0\\times 10^{-3}, 5.0\\times 10^{-4}, 2.5\\times 10^{-4}",
+      "fmt": [
+        "text"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "logs": {
+          "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+          "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+        },
+        "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+        "output": "data/frozen_convergence.json"
+      },
+      "used_in": [
+        "S5_numerical_methods_and_convergence.md"
+      ]
+    },
+    "conv.missing_nx": {
+      "text": "480",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "logs": {
+          "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+          "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+        },
+        "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+        "output": "data/frozen_convergence.json"
+      },
+      "used_in": [
+        "S5_numerical_methods_and_convergence.md"
+      ]
+    },
+    "conv.missing_dt": {
+      "text": "2.5\\times 10^{-4}",
+      "fmt": [
+        "sci",
+        2
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "logs": {
+          "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+          "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+        },
+        "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+        "output": "data/frozen_convergence.json"
+      },
+      "used_in": [
+        "S5_numerical_methods_and_convergence.md"
+      ]
+    },
+    "second.max_rel_diff": {
+      "text": "1.4\\times 10^{-7}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/second_path.py",
+        "method": "GL(200) in x on [-6,6] x Gauss-Hermite(100) in p; DOP853 rtol=atol=1e-12",
+        "output": "data/second_path.json"
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "second.max_rel_diff_tstar": {
+      "text": "1.4\\times 10^{-7}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/second_path.py",
+        "method": "GL(200) in x on [-6,6] x Gauss-Hermite(100) in p; DOP853 rtol=atol=1e-12",
+        "output": "data/second_path.json"
+      },
+      "used_in": [
+        "S6_second_code_path_and_reproducibility.md"
+      ]
+    },
+    "second.max_rel_diff_t1": {
+      "text": "5.3\\times 10^{-8}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/second_path.py",
+        "method": "GL(200) in x on [-6,6] x Gauss-Hermite(100) in p; DOP853 rtol=atol=1e-12",
+        "output": "data/second_path.json"
+      },
+      "used_in": [
+        "S6_second_code_path_and_reproducibility.md"
+      ]
+    },
+    "second.drift_t1": {
+      "text": "1.37\\times 10^{-7}",
+      "fmt": [
+        "sig",
+        3
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/second_path.py",
+        "method": "GL(200) in x on [-6,6] x Gauss-Hermite(100) in p; DOP853 rtol=atol=1e-12",
+        "output": "data/second_path.json"
+      },
+      "used_in": [
+        "S6_second_code_path_and_reproducibility.md"
+      ]
+    },
+    "second.spread_tstar": {
+      "text": "2.2\\times 10^{-10}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/second_path.py",
+        "method": "GL(200) in x on [-6,6] x Gauss-Hermite(100) in p; DOP853 rtol=atol=1e-12",
+        "output": "data/second_path.json"
+      },
+      "used_in": []
+    },
+    "second.ref_var_reldiff": {
+      "text": "2.5\\times 10^{-8}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/second_path.py",
+        "method": "GL(200) in x on [-6,6] x Gauss-Hermite(100) in p; DOP853 rtol=atol=1e-12",
+        "output": "data/second_path.json"
+      },
+      "used_in": [
+        "S6_second_code_path_and_reproducibility.md"
+      ]
+    },
+    "x.t7_spread_tstar": {
+      "text": "1\\times 10^{-6}",
+      "fmt": [
+        "sig",
+        1
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "repro.n_values": {
+      "text": "221",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/repro_record.py",
+        "method": "record script re-run in a temporary directory; outputs compared",
+        "inputs": [
+          "data/repro_record.json"
+        ]
+      },
+      "used_in": [
+        "S6_second_code_path_and_reproducibility.md"
+      ]
+    },
+    "repro.n_sig": {
+      "text": "208",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/repro_record.py",
+        "method": "record script re-run in a temporary directory; outputs compared",
+        "inputs": [
+          "data/repro_record.json"
+        ]
+      },
+      "used_in": [
+        "S6_second_code_path_and_reproducibility.md"
+      ]
+    },
+    "repro.max_rel": {
+      "text": "3.7\\times 10^{-9}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/repro_record.py",
+        "method": "record script re-run in a temporary directory; outputs compared",
+        "inputs": [
+          "data/repro_record.json"
+        ]
+      },
+      "used_in": [
+        "S6_second_code_path_and_reproducibility.md"
+      ]
+    },
+    "repro.max_abs_roundoff": {
+      "text": "2.8\\times 10^{-17}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/repro_record.py",
+        "method": "record script re-run in a temporary directory; outputs compared",
+        "inputs": [
+          "data/repro_record.json"
+        ]
+      },
+      "used_in": [
+        "S6_second_code_path_and_reproducibility.md"
+      ]
+    },
+    "repro.bitwise": {
+      "text": "163",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/repro_record.py",
+        "method": "record script re-run in a temporary directory; outputs compared",
+        "inputs": [
+          "data/repro_record.json"
+        ]
+      },
+      "used_in": []
     }
   },
   "equations": {
@@ -3048,12 +3679,13 @@
     "eq:prep": "4",
     "eq:protocols": "5",
     "eq:e2pm": "6",
-    "eq:g1-invariant": "7",
-    "eq:star": "8",
-    "eq:kappa3": "9",
-    "eq:c-small": "10",
-    "eq:g1-rate": "11",
-    "eq:C0": "12",
+    "eq:ladder": "7",
+    "eq:g1-invariant": "8",
+    "eq:star": "9",
+    "eq:kappa3": "10",
+    "eq:c-small": "11",
+    "eq:g1-rate": "12",
+    "eq:C0": "13",
     "eq:S1-H": "S1.1",
     "eq:S1-clamp": "S1.2",
     "eq:S1-force": "S1.3",
@@ -3074,7 +3706,12 @@
     "eq:S1-c7": "S1.18",
     "eq:S1-g1-invariant": "S1.19",
     "eq:S1-g1-rate": "S1.20",
-    "eq:S2-cov": "S2.1"
+    "eq:S2-cov": "S2.1",
+    "eq:S3-affine": "S3.1",
+    "eq:S3-xi-gamma": "S3.2",
+    "eq:S3-ladder": "S3.3",
+    "eq:S4-rate": "S4.1",
+    "eq:S4-lyapunov": "S4.2"
   },
   "figures": {
     "fig1_schematic": {
@@ -3093,16 +3730,16 @@
       ],
       "reference_line": "slope -1 through 3x|gamma1(N_B min)| (display offset only)"
     },
-    "fig3_flat": {
-      "source": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
-      "json_paths": [
-        "p1.0.5.*.gamma1_F",
-        "p1.0.5.*.NB_gamma1",
-        "scaling_fit.global_p",
-        "scaling_fit.intercept"
+    "fig3_residual": {
+      "source": [
+        "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json"
       ],
-      "overlay": "K(t_star)/m2^{3/2}: data/t7_check.json (primary run) and data/constants.json m2",
-      "y_window": "mean +/- 20% (display choice)"
+      "quantity": "r(N_B) = N_B gamma1(N_B) / N_B gamma1(N_B max) - 1 at t_star and t = 1.0",
+      "json_paths": [
+        "p1.0.5.*.NB_gamma1",
+        "p1.1.0.*.NB_gamma1"
+      ],
+      "scales": "panel (a) in units of 1e-10, panel (b) in units of 1e-7 (small multiples)"
     }
   },
   "tables": {
@@ -3154,6 +3791,25 @@
     "s2_t7": {
       "source": "manuscript/data/t7_check.json",
       "computed_by": "manuscript/tools/check_t7.py"
+    },
+    "s5_convergence": {
+      "source": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "logs": {
+          "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+          "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+        }
+      },
+      "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+      "note": "gamma_1 from authoritative.log (7 significant figures), or from v3_r2.log (5 significant figures, marked double dagger) where authoritative.log has no data; drift and residual from v3_r2.log; 'not in log' marks cells whose header was logged without data"
+    },
+    "s6_second": {
+      "source": [
+        "manuscript/data/second_path.json",
+        "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json"
+      ],
+      "computed_by": "manuscript/tools/second_path.py"
     }
   },
   "check": {

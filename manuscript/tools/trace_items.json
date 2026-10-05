@@ -11,7 +11,9 @@
     "NOV": "BRI1_NOVELTY_POSITIONING_AUDIT_01.md",
     "NOVS": "BRI1_NOVELTY_POSITIONING_AUDIT_SUPPLEMENT_01.md",
     "REP3": "BRI1_PUBLICATION_FIGURE_REPORT_03.md",
-    "LOG": "preflight/bri1_preflight_symbolic.log"
+    "LOG": "preflight/bri1_preflight_symbolic.log",
+    "ALOG": "publication_verification/v3_r2/authoritative.log",
+    "VLOG": "publication_verification/v3_r2/v3_r2.log"
   },
   "items": {
     "thm.main": {
@@ -236,7 +238,7 @@
           "quote": "**Fdd equality is not silently upgraded** to equality of arbitrary path-space measures."
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "blueprint": "MATCHES-REVIEW: §3 statement; S3 proof",
       "notes": "Repaired (§R2) statement used; it supersedes §R."
     },
     "lem.e2pm_necessity": {
@@ -270,9 +272,14 @@
           "file": "B0",
           "section": "§R BRI-O8",
           "quote": "So **E₁ ⊊ E₂± ⊊ E_univ.**"
+        },
+        {
+          "file": "FIN",
+          "section": "ladder",
+          "quote": "**The ladder:** 𝓗 ⊂ E₁ ⊊ E₂± ⊊ E_univ."
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "blueprint": "MATCHES-REVIEW: H ⊂ E1 ⊊ E2± ⊊ E_univ displayed in §3",
       "notes": ""
     },
     "prop.ladder_strict": {
@@ -290,7 +297,7 @@
           "quote": "F_q(t) = (1 + q(t)²)·ξ(t), with ξ i.i.d. standard normal. It is in E₂± (G > 0 is allowed)."
         }
       ],
-      "blueprint": "BLUEPRINT-UNVERIFIED: S4 contents inferred (blueprint v1.1 not available)",
+      "blueprint": "MATCHES-REVIEW: S3 proved class hierarchy",
       "notes": ""
     },
     "prop.upper": {
@@ -313,7 +320,7 @@
           "quote": "X1 is in the BRI-UPPER parent class, hence **X1 ∈ E_univ**."
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT (statement in §3); BLUEPRINT-UNVERIFIED (S4 placement)",
+      "blueprint": "MATCHES-REVIEW: §3 statement; S3 proof",
       "notes": ""
     },
     "prop.vacuity": {
@@ -326,7 +333,7 @@
           "quote": "Then the additive exogenous model with **M ≡ 0** and **ξ with Law(ξ) := Law(F_env)**\nreproduces the reduced path law of that protocol exactly."
         }
       ],
-      "blueprint": "BLUEPRINT-UNVERIFIED: S4 contents inferred",
+      "blueprint": "MATCHES-REVIEW: S3 proved class hierarchy",
       "notes": ""
     },
     "prop.c1": {
@@ -339,7 +346,7 @@
           "quote": "**PROP BRI-C1.** F ∈ E₁ ⟺ the finite-dimensional distributions (fdd) of F̊_q are identical for all q ∈ 𝒳"
         }
       ],
-      "blueprint": "BLUEPRINT-UNVERIFIED: S4 contents inferred",
+      "blueprint": "MATCHES-REVIEW: S3 proved class hierarchy",
       "notes": ""
     },
     "def.c": {
@@ -508,7 +515,7 @@
           "quote": "**|γ₁[F_{P1,N}(t)]| = O(N_B^(−1)) → 0 as N_B → ∞.** ✓"
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT: reservoir limit stated as E1-type finite-dimensional convergence, not the harmonic class",
+      "blueprint": "MATCHES-REVIEW: §5 statement; S1 statement; S4 proof",
       "notes": "The record's narrowed (§T4-R) wording supersedes T4/T6 and is the one used."
     },
     "eq.C0": {
@@ -539,7 +546,7 @@
           "quote": "**Scope kept explicit:** no theorem gives one shared E₁ representation uniformly over the whole infinite clamp class 𝒳,\n  and none is claimed."
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT: not the harmonic class",
+      "blueprint": "MATCHES-REVIEW: E1-type finite-dimensional convergence, not H; effective-harmonic only as literature connection",
       "notes": ""
     },
     "scope.theorem": {
@@ -642,7 +649,7 @@
           "quote": "Explicit 2-D tensor grids with **every `(x_i, p_j)` pair evolved independently**"
         }
       ],
-      "blueprint": "BLUEPRINT-UNVERIFIED for S6 placement",
+      "blueprint": "MATCHES-REVIEW: S5 numerical methods",
       "notes": "Numerical parameters (L, nx, dt, 1-D node count) are rendered from values.json, parsed from the record script whose output schema matches the authoritative JSON."
     },
     "num.controls": {
@@ -686,7 +693,7 @@
           "quote": "γ₁[F_q(t)] = 3c(t, t; t) / (N_B·m₂^{3/2}) + O(N_B^{−2})"
         }
       ],
-      "blueprint": "ADDITION (not in prompt): independent check computed by this build",
+      "blueprint": "§6 and S6; claim relations asserted in tools/gen_values.py",
       "notes": "Uses data/t7_check.json and data/constants.json."
     },
     "num.tables": {
@@ -699,25 +706,7 @@
           "quote": "## 5. P1 finite-ε results (primary witness t★ = 0.5)"
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT: S5 tables from the JSON",
-      "notes": ""
-    },
-    "num.history": {
-      "kind": "method",
-      "label": "verification history (S6)",
-      "sources": [
-        {
-          "file": "SYN",
-          "section": "§11",
-          "quote": "**Failed Monte Carlo:** the original preregistered MC visualization failed because the theorem's small-time signal was orders of magnitude below feasible sampling noise."
-        },
-        {
-          "file": "SYN",
-          "section": "§11",
-          "quote": "It was caught because the P0 Gibbs variance violated stationarity and an exact moment identity."
-        }
-      ],
-      "blueprint": "BLUEPRINT-UNVERIFIED for S6 contents",
+      "blueprint": "MATCHES-REVIEW: S5 tables",
       "notes": ""
     },
     "check.t7": {
@@ -730,7 +719,7 @@
           "quote": "c_P1(t_v, t_v; t_v) from A and B, compared with the exact series c = Σ_{k=7}^{14} c_k t^k"
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT: S2 check at t = 0.1, 0.2, 0.25, 0.5 with fresh code",
+      "blueprint": "MATCHES-PROMPT-EXTRACT: S2 check",
       "notes": "Values computed by tools/check_t7.py; the expected ratios quoted in the prompt were not used."
     },
     "check.symbolic": {
@@ -746,45 +735,9 @@
       "blueprint": "ADDITION (not in prompt)",
       "notes": "tools/gen_constants.py reproduces all eight logged coefficients exactly."
     },
-    "mech.parity": {
-      "kind": "statement",
-      "label": "S3 expansion and parity",
-      "sources": [
-        {
-          "file": "CAND",
-          "section": "§4.2",
-          "quote": "By induction, **y_k is odd in x₀ for even k and even in x₀ for odd k**:"
-        }
-      ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT: mechanism map in S3",
-      "notes": ""
-    },
-    "mech.orders": {
-      "kind": "statement",
-      "label": "S3 order table",
-      "sources": [
-        {
-          "file": "CAND",
-          "section": "§4.4",
-          "quote": "| n | N_B^{(1−n)/2} for odd n; N_B^{−n/2} for even n | |"
-        },
-        {
-          "file": "CAND",
-          "section": "§4.3 ASSUMPTION R",
-          "quote": "**Not proved\n  here.**"
-        },
-        {
-          "file": "R1",
-          "section": "§1 scope",
-          "quote": "The all-orders ASSUMPTION R remains unproved and is not needed here."
-        }
-      ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT",
-      "notes": "Rows other than the third cumulant are labelled as resting on the unproved all-orders expansion, as in the record."
-    },
     "mech.physical": {
       "kind": "statement",
-      "label": "S3 physical mechanism; Section 4 physical reading",
+      "label": "Section 4 interpretation of the sign of c(t)",
       "sources": [
         {
           "file": "CAND",
@@ -792,7 +745,7 @@
           "quote": "Physically,\n  a stiffer, higher-energy oscillator responds less, so response amplitude anticorrelates with x₀²."
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "blueprint": "Interpretation paragraph in §4 (sign of c(t) is what is proved)",
       "notes": ""
     },
     "mech.control": {
@@ -810,7 +763,7 @@
           "quote": "**C1 ∉ E₁** for any protocol with q ≢ 0"
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "blueprint": "MATCHES-REVIEW: S3 mechanism non-escape (multiplicative modulation stays in E2±)",
       "notes": ""
     },
     "proof.lem1": {
@@ -939,7 +892,7 @@
           "quote": "**no uniform theorem over the entire infinite clamp\nclass 𝒳 is established or claimed.**"
         }
       ],
-      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "blueprint": "MATCHES-REVIEW: S4 reservoir-limit proof",
       "notes": ""
     },
     "build.provenance": {
@@ -952,7 +905,7 @@
           "quote": "Publication-facing numerics follow: computation → authoritative machine-readable output → generated table/figure → prose interpretation."
         }
       ],
-      "blueprint": "BLUEPRINT-UNVERIFIED for S6 contents",
+      "blueprint": "MATCHES-REVIEW: S6 reproducibility statement",
       "notes": ""
     },
     "disclosure.ack": {
@@ -966,7 +919,7 @@
       "kind": "placeholder",
       "label": "AI-use disclosure, methods/supplement",
       "sources": [],
-      "blueprint": "PROMPT §7",
+      "blueprint": "PROMPT §7; located in S6 (Supplement)",
       "notes": "Text deliberately not drafted."
     },
     "ref.1": {
@@ -1020,13 +973,236 @@
       ],
       "blueprint": "PROMPT §5: verified in record",
       "notes": "Record verification level: search-level inspection. The record's heading misspells the first author as 'Carcarra'; the source line spells 'Carcaterra'."
+    },
+    "def.H": {
+      "kind": "definition",
+      "label": "class H (Section 3; S3)",
+      "sources": [
+        {
+          "file": "B0",
+          "section": "§1 inherited P-17",
+          "quote": "coupling linear in the bath coordinates **and** in the system coordinate, with counterterm"
+        },
+        {
+          "file": "B0",
+          "section": "§1 inherited P-17",
+          "quote": "the free-force law does not depend on the system's initial state"
+        },
+        {
+          "file": "FIN",
+          "section": "ladder",
+          "quote": "**The ladder:** 𝓗 ⊂ E₁ ⊊ E₂± ⊊ E_univ."
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: frozen ladder H ⊂ E1 ⊊ E2± ⊊ E_univ displayed in the main text",
+      "notes": ""
+    },
+    "prop.affine_bath": {
+      "kind": "lemma",
+      "label": "Lemma S3.2 (harmonic bath coupled through A(q))",
+      "sources": [
+        {
+          "file": "CAND",
+          "section": "§2 PROP BRI1-C1",
+          "quote": "ξ(t) := Σ_j c_j [x_j(0) cos ω_j t + (p_j(0)/ω_j) sin ω_j t];"
+        },
+        {
+          "file": "CAND",
+          "section": "§2 proof",
+          "quote": "Variation of constants plus one integration by parts give"
+        },
+        {
+          "file": "CAND",
+          "section": "§2 proof",
+          "quote": "This is\n   P-17's proof with q replaced by A(q)."
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: S3 proved class hierarchy",
+      "notes": "Stated for general smooth A with A(0)=0; A(q)=q gives class H, A(q)=q+q^3/3 gives the record's control."
+    },
+    "prop.H_in_E1": {
+      "kind": "proposition",
+      "label": "Proposition S3.3 (H ⊂ E1)",
+      "sources": [
+        {
+          "file": "B0",
+          "section": "§5.2 PROP BRI-H",
+          "quote": "the clamped force is F_q(t) = F_free(t) − ∫₀ᵗ γ(t − s) q̇(s) ds."
+        },
+        {
+          "file": "B0",
+          "section": "§5.2 PROP BRI-H",
+          "quote": "So M_t[q] = −∫γ q̇ and ξ = F_free."
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: S3 proved class hierarchy",
+      "notes": ""
+    },
+    "mech.map": {
+      "kind": "statement",
+      "label": "S3 mechanism map (proof-backed assignments)",
+      "sources": [
+        {
+          "file": "FIN",
+          "section": "§1",
+          "quote": "**P-17's class 𝓗** (harmonic bath, coupling linear in bath and system coordinates, system-independent free-force law)\n  **lies in E₁** under clamping (PROP BRI-H)."
+        },
+        {
+          "file": "FIN",
+          "section": "§2",
+          "quote": "**C1** (harmonic bath, nonlinear system coupling A(q) = q + q³/3) **lies in E₂± exactly** (PROP BRI1-C1)."
+        },
+        {
+          "file": "FIN",
+          "section": "§2",
+          "quote": "**X1** (a finite reciprocal Duffing bath with coupling 1/√N_B) **escapes E₂±** for every sufficiently large finite N_B"
+        },
+        {
+          "file": "B0",
+          "section": "§R BRI-O7",
+          "quote": "**No environment in the declared continuous-time deterministic parent class escapes E_univ.**"
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: mechanism map H / E1 / E2± non-escape / Duffing escape / E_univ, each proof-backed",
+      "notes": "Replaces the perturbative order table of ca0f4d5 (removed: it relied on an unproved all-orders expansion)."
+    },
+    "mean.response": {
+      "kind": "statement",
+      "label": "S4.3 the mean (linear response)",
+      "sources": [
+        {
+          "file": "THM",
+          "section": "T4 limit law",
+          "quote": "E F_{q,N} = √N_B·E X^ε → E y₁ is the linear (FDT) response, absorbed by M."
+        },
+        {
+          "file": "CAND",
+          "section": "§4.4",
+          "quote": "The O(1) term is the equilibrium linear response, E y₁(t) = ∫₀ᵗ χ(t − s) q(s) ds."
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: S4 reservoir-limit proof",
+      "notes": "The O(1/N_B) correction to the mean is derived from Lemma 3(iii) and oddness; the record states it under ASSUMPTION R, which is not needed for that order."
+    },
+    "num.convergence": {
+      "kind": "result",
+      "label": "S5.3 archived convergence ladder (extracted, not recomputed)",
+      "sources": [
+        {
+          "file": "ALOG",
+          "section": "line 3",
+          "quote": "P1 t*=0.5 gamma1: 4:-5.338286e-06 8:-2.669143e-06 16:-1.334572e-06 32:-6.672858e-07 64:-3.336429e-07 128:-1.668214e-07"
+        },
+        {
+          "file": "VLOG",
+          "section": "cell nx120_dt0.001",
+          "quote": "P0 var drift: 1.189e-08  k3 max: 7.792e-17  mean max: 5.551e-17"
+        },
+        {
+          "file": "REP3",
+          "section": "§1",
+          "quote": "Quadrature resolutions: **nx ∈ {120, 240, 480}**"
+        },
+        {
+          "file": "SYN",
+          "section": "§12 NG-2",
+          "quote": "Resolution/step-size convergence demonstrates stability of the implemented calculation, not correctness of the implementation."
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: S5 numerical methods + convergence, from frozen evidence (extracted from archived logs; no recomputation)",
+      "notes": "tools/extract_frozen_convergence.py parses authoritative.log and v3_r2.log with line numbers. The finest cell is absent from both archives and is reported as not archived. A separately computed ladder exists only as an archived reproducibility check (data/reproducibility/, labelled NOT PART OF FROZEN SCIENTIFIC EVIDENCE) and is not used."
+    },
+    "num.second": {
+      "kind": "result",
+      "label": "S6.1 second numerical code path",
+      "sources": [
+        {
+          "file": "REP3",
+          "section": "§10",
+          "quote": "A separately written implementation (DOP853, rtol = 1e-12, 160-point tensor GL grid on [-6,6]^2) reproduced the following repository values to all printed digits:"
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: S6 second numerical code path, framed as reproducibility artifact",
+      "notes": "Manuscript-stage numerical cross-check of the frozen result (reproducibility artifact): not a new verification lane, not external replication, no evidence-grade change. gen_values.py stops the build on a material contradiction with the frozen data (sign mismatch or relative difference above 1e-4)."
+    },
+    "repro.statement": {
+      "kind": "result",
+      "label": "S6.2 reproducibility",
+      "sources": [
+        {
+          "file": "SYN",
+          "section": "§12 NG-3",
+          "quote": "No manual transcription when generation is possible."
+        },
+        {
+          "file": "SYN",
+          "section": "§12 NG-5",
+          "quote": "A pushed task is complete only after remote verification confirms"
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: S6 clean reproducibility statement and pointer; no verification-history narrative",
+      "notes": "Numbers from data/repro_record.json (tools/repro_record.py)."
+    },
+    "intro.contributions": {
+      "kind": "statement",
+      "label": "Introduction: three-item contribution list",
+      "sources": [
+        {
+          "file": "SYN",
+          "section": "§7",
+          "quote": "can generate environmental force laws across interventions that cannot all be represented by a single shared causal signed-affine exogenous process"
+        },
+        {
+          "file": "SYN",
+          "section": "§9",
+          "quote": "the witness decays asymptotically as O(1/N_B);"
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: concise three-item contribution list",
+      "notes": ""
+    },
+    "intro.ingredients": {
+      "kind": "statement",
+      "label": "Introduction: Established ingredients | Contribution here table",
+      "sources": [
+        {
+          "file": "SYN",
+          "section": "§5",
+          "quote": "**Known (do not claim novelty):** anharmonic/nonlinear environments can generate non-Gaussian forces"
+        },
+        {
+          "file": "SYN",
+          "section": "§5",
+          "quote": "**Surviving contribution:** the constructive physical/dynamical instantiation"
+        },
+        {
+          "file": "NOVS",
+          "section": "final adjudication",
+          "quote": "**V2 disposition (supplemental): KNOWN-RESULT-NEW-FRAMING**"
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: explicit Established ingredients | Contribution here table",
+      "notes": ""
+    },
+    "intro.dictionary": {
+      "kind": "statement",
+      "label": "Introduction: causal/physics dictionary table",
+      "sources": [
+        {
+          "file": "NOVS",
+          "section": "Comparator A Q1",
+          "quote": "Mapping X := q (protocol/history variable), f := M, g := G, N := ξ gives exactly the LSNM functional form."
+        }
+      ],
+      "blueprint": "MATCHES-REVIEW: causal/physics dictionary table",
+      "notes": ""
     }
   },
   "_findings": [
     {
       "id": "F1",
-      "type": "BLUEPRINT-MISSING",
-      "finding": "Blueprint v1.1 is not present in ryangrvr/vsctestinggrut or in any branch of ryangrvr/TestingGRUT. The binding constraints quoted in the build prompt were applied; section-level placement that only the full blueprint can settle is marked BLUEPRINT-UNVERIFIED (S4 contents: competitor-class proofs; S6 contents: methods, verification history, provenance). No record-vs-blueprint disagreement can be assessed until the blueprint is supplied."
+      "type": "BLUEPRINT",
+      "finding": "Blueprint v1.1 is not present in either repository. Commit ca0f4d5 inferred S4/S6 contents and mis-assigned the supplements. After the owner's conformance review of ca0f4d5, the supplement architecture follows the frozen structure stated in that review: S1 theorem and notation; S2 small-time check; S3 proved class hierarchy and mechanism non-escapes; S4 reservoir-limit proof; S5 numerical methods and convergence; S6 second numerical code path and reproducibility. These titles and their order are enforced by make check (C10). Blueprint 'patch items' not restated in the prompt or the review remain unverifiable."
     },
     {
       "id": "F2",
@@ -1067,6 +1243,21 @@
       "id": "F9",
       "type": "INDEPENDENT-CHECK",
       "finding": "The leading-order prediction N_B*gamma1 -> K(t)/m2^{3/2}, computed with this build's fresh small-time code, agrees with the record's finite-N_B numerics to 1.3e-7 relative at t_star = 0.5 and 2.0e-8 at t = 0.25."
+    },
+    {
+      "id": "F10",
+      "type": "RECORD-GAP",
+      "finding": "The record's archived ladder logs are incomplete: authoritative.log holds 7 of 9 cells (gamma_1 to 7 significant figures; nx=480 dt=5e-4 logged without output, nx=480 dt=2.5e-4 absent) and v3_r2.log holds 8 of 9 (5 significant figures; nx=480 dt=2.5e-4 logged without output). S5 reports exactly the archived cells and marks the finest cell as not archived; nothing was recomputed for the manuscript."
+    },
+    {
+      "id": "F11",
+      "type": "GOVERNANCE",
+      "finding": "Commit ca0f4d5 carries an AI Co-Authored-By trailer. From the repair commit onward no AI co-author trailer is used; a Claude-Session link is kept as tool provenance. AI_USE_LOG.md records AI use. Squashing the working history before publication is left to the author."
+    },
+    {
+      "id": "F12",
+      "type": "SCOPE",
+      "finding": "Per the owner's scope rule for the repair pass (repair the manuscript from the frozen evidence; do not re-open numerical verification), a convergence ladder computed during this pass is archived only, under data/reproducibility/ with the label MANUSCRIPT REPRODUCIBILITY CHECK — NOT PART OF FROZEN SCIENTIFIC EVIDENCE, and is used by no theorem, disposition, fitted result, table, figure or claim. The second implementation is a manuscript-stage cross-check; it agrees with the frozen data (max relative difference 1.4e-7 in gamma_1, signs equal) and changes nothing."
     }
   ]
 }

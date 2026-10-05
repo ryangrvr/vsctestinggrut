@@ -57,6 +57,7 @@ This supplement states the main result and every lemma it uses, defines each sym
 | $\Lambda$ | constant in the order-eight Taylor remainder of $c(t)$ |
 | $\Theta(t)$ | constant in the order-three remainder of the third cumulant in $\varepsilon$ |
 | $\delta$, $N_0(t)$ | existential time window and bath-size threshold of Theorem 1 |
+| $\mathcal{H}$ | harmonic baths with coupling linear in bath and system coordinates (Definition 4) |
 | $\mathcal{E}_1$, $\mathcal{E}_2^{\pm}$, $\mathcal{E}_{\mathrm{univ}}$ | competitor classes (Definition 4) |
 | $M_t[q]$, $G_t[q]$, $\xi$ | deterministic location, signed scale, shared exogenous process |
 | $S_t$ | shared causal sign functional (Definition 4) |
@@ -107,8 +108,8 @@ Only the restriction of $q_{\mathrm{ramp}}$ to $[0, \pi]$, where it is the polyn
 - $\mathcal{E}_2^{\pm}$ (shared signed-affine exogenous): $F_q(t) = M_t[q] + G_t[q]\, \xi(t)$, with $M$ an arbitrary deterministic causal functional, $G$ an arbitrary deterministic causal functional with $G_t[q] \in \mathbb{R} \setminus \{0\}$ (a *signed causal scale*: sign changes are allowed, zero is not), and $\xi$ one exogenous process with one protocol-independent path law. Equivalently, under clamping and finite second moments, $\mathcal{E}_2^{\pm}$ membership holds exactly when (i) the degeneracy set $D_q = D$ is common to all $q$, and (ii) there is one shared deterministic causal sign functional $S_t : q_{[0,t]} \mapsto \{+1, -1\}$ such that, with $s_q(t) = S_t[q_{[0,t]}]$, the finite-dimensional laws of $s_q Z_q$ off $D$ are the same for every $q \in \mathcal{X}$. *Prefix consistency* is part of membership: if $q_{[0,t]} = q'_{[0,t]}$ then $s_q(t) = s_{q'}(t)$.
 - $\mathcal{E}_{\mathrm{univ}}$ (universal causal exogenous): $F_q(t) = \mathfrak{F}_t[q, U]$, with $U$ one exogenous random object of protocol-independent law and $\mathfrak{F}$ an arbitrary deterministic functional that is causal in $q$.
 
-The classes are nested and both inclusions are strict, $\mathcal{E}_1 \subsetneq \mathcal{E}_2^{\pm} \subsetneq \mathcal{E}_{\mathrm{univ}}$.
-Every classical, deterministic, causal environment whose state obeys $\dot Y = B(Y, q)$ with force $C(Y, q)$ and initial state $\Psi(q(0), U)$ (with the regularity that excludes blow-up on $[0, T]$) lies in $\mathcal{E}_{\mathrm{univ}}$; model $\mathcal{D}$ is of this type. The question is therefore whether it lies in $\mathcal{E}_2^{\pm}$.
+The harmonic class $\mathcal{H}$ (harmonic baths coupled linearly in the bath and system coordinates, with counterterm and a free-force law independent of the system's initial state) sits at the bottom, and the ladder $\mathcal{H} \subset \mathcal{E}_1 \subsetneq \mathcal{E}_2^{\pm} \subsetneq \mathcal{E}_{\mathrm{univ}}$ holds, with both inclusions among the $\mathcal{E}$-classes strict (Supplement S3).
+Every classical, deterministic, causal environment whose state obeys $\dot Y = B(Y, q)$ with force $C(Y, q)$ and initial state $\Psi(q(0), U)$ (with the regularity that excludes blow-up on $[0, T]$) lies in $\mathcal{E}_{\mathrm{univ}}$ (Supplement S3); model $\mathcal{D}$ is of this type. The question is therefore whether it lies in $\mathcal{E}_2^{\pm}$.
 
 **Definition 5 (response objects).** Write $X^{\varepsilon}_q(t)$ for the position of one oscillator obeying (S1.2) from $z_0 = (a, b) \sim \rho$, and $x_0(t) = X^{0}_q(t)$ for the unforced trajectory. For the ramp protocol the first-order response $y_1 = \partial_\varepsilon X^\varepsilon\rvert_{\varepsilon=0}$ solves
 $$
@@ -276,13 +277,11 @@ Hence no common $\mathcal{E}_2^{\pm}$ representation exists for $N_B \geq N_0(t)
 
 ### Proof of Proposition 1 {#sec:S1-proof-prop}
 
-(a) By Lemma 3, $\kappa_3(F_{\mathrm{ramp}}(t)) = K(t)/N_B + O(N_B^{-2})$. The variance $\operatorname{Var} X^\varepsilon(t)$ is continuous in $\varepsilon$ (Lemma 3(iii)) and tends to $\operatorname{Var} x_0(t) = m_2 > 0$. Hence
+The proof, which uses only Lemmas 1 and 3 and a central limit theorem, is given in Supplement S4. Part (a) reads, explicitly,
 $$
 \gamma_1[F_{\mathrm{ramp}}(t)] = \frac{K(t)}{m_2^{3/2}\, N_B} + O(N_B^{-2}) \longrightarrow 0 .
 \tag{S1.20}
 $$
-
-(b) Fix a protocol and a finite tuple of times. The centred force $\mathring F_{q} = N_B^{-1/2} \sum_j (X_j^\varepsilon - \mathbb{E} X^\varepsilon)$ is a triangular array with independent, identically distributed rows ($\varepsilon = N_B^{-1/2}$ in row $N_B$). By Lemma 3(iii) the covariance of $X^\varepsilon$ at the chosen times is continuous in $\varepsilon$ and tends to $C_0(t_a, t_b)$, and the same Grönwall bounds give fourth moments bounded uniformly for $|\varepsilon| \leq 1$. Then $N_B\, \mathbb{E}|N_B^{-1/2}(X - \mathbb{E}X)|^4 = O(N_B^{-1}) \to 0$, which is Lyapunov's condition, and the multivariate Lindeberg–Feller central limit theorem gives convergence of the finite-dimensional laws to the centred Gaussian with covariance $C_0$. $C_0$ is computed from the unforced Gibbs trajectory, so it is the same for every protocol. The deterministic mean, $\mathbb{E} F_q(t) = \sqrt{N_B}\, \mathbb{E} X^\varepsilon(t) \to \mathbb{E}\, y_1(t)$, is the linear (fluctuation–dissipation) response and is absorbed by $M$. The Grönwall constants depend on bounds for $q$ and its derivatives, which is why the statement is made protocol by protocol and tuple by tuple, and not uniformly over $\mathcal{X}$. $\square$
 
 ## S1.5 What is not claimed {#sec:S1-not}
 

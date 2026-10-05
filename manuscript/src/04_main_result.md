@@ -25,7 +25,8 @@ c(t) = {{sym.C7}}\; t^7 + O(t^8), \qquad K(t) = 3c(t).
 $$ {#eq:c-small}
 The coefficient follows from an order-by-order solution of the equations for $x_0$ and $y_1$; the lower orders cancel through the Gibbs identity $m_2 + m_4 = 1$, and only the $x_0^2$-dependent part of the response survives (Supplement S1, Lemma 4). Since $\operatorname{Var}(x_0^2) > 0$, $c(t) < 0$ on some interval $(0, \delta)$.
 
-**Physical reading.** The response $y_1$ of an oscillator to the ramp is weaker when its instantaneous stiffness $1 + 3x_0^2$ is larger, that is, when $x_0^2$ is large. The response is therefore anticorrelated with $x_0^2$, which is exactly what $c(t) < 0$ expresses, and this anticorrelation skews the summed force. Supplement S3 maps which parts of the ramp's effect a shared signed-affine model can absorb and which it cannot.
+<!-- M:mech.physical -->
+**Interpretation.** The response $y_1$ of an oscillator to the ramp is weaker when its instantaneous stiffness $1 + 3x_0^2$ is larger, that is, when $x_0^2$ is large. The response is therefore anticorrelated with $x_0^2$, which is exactly what $c(t) < 0$ expresses, and this anticorrelation skews the summed force. This reading is an interpretation of the sign of $c(t)$, which is what is proved. Supplement S3 places each mechanism discussed in this paper in the class hierarchy.
 
 {{include:thm_main}}
 

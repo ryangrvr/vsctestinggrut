@@ -42,6 +42,10 @@ def fmt_value(v, fmt):
         return str(v)
     if kind == "fixed":
         return f"{v:.{fmt[1]}f}"
+    if kind == "sci":                                   # always scientific notation, n significant figures
+        n = fmt[1]
+        e = math.floor(math.log10(abs(v)))
+        return rf"{v / 10 ** e:.{n - 1}f}\times 10^{{{e}}}"
     if kind == "sig":
         n = fmt[1]
         if v == 0:
@@ -60,7 +64,7 @@ def fmt_value(v, fmt):
 
 # Numeric Gibbs moments may appear only in the numerical section and its tables
 # (m2 is kept symbolic elsewhere).
-NUMERIC_ZONE = ["06_numerical_illustration.md", "S5_numerical_tables.md"]
+NUMERIC_ZONE = ["06_numerical_illustration.md", "S5_numerical_methods_and_convergence.md"]
 
 
 def main():
@@ -132,8 +136,8 @@ def main():
             derived("gen_values.py", "|NBg1(N_B min) - NBg1(N_B max)| / |NBg1(N_B max)|", [AUTH_JSON_REL + f":p1.{t}.*.NB_gamma1"]))
     sf = d["scaling_fit"]
     put("num.global_p", sf["global_p"], ("fixed", 6), auth("scaling_fit.global_p"))
-    put("num.local_p_min", min(sf["local_p"]), ("fixed", 6), auth("scaling_fit.local_p (min)"))
-    put("num.local_p_max", max(sf["local_p"]), ("fixed", 6), auth("scaling_fit.local_p (max)"))
+    put("num.local_p_min", min(sf["local_p"]), ("fixed", 10), auth("scaling_fit.local_p (min)"))
+    put("num.local_p_max", max(sf["local_p"]), ("fixed", 10), auth("scaling_fit.local_p (max)"))
     odd = d["odd_epsilon"]
     worst = max(abs(odd[k]["ratio"] + 1) for k in odd)
     put("num.odd_ratio_dev", worst, ("sig", 2), derived("gen_values.py", "max |ratio + 1| over odd_epsilon", [AUTH_JSON_REL + ":odd_epsilon.*.ratio"]))
@@ -184,6 +188,64 @@ def main():
             put(f"x.obs_{tag}", obs, ("sig", 6), auth(f"p1.{key}.{nbs[-1]}.NB_gamma1"), NUMERIC_ZONE)
             put(f"x.reldiff_{tag}", abs(pred - obs) / abs(obs), ("sig", 2),
                 derived("gen_values.py", "|pred - obs| / |obs|", ["x.pred", "x.obs"]))
+
+    # ---------------- S5 frozen convergence (extracted from the record's archived logs; no recomputation)
+    fc = load_json(os.path.join(DATA, "frozen_convergence.json"))
+    fcp = {**fc["source"], "extracted_by": "manuscript/tools/extract_frozen_convergence.py", "output": "data/frozen_convergence.json"}
+    la, lv = fc["logs"]["authoritative"], fc["logs"]["v3_r2"]
+    put("conv.cells_sevenfig", la["n_cells_complete"], ("int",), fcp)
+    put("conv.cells_fivefig", lv["n_cells_complete"], ("int",), fcp)
+    put("conv.spread_sevenfig", la["max_rel_spread_gamma1_tstar_at_printed_precision"], ("int",), fcp)
+    put("conv.spread_fivefig", lv["max_rel_spread_gamma1_tstar_at_printed_precision"], ("int",), fcp)
+    drifts = [c["ref_var_drift"] for c in lv["cells"].values() if c["complete"]]
+    put("conv.ref_drift_max", max(drifts), ("sig", 2), fcp)
+    nxs = sorted({c["nx"] for c in lv["cells"].values()})
+    dts = sorted({c["dt"] for c in lv["cells"].values()}, reverse=True)
+    put("conv.nx_list", ", ".join(str(n) for n in nxs), ("text",), fcp)
+    put("conv.dt_list", ", ".join(fmt_value(x, ("sci", 2)) for x in dts), ("text",), fcp)
+    miss = sorted(set(lv["missing"]) | set(la["missing"]))
+    mc = lv["cells"][lv["missing"][0]]
+    put("conv.missing_nx", mc["nx"], ("int",), fcp)
+    put("conv.missing_dt", mc["dt"], ("sci", 2), fcp)
+
+    # ---------------- S6 second code path (second_path.py) and reproduction (repro_record.py)
+    sp = load_json(os.path.join(DATA, "second_path.json"))
+    spp = {**sp["method"], "output": "data/second_path.json"}
+    put("second.max_rel_diff", sp["max_rel_diff_gamma1_vs_record"], ("sig", 2), spp)
+    for t, tag in (("0.5", "tstar"), ("1.0", "t1")):
+        put(f"second.max_rel_diff_{tag}", max(sp["ramp"][nb][t]["rel_diff_vs_record"] for nb in sp["ramp"]), ("sig", 2), spp)
+    put("second.drift_t1", sp["NB_gamma1_drift_t1.0"], ("sig", 3), spp)
+    put("second.spread_tstar", sp["NB_gamma1_relspread_t0.5"], ("sig", 2), spp)
+    put("second.ref_var_reldiff", max(v["rel_diff_var_vs_record"] for v in sp["reference"].values()), ("sig", 2), spp)
+    nbmax = max(sp["ramp"], key=int)
+    pred = load_json(os.path.join(DATA, "t7_check.json"))
+    row05 = [r for r in pred["rows"] if r["t"] == 0.5][0]
+    pr = row05["K_numerical"] / float(load_json(os.path.join(DATA, "constants.json"))["gibbs"]["m2"]) ** 1.5
+    put("x.t7_spread_tstar", row05["relative_spread"], ("sig", 1), pred["method"])
+    # claim guards: relations stated in prose must hold in the data, or the build fails
+    auth_drift = V["num.nbg1_diag_3_drift"]["value"]
+    signs_agree = all((sp["ramp"][nb][t]["gamma1_F"] < 0) == (sp["ramp"][nb][t]["record_gamma1_F"] < 0)
+                      for nb in sp["ramp"] for t in ("0.5", "1.0"))
+    guards = {
+        "STOP RULE: second code path consistent with the frozen authoritative data (signs equal, max rel diff < 1e-4)":
+            signs_agree and sp["max_rel_diff_gamma1_vs_record"] < 1e-4,
+        "S6: second path reproduces the frozen t=1.0 drift (within 5%)": abs(sp["NB_gamma1_drift_t1.0"] - auth_drift) / auth_drift < 0.05,
+        "S6: no correction resolved at t_star in the second path (spread < drift/100)": sp["NB_gamma1_relspread_t0.5"] < auth_drift / 100,
+        "Section 6: small-time prediction agrees with the authoritative N_B*gamma1 within the small-time code's spread":
+            V["x.reldiff_tstar"]["value"] <= row05["relative_spread"],
+        "S5: archived ladder shows no change of gamma1 at printed precision":
+            V["conv.spread_sevenfig"]["value"] == 0 and V["conv.spread_fivefig"]["value"] == 0,
+    }
+    bad = [k for k, ok in guards.items() if not ok]
+    if bad:
+        raise SystemExit("CLAIM GUARD FAILED (stop; report rather than revise the frozen result): " + "; ".join(bad))
+    rp = load_json(os.path.join(DATA, "repro_record.json"))
+    rpp = derived("repro_record.py", "record script re-run in a temporary directory; outputs compared", ["data/repro_record.json"])
+    put("repro.n_values", rp["n_values"], ("int",), rpp)
+    put("repro.n_sig", rp["n_significant"], ("int",), rpp)
+    put("repro.max_rel", rp["max_rel_diff_significant"], ("sig", 2), rpp)
+    put("repro.max_abs_roundoff", rp["max_abs_diff_roundoff_level"], ("sig", 2), rpp)
+    put("repro.bitwise", rp["bitwise_identical_values"], ("int",), rpp)
 
     dump_json(V, os.path.join(DATA, "values.json"))
     print(f"values.json: {len(V)} keys")

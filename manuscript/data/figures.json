@@ -15,15 +15,15 @@
     ],
     "reference_line": "slope -1 through 3x|gamma1(N_B min)| (display offset only)"
   },
-  "fig3_flat": {
-    "source": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
-    "json_paths": [
-      "p1.0.5.*.gamma1_F",
-      "p1.0.5.*.NB_gamma1",
-      "scaling_fit.global_p",
-      "scaling_fit.intercept"
+  "fig3_residual": {
+    "source": [
+      "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json"
     ],
-    "overlay": "K(t_star)/m2^{3/2}: data/t7_check.json (primary run) and data/constants.json m2",
-    "y_window": "mean +/- 20% (display choice)"
+    "quantity": "r(N_B) = N_B gamma1(N_B) / N_B gamma1(N_B max) - 1 at t_star and t = 1.0",
+    "json_paths": [
+      "p1.0.5.*.NB_gamma1",
+      "p1.1.0.*.NB_gamma1"
+    ],
+    "scales": "panel (a) in units of 1e-10, panel (b) in units of 1e-7 (small multiples)"
   }
 }

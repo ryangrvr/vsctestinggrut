@@ -1,0 +1,16 @@
+{
+  "role": "reproducibility of the frozen authoritative output by re-running the record script unchanged",
+  "script": "backreaction_identifiability_0/publication_verification/v3_r2/extract_data.py",
+  "compared_with": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+  "same_keys": true,
+  "n_values": 221,
+  "n_significant": 208,
+  "n_roundoff_level": 13,
+  "bitwise_identical_values": 163,
+  "max_rel_diff_significant": 3.653325554609976e-09,
+  "max_abs_diff_roundoff_level": 2.7755575615628914e-17,
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6"
+  }
+}

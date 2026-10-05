@@ -20,7 +20,7 @@
     ]
   },
   "C4_provenance": {
-    "values": 93,
+    "values": 114,
     "without_provenance": [],
     "used": [
       "const.C7",
@@ -28,6 +28,13 @@
       "const.m4",
       "const.var_cert_mid",
       "const.var_x0sq",
+      "conv.cells_fivefig",
+      "conv.cells_sevenfig",
+      "conv.dt_list",
+      "conv.missing_dt",
+      "conv.missing_nx",
+      "conv.nx_list",
+      "conv.ref_drift_max",
       "num.L",
       "num.dt",
       "num.g1_tstar_nbmax",
@@ -42,7 +49,6 @@
       "num.nbg1_diag_3_drift",
       "num.nbg1_tstar_relspread",
       "num.nx",
-      "num.odd_nbs",
       "num.odd_ratio_dev",
       "num.ref_k3_max",
       "num.ref_mean_max",
@@ -52,6 +58,15 @@
       "num.t_diag_1",
       "num.t_diag_2",
       "num.t_diag_3",
+      "repro.max_abs_roundoff",
+      "repro.max_rel",
+      "repro.n_sig",
+      "repro.n_values",
+      "second.drift_t1",
+      "second.max_rel_diff",
+      "second.max_rel_diff_t1",
+      "second.max_rel_diff_tstar",
+      "second.ref_var_reldiff",
       "sym.C7",
       "sym.C7_in_m2",
       "sym.order_max",
@@ -67,8 +82,8 @@
       "sym.y1_b7_a2coef",
       "x.obs_tstar",
       "x.pred_tstar",
-      "x.reldiff_t025",
-      "x.reldiff_tstar"
+      "x.reldiff_tstar",
+      "x.t7_spread_tstar"
     ]
   },
   "C5_numeric_zone": {
@@ -103,8 +118,8 @@
     "violations": []
   },
   "C7_trace": {
-    "markers": 58,
-    "items": 58,
+    "markers": 66,
+    "items": 66,
     "missing_items": [],
     "unused_items": [],
     "quote_failures": []
@@ -112,7 +127,7 @@
   "C8_disclosure_and_header": {
     "disclosures": {
       "[AI-USE DISCLOSURE — research: proof development, code, numerical verification]": {
-        "file": "S6_methods_and_provenance.md",
+        "file": "S6_second_code_path_and_reproducibility.md",
         "present": true
       },
       "[AI-USE DISCLOSURE — manuscript preparation]": {
@@ -126,6 +141,30 @@
   "C9_artefacts": {
     "missing": []
   },
+  "C10_architecture": {
+    "violations": [],
+    "supplement_titles": [
+      "# S1. Theorem and notation sheet",
+      "# S2. Small-time consistency check",
+      "# S3. Class hierarchy and mechanism map",
+      "# S4. Reservoir-limit proof",
+      "# S5. Numerical methods and convergence",
+      "# S6. Second numerical code path and reproducibility"
+    ],
+    "ladder": "\\mathcal{H} \\subset \\mathcal{E}_1 \\subsetneq \\mathcal{E}_2^{\\pm} \\subsetneq \\mathcal{E}_{\\mathrm{univ}}"
+  },
+  "C11_semantic": {
+    "violations": [],
+    "quantifier_chain": [
+      "There exists $\\delta \\in (0, 1]$",
+      "for each fixed $t \\in (0, \\delta)$",
+      "there is a finite integer $N_0(t)$",
+      "for every bath size $N_B \\geq N_0(t)$",
+      "admit no common representation in the class $\\mathcal{E}_2^{\\pm}$",
+      "The numbers $\\delta$ and $N_0(t)$ are existential",
+      "$N_0(t)$ is not claimed to be uniform in $t$"
+    ]
+  },
   "citation_placeholders": [
     "[CITATION NEEDED: Mori–Zwanzig projection-operator formalism]",
     "[CITATION NEEDED: classical fluctuation–dissipation theorem]",
@@ -136,7 +175,7 @@
     "[CITATION NEEDED: multivariate Lindeberg–Feller central limit theorem, standard probability text]"
   ],
   "pdf": {
-    "manuscript_pages": 23,
+    "manuscript_pages": 28,
     "s1_pages": 9,
     "outputs": {
       "BRI1_manuscript": {
@@ -180,8 +219,8 @@
   "findings": [
     {
       "id": "F1",
-      "type": "BLUEPRINT-MISSING",
-      "finding": "Blueprint v1.1 is not present in ryangrvr/vsctestinggrut or in any branch of ryangrvr/TestingGRUT. The binding constraints quoted in the build prompt were applied; section-level placement that only the full blueprint can settle is marked BLUEPRINT-UNVERIFIED (S4 contents: competitor-class proofs; S6 contents: methods, verification history, provenance). No record-vs-blueprint disagreement can be assessed until the blueprint is supplied."
+      "type": "BLUEPRINT",
+      "finding": "Blueprint v1.1 is not present in either repository. Commit ca0f4d5 inferred S4/S6 contents and mis-assigned the supplements. After the owner's conformance review of ca0f4d5, the supplement architecture follows the frozen structure stated in that review: S1 theorem and notation; S2 small-time check; S3 proved class hierarchy and mechanism non-escapes; S4 reservoir-limit proof; S5 numerical methods and convergence; S6 second numerical code path and reproducibility. These titles and their order are enforced by make check (C10). Blueprint 'patch items' not restated in the prompt or the review remain unverifiable."
     },
     {
       "id": "F2",
@@ -222,6 +261,21 @@
       "id": "F9",
       "type": "INDEPENDENT-CHECK",
       "finding": "The leading-order prediction N_B*gamma1 -> K(t)/m2^{3/2}, computed with this build's fresh small-time code, agrees with the record's finite-N_B numerics to 1.3e-7 relative at t_star = 0.5 and 2.0e-8 at t = 0.25."
+    },
+    {
+      "id": "F10",
+      "type": "RECORD-GAP",
+      "finding": "The record's archived ladder logs are incomplete: authoritative.log holds 7 of 9 cells (gamma_1 to 7 significant figures; nx=480 dt=5e-4 logged without output, nx=480 dt=2.5e-4 absent) and v3_r2.log holds 8 of 9 (5 significant figures; nx=480 dt=2.5e-4 logged without output). S5 reports exactly the archived cells and marks the finest cell as not archived; nothing was recomputed for the manuscript."
+    },
+    {
+      "id": "F11",
+      "type": "GOVERNANCE",
+      "finding": "Commit ca0f4d5 carries an AI Co-Authored-By trailer. From the repair commit onward no AI co-author trailer is used; a Claude-Session link is kept as tool provenance. AI_USE_LOG.md records AI use. Squashing the working history before publication is left to the author."
+    },
+    {
+      "id": "F12",
+      "type": "SCOPE",
+      "finding": "Per the owner's scope rule for the repair pass (repair the manuscript from the frozen evidence; do not re-open numerical verification), a convergence ladder computed during this pass is archived only, under data/reproducibility/ with the label MANUSCRIPT REPRODUCIBILITY CHECK — NOT PART OF FROZEN SCIENTIFIC EVIDENCE, and is used by no theorem, disposition, fitted result, table, figure or claim. The second implementation is a manuscript-stage cross-check; it agrees with the frozen data (max relative difference 1.4e-7 in gamma_1, signs equal) and changes nothing."
     }
   ],
   "result": "PASS",

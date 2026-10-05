@@ -12,6 +12,11 @@ Checks (all blocking unless marked informational):
       occurs verbatim in the cited record file
   C8  disclosure placeholders present at the two reserved locations; page header present
   C9  generated artefacts present (figures, tables, data files)
+  C10 architecture firewalls (frozen titles and order, H in the displayed ladder, Introduction
+      devices, no unproved claims in S3, no verification-history narrative in S6, AI_USE_LOG.md)
+  C11 semantic firewalls (theorem quantifier chain; no numerical delta or N_0; no uniform
+      threshold; t_star never inside (0, delta); reservoir limit never the harmonic class;
+      effective-harmonic only as a cited, unclaimed connection) — see tools/firewalls.py
   info: [CITATION NEEDED] placeholders listed; PDF page count
 """
 import json
@@ -23,6 +28,7 @@ import unicodedata
 
 from common import (AUTH_JSON_REL, BUILD, DATA, FIG, MS, ROOT, RECORD_DIR, SOURCE_BRANCH, SOURCE_COMMIT,
                     SOURCE_REPO, SRC, dump_json, load_json)
+import firewalls
 import record_import
 import render
 
@@ -38,7 +44,7 @@ NUMERIC_ALLOW = [
 ]
 NB_VALUES = {"4", "8", "16", "32", "64", "128"}                           # integer N_B values (prompt allowlist)
 DISCLOSURES = {
-    "[AI-USE DISCLOSURE — research: proof development, code, numerical verification]": "S6_methods_and_provenance.md",
+    "[AI-USE DISCLOSURE — research: proof development, code, numerical verification]": "S6_second_code_path_and_reproducibility.md",
     "[AI-USE DISCLOSURE — manuscript preparation]": "08_back_matter.md",
 }
 
@@ -199,13 +205,29 @@ def main():
         fails.append("C8 page header missing")
 
     # C9
-    need = [os.path.join(FIG, f"{n}.{e}") for n in ("fig1_schematic", "fig2_scaling", "fig3_flat") for e in ("pdf", "png")]
-    need += [os.path.join(DATA, f) for f in ("values.json", "constants.json", "t7_check.json", "figures.json", "tables.json")]
+    need = [os.path.join(FIG, f"{n}.{e}") for n in ("fig1_schematic", "fig2_scaling", "fig3_residual") for e in ("pdf", "png")]
+    need += [os.path.join(DATA, f) for f in ("values.json", "constants.json", "t7_check.json", "figures.json", "tables.json",
+                                             "frozen_convergence.json", "second_path.json", "repro_record.json")]
     tables = load_json(os.path.join(DATA, "tables.json"))
     need += [os.path.join(DATA, "tables", t + ".md") for t in tables]
     missing = [os.path.relpath(p, MS) for p in need if not os.path.exists(p)]
     report["C9_artefacts"] = {"missing": missing}
     fails += [f"C9 missing artefact {m}" for m in missing]
+
+    # C10
+    ai_log = os.path.join(MS, "AI_USE_LOG.md")
+    arch = firewalls.architecture(lambda f: read(os.path.join(SRC, f)), rlog["section_order"],
+                                  read(ai_log) if os.path.exists(ai_log) else None, list(DISCLOSURES))
+    report["C10_architecture"] = {"violations": arch, "supplement_titles": [t for _, t in firewalls.SUPP_TITLES],
+                                  "ladder": firewalls.LADDER}
+    fails += [f"C10 {a}: {b} ({c})" for a, b, c in arch]
+
+    # C11
+    s1 = read(os.path.join(BUILD, "S1_theorem_and_notation.md"))
+    sem = firewalls.quantifiers(read(os.path.join(SRC, "_include", "thm_main.md")), manuscript, s1)
+    sem += firewalls.semantic(manuscript, "build/BRI1_manuscript.md")
+    report["C11_semantic"] = {"violations": sem, "quantifier_chain": firewalls.QUANTIFIER_CHAIN}
+    fails += [f"C11 {a}: {b}: {c}" for a, b, c in sem]
 
     # informational
     cites = sorted(set(re.findall(r"\[CITATION NEEDED:[^\]]*\]", manuscript)))
@@ -268,6 +290,14 @@ def write_md_report(r):
     L += ["", f"Violations: {len(r['C3_numeric_literals']['violations'])}", ""]
     L += ["## Trace", "", f"{r['C7_trace']['markers']} marked statements; {r['C7_trace']['items']} trace items; "
           f"quote failures: {len(r['C7_trace']['quote_failures'])}", ""]
+    L += ["## Architecture firewall (C10)", "", "Supplement titles enforced: " + "; ".join(r["C10_architecture"]["supplement_titles"]),
+          "", f"Displayed ladder enforced: ${r['C10_architecture']['ladder']}$",
+          "", f"Violations: {len(r['C10_architecture']['violations'])}", ""]
+    L += ["## Semantic firewalls (C11)", "", "Quantifier chain enforced verbatim and in order:"]
+    L += [f"- {q}" for q in r["C11_semantic"]["quantifier_chain"]]
+    L += ["", "Also enforced: no numerical delta or N_0; no uniform threshold; t_star never inside (0, delta); "
+          "reservoir limit never the harmonic class; effective-harmonic only as a cited, unclaimed connection. "
+          "Negative unit tests: tools/test_firewalls.py.", "", f"Violations: {len(r['C11_semantic']['violations'])}", ""]
     L += ["## Findings (record, blueprint, notation)", ""] + [f"- **{f['id']} {f['type']}.** {f['finding']}" for f in r.get("findings", [])] + [""]
     L += ["## Citation placeholders", ""] + [f"- {c}" for c in r["citation_placeholders"]] + [""]
     L += ["## S2 small-time check (computed by this build)", "", "| t | ratio | method B | series |", "|---|---|---|---|"]

@@ -170,7 +170,7 @@
     },
     "allowed_in": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ]
   },
   "num.ref_var_drift": {
@@ -249,7 +249,7 @@
     },
     "allowed_in": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ]
   },
   "num.ind1d_m4": {
@@ -268,7 +268,7 @@
     },
     "allowed_in": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ]
   },
   "num.ref_rel_disc": {
@@ -501,9 +501,9 @@
     "value": 0.9999999998850774,
     "fmt": [
       "fixed",
-      6
+      10
     ],
-    "text": "1.000000",
+    "text": "0.9999999999",
     "provenance": {
       "repo": "ryangrvr/TestingGRUT",
       "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
@@ -516,9 +516,9 @@
     "value": 1.0000000001795437,
     "fmt": [
       "fixed",
-      6
+      10
     ],
-    "text": "1.000000",
+    "text": "1.0000000002",
     "provenance": {
       "repo": "ryangrvr/TestingGRUT",
       "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
@@ -584,7 +584,7 @@
     },
     "allowed_in": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ]
   },
   "const.m4": {
@@ -600,7 +600,7 @@
     },
     "allowed_in": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ]
   },
   "const.var_x0sq": {
@@ -616,7 +616,7 @@
     },
     "allowed_in": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ]
   },
   "const.identity_residual": {
@@ -645,7 +645,7 @@
     },
     "allowed_in": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ]
   },
   "const.C7": {
@@ -661,7 +661,7 @@
     },
     "allowed_in": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ]
   },
   "sym.C7": {
@@ -1283,7 +1283,7 @@
     },
     "allowed_in": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ]
   },
   "x.obs_t025": {
@@ -1302,7 +1302,7 @@
     },
     "allowed_in": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ]
   },
   "x.reldiff_t025": {
@@ -1338,7 +1338,7 @@
     },
     "allowed_in": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ]
   },
   "x.obs_tstar": {
@@ -1357,7 +1357,7 @@
     },
     "allowed_in": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ]
   },
   "x.reldiff_tstar": {
@@ -1373,6 +1373,323 @@
       "inputs": [
         "x.pred",
         "x.obs"
+      ]
+    }
+  },
+  "conv.cells_sevenfig": {
+    "value": 7,
+    "fmt": [
+      "int"
+    ],
+    "text": "7",
+    "provenance": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "logs": {
+        "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+        "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+      },
+      "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+      "output": "data/frozen_convergence.json"
+    }
+  },
+  "conv.cells_fivefig": {
+    "value": 8,
+    "fmt": [
+      "int"
+    ],
+    "text": "8",
+    "provenance": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "logs": {
+        "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+        "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+      },
+      "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+      "output": "data/frozen_convergence.json"
+    }
+  },
+  "conv.spread_sevenfig": {
+    "value": 0.0,
+    "fmt": [
+      "int"
+    ],
+    "text": "0",
+    "provenance": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "logs": {
+        "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+        "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+      },
+      "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+      "output": "data/frozen_convergence.json"
+    }
+  },
+  "conv.spread_fivefig": {
+    "value": 0.0,
+    "fmt": [
+      "int"
+    ],
+    "text": "0",
+    "provenance": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "logs": {
+        "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+        "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+      },
+      "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+      "output": "data/frozen_convergence.json"
+    }
+  },
+  "conv.ref_drift_max": {
+    "value": 1.189e-08,
+    "fmt": [
+      "sig",
+      2
+    ],
+    "text": "1.2\\times 10^{-8}",
+    "provenance": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "logs": {
+        "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+        "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+      },
+      "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+      "output": "data/frozen_convergence.json"
+    }
+  },
+  "conv.nx_list": {
+    "value": "120, 240, 480",
+    "fmt": [
+      "text"
+    ],
+    "text": "120, 240, 480",
+    "provenance": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "logs": {
+        "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+        "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+      },
+      "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+      "output": "data/frozen_convergence.json"
+    }
+  },
+  "conv.dt_list": {
+    "value": "1.0\\times 10^{-3}, 5.0\\times 10^{-4}, 2.5\\times 10^{-4}",
+    "fmt": [
+      "text"
+    ],
+    "text": "1.0\\times 10^{-3}, 5.0\\times 10^{-4}, 2.5\\times 10^{-4}",
+    "provenance": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "logs": {
+        "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+        "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+      },
+      "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+      "output": "data/frozen_convergence.json"
+    }
+  },
+  "conv.missing_nx": {
+    "value": 480,
+    "fmt": [
+      "int"
+    ],
+    "text": "480",
+    "provenance": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "logs": {
+        "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+        "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+      },
+      "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+      "output": "data/frozen_convergence.json"
+    }
+  },
+  "conv.missing_dt": {
+    "value": 0.00025,
+    "fmt": [
+      "sci",
+      2
+    ],
+    "text": "2.5\\times 10^{-4}",
+    "provenance": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "logs": {
+        "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+        "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+      },
+      "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+      "output": "data/frozen_convergence.json"
+    }
+  },
+  "second.max_rel_diff": {
+    "value": 1.381390540986761e-07,
+    "fmt": [
+      "sig",
+      2
+    ],
+    "text": "1.4\\times 10^{-7}",
+    "provenance": {
+      "computed_by": "manuscript/tools/second_path.py",
+      "method": "GL(200) in x on [-6,6] x Gauss-Hermite(100) in p; DOP853 rtol=atol=1e-12",
+      "output": "data/second_path.json"
+    }
+  },
+  "second.max_rel_diff_tstar": {
+    "value": 1.381390540986761e-07,
+    "fmt": [
+      "sig",
+      2
+    ],
+    "text": "1.4\\times 10^{-7}",
+    "provenance": {
+      "computed_by": "manuscript/tools/second_path.py",
+      "method": "GL(200) in x on [-6,6] x Gauss-Hermite(100) in p; DOP853 rtol=atol=1e-12",
+      "output": "data/second_path.json"
+    }
+  },
+  "second.max_rel_diff_t1": {
+    "value": 5.272302117624144e-08,
+    "fmt": [
+      "sig",
+      2
+    ],
+    "text": "5.3\\times 10^{-8}",
+    "provenance": {
+      "computed_by": "manuscript/tools/second_path.py",
+      "method": "GL(200) in x on [-6,6] x Gauss-Hermite(100) in p; DOP853 rtol=atol=1e-12",
+      "output": "data/second_path.json"
+    }
+  },
+  "second.drift_t1": {
+    "value": 1.3658552035132765e-07,
+    "fmt": [
+      "sig",
+      3
+    ],
+    "text": "1.37\\times 10^{-7}",
+    "provenance": {
+      "computed_by": "manuscript/tools/second_path.py",
+      "method": "GL(200) in x on [-6,6] x Gauss-Hermite(100) in p; DOP853 rtol=atol=1e-12",
+      "output": "data/second_path.json"
+    }
+  },
+  "second.spread_tstar": {
+    "value": 2.247777371696996e-10,
+    "fmt": [
+      "sig",
+      2
+    ],
+    "text": "2.2\\times 10^{-10}",
+    "provenance": {
+      "computed_by": "manuscript/tools/second_path.py",
+      "method": "GL(200) in x on [-6,6] x Gauss-Hermite(100) in p; DOP853 rtol=atol=1e-12",
+      "output": "data/second_path.json"
+    }
+  },
+  "second.ref_var_reldiff": {
+    "value": 2.541526518144102e-08,
+    "fmt": [
+      "sig",
+      2
+    ],
+    "text": "2.5\\times 10^{-8}",
+    "provenance": {
+      "computed_by": "manuscript/tools/second_path.py",
+      "method": "GL(200) in x on [-6,6] x Gauss-Hermite(100) in p; DOP853 rtol=atol=1e-12",
+      "output": "data/second_path.json"
+    }
+  },
+  "x.t7_spread_tstar": {
+    "value": 1.0399204217919568e-06,
+    "fmt": [
+      "sig",
+      1
+    ],
+    "text": "1\\times 10^{-6}",
+    "provenance": {
+      "computed_by": "manuscript/tools/check_t7.py",
+      "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+    }
+  },
+  "repro.n_values": {
+    "value": 221,
+    "fmt": [
+      "int"
+    ],
+    "text": "221",
+    "provenance": {
+      "computed_by": "manuscript/tools/repro_record.py",
+      "method": "record script re-run in a temporary directory; outputs compared",
+      "inputs": [
+        "data/repro_record.json"
+      ]
+    }
+  },
+  "repro.n_sig": {
+    "value": 208,
+    "fmt": [
+      "int"
+    ],
+    "text": "208",
+    "provenance": {
+      "computed_by": "manuscript/tools/repro_record.py",
+      "method": "record script re-run in a temporary directory; outputs compared",
+      "inputs": [
+        "data/repro_record.json"
+      ]
+    }
+  },
+  "repro.max_rel": {
+    "value": 3.653325554609976e-09,
+    "fmt": [
+      "sig",
+      2
+    ],
+    "text": "3.7\\times 10^{-9}",
+    "provenance": {
+      "computed_by": "manuscript/tools/repro_record.py",
+      "method": "record script re-run in a temporary directory; outputs compared",
+      "inputs": [
+        "data/repro_record.json"
+      ]
+    }
+  },
+  "repro.max_abs_roundoff": {
+    "value": 2.7755575615628914e-17,
+    "fmt": [
+      "sig",
+      2
+    ],
+    "text": "2.8\\times 10^{-17}",
+    "provenance": {
+      "computed_by": "manuscript/tools/repro_record.py",
+      "method": "record script re-run in a temporary directory; outputs compared",
+      "inputs": [
+        "data/repro_record.json"
+      ]
+    }
+  },
+  "repro.bitwise": {
+    "value": 163,
+    "fmt": [
+      "int"
+    ],
+    "text": "163",
+    "provenance": {
+      "computed_by": "manuscript/tools/repro_record.py",
+      "method": "record script re-run in a temporary directory; outputs compared",
+      "inputs": [
+        "data/repro_record.json"
       ]
     }
   }

@@ -7,9 +7,9 @@ Fig. 1  model / protocol schematic with a minimal witness schematic (no data,
 Fig. 2  |gamma_1| versus N_B (log-log) at t_star, from the authoritative JSON,
         with the fitted power law (fit parameters from the same JSON) and a
         slope -1 reference line.
-Fig. 3  N_B * gamma_1 versus N_B at t_star, from the authoritative JSON, with the
-        leading-order value K(t_star)/m2^{3/2} computed independently by this build
-        (data/t7_check.json, data/constants.json).
+Fig. 3  normalised residual r(N_B) = N_B gamma_1(N_B) / N_B gamma_1(N_B max) - 1 at t_star = 0.5 and
+        at t = 1.0, from the authoritative JSON only; two panels with their own vertical scales, because
+        the effect sizes differ by orders of magnitude.
 
 Each figure is written as PDF (for the LaTeX build) and PNG (for the HTML render);
 data/figures.json records the provenance of every plotted quantity.
@@ -132,31 +132,32 @@ def fig2_fig3():
     ax.legend(fontsize=7, loc="lower left")
     save(fig, "fig2_scaling")
 
-    # Fig. 3
-    i = [r["t"] for r in t7["rows"]].index(float(t_star))
-    m2 = float(const["gibbs"]["m2"])
-    lead = t7["rows"][i]["K_numerical"] / m2 ** 1.5
-    fig, ax = plt.subplots(figsize=(3.4, 2.7))
-    scale = 1e5
-    ax.axhline(lead * scale, color=SERIES2, lw=1.0, ls="--",
-               label=r"$K(t_\star)/m_2^{3/2}$ (independent small-$t$ code)")
-    ax.semilogx(nb, nbg * scale, "o", zorder=3, ms=4.5, mfc=SERIES1, mec="white", mew=0.8, color=SERIES1,
-                label=fr"ramp protocol, $t_\star={t_star}$")
-    ax.set_xticks(nb); ax.set_xticklabels([str(int(n)) for n in nb]); ax.minorticks_off()
-    mid = nbg.mean() * scale
-    ax.set_ylim(mid * 1.2, mid * 0.8) if mid < 0 else ax.set_ylim(mid * 0.8, mid * 1.2)
-    ax.set_ylim(sorted(ax.get_ylim()))
-    ax.ticklabel_format(axis="y", useOffset=False)
-    ax.set_xlabel(r"bath size $N_B$"); ax.set_ylabel(r"$N_B\,\gamma_1[F(t_\star)]\ \ (\times 10^{-5})$")
-    ax.legend(fontsize=7, loc="upper left")
-    save(fig, "fig3_flat")
+    # Fig. 3: normalised residual of N_B*gamma_1 at t_star and at t = 1.0 (small multiples, own scales),
+    # from the authoritative output only (the frozen evidence)
+    fig, axes = plt.subplots(1, 2, figsize=(6.8, 2.6))
+    for ax, t, sc, lab in ((axes[0], t_star, 1e-10, "(a)"), (axes[1], "1.0", 1e-7, "(b)")):
+        rr = d["p1"][t]
+        keys = list(rr.keys())
+        nbs = np.array([int(k) for k in keys], float)
+        g = np.array([rr[k]["NB_gamma1"] for k in keys])
+        ax.axhline(0, color=INK2, lw=0.8)
+        ax.semilogx(nbs, (g / g[-1] - 1) / sc, "o", ms=5, mfc=SERIES1, mec="white", mew=0.8, color=SERIES1, zorder=4)
+        ax.set_xticks(nbs); ax.set_xticklabels([str(int(n)) for n in nbs]); ax.minorticks_off()
+        ax.set_xlabel(r"bath size $N_B$")
+        e = int(round(np.log10(sc)))
+        ax.set_ylabel(fr"$r(N_B)\ \ (\times 10^{{{e}}})$")
+        ax.set_title(fr"{lab} $t = {t}$", fontsize=9, loc="left", color=INK)
+    fig.tight_layout()
+    save(fig, "fig3_residual")
 
     src = {"source": AUTH_JSON_REL, "json_paths": [f"p1.{t_star}.*.gamma1_F", f"p1.{t_star}.*.NB_gamma1",
                                                    "scaling_fit.global_p", "scaling_fit.intercept"]}
     return {
         "fig2_scaling": {**src, "reference_line": "slope -1 through 3x|gamma1(N_B min)| (display offset only)"},
-        "fig3_flat": {**src, "overlay": "K(t_star)/m2^{3/2}: data/t7_check.json (primary run) and data/constants.json m2",
-                      "y_window": "mean +/- 20% (display choice)"},
+        "fig3_residual": {"source": [AUTH_JSON_REL],
+                          "quantity": "r(N_B) = N_B gamma1(N_B) / N_B gamma1(N_B max) - 1 at t_star and t = 1.0",
+                          "json_paths": [f"p1.{t_star}.*.NB_gamma1", "p1.1.0.*.NB_gamma1"],
+                          "scales": "panel (a) in units of 1e-10, panel (b) in units of 1e-7 (small multiples)"},
     }
 
 

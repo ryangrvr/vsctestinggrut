@@ -11,34 +11,27 @@
     ],
     "num.t_diag_1": [
       "06_numerical_illustration.md",
-      "06_numerical_illustration.md"
+      "S5_numerical_methods_and_convergence.md"
     ],
     "num.t_diag_2": [
-      "06_numerical_illustration.md"
+      "06_numerical_illustration.md",
+      "S5_numerical_methods_and_convergence.md"
     ],
     "num.t_diag_3": [
       "06_numerical_illustration.md",
-      "06_numerical_illustration.md"
-    ],
-    "num.L": [
       "06_numerical_illustration.md",
       "06_numerical_illustration.md",
-      "S6_methods_and_provenance.md",
-      "S6_methods_and_provenance.md"
-    ],
-    "num.nx": [
       "06_numerical_illustration.md",
-      "S6_methods_and_provenance.md"
-    ],
-    "num.dt": [
-      "06_numerical_illustration.md",
-      "S6_methods_and_provenance.md"
+      "S5_numerical_methods_and_convergence.md",
+      "S6_second_code_path_and_reproducibility.md",
+      "S6_second_code_path_and_reproducibility.md"
     ],
     "num.ref_var_t0": [
       "06_numerical_illustration.md"
     ],
     "num.ref_var_drift": [
-      "06_numerical_illustration.md"
+      "06_numerical_illustration.md",
+      "S5_numerical_methods_and_convergence.md"
     ],
     "num.ref_mean_max": [
       "06_numerical_illustration.md"
@@ -46,33 +39,24 @@
     "num.ref_k3_max": [
       "06_numerical_illustration.md"
     ],
-    "num.gl_1d": [
-      "06_numerical_illustration.md"
-    ],
     "num.ind1d_m2": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ],
     "num.ref_rel_disc": [
       "06_numerical_illustration.md"
     ],
     "const.m2": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ],
     "const.var_x0sq": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ],
     "num.gibbs_residual": [
       "06_numerical_illustration.md",
-      "S5_numerical_tables.md"
-    ],
-    "num.odd_ratio_dev": [
-      "06_numerical_illustration.md"
-    ],
-    "num.odd_nbs": [
-      "06_numerical_illustration.md"
+      "S5_numerical_methods_and_convergence.md"
     ],
     "num.g1_tstar_nbmin": [
       "06_numerical_illustration.md"
@@ -96,6 +80,9 @@
     "num.nbg1_diag_3_drift": [
       "06_numerical_illustration.md"
     ],
+    "second.max_rel_diff": [
+      "06_numerical_illustration.md"
+    ],
     "x.pred_tstar": [
       "06_numerical_illustration.md"
     ],
@@ -105,7 +92,7 @@
     "x.reldiff_tstar": [
       "06_numerical_illustration.md"
     ],
-    "x.reldiff_t025": [
+    "x.t7_spread_tstar": [
       "06_numerical_illustration.md"
     ],
     "sym.q3": [
@@ -147,21 +134,97 @@
     "sym.ratio_C8_C7": [
       "S2_t7_check.md"
     ],
+    "num.L": [
+      "S5_numerical_methods_and_convergence.md",
+      "S5_numerical_methods_and_convergence.md"
+    ],
+    "num.nx": [
+      "S5_numerical_methods_and_convergence.md"
+    ],
+    "num.dt": [
+      "S5_numerical_methods_and_convergence.md"
+    ],
     "const.m4": [
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ],
     "const.C7": [
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
     ],
     "const.var_cert_mid": [
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
+    ],
+    "num.gl_1d": [
+      "S5_numerical_methods_and_convergence.md"
     ],
     "num.ind1d_m4": [
-      "S5_numerical_tables.md"
+      "S5_numerical_methods_and_convergence.md"
+    ],
+    "num.odd_ratio_dev": [
+      "S5_numerical_methods_and_convergence.md"
+    ],
+    "conv.nx_list": [
+      "S5_numerical_methods_and_convergence.md"
+    ],
+    "conv.dt_list": [
+      "S5_numerical_methods_and_convergence.md"
+    ],
+    "conv.cells_sevenfig": [
+      "S5_numerical_methods_and_convergence.md"
+    ],
+    "conv.cells_fivefig": [
+      "S5_numerical_methods_and_convergence.md"
+    ],
+    "conv.ref_drift_max": [
+      "S5_numerical_methods_and_convergence.md"
+    ],
+    "conv.missing_nx": [
+      "S5_numerical_methods_and_convergence.md"
+    ],
+    "conv.missing_dt": [
+      "S5_numerical_methods_and_convergence.md"
+    ],
+    "second.max_rel_diff_tstar": [
+      "S6_second_code_path_and_reproducibility.md"
+    ],
+    "second.max_rel_diff_t1": [
+      "S6_second_code_path_and_reproducibility.md"
+    ],
+    "second.ref_var_reldiff": [
+      "S6_second_code_path_and_reproducibility.md"
+    ],
+    "second.drift_t1": [
+      "S6_second_code_path_and_reproducibility.md"
+    ],
+    "repro.n_values": [
+      "S6_second_code_path_and_reproducibility.md"
+    ],
+    "repro.n_sig": [
+      "S6_second_code_path_and_reproducibility.md"
+    ],
+    "repro.max_rel": [
+      "S6_second_code_path_and_reproducibility.md"
+    ],
+    "repro.max_abs_roundoff": [
+      "S6_second_code_path_and_reproducibility.md"
     ]
   },
   "unresolved": [],
   "markers": [
+    [
+      "intro.contributions",
+      "01_introduction.md",
+      11
+    ],
+    [
+      "intro.ingredients",
+      "01_introduction.md",
+      18
+    ],
+    [
+      "intro.dictionary",
+      "01_introduction.md",
+      32
+    ],
     [
       "def.model",
       "02_model.md",
@@ -188,29 +251,34 @@
       5
     ],
     [
+      "def.H",
+      "03_classes.md",
+      8
+    ],
+    [
       "def.e2pm",
       "03_classes.md",
-      9
+      11
     ],
     [
       "prop.ladder",
       "03_classes.md",
-      17
+      19
     ],
     [
       "prop.upper",
       "03_classes.md",
-      19
+      25
     ],
     [
       "prop.c2pm",
       "03_classes.md",
-      22
+      28
     ],
     [
       "lem.e2pm_necessity",
       "03_classes.md",
-      25
+      31
     ],
     [
       "lem.cumulant_identity",
@@ -233,14 +301,19 @@
       21
     ],
     [
+      "mech.physical",
+      "04_main_result.md",
+      28
+    ],
+    [
       "proof.thm",
       "04_main_result.md",
-      32
+      33
     ],
     [
       "scope.theorem",
       "04_main_result.md",
-      35
+      36
     ],
     [
       "thm.main",
@@ -330,127 +403,122 @@
     [
       "def.model",
       "S1_theorem_and_notation.md",
-      48
+      49
     ],
     [
       "def.clamp_class",
       "S1_theorem_and_notation.md",
-      70
+      71
     ],
     [
       "def.standardised",
       "S1_theorem_and_notation.md",
-      78
+      79
     ],
     [
       "def.classes",
       "S1_theorem_and_notation.md",
-      81
+      82
     ],
     [
       "def.e2pm",
       "S1_theorem_and_notation.md",
-      85
+      86
     ],
     [
       "prop.ladder",
       "S1_theorem_and_notation.md",
-      89
+      90
     ],
     [
       "prop.upper",
       "S1_theorem_and_notation.md",
-      91
+      92
     ],
     [
       "def.c",
       "S1_theorem_and_notation.md",
-      94
+      95
     ],
     [
       "eq.moment_identity",
       "S1_theorem_and_notation.md",
-      105
+      106
     ],
     [
       "lem.cumulant_identity",
       "S1_theorem_and_notation.md",
-      116
+      117
     ],
     [
       "lem.parity",
       "S1_theorem_and_notation.md",
-      122
+      123
     ],
     [
       "lem.first_order",
       "S1_theorem_and_notation.md",
-      125
+      126
     ],
     [
       "lem.small_time",
       "S1_theorem_and_notation.md",
-      131
+      132
     ],
     [
       "lem.variance",
       "S1_theorem_and_notation.md",
-      138
+      139
     ],
     [
       "lem.e2pm_necessity",
       "S1_theorem_and_notation.md",
-      141
+      142
     ],
     [
       "prop.reservoir",
       "S1_theorem_and_notation.md",
-      144
+      145
     ],
     [
       "proof.lem1",
       "S1_theorem_and_notation.md",
-      155
+      156
     ],
     [
       "proof.lem2",
       "S1_theorem_and_notation.md",
-      166
+      167
     ],
     [
       "proof.lem3",
       "S1_theorem_and_notation.md",
-      171
+      172
     ],
     [
       "proof.lem4",
       "S1_theorem_and_notation.md",
-      192
+      193
     ],
     [
       "proof.lem5",
       "S1_theorem_and_notation.md",
-      233
+      234
     ],
     [
       "proof.lem6",
       "S1_theorem_and_notation.md",
-      238
+      239
     ],
     [
       "proof.thm",
       "S1_theorem_and_notation.md",
-      249
-    ],
-    [
-      "proof.prop1",
-      "S1_theorem_and_notation.md",
-      263
+      250
     ],
     [
       "scope.not_claimed",
       "S1_theorem_and_notation.md",
-      273
+      271
     ],
     [
       "thm.main",
@@ -468,79 +536,114 @@
       20
     ],
     [
-      "mech.parity",
-      "S3_mechanism_map.md",
-      5
-    ],
-    [
-      "mech.orders",
-      "S3_mechanism_map.md",
-      8
-    ],
-    [
-      "mech.physical",
-      "S3_mechanism_map.md",
-      23
-    ],
-    [
-      "mech.control",
-      "S3_mechanism_map.md",
-      26
+      "def.H",
+      "S3_class_hierarchy_and_mechanism_map.md",
+      7
     ],
     [
       "prop.vacuity",
-      "S4_classes_proofs.md",
-      5
-    ],
-    [
-      "prop.c1",
-      "S4_classes_proofs.md",
+      "S3_class_hierarchy_and_mechanism_map.md",
       10
     ],
     [
-      "prop.c2pm",
-      "S4_classes_proofs.md",
+      "prop.affine_bath",
+      "S3_class_hierarchy_and_mechanism_map.md",
       15
     ],
     [
-      "prop.ladder_strict",
-      "S4_classes_proofs.md",
-      23
-    ],
-    [
-      "prop.upper",
-      "S4_classes_proofs.md",
+      "prop.H_in_E1",
+      "S3_class_hierarchy_and_mechanism_map.md",
       28
     ],
     [
-      "num.tables",
-      "S5_numerical_tables.md",
-      3
+      "prop.c1",
+      "S3_class_hierarchy_and_mechanism_map.md",
+      33
+    ],
+    [
+      "prop.c2pm",
+      "S3_class_hierarchy_and_mechanism_map.md",
+      38
+    ],
+    [
+      "prop.ladder_strict",
+      "S3_class_hierarchy_and_mechanism_map.md",
+      46
+    ],
+    [
+      "prop.upper",
+      "S3_class_hierarchy_and_mechanism_map.md",
+      51
+    ],
+    [
+      "mech.map",
+      "S3_class_hierarchy_and_mechanism_map.md",
+      63
+    ],
+    [
+      "mech.control",
+      "S3_class_hierarchy_and_mechanism_map.md",
+      75
+    ],
+    [
+      "prop.reservoir",
+      "S4_reservoir_limit_proof.md",
+      5
+    ],
+    [
+      "proof.prop1",
+      "S4_reservoir_limit_proof.md",
+      8
+    ],
+    [
+      "mean.response",
+      "S4_reservoir_limit_proof.md",
+      35
+    ],
+    [
+      "scope.reservoir",
+      "S4_reservoir_limit_proof.md",
+      40
     ],
     [
       "num.method",
-      "S6_methods_and_provenance.md",
+      "S5_numerical_methods_and_convergence.md",
       3
     ],
     [
-      "num.history",
-      "S6_methods_and_provenance.md",
-      6
+      "num.controls",
+      "S5_numerical_methods_and_convergence.md",
+      8
     ],
     [
-      "check.t7",
-      "S6_methods_and_provenance.md",
-      9
+      "num.convergence",
+      "S5_numerical_methods_and_convergence.md",
+      15
+    ],
+    [
+      "num.tables",
+      "S5_numerical_methods_and_convergence.md",
+      24
+    ],
+    [
+      "num.second",
+      "S6_second_code_path_and_reproducibility.md",
+      3
+    ],
+    [
+      "repro.statement",
+      "S6_second_code_path_and_reproducibility.md",
+      14
     ],
     [
       "build.provenance",
-      "S6_methods_and_provenance.md",
-      12
+      "S6_second_code_path_and_reproducibility.md",
+      19
     ],
     [
       "disclosure.research",
-      "S6_methods_and_provenance.md",
-      15
+      "S6_second_code_path_and_reproducibility.md",
+      22
     ]
   ],
   "includes": [
@@ -560,12 +663,13 @@
     "eq:prep": "4",
     "eq:protocols": "5",
     "eq:e2pm": "6",
-    "eq:g1-invariant": "7",
-    "eq:star": "8",
-    "eq:kappa3": "9",
-    "eq:c-small": "10",
-    "eq:g1-rate": "11",
-    "eq:C0": "12",
+    "eq:ladder": "7",
+    "eq:g1-invariant": "8",
+    "eq:star": "9",
+    "eq:kappa3": "10",
+    "eq:c-small": "11",
+    "eq:g1-rate": "12",
+    "eq:C0": "13",
     "eq:S1-H": "S1.1",
     "eq:S1-clamp": "S1.2",
     "eq:S1-force": "S1.3",
@@ -586,12 +690,17 @@
     "eq:S1-c7": "S1.18",
     "eq:S1-g1-invariant": "S1.19",
     "eq:S1-g1-rate": "S1.20",
-    "eq:S2-cov": "S2.1"
+    "eq:S2-cov": "S2.1",
+    "eq:S3-affine": "S3.1",
+    "eq:S3-xi-gamma": "S3.2",
+    "eq:S3-ladder": "S3.3",
+    "eq:S4-rate": "S4.1",
+    "eq:S4-lyapunov": "S4.2"
   },
   "figures": {
     "fig:schematic": "1",
     "fig:scaling": "2",
-    "fig:scaling-flat": "3"
+    "fig:residual": "3"
   },
   "outputs": {
     "BRI1_manuscript": {
@@ -618,10 +727,10 @@
     "S0_supplement_front.md",
     "S1_theorem_and_notation.md",
     "S2_t7_check.md",
-    "S3_mechanism_map.md",
-    "S4_classes_proofs.md",
-    "S5_numerical_tables.md",
-    "S6_methods_and_provenance.md"
+    "S3_class_hierarchy_and_mechanism_map.md",
+    "S4_reservoir_limit_proof.md",
+    "S5_numerical_methods_and_convergence.md",
+    "S6_second_code_path_and_reproducibility.md"
   ],
   "header": "Working draft — not for submission. AI-assisted; disclosure statements pending."
 }

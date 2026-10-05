@@ -1,11 +1,13 @@
 # 3. Shared exogenous descriptions {#sec:classes}
 
-Every competitor description below is one model shared by *all* admissible clamps: its objects may depend on the prescribed path up to the present, $q_{[0,t]}$, but not on a protocol label. No Gaussian, Markov, finite-memory or stationarity restriction is imposed. Sharing is essential, because a separate exogenous process fitted to each protocol always succeeds (Supplement S4).
+Every competitor description below is one model shared by *all* admissible clamps: its objects may depend on the prescribed path up to the present, $q_{[0,t]}$, but not on a protocol label. No Gaussian, Markov, finite-memory or stationarity restriction is imposed. Sharing is essential, because a separate exogenous process fitted to each protocol always succeeds (Supplement S3).
 
 <!-- M:def.classes -->
 **The nested ladder.**
 
-- $\mathcal{E}_1$ — *additive exogenous forcing*: $F_q(t) = M_t[q] + \xi(t)$, with $M$ an arbitrary deterministic causal functional (nonlinear, unlimited memory) and $\xi$ one exogenous process whose law does not depend on $q$. The harmonic bath with linear coupling lies here.
+<!-- M:def.H -->
+- $\mathcal{H}$ — *the harmonic class*: harmonic baths whose coupling is linear in the bath coordinates and in the system coordinate, with counterterm, and whose free-force law does not depend on the system's initial state. Under clamping their force is a free exogenous force minus a deterministic memory term (Supplement S3).
+- $\mathcal{E}_1$ — *additive exogenous forcing*: $F_q(t) = M_t[q] + \xi(t)$, with $M$ an arbitrary deterministic causal functional (nonlinear, unlimited memory) and $\xi$ one exogenous process whose law does not depend on $q$.
 <!-- M:def.e2pm -->
 - $\mathcal{E}_2^{\pm}$ — *shared signed-affine exogenous forcing*:
 $$
@@ -15,7 +17,11 @@ with $M$ and $G$ arbitrary deterministic causal functionals and $\xi$ one exogen
 - $\mathcal{E}_{\mathrm{univ}}$ — *universal causal exogenous representation*: $F_q(t) = \mathfrak{F}_t[q, U]$, with $U$ one exogenous random object of protocol-independent law and $\mathfrak{F}$ any deterministic functional causal in $q$.
 
 <!-- M:prop.ladder -->
-These classes are nested and the inclusions are strict, $\mathcal{E}_1 \subsetneq \mathcal{E}_2^{\pm} \subsetneq \mathcal{E}_{\mathrm{univ}}$ (Supplement S4).
+These classes form the ladder
+$$
+\mathcal{H} \subset \mathcal{E}_1 \subsetneq \mathcal{E}_2^{\pm} \subsetneq \mathcal{E}_{\mathrm{univ}},
+$$ {#eq:ladder}
+where, for the class $\mathcal{H}$ of environments, "$\subset$" means that the interventional force family of every environment in $\mathcal{H}$ lies in $\mathcal{E}_1$, and both inclusions among the $\mathcal{E}$-classes are strict (Supplement S3).
 <!-- M:prop.upper -->
 Every classical, deterministic, causal environment of the type considered here, reciprocal and energy-absorbing back-reaction included, lies in $\mathcal{E}_{\mathrm{univ}}$; so does model $\mathcal{D}$. Back-reaction as such is therefore never identifiable at the universal level, and the content of the question lies at the boundary between $\mathcal{E}_2^{\pm}$ and $\mathcal{E}_{\mathrm{univ}}$.
 

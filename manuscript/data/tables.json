@@ -47,5 +47,24 @@
   "s2_t7": {
     "source": "manuscript/data/t7_check.json",
     "computed_by": "manuscript/tools/check_t7.py"
+  },
+  "s5_convergence": {
+    "source": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "logs": {
+        "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+        "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+      }
+    },
+    "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+    "note": "gamma_1 from authoritative.log (7 significant figures), or from v3_r2.log (5 significant figures, marked double dagger) where authoritative.log has no data; drift and residual from v3_r2.log; 'not in log' marks cells whose header was logged without data"
+  },
+  "s6_second": {
+    "source": [
+      "manuscript/data/second_path.json",
+      "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json"
+    ],
+    "computed_by": "manuscript/tools/second_path.py"
   }
 }

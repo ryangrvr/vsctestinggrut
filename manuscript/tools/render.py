@@ -29,8 +29,9 @@ TITLE = ("Finite-bath escape of reciprocal anharmonic back-reaction from shared 
 
 MAIN = ["00_front.md", "01_introduction.md", "02_model.md", "03_classes.md", "04_main_result.md",
         "05_reservoir_limit.md", "06_numerical_illustration.md", "07_discussion.md", "08_back_matter.md"]
-SUPP = ["S0_supplement_front.md", "S1_theorem_and_notation.md", "S2_t7_check.md", "S3_mechanism_map.md",
-        "S4_classes_proofs.md", "S5_numerical_tables.md", "S6_methods_and_provenance.md"]
+SUPP = ["S0_supplement_front.md", "S1_theorem_and_notation.md", "S2_t7_check.md",
+        "S3_class_hierarchy_and_mechanism_map.md", "S4_reservoir_limit_proof.md",
+        "S5_numerical_methods_and_convergence.md", "S6_second_code_path_and_reproducibility.md"]
 
 PH = re.compile(r"\{\{\s*([A-Za-z0-9_.:\-]+)\s*\}\}")
 MARK = re.compile(r"<!--\s*M:([A-Za-z0-9_.\-]+)\s*-->\n?")

@@ -1,0 +1,135 @@
+{
+  "role": "manuscript-stage numerical cross-check of the frozen result; not a new verification lane, not external replication, no upgrade of the evidence grade; it cannot change the frozen result (a material contradiction stops the build)",
+  "method": {
+    "computed_by": "manuscript/tools/second_path.py",
+    "method": "GL(200) in x on [-6,6] x Gauss-Hermite(100) in p; DOP853 rtol=atol=1e-12"
+  },
+  "compared_with": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+  "reference": {
+    "0.5": {
+      "var": 0.4679199169736652,
+      "kappa3": -2.7755575615628914e-17,
+      "rel_diff_var_vs_record": 2.541526518144102e-08
+    },
+    "1.0": {
+      "var": 0.4679199169736652,
+      "kappa3": 3.469446951953614e-18,
+      "rel_diff_var_vs_record": 6.950382026659086e-09
+    }
+  },
+  "ramp": {
+    "4": {
+      "0.5": {
+        "var_X": 0.4679199167355441,
+        "kappa3_X": -3.4173479685761787e-06,
+        "gamma1_F": -5.338286896503316e-06,
+        "NB_gamma1": -2.1353147586013266e-05,
+        "record_gamma1_F": -5.338286160020776e-06,
+        "rel_diff_vs_record": 1.3796235689177833e-07
+      },
+      "1.0": {
+        "var_X": 0.46791932427627747,
+        "kappa3_X": -0.0002971549995063223,
+        "gamma1_F": -0.00046419084841140955,
+        "NB_gamma1": -0.0018567633936456382,
+        "record_gamma1_F": -0.00046419082393866264,
+        "rel_diff_vs_record": 5.2721306941728866e-08
+      }
+    },
+    "8": {
+      "0.5": {
+        "var_X": 0.4679199168546047,
+        "kappa3_X": -2.4164299231022035e-06,
+        "gamma1_F": -2.6691434481695176e-06,
+        "NB_gamma1": -2.135314758535614e-05,
+        "record_gamma1_F": -2.669143079767558e-06,
+        "rel_diff_vs_record": 1.3802255950309343e-07
+      },
+      "1.0": {
+        "var_X": 0.46791962062488984,
+        "kappa3_X": -0.0002101205000158632,
+        "gamma1_F": -0.00023209540784388318,
+        "NB_gamma1": -0.0018567632627510655,
+        "record_gamma1_F": -0.0002320953956075044,
+        "rel_diff_vs_record": 5.272133366484668e-08
+      }
+    },
+    "16": {
+      "0.5": {
+        "var_X": 0.4679199169141349,
+        "kappa3_X": -1.7086739852179011e-06,
+        "gamma1_F": -1.334571724088017e-06,
+        "NB_gamma1": -2.135314758540827e-05,
+        "record_gamma1_F": -1.3345715398910633e-06,
+        "rel_diff_vs_record": 1.3801954268440547e-07
+      },
+      "1.0": {
+        "var_X": 0.46791976879925723,
+        "kappa3_X": -0.00014857769576470323,
+        "gamma1_F": -0.0001160476998314534,
+        "NB_gamma1": -0.0018567631973032545,
+        "record_gamma1_F": -0.00011604769371330813,
+        "rel_diff_vs_record": 5.272095527408897e-08
+      }
+    },
+    "32": {
+      "0.5": {
+        "var_X": 0.46791991694390006,
+        "kappa3_X": -1.2082149619396798e-06,
+        "gamma1_F": -6.672858620659754e-07,
+        "NB_gamma1": -2.1353147586111213e-05,
+        "record_gamma1_F": -6.672857699158738e-07,
+        "rel_diff_vs_record": 1.380969079733594e-07
+      },
+      "1.0": {
+        "var_X": 0.46791984288645605,
+        "kappa3_X": -0.00010506031930852464,
+        "gamma1_F": -5.802384889312869e-05,
+        "NB_gamma1": -0.0018567631645801182,
+        "record_gamma1_F": -5.8023845833994774e-05,
+        "rel_diff_vs_record": 5.2722012398836446e-08
+      }
+    },
+    "64": {
+      "0.5": {
+        "var_X": 0.46791991695878266,
+        "kappa3_X": -8.543369925673172e-07,
+        "gamma1_F": -3.336429309579922e-07,
+        "NB_gamma1": -2.13531475813115e-05,
+        "record_gamma1_F": -3.3364288498451433e-07,
+        "rel_diff_vs_record": 1.3779247195202168e-07
+      },
+      "1.0": {
+        "var_X": 0.4679198799300594,
+        "kappa3_X": -7.428887238378548e-05,
+        "gamma1_F": -2.9011924190890413e-05,
+        "NB_gamma1": -0.0018567631482169864,
+        "record_gamma1_F": -2.9011922661351114e-05,
+        "rel_diff_vs_record": 5.2721059437874074e-08
+      }
+    },
+    "128": {
+      "0.5": {
+        "var_X": 0.4679199169662239,
+        "kappa3_X": -6.041074810114733e-07,
+        "gamma1_F": -1.6682146551605247e-07,
+        "NB_gamma1": -2.1353147586054716e-05,
+        "record_gamma1_F": -1.668214424714962e-07,
+        "rel_diff_vs_record": 1.381390540986761e-07
+      },
+      "1.0": {
+        "var_X": 0.467919898451862,
+        "kappa3_X": -5.253016831687635e-05,
+        "gamma1_F": -1.4505962031552176e-05,
+        "NB_gamma1": -0.0018567631400386786,
+        "record_gamma1_F": -1.4505961266754073e-05,
+        "rel_diff_vs_record": 5.272302117624144e-08
+      }
+    }
+  },
+  "NB_gamma1_drift_t0.5": 1.9411847428950855e-12,
+  "NB_gamma1_relspread_t0.5": 2.247777371696996e-10,
+  "NB_gamma1_drift_t1.0": 1.3658552035132765e-07,
+  "NB_gamma1_relspread_t1.0": 1.3658551463436017e-07,
+  "max_rel_diff_gamma1_vs_record": 1.381390540986761e-07
+}
