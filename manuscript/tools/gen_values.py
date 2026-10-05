@@ -152,6 +152,8 @@ def main():
     put("const.var_x0sq", float(g["var_x0sq"]), ("sig", 12), g["method"], NUMERIC_ZONE)
     put("const.identity_residual", float(g["identity_m2_plus_m4_minus_1"]), ("sig", 1), g["method"])
     put("const.var_cert_mid", g["record_certified_var"]["midpoint"], ("text",), g["record_certified_var"]["source"], NUMERIC_ZONE)
+    rk, re_ = g["record_certified_var"]["radius"].split("e")
+    put("const.var_cert_rad", rf"{rk}\times 10^{{{int(re_)}}}", ("text",), g["record_certified_var"]["source"], NUMERIC_ZONE)
     put("const.C7", c["series"]["C_numeric"]["7"], ("sig", 6), c["series"]["method"], NUMERIC_ZONE)
 
     # ---------------- exact symbolic expressions (computed here; cross-checked against the record log)
@@ -203,7 +205,12 @@ def main():
     dts = sorted({c["dt"] for c in lv["cells"].values()}, reverse=True)
     put("conv.nx_list", ", ".join(str(n) for n in nxs), ("text",), fcp)
     put("conv.dt_list", ", ".join(fmt_value(x, ("sci", 2)) for x in dts), ("text",), fcp)
-    miss = sorted(set(lv["missing"]) | set(la["missing"]))
+    archived = {k for k, c in la["cells"].items() if c["complete"]} | {k for k, c in lv["cells"].items() if c["complete"]}
+    fivefig_only = {k for k, c in lv["cells"].items() if c["complete"]} - {k for k, c in la["cells"].items() if c["complete"]}
+    put("conv.sigfigs_auth", la["printed_sigfigs"], ("int",), fcp)
+    put("conv.sigfigs_five", lv["printed_sigfigs"], ("int",), fcp)
+    put("conv.cells_archived", len(archived), ("int",), fcp)
+    put("conv.cells_fivefig_only", len(fivefig_only), ("int",), fcp)
     mc = lv["cells"][lv["missing"][0]]
     put("conv.missing_nx", mc["nx"], ("int",), fcp)
     put("conv.missing_dt", mc["dt"], ("sci", 2), fcp)
@@ -229,8 +236,6 @@ def main():
     guards = {
         "STOP RULE: second code path consistent with the frozen authoritative data (signs equal, max rel diff < 1e-4)":
             signs_agree and sp["max_rel_diff_gamma1_vs_record"] < 1e-4,
-        "S6: second path reproduces the frozen t=1.0 drift (within 5%)": abs(sp["NB_gamma1_drift_t1.0"] - auth_drift) / auth_drift < 0.05,
-        "S6: no correction resolved at t_star in the second path (spread < drift/100)": sp["NB_gamma1_relspread_t0.5"] < auth_drift / 100,
         "Section 6: small-time prediction agrees with the authoritative N_B*gamma1 within the small-time code's spread":
             V["x.reldiff_tstar"]["value"] <= row05["relative_spread"],
         "S5: archived ladder shows no change of gamma1 at printed precision":

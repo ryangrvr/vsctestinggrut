@@ -19,7 +19,7 @@
     "source": [
       "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json"
     ],
-    "quantity": "r(N_B) = N_B gamma1(N_B) / N_B gamma1(N_B max) - 1 at t_star and t = 1.0",
+    "quantity": "r(N_B) = N_B gamma1(N_B) / mean_over_grid(N_B gamma1) - 1 at t_star and t = 1.0",
     "json_paths": [
       "p1.0.5.*.NB_gamma1",
       "p1.1.0.*.NB_gamma1"

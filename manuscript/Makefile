@@ -19,7 +19,10 @@ data/t7_check.json: $(T)/check_t7.py data/constants.json
 data/frozen_convergence.json: $(T)/extract_frozen_convergence.py
 	cd $(T) && $(PY) extract_frozen_convergence.py
 
-data/values.json: $(T)/gen_values.py data/constants.json data/t7_check.json data/frozen_convergence.json
+# second_path.json and repro_record.json are committed heavy outputs (make second / make repro);
+# they are prerequisites only so that regenerating them refreshes the derived values.
+data/values.json: $(T)/gen_values.py data/constants.json data/t7_check.json data/frozen_convergence.json \
+                  data/second_path.json data/repro_record.json
 	cd $(T) && $(PY) gen_values.py
 
 data: data/values.json
@@ -36,7 +39,7 @@ md: data figures tables
 pdf: data figures tables
 	cd $(T) && $(PY) render.py --pdf
 
-check:
+check: md
 	cd $(T) && $(PY) record_import.py && $(PY) test_firewalls.py && $(PY) check.py
 
 # The BRI1 science is frozen. The build repairs the manuscript from the frozen evidence and does

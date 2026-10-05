@@ -7,7 +7,7 @@ Fig. 1  model / protocol schematic with a minimal witness schematic (no data,
 Fig. 2  |gamma_1| versus N_B (log-log) at t_star, from the authoritative JSON,
         with the fitted power law (fit parameters from the same JSON) and a
         slope -1 reference line.
-Fig. 3  normalised residual r(N_B) = N_B gamma_1(N_B) / N_B gamma_1(N_B max) - 1 at t_star = 0.5 and
+Fig. 3  normalised residual r(N_B) = N_B gamma_1(N_B) / <N_B gamma_1> - 1 (mean over the bath-size grid) at t_star = 0.5 and
         at t = 1.0, from the authoritative JSON only; two panels with their own vertical scales, because
         the effect sizes differ by orders of magnitude.
 
@@ -108,8 +108,6 @@ def fig1():
 
 def fig2_fig3():
     d = load_json(AUTH_JSON)
-    t7 = load_json(os.path.join(DATA, "t7_check.json"))
-    const = load_json(os.path.join(DATA, "constants.json"))
     t_star = list(d["p1"].keys())[0]
     row = d["p1"][t_star]
     nb = np.array([int(k) for k in row], float)
@@ -141,7 +139,7 @@ def fig2_fig3():
         nbs = np.array([int(k) for k in keys], float)
         g = np.array([rr[k]["NB_gamma1"] for k in keys])
         ax.axhline(0, color=INK2, lw=0.8)
-        ax.semilogx(nbs, (g / g[-1] - 1) / sc, "o", ms=5, mfc=SERIES1, mec="white", mew=0.8, color=SERIES1, zorder=4)
+        ax.semilogx(nbs, (g / g.mean() - 1) / sc, "o", ms=5, mfc=SERIES1, mec="white", mew=0.8, color=SERIES1, zorder=4)
         ax.set_xticks(nbs); ax.set_xticklabels([str(int(n)) for n in nbs]); ax.minorticks_off()
         ax.set_xlabel(r"bath size $N_B$")
         e = int(round(np.log10(sc)))
@@ -155,7 +153,7 @@ def fig2_fig3():
     return {
         "fig2_scaling": {**src, "reference_line": "slope -1 through 3x|gamma1(N_B min)| (display offset only)"},
         "fig3_residual": {"source": [AUTH_JSON_REL],
-                          "quantity": "r(N_B) = N_B gamma1(N_B) / N_B gamma1(N_B max) - 1 at t_star and t = 1.0",
+                          "quantity": "r(N_B) = N_B gamma1(N_B) / mean_over_grid(N_B gamma1) - 1 at t_star and t = 1.0",
                           "json_paths": [f"p1.{t_star}.*.NB_gamma1", "p1.1.0.*.NB_gamma1"],
                           "scales": "panel (a) in units of 1e-10, panel (b) in units of 1e-7 (small multiples)"},
     }

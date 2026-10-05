@@ -22,8 +22,8 @@
       "06_numerical_illustration.md",
       "06_numerical_illustration.md",
       "06_numerical_illustration.md",
+      "06_numerical_illustration.md",
       "S5_numerical_methods_and_convergence.md",
-      "S6_second_code_path_and_reproducibility.md",
       "S6_second_code_path_and_reproducibility.md"
     ],
     "num.ref_var_t0": [
@@ -75,6 +75,7 @@
       "06_numerical_illustration.md"
     ],
     "num.nbg1_tstar_relspread": [
+      "06_numerical_illustration.md",
       "06_numerical_illustration.md"
     ],
     "num.nbg1_diag_3_drift": [
@@ -153,6 +154,9 @@
     "const.var_cert_mid": [
       "S5_numerical_methods_and_convergence.md"
     ],
+    "const.var_cert_rad": [
+      "S5_numerical_methods_and_convergence.md"
+    ],
     "num.gl_1d": [
       "S5_numerical_methods_and_convergence.md"
     ],
@@ -168,10 +172,21 @@
     "conv.dt_list": [
       "S5_numerical_methods_and_convergence.md"
     ],
+    "conv.sigfigs_auth": [
+      "S5_numerical_methods_and_convergence.md",
+      "S5_numerical_methods_and_convergence.md"
+    ],
     "conv.cells_sevenfig": [
       "S5_numerical_methods_and_convergence.md"
     ],
-    "conv.cells_fivefig": [
+    "conv.cells_archived": [
+      "S5_numerical_methods_and_convergence.md"
+    ],
+    "conv.sigfigs_five": [
+      "S5_numerical_methods_and_convergence.md",
+      "S5_numerical_methods_and_convergence.md"
+    ],
+    "conv.cells_fivefig_only": [
       "S5_numerical_methods_and_convergence.md"
     ],
     "conv.ref_drift_max": [
@@ -190,9 +205,6 @@
       "S6_second_code_path_and_reproducibility.md"
     ],
     "second.ref_var_reldiff": [
-      "S6_second_code_path_and_reproducibility.md"
-    ],
-    "second.drift_t1": [
       "S6_second_code_path_and_reproducibility.md"
     ],
     "repro.n_values": [
@@ -328,12 +340,12 @@
     [
       "eq.C0",
       "05_reservoir_limit.md",
-      9
+      11
     ],
     [
       "scope.reservoir",
       "05_reservoir_limit.md",
-      16
+      18
     ],
     [
       "scope.numerics",
@@ -403,122 +415,122 @@
     [
       "def.model",
       "S1_theorem_and_notation.md",
-      49
+      59
     ],
     [
       "def.clamp_class",
       "S1_theorem_and_notation.md",
-      71
+      81
     ],
     [
       "def.standardised",
       "S1_theorem_and_notation.md",
-      79
+      89
     ],
     [
       "def.classes",
       "S1_theorem_and_notation.md",
-      82
+      92
     ],
     [
       "def.e2pm",
       "S1_theorem_and_notation.md",
-      86
+      96
     ],
     [
       "prop.ladder",
       "S1_theorem_and_notation.md",
-      90
+      100
     ],
     [
       "prop.upper",
       "S1_theorem_and_notation.md",
-      92
+      102
     ],
     [
       "def.c",
       "S1_theorem_and_notation.md",
-      95
+      105
     ],
     [
       "eq.moment_identity",
       "S1_theorem_and_notation.md",
-      106
+      116
     ],
     [
       "lem.cumulant_identity",
       "S1_theorem_and_notation.md",
-      117
+      127
     ],
     [
       "lem.parity",
       "S1_theorem_and_notation.md",
-      123
+      133
     ],
     [
       "lem.first_order",
       "S1_theorem_and_notation.md",
-      126
+      136
     ],
     [
       "lem.small_time",
       "S1_theorem_and_notation.md",
-      132
+      143
     ],
     [
       "lem.variance",
       "S1_theorem_and_notation.md",
-      139
+      150
     ],
     [
       "lem.e2pm_necessity",
       "S1_theorem_and_notation.md",
-      142
+      153
     ],
     [
       "prop.reservoir",
       "S1_theorem_and_notation.md",
-      145
+      156
     ],
     [
       "proof.lem1",
       "S1_theorem_and_notation.md",
-      156
+      167
     ],
     [
       "proof.lem2",
       "S1_theorem_and_notation.md",
-      167
+      178
     ],
     [
       "proof.lem3",
       "S1_theorem_and_notation.md",
-      172
+      183
     ],
     [
       "proof.lem4",
       "S1_theorem_and_notation.md",
-      193
+      204
     ],
     [
       "proof.lem5",
       "S1_theorem_and_notation.md",
-      234
+      245
     ],
     [
       "proof.lem6",
       "S1_theorem_and_notation.md",
-      239
+      250
     ],
     [
       "proof.thm",
       "S1_theorem_and_notation.md",
-      250
+      261
     ],
     [
       "scope.not_claimed",
       "S1_theorem_and_notation.md",
-      271
+      282
     ],
     [
       "thm.main",
@@ -601,9 +613,14 @@
       35
     ],
     [
+      "mean.response",
+      "S4_reservoir_limit_proof.md",
+      38
+    ],
+    [
       "scope.reservoir",
       "S4_reservoir_limit_proof.md",
-      40
+      41
     ],
     [
       "num.method",
@@ -704,14 +721,10 @@
   },
   "outputs": {
     "BRI1_manuscript": {
-      "md": "build/BRI1_manuscript.md",
-      "pdf_rc": 0,
-      "html_rc": 0
+      "md": "build/BRI1_manuscript.md"
     },
     "S1_theorem_and_notation": {
-      "md": "build/S1_theorem_and_notation.md",
-      "pdf_rc": 0,
-      "html_rc": 0
+      "md": "build/S1_theorem_and_notation.md"
     }
   },
   "section_order": [

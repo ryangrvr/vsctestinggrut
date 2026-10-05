@@ -648,6 +648,23 @@
       "S5_numerical_methods_and_convergence.md"
     ]
   },
+  "const.var_cert_rad": {
+    "value": "4\\times 10^{-21}",
+    "fmt": [
+      "text"
+    ],
+    "text": "4\\times 10^{-21}",
+    "provenance": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+      "section": "T1 step 6"
+    },
+    "allowed_in": [
+      "06_numerical_illustration.md",
+      "S5_numerical_methods_and_convergence.md"
+    ]
+  },
   "const.C7": {
     "value": -0.0003606770119878022,
     "fmt": [
@@ -1485,6 +1502,74 @@
       "text"
     ],
     "text": "1.0\\times 10^{-3}, 5.0\\times 10^{-4}, 2.5\\times 10^{-4}",
+    "provenance": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "logs": {
+        "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+        "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+      },
+      "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+      "output": "data/frozen_convergence.json"
+    }
+  },
+  "conv.sigfigs_auth": {
+    "value": 7,
+    "fmt": [
+      "int"
+    ],
+    "text": "7",
+    "provenance": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "logs": {
+        "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+        "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+      },
+      "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+      "output": "data/frozen_convergence.json"
+    }
+  },
+  "conv.sigfigs_five": {
+    "value": 5,
+    "fmt": [
+      "int"
+    ],
+    "text": "5",
+    "provenance": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "logs": {
+        "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+        "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+      },
+      "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+      "output": "data/frozen_convergence.json"
+    }
+  },
+  "conv.cells_archived": {
+    "value": 8,
+    "fmt": [
+      "int"
+    ],
+    "text": "8",
+    "provenance": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "logs": {
+        "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+        "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+      },
+      "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+      "output": "data/frozen_convergence.json"
+    }
+  },
+  "conv.cells_fivefig_only": {
+    "value": 1,
+    "fmt": [
+      "int"
+    ],
+    "text": "1",
     "provenance": {
       "repo": "ryangrvr/TestingGRUT",
       "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",

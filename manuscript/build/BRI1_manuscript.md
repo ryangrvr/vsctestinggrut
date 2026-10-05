@@ -20,7 +20,7 @@ header-includes:
 
 ## Abstract {.unnumbered}
 
-Reduced descriptions of open systems routinely replace an environment by deterministic memory plus an exogenous random force. For a harmonic bath with linear coupling this replacement is exact, so reduced data cannot distinguish a reacting environment from an externally supplied noise. We ask whether reciprocal back-reaction from a *finite anharmonic* environment can be distinguished from the broadest affine version of that replacement: one exogenous process, shared across a family of interventions, modulated by deterministic causal location and by a deterministic causal scale whose sign may change. For a bath of $N_B$ Duffing oscillators coupled with strength $N_B^{-1/2}$ to a clamped coordinate, we prove that the interventional force laws under a smooth ramp protocol and under the at-rest reference protocol admit no common representation of this kind for every sufficiently large finite $N_B$. The witness is the standardised skewness at a single short time: it vanishes exactly for the reference protocol, while for the ramp its leading coefficient is $K(t)/N_B$ with $K(t) = 3c(t)$ and $c(t) = - \frac{\operatorname{Var}(x_0^2)}{28 \pi^{3}}\, t^7 + O(t^8) < 0$. The effect is mesoscopic: it decays as $O(N_B^{-1})$, and in the reservoir limit the centred force laws of the fixed protocols converge to a common Gaussian law with the equilibrium covariance of the unforced bath. Deterministic finite-$N_B$ quadrature illustrates the $1/N_B$ scaling at fixed finite times that are not claimed to lie inside the theorem's short-time window.
+Reduced descriptions of open systems routinely replace an environment by deterministic memory plus an exogenous random force. For a harmonic bath with linear coupling this replacement is exact, so reduced data cannot distinguish a reacting environment from an externally supplied noise. We ask whether reciprocal back-reaction from a *finite anharmonic* environment can be distinguished from the broadest affine version of that replacement: one exogenous process, shared across a family of interventions, modulated by deterministic causal location and by a deterministic causal scale whose sign may change. For a bath of $N_B$ Duffing oscillators coupled with strength $N_B^{-1/2}$ to a clamped coordinate, we prove that the interventional force laws under a smooth ramp protocol and under the at-rest reference protocol admit no common representation of this kind for every sufficiently large finite $N_B$. The witness is the standardised skewness at a single short time: it vanishes exactly for the reference protocol, while for the ramp the force's third cumulant is $K(t)/N_B + O(N_B^{-2})$ with $K(t) = 3c(t)$ and $c(t) = - \frac{\operatorname{Var}(x_0^2)}{28 \pi^{3}}\, t^7 + O(t^8) < 0$. The effect is mesoscopic: it decays as $O(N_B^{-1})$, and in the reservoir limit the centred force laws of the fixed protocols converge to a common Gaussian law with the equilibrium covariance of the unforced bath. Deterministic finite-$N_B$ quadrature illustrates the $1/N_B$ scaling at fixed finite times that are not claimed to lie inside the theorem's short-time window.
 
 # 1. Introduction {#sec:intro}
 
@@ -28,15 +28,15 @@ A standard route from microscopic dynamics to a reduced equation of motion elimi
 
 That indistinguishability depends on what is compared. For a *single* experimental protocol nothing can be distinguished at all: whatever force the environment exerts, an exogenous process with exactly that law, and no memory, reproduces the reduced path (Supplement S3). Any meaningful comparison must therefore fix one environment and probe it with a *family* of interventions, and ask whether one shared exogenous description serves the whole family.
 
-We adopt that interventional setting. The system coordinate is clamped to prescribed trajectories, all starting from one common environment preparation, and the environment force needed to hold each trajectory is the observable. The competitor descriptions form a nested ladder (Section 3), from the harmonic class, through additive exogenous forcing with arbitrary deterministic causal memory and the shared signed-affine class $\mathcal{E}_2^{\pm}$ (an arbitrary deterministic causal scale whose *sign* may change), up to an arbitrary causal transformation of one exogenous random object. The top class contains every classical deterministic causal environment, so back-reaction as such can never be identified at that level. The informative question is whether back-reaction leaves the shared signed-affine class.
+We adopt that interventional setting. The system coordinate is clamped to prescribed trajectories, all starting from one common environment preparation, and the environment force needed to hold each trajectory is the observable. The competitor descriptions form a nested ladder (Section 3), from the harmonic class, through additive exogenous forcing with arbitrary deterministic causal memory and the shared signed-affine class $\mathcal{E}_2^{\pm}$ (an arbitrary deterministic causal scale whose *sign* may change), up to an arbitrary causal transformation of one exogenous random object. The top class contains every classical deterministic causal environment of the type considered here (a finite-dimensional state, well posed on $[0, T]$; Supplement S3), so back-reaction as such can never be identified at that level. The informative question is whether back-reaction leaves the shared signed-affine class.
 
 Our main result (Theorem 1) answers this for a concrete model: a finite bath of $N_B$ Duffing oscillators coupled reciprocally, with strength $N_B^{-1/2}$, to the clamped coordinate. For each fixed sufficiently small time, and every sufficiently large finite $N_B$, the force law under a smooth ramp protocol has non-zero standardised skewness while the reference (at-rest) protocol has exactly zero third cumulant. Since the absolute standardised skewness is invariant under every deterministic location, scale and sign modulation, no shared signed-affine exogenous process can represent both. The leading coefficient is explicit, $K(t) = 3c(t)$ with $c(t) = - \frac{\operatorname{Var}(x_0^2)}{28 \pi^{3}}\, t^7 + O(t^8)$, and the witness decays as $O(N_B^{-1})$; in the reservoir limit the centred force laws of the fixed protocols converge to one common Gaussian law (Section 5).
 
 **Contributions.**
 
-1. A shared, process-level competitor class $\mathcal{E}_2^{\pm}$ for interventional environment forces: one exogenous process modulated by deterministic causal location and by a deterministic causal scale that may change sign but not vanish, with prefix-consistent signs across the whole intervention family, and its exact characterisation under clamping.
-2. A constructive non-representability theorem: for a finite reciprocal Duffing bath, the reference and ramp protocols admit no common $\mathcal{E}_2^{\pm}$ representation for each fixed short time and every sufficiently large finite $N_B$, with an explicit negative leading coefficient of the third-cumulant witness.
-3. A quantified mesoscopic scope: the witness scales as $1/N_B$, and for the fixed protocols the centred force laws converge to one common Gaussian law with the equilibrium covariance of the unforced bath.
+1. A process-level formulation, for interventional environment forces, of the established location-scale noise class [1] [CITATION NEEDED: location-scale / conditional-transformation regression literature]: one shared exogenous path law modulated by deterministic causal location and by a deterministic causal scale that may change sign but not vanish, with prefix-consistent signs and a common degeneracy set across the whole intervention family, and its exact characterisation under clamping.
+2. An explicit-witness non-representability theorem: for a finite reciprocal Duffing bath, the reference and ramp protocols admit no common $\mathcal{E}_2^{\pm}$ representation for each fixed short time and every sufficiently large finite $N_B$, with an explicit negative leading coefficient of the third-cumulant witness.
+3. A quantified mesoscopic scope: the witness scales as $1/N_B$ and disappears in the reservoir limit, where the known Gaussian linear-response description is recovered for the fixed protocols, at the level of finite-dimensional force laws.
 
 **What is established and what is added.** The table separates ingredients that are already known, which we credit, from what this work contributes.
 
@@ -49,7 +49,7 @@ Table 1: Established ingredients and the contribution of this work.
 | Influence-functional treatments organise anharmonic corrections around linear response [2] [3]; finite baths depart from ideal fluctuation–dissipation behaviour [4] | The finite-bath departure tied to a defined competitor class, with an explicit $1/N_B$ rate and leading coefficient |
 | Location-scale noise models with fixed standardised shape, and their causal identifiability [1] [CITATION NEEDED: location-scale / conditional-transformation regression literature] | A shared *process* across interventions with prefix-consistent signed scale, and a non-representability result rather than an identifiability result within the class |
 | Identifiability of interventional stochastic differential equations [CITATION NEEDED: identifiability of interventional stochastic differential equations, Zweig et al., arXiv:2505.15987 — full bibliographic details to be verified] | A constructive Hamiltonian counterexample to shared signed-affine representation |
-| Central-limit Gaussian behaviour of sums of many weakly coupled degrees of freedom [CITATION NEEDED: multivariate Lindeberg–Feller central limit theorem, standard probability text] | The reservoir limit stated for the fixed protocols as finite-dimensional convergence to one common Gaussian law, with its scope |
+| Gaussian, linear-response reservoir recovery for weakly coupled environments [2] [3] [CITATION NEEDED: Caldeira–Leggett-type linear-response universality], via central-limit behaviour [CITATION NEEDED: multivariate Lindeberg–Feller central limit theorem, standard probability text] | The quantified $O(1/N_B)$ disappearance of the $\mathcal{E}_2^{\pm}$ witness into that known limit, stated for the fixed protocols at the level of finite-dimensional force laws |
 
 **A dictionary.** The competitor class has a direct counterpart in causal modelling. At a single time and a fixed protocol history, the form (6) is the location-scale noise model $Y = f(X) + g(X) N$ of [1], under the identification below. What has no static counterpart is the shared *process* across an intervention family, the prefix-consistent sign, and the common degeneracy set.
 
@@ -66,7 +66,7 @@ Table 2: Causal-modelling and physics vocabulary used in this paper.
 | standardised residual | standardised force $Z_q(t)$ |
 | model membership | representability of the force family in $\mathcal{E}_1$ or $\mathcal{E}_2^{\pm}$ |
 
-**Outline.** Section 2 defines model $\mathcal{D}$ and the protocols, Section 3 the competitor classes, Section 4 states and explains Theorem 1, Section 5 the reservoir limit, Section 6 a deterministic numerical illustration, and Section 7 discusses scope and limitations. Supplement S1 contains the complete statements and proofs with a notation table; S2 a small-time consistency check; S3 the proved class hierarchy and mechanism map; S4 the reservoir-limit proof; S5 the numerical methods, convergence and tables; S6 a second numerical code path and reproducibility.
+**Outline.** Section 2 defines model $\mathcal{D}$ and the protocols, Section 3 the competitor classes, Section 4 states and explains Theorem 1, Section 5 the reservoir limit, Section 6 a deterministic numerical illustration, and Section 7 discusses scope and limitations. Supplement S1 contains the statements, the notation table and the proofs of Theorem 1 and its lemmas; S2 a small-time consistency check; S3 the proved class hierarchy and mechanism map; S4 the reservoir-limit proof; S5 the numerical methods, convergence and tables; S6 a second numerical code path and reproducibility.
 
 # 2. Model and protocols {#sec:model}
 
@@ -102,7 +102,7 @@ q_{\mathrm{ref}}(t) \equiv 0, \qquad
 q_{\mathrm{ramp}}(t) = \begin{cases} s(t/\pi), & 0 \leq t \leq \pi, \\ 1, & \pi < t \leq 2\pi, \end{cases} \qquad s(u) = 10u^3 - 15u^4 + 6u^5 .
 \tag{5}
 $$
-The *reference protocol* holds the coordinate at rest; the *ramp protocol* moves it smoothly from $0$ to $1$. Theorem 1 uses only the polynomial part $s(t/\pi)$ of the ramp, at short times.
+The *reference protocol* holds the coordinate at rest; the *ramp protocol* moves it smoothly from $0$ to $1$ (Fig. 1). Theorem 1 uses only the polynomial part $s(t/\pi)$ of the ramp, at short times.
 
 ![Model, protocols and witness (schematic). (a) The clamped coordinate exerts the force $q(t)/\sqrt{N_B}$ on each of $N_B$ Duffing oscillators and receives the force $F_q$ of (3). (b) The two protocols, drawn exactly from their definitions (5); the theorem concerns a short initial time window $(0, \delta)$ whose size is existential and is not drawn to scale. (c) The witness logic: the reference protocol has zero third cumulant for every $N_B$; the ramp protocol has a non-zero third cumulant for all sufficiently large $N_B$; since the absolute standardised skewness is invariant under shared location, scale and sign modulation, the two cannot share one signed-affine exogenous representation. The panel contains no data.](../figures/fig1_schematic.pdf){#fig:schematic}
 
@@ -132,7 +132,7 @@ $$
 where, for the class $\mathcal{H}$ of environments, "$\subset$" means that the interventional force family of every environment in $\mathcal{H}$ lies in $\mathcal{E}_1$, and both inclusions among the $\mathcal{E}$-classes are strict (Supplement S3).
 Every classical, deterministic, causal environment of the type considered here, reciprocal and energy-absorbing back-reaction included, lies in $\mathcal{E}_{\mathrm{univ}}$; so does model $\mathcal{D}$. Back-reaction as such is therefore never identifiable at the universal level, and the content of the question lies at the boundary between $\mathcal{E}_2^{\pm}$ and $\mathcal{E}_{\mathrm{univ}}$.
 
-**Operational form and prefix consistency.** Write $Z_q(t) = (F_q(t) - \mathbb{E} F_q(t))/\operatorname{sd} F_q(t)$ for the standardised force at times where the variance is non-zero, and $D_q$ for the set of times where it vanishes. Under clamping and finite second moments, a force family lies in $\mathcal{E}_2^{\pm}$ exactly when (i) $D_q = D$ is common to all protocols, and (ii) there is one shared deterministic causal sign functional $S_t : q_{[0,t]} \mapsto \{+1, -1\}$ such that, with $s_q(t) = S_t[q_{[0,t]}]$, the finite-dimensional laws of $s_q Z_q$ off $D$ are the same for every protocol. Prefix consistency is part of membership: two protocols that agree up to time $t$ must receive the same sign at $t$.
+**Operational form and prefix consistency.** Write $Z_q(t) = (F_q(t) - \mathbb{E} F_q(t))/\operatorname{sd} F_q(t)$ for the standardised force at times where the variance is non-zero, and $D_q$ for the set of times where it vanishes. Under clamping, finite second moments and environment causality (the law of $F_q$ on $[0, t]$ depends on $q$ only through $q_{[0,t]}$), and at the level of finite-dimensional distributions, a force family lies in $\mathcal{E}_2^{\pm}$ exactly when (i) $D_q = D$ is common to all protocols, and (ii) there is one shared deterministic causal sign functional $S_t : q_{[0,t]} \mapsto \{+1, -1\}$ such that, with $s_q(t) = S_t[q_{[0,t]}]$, the finite-dimensional laws of $s_q Z_q$ off $D$ are the same for every protocol. Prefix consistency is part of membership: two protocols that agree up to time $t$ must receive the same sign at $t$.
 
 **The invariant used here.** Within $\mathcal{E}_2^{\pm}$, a clamped protocol gives $F_q(t) = M_t[q] + G_t[q]\,\xi(t)$ with deterministic numbers $M_t[q]$ and $G_t[q] \neq 0$, so
 $$
@@ -165,11 +165,11 @@ $$
 c(t) = - \frac{\operatorname{Var}(x_0^2)}{28 \pi^{3}}\; t^7 + O(t^8), \qquad K(t) = 3c(t).
 \tag{11}
 $$
-The coefficient follows from an order-by-order solution of the equations for $x_0$ and $y_1$; the lower orders cancel through the Gibbs identity $m_2 + m_4 = 1$, and only the $x_0^2$-dependent part of the response survives (Supplement S1, Lemma 4). Since $\operatorname{Var}(x_0^2) > 0$, $c(t) < 0$ on some interval $(0, \delta)$.
+The coefficient follows from an order-by-order solution of the equations for $x_0$ and $y_1$: the orders $t^0$ to $t^6$ vanish because the response starts at order $t^5$ with deterministic leading coefficients, and at order $t^7$ the Gibbs identity $m_2 + m_4 = 1$ removes the remaining deterministic contribution, so that only the $x_0^2$-dependent part of the response survives (Supplement S1, Lemma 4). Since $\operatorname{Var}(x_0^2) > 0$, $c(t) < 0$ on some interval $(0, \delta)$.
 
 **Interpretation.** The response $y_1$ of an oscillator to the ramp is weaker when its instantaneous stiffness $1 + 3x_0^2$ is larger, that is, when $x_0^2$ is large. The response is therefore anticorrelated with $x_0^2$, which is exactly what $c(t) < 0$ expresses, and this anticorrelation skews the summed force. This reading is an interpretation of the sign of $c(t)$, which is what is proved. Supplement S3 places each mechanism discussed in this paper in the class hierarchy.
 
-**Theorem 1 (finite-bath escape from the shared signed-affine class).** Consider model $\mathcal{D}$ with bath size $N_B$, prepared in the Gibbs state at $\beta = 1$, together with the reference protocol $q_{\mathrm{ref}} \equiv 0$ and the ramp protocol $q_{\mathrm{ramp}}$, which equals $s(t/\pi)$ on $[0,\pi]$. There exists $\delta \in (0, 1]$ such that, for each fixed $t \in (0, \delta)$, there is a finite integer $N_0(t)$ with the following property: for every bath size $N_B \geq N_0(t)$, the interventional force laws of model $\mathcal{D}$ under the reference and ramp protocols admit no common representation in the class $\mathcal{E}_2^{\pm}$. Equivalently, the interventional force family of model $\mathcal{D}$ lies outside $\mathcal{E}_2^{\pm}$ for all finite $N_B \geq N_0(t)$. The witness is the standardised skewness at the single time $t$: $\gamma_1[F_{\mathrm{ref}}(t)] = 0$ for every $N_B$, whereas $\gamma_1[F_{\mathrm{ramp}}(t)] < 0$ for every $N_B \geq N_0(t)$, and both force variances are strictly positive. The numbers $\delta$ and $N_0(t)$ are existential: no value of either is claimed, and $N_0(t)$ is not claimed to be uniform in $t$.
+**Theorem 1 (finite-bath escape from the shared signed-affine class).** Consider model $\mathcal{D}$ with bath size $N_B$, prepared in the Gibbs state at $\beta = 1$, together with the reference protocol $q_{\mathrm{ref}} \equiv 0$ and the ramp protocol $q_{\mathrm{ramp}}$, which equals $s(t/\pi)$ on $[0,\pi]$. There exists $\delta \in (0, 1]$ such that, for each fixed $t \in (0, \delta)$, there is a finite integer $N_0(t)$ with the following property: for every bath size $N_B \geq N_0(t)$, the interventional force laws of model $\mathcal{D}$ under the reference and ramp protocols admit no common representation in the class $\mathcal{E}_2^{\pm}$. Consequently, the interventional force family of model $\mathcal{D}$ over $\mathcal{X}$ lies outside $\mathcal{E}_2^{\pm}$ for all finite $N_B \geq N_0(t)$. The witness is the standardised skewness at the single time $t$: $\gamma_1[F_{\mathrm{ref}}(t)] = 0$ for every $N_B$, whereas $\gamma_1[F_{\mathrm{ramp}}(t)] < 0$ for every $N_B \geq N_0(t)$, and both force variances are strictly positive. The numbers $\delta$ and $N_0(t)$ are existential: no value of either is claimed, and $N_0(t)$ is not claimed to be uniform in $t$.
 
 *Proof sketch.* Fix $t \in (0, \delta)$, so $K(t) < 0$. By (10) there is a finite $N_0(t)$ beyond which the remainder is smaller than $|K(t)|/N_B$, so $\kappa_3(F_{\mathrm{ramp}}(t)) < 0$. The ramp force variance is strictly positive, because the time-$t$ flow map is a diffeomorphism carrying the Gibbs density to a density. Hence $\gamma_1[F_{\mathrm{ramp}}(t)] < 0 = \gamma_1[F_{\mathrm{ref}}(t)]$ at a time where both variances are positive, which contradicts (8). Supplement S1 gives every step, including the remainder bounds and the definition $N_0(t) = \lfloor \Theta(t)/|K(t)| \rfloor + 1$. $\square$
 
@@ -177,18 +177,20 @@ The statement is pointwise in $t$: for each fixed short time there is a threshol
 
 # 5. Reservoir limit {#sec:reservoir}
 
-The escape of Theorem 1 is a finite-bath effect. For fixed $t \in (0, \delta)$ the ramp variance tends to $m_2$, so
+The escape of Theorem 1 is a finite-bath effect; the two statements of this section together form **Proposition 1**, proved in Supplement S4. (a) For fixed $t \in (0, \delta)$, $\kappa_3(F_{\mathrm{ramp}}(t)) = K(t)/N_B + O(N_B^{-2})$ and the ramp variance tends to $m_2 > 0$, so
 $$
-\gamma_1[F_{\mathrm{ramp}}(t)] = \frac{K(t)}{m_2^{3/2}\, N_B} + O(N_B^{-2}) \longrightarrow 0 \qquad (N_B \to \infty).
+\gamma_1[F_{\mathrm{ramp}}(t)] = \frac{K(t)}{m_2^{3/2}\, N_B} + o(N_B^{-1}) \longrightarrow 0 \qquad (N_B \to \infty);
 \tag{12}
 $$
 
-More strongly, fix a protocol (the reference or ramp protocol, or any separately fixed admissible bounded clamp for which the same moment estimates hold) and a finite tuple of times in $[0, 2\pi]$. The centred force $N_B^{-1/2} \sum_j (X_j^\varepsilon - \mathbb{E} X^\varepsilon)$ is a triangular array with independent identically distributed rows, uniformly bounded fourth moments, and covariance converging to
+in particular $|\gamma_1[F_{\mathrm{ramp}}(t)]| = O(N_B^{-1})$.
+
+(b) More strongly, fix a protocol (the reference or ramp protocol, or any separately fixed admissible bounded clamp for which the same moment estimates hold) and a finite tuple of times in $[0, 2\pi]$. The centred force $N_B^{-1/2} \sum_j (X_j^\varepsilon - \mathbb{E} X^\varepsilon)$ is the row sum of a triangular array whose entries are independent and identically distributed within each row (with $\varepsilon = N_B^{-1/2}$ changing from row to row), with uniformly bounded fourth moments and covariance converging to
 $$
 C_0(t_a, t_b) = \left\langle x_0(t_a)\, x_0(t_b) \right\rangle_{\mathrm{Gibbs}} .
 \tag{13}
 $$
-By the multivariate Lindeberg–Feller central limit theorem (proof in Supplement S4) [CITATION NEEDED: multivariate Lindeberg–Feller central limit theorem, standard probability text], the centred force converges in finite-dimensional distribution to the centred Gaussian law with covariance $C_0$, which is computed from the unforced equilibrium bath and is therefore the same for every such protocol. The deterministic mean tends to the linear response $\mathbb{E}\, y_1(t)$ [CITATION NEEDED: classical fluctuation–dissipation theorem], which is absorbed by the location functional $M$.
+By the multivariate Lindeberg–Feller central limit theorem [CITATION NEEDED: multivariate Lindeberg–Feller central limit theorem, standard probability text], the centred force converges in finite-dimensional distribution to the centred Gaussian law with covariance $C_0$, which is computed from the unforced equilibrium bath and is therefore the same for every such protocol. The deterministic mean tends to the bath's equilibrium linear response to the clamp — for the ramp protocol, $\mathbb{E}\, y_1(t)$ [CITATION NEEDED: classical fluctuation–dissipation theorem] — which is deterministic and causal and is absorbed by the location functional $M$ (proof of Proposition 1 in Supplement S4).
 
 This is an $\mathcal{E}_1$-type reservoir limit in the following precise sense: for the fixed protocols, the centred finite-dimensional force laws converge to one common Gaussian law. It is not a statement that one shared $\mathcal{E}_1$ representation exists uniformly over the whole infinite class of admissible clamps; the moment bounds depend on the clamp, and no such uniform theorem is claimed. Nor is it a statement that the environment enters the harmonic class $\mathcal{H}$: the limit is reached at the level of finite-dimensional force laws, no harmonic-bath realisation of it is constructed, and the finite-$N_B$ model remains anharmonic.
 
@@ -196,36 +198,36 @@ This is an $\mathcal{E}_1$-type reservoir limit in the following precise sense: 
 
 The theorem is analytic and does not use the numbers in this section. The computation below illustrates the finite-$N_B$ behaviour at fixed finite times; it is evidence-grade, not certified, and it is not part of the proof. In particular, the primary time $t_\star = 0.5$ and the diagnostic times $0.25$, $0.75$ and $1.0$ were fixed in advance, and none of them is claimed to lie inside the theorem's window $(0, \delta)$.
 
-**Method.** By the single-oscillator reduction, every $N_B$ requires only the one-oscillator process $X^\varepsilon$ at $\varepsilon = N_B^{-1/2}$, and the force cumulants follow exactly from (9). Gibbs expectations over the initial data are evaluated by deterministic tensor quadrature, with every initial condition evolved separately by a fixed-step fourth-order Runge–Kutta integrator; no sampling is involved. The bath sizes are $N_B \in \{4, 8, 16, 32, 64, 128\}$. Supplement S5 gives the method, the controls, a resolution ladder and the full tables; Supplement S6 gives a second, independent code path.
+**Method.** By the single-oscillator reduction, every $N_B$ requires only the one-oscillator process $X^\varepsilon$ at $\varepsilon = N_B^{-1/2}$, and the force cumulants follow exactly from (9). Gibbs expectations over the initial data are evaluated by deterministic tensor quadrature, with every initial condition evolved separately by a fixed-step fourth-order Runge–Kutta integrator; no sampling is involved. The bath sizes are $N_B \in \{4, 8, 16, 32, 64, 128\}$. Supplement S5 gives the method, the controls, the archived resolution ladder and the full tables; Supplement S6 reports a reproducibility cross-check by a separately written code.
 
 **Controls.** The reference protocol is stationary on the grid: its variance stays at $0.4679199170$ with maximal drift $1.2\times 10^{-8}$ over the sampled times, and its mean and third cumulant remain below $5.6\times 10^{-17}$ and $7.8\times 10^{-17}$ in magnitude. The initial variance agrees with an independent one-dimensional quadrature of the Gibbs marginal, $m_2 = 0.4679199170$, to relative discrepancy $2.4\times 10^{-16}$, and our own high-precision evaluation gives $m_2 = 0.467919916974$ and $\operatorname{Var}(x_0^2) = 0.313131034326$, inside the certified enclosure recorded with the proof. The exact identity $m_2 + m_4 = 1$ holds on the grid to $6.7\times 10^{-16}$.
 
 **Results.** At $t_\star = 0.5$ the ramp protocol has negative standardised skewness at every bath size, $\gamma_1 = -5.338\times 10^{-6}$ at $N_B = 4$ and $-1.668\times 10^{-7}$ at $N_B = 128$ (Table 3, Fig. 2). A least-squares fit of $\log|\gamma_1|$ against $\log N_B$ over all six bath sizes gives exponent $p = 1.000000$, with local exponents between $0.9999999999$ and $1.0000000002$; across the archived resolution ladder (Supplement S5), $\gamma_1$ at $t_\star$ is unchanged to the printed precision. The product $N_B \gamma_1$ is flat across the grid to relative spread $1.7\times 10^{-10}$, so no finite-$N_B$ correction is resolved at $t_\star$. At the latest diagnostic time $1.0$ a monotone correction is resolved: $N_B \gamma_1$ drifts by a relative $1.4\times 10^{-7}$ between the smallest and largest bath sizes (Fig. 3). All four times show negative skewness and the same $1/N_B$ scaling (Supplement S5).
 
-Table 3: Ramp-protocol standardised skewness at $t_\star = 0.5$. Generated from the authoritative numerical output.
+Table 3: Ramp-protocol standardised skewness at $t_\star = 0.5$, generated from the authoritative numerical output. The product $N_B\gamma_1$ is constant to the printed precision; its relative spread over the grid is $1.7\times 10^{-10}$.
 
 | $N_B$ | $\gamma_1[F(t_\star)]$ | $N_B\,\gamma_1[F(t_\star)]$ |
 | ---: | ---: | ---: |
-| 4 | $-5.33829\times 10^{-6}$ | $-2.135314464\times 10^{-5}$ |
-| 8 | $-2.66914\times 10^{-6}$ | $-2.135314464\times 10^{-5}$ |
-| 16 | $-1.33457\times 10^{-6}$ | $-2.135314464\times 10^{-5}$ |
-| 32 | $-6.67286\times 10^{-7}$ | $-2.135314464\times 10^{-5}$ |
-| 64 | $-3.33643\times 10^{-7}$ | $-2.135314464\times 10^{-5}$ |
-| 128 | $-1.66821\times 10^{-7}$ | $-2.135314464\times 10^{-5}$ |
+| 4 | $-5.33829\times 10^{-6}$ | $-2.135314\times 10^{-5}$ |
+| 8 | $-2.66914\times 10^{-6}$ | $-2.135314\times 10^{-5}$ |
+| 16 | $-1.33457\times 10^{-6}$ | $-2.135314\times 10^{-5}$ |
+| 32 | $-6.67286\times 10^{-7}$ | $-2.135314\times 10^{-5}$ |
+| 64 | $-3.33643\times 10^{-7}$ | $-2.135314\times 10^{-5}$ |
+| 128 | $-1.66821\times 10^{-7}$ | $-2.135314\times 10^{-5}$ |
 
-**Cross-checks.** A separately written implementation (Supplement S6, a reproducibility cross-check rather than additional evidence) agrees with these values to within $1.4\times 10^{-7}$ in relative terms at both times and all bath sizes. Proposition 1(a) predicts $N_B\gamma_1 \to K(t)/m_2^{3/2}$; evaluating $K(t)$ with the separately written small-time code of Supplement S2 gives $K(t_\star)/m_2^{3/2} = -2.13531\times 10^{-5}$, against $N_B\gamma_1 = -2.13531\times 10^{-5}$ at $N_B = 128$, a relative difference of $1.3\times 10^{-7}$ that lies within the $1\times 10^{-6}$ relative spread of the small-time code's own runs.
+**Cross-checks (non-evidentiary).** A separately written implementation (Supplement S6, a reproducibility cross-check rather than additional evidence) agrees with the authoritative values to within $1.4\times 10^{-7}$ in relative terms at $t_\star$ and at $t = 1.0$, for all bath sizes. As a consistency note: the first-order expansion (10) (Lemma 3), which holds at every fixed $t \in [0, 2\pi]$ and not only in the theorem's window, together with $\operatorname{Var} F_{\mathrm{ramp}}(t) \to m_2$, gives $N_B\gamma_1 \to K(t)/m_2^{3/2}$ at each fixed time; evaluating $K(t_\star)$ with the separately written small-time code of Supplement S2 gives $-2.13531\times 10^{-5}$ for that limit, against $N_B\gamma_1 = -2.13531\times 10^{-5}$ at $N_B = 128$, a relative difference of $1.3\times 10^{-7}$, within the $1\times 10^{-6}$ relative spread of the small-time code's own runs.
 
 ![Standardised skewness of the ramp-protocol force at $t_\star = 0.5$ against bath size, on logarithmic axes. Points: authoritative numerical output. Solid line: least-squares power law, $p = 1.000000$. Dashed line: slope $-1$, offset vertically for visibility. The time $t_\star$ is not claimed to lie inside the theorem's window.](../figures/fig2_scaling.pdf){#fig:scaling}
 
-![Normalised residual $r(N_B) = N_B\gamma_1(N_B)/N_B\gamma_1(128) - 1$ of the ramp-protocol force at (a) $t_\star = 0.5$ and (b) $t = 1.0$. Authoritative numerical output. The panels have their own vertical scales, which differ by three orders of magnitude. At $t_\star$ the residuals scatter at the level of the computation's numerical precision, so no finite-$N_B$ correction is resolved; at $t = 1.0$ a monotone correction is resolved.](../figures/fig3_residual.pdf){#fig:residual}
+![Normalised residual $r(N_B) = N_B\gamma_1(N_B)/\langle N_B\gamma_1 \rangle - 1$, with $\langle \cdot \rangle$ the mean over the bath-size grid, of the ramp-protocol force at (a) $t_\star = 0.5$ and (b) $t = 1.0$. Authoritative numerical output. The panels have independent vertical scales. At $t_\star$ the residuals scatter at the level of the computation's numerical precision, so no finite-$N_B$ correction is resolved; at $t = 1.0$ a monotone correction is resolved.](../figures/fig3_residual.pdf){#fig:residual}
 
 # 7. Discussion {#sec:discussion}
 
-**What is shown.** A finite reciprocal anharmonic environment can produce interventional force laws that no single shared causal signed-affine modulation of one exogenous process represents. For model $\mathcal{D}$ this holds for each fixed short time and every sufficiently large finite bath size, with a standardised third-cumulant witness whose leading coefficient is explicit and negative. The distinguishing contribution is mesoscopic: it scales as $1/N_B$ and vanishes in the reservoir limit, where the centred force laws of the fixed protocols return to one common Gaussian law with the equilibrium covariance $C_0$ of the unforced bath. The escape from the shared signed-affine class therefore weakens at a known rate as the bath grows, while the reservoir limit itself is the common Gaussian linear-response law. Whether that limit admits an effective harmonic-bath description is not addressed here; it connects to the influence-functional literature [2] [3].
+**What is shown.** A finite reciprocal anharmonic environment can produce interventional force laws that no single shared causal signed-affine modulation of one exogenous process represents. For model $\mathcal{D}$ this holds for each fixed short time and every sufficiently large finite bath size, with a standardised third-cumulant witness whose leading coefficient is explicit and negative. The distinguishing contribution is mesoscopic: it scales as $1/N_B$ and vanishes in the reservoir limit, where the centred force laws of the fixed protocols return to one common Gaussian law with the equilibrium covariance $C_0$ of the unforced bath. The witness therefore decays at a known rate as the bath grows, while the centred force laws of the fixed protocols converge to one common Gaussian law with covariance $C_0$. Whether that limit admits an effective harmonic-bath description is not addressed here; it connects to the influence-functional literature [2] [3].
 
-**What is not shown.** The result is relative to $\mathcal{E}_2^{\pm}$. It makes no claim against the universal class $\mathcal{E}_{\mathrm{univ}}$, which contains model $\mathcal{D}$: back-reaction in a classical deterministic causal environment is always representable as a causal transformation of one fixed exogenous random object. It does not identify randomness of any special origin or a unique microscopic description of the environment. The constants $\delta$ and $N_0(t)$ are existential; no finite-$N_B$ detection threshold and no experimentally observable effect size are claimed. The numerical times are not certified to lie inside the theorem's window. No uniform statement over the full clamp class is made in the reservoir limit, and quantum environments are not treated.
+**What is not shown.** The result is relative to $\mathcal{E}_2^{\pm}$. It makes no claim against the universal class $\mathcal{E}_{\mathrm{univ}}$, which contains model $\mathcal{D}$: back-reaction in a classical deterministic causal environment of the type considered here (a finite-dimensional state, well posed on $[0, T]$; Proposition S3.7) is always representable as a causal transformation of one fixed exogenous random object. It does not identify randomness of any special origin or a unique microscopic description of the environment. The constants $\delta$ and $N_0(t)$ are existential; no finite-$N_B$ detection threshold and no experimentally observable effect size are claimed. The numerical times are not certified to lie inside the theorem's window. No uniform statement over the full clamp class is made in the reservoir limit, and quantum environments are not treated.
 
-**Relation to known results.** The harmonic class $\mathcal{H}$ lies in $\mathcal{E}_1$, and a harmonic bath with a nonlinear system coupling still lies exactly in $\mathcal{E}_2^{\pm}$ (Supplement S3): history-dependent noise amplitude, including sign changes, is ordinary multiplicative response and is not the effect reported here. The invariance of standardised shape under location-scale maps is standard in statistics [CITATION NEEDED: location-scale / conditional-transformation regression literature], and the causal location-scale noise model of [1] has the same functional form as a single-time slice of (6). Their identifiability theorem, however, assumes that the model holds in one causal direction and identifies that direction; the present theorem is a non-representability result for a shared *process* across an intervention family, constructed from Hamiltonian dynamics. Non-Gaussian corrections from anharmonic environments [2] [3] [CITATION NEEDED: generalized Langevin equations with non-Gaussian orthogonal forces, Kiefer et al., arXiv:2505.15665 — full bibliographic details to be verified] and finite-bath departures from ideal fluctuation–dissipation behaviour [4] are known; what is new here is their role as a quantified escape from a defined shared competitor class.
+**Relation to known results.** The harmonic class $\mathcal{H}$ lies in $\mathcal{E}_1$, and a harmonic bath coupled through $A(q) = q + q^3/3$, whose factor $A'(q) = 1 + q^2$ never vanishes, still lies exactly in $\mathcal{E}_2^{\pm}$ (Proposition S3.8): history-dependent noise amplitude from a non-vanishing deterministic causal factor is ordinary multiplicative response and is not the effect reported here. The invariance of standardised shape under location-scale maps is standard in statistics [CITATION NEEDED: location-scale / conditional-transformation regression literature], and the causal location-scale noise model of [1] has the same functional form as a single-time slice of (6). Their identifiability theorem, however, assumes that the model holds in one causal direction and identifies that direction; the present theorem is a non-representability result for a shared *process* across an intervention family, constructed from Hamiltonian dynamics. Non-Gaussian corrections from anharmonic environments [2] [3] [CITATION NEEDED: generalized Langevin equations with non-Gaussian orthogonal forces, Kiefer et al., arXiv:2505.15665 — full bibliographic details to be verified] and finite-bath departures from ideal fluctuation–dissipation behaviour [4] are known; what is new here is their role as a quantified escape from a defined shared competitor class.
 
 **Limitations of the present draft.** The proofs were reproduced by an independent internal re-derivation, not by external review. The literature comparison is a targeted search, not an exhaustive one, and several citations below are placeholders. A certified-error evaluation of the third-cumulant coefficients at finite times, which would turn the numerical illustration into a certified statement at those times, has not been carried out.
 
@@ -240,7 +242,7 @@ Table 3: Ramp-protocol standardised skewness at $t_\star = 0.5$. Generated from 
 ## References {.unnumbered}
 
 <!-- refs:begin -->
-[1] A. Immer, C. Utans, I. Khemakhem, B. Schölkopf, "On the Identifiability and Estimation of Causal Location-Scale Noise Models," ICML 2023 (PMLR 202); arXiv:2210.09054.
+[1] A. Immer, C. Utans, I. Khemakhem, B. Schölkopf, "On the Identifiability and Estimation of Causal Location-Scale Noise Models," ICML 2023 (PMLR 202); arXiv:2210.09054. [Author list as recorded in the verification record — to be verified against the primary source during the literature sweep.]
 
 [2] N. Makri, "The Linear Response Approximation and Its Lowest Order Corrections: An Influence Functional Approach," J. Phys. Chem. B 103, 2823 (1999). doi:10.1021/jp9847540.
 
@@ -249,7 +251,7 @@ Table 3: Ramp-protocol standardised skewness at $t_\star = 0.5$. Generated from 
 [4] A. Carcaterra, A. Akay, "Fluctuation-dissipation and energy properties of a finite bath," Phys. Rev. E 93, 032142 (2016). doi:10.1103/PhysRevE.93.032142.
 <!-- refs:end -->
 
-All other citations in this draft are visible placeholders marked CITATION NEEDED; the literature sweep has not been done.
+The four references above reproduce the verification record's citation data; they are to be re-verified during the literature sweep. All other citations in this draft are visible placeholders marked CITATION NEEDED; the literature sweep has not been done.
 
 # Supplementary material {#sec:supp .unnumbered}
 
@@ -257,7 +259,7 @@ The supplement contains: S1, the theorem and notation sheet with complete proofs
 
 # S1. Theorem and notation sheet {#sec:S1}
 
-This supplement states the main result and every lemma it uses, defines each symbol exactly once, and gives a complete proof written to be worked through line by line. Every load-bearing definition, equation and statement carries an entry in the build manifest that traces it to the proof record (file, commit, section). Throughout this supplement $m_2$ is kept symbolic; numerical values appear only in Section 6 and Supplement S5.
+This supplement states the main result and every lemma it uses, defines each symbol exactly once, and gives complete proofs of Theorem 1 and of its lemmas, written to be worked through line by line; Proposition 1 is proved in Supplement S4, and the class-hierarchy propositions in Supplement S3. Every load-bearing definition, equation and statement carries an entry in the build manifest that traces it to the proof record (file, commit, section). Throughout this supplement $m_2$ is kept symbolic; its numerical value appears only in Section 6 and Supplement S5.
 
 **How to read the proof.** The argument has one idea and four supporting facts. The idea: a shared signed-affine modulation of one exogenous process cannot change the *absolute* standardised skewness of the force, so if one protocol has zero skewness and another has non-zero skewness, no such shared representation exists. The four facts are: (i) an exact identity that turns cumulants of the bath force into cumulants of a single oscillator (Lemma 1); (ii) a symmetry that makes the reference protocol's skewness vanish exactly (Lemma 2); (iii) a first-order expansion of the ramp protocol's third cumulant in $1/N_B$ with a controlled remainder (Lemma 3); and (iv) a small-time computation showing that the first-order coefficient is strictly negative (Lemma 4). Lemma 5 makes sure the standardisation is legitimate, and Lemma 6 is the precise form of the idea.
 
@@ -265,7 +267,10 @@ This supplement states the main result and every lemma it uses, defines each sym
 
 | Symbol | Meaning |
 | :---------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| $\mathcal{D}$ | the model of Definition 1 (finite Duffing bath, reciprocal coupling) |
 | $t$, $T$ | time; the horizon is $[0, T]$ with $T = 2\pi$ |
+| $M$, $p_q$, $V$ | mass, momentum and potential of the system coordinate; $M$ denotes the mass only in (S1.1), and the location functional $M_t[q]$ everywhere else |
+| $H$, $H_{\mathrm{int}}$ | parent Hamiltonian (S1.1) and its coupling term, $H_{\mathrm{int}} = -N_B^{-1/2}\, q \sum_j x_j$ |
 | $q(t)$ | prescribed (clamped) trajectory of the system coordinate; a *protocol* |
 | $\mathcal{X}$ | class of admissible clamps (Definition 2) |
 | $q_{\mathrm{ref}}$, $q_{\mathrm{ramp}}$ | reference protocol and ramp protocol (Definition 2) |
@@ -293,10 +298,17 @@ This supplement states the main result and every lemma it uses, defines each sym
 | $\alpha_k$, $\eta_k$ | Taylor coefficients of $t^k$ in $x_0(t)$ and $y_1(t)$ |
 | $\Lambda$ | constant in the order-eight Taylor remainder of $c(t)$ |
 | $\Theta(t)$ | constant in the order-three remainder of the third cumulant in $\varepsilon$ |
+| $Q$, $c_Q$ | bound for a clamp, $|q| \leq Q$, and the energy constant $c_Q = \sqrt{2}\, Q \pi$ (Lemma 3) |
+| $R_N(t)$ | remainder in the first-order expansion (S1.11) |
+| $D_8(z_0)$ | bound on the eighth time derivative in the proof of Lemma 4 |
 | $\delta$, $N_0(t)$ | existential time window and bath-size threshold of Theorem 1 |
 | $\mathcal{H}$ | harmonic baths with coupling linear in bath and system coordinates (Definition 4) |
 | $\mathcal{E}_1$, $\mathcal{E}_2^{\pm}$, $\mathcal{E}_{\mathrm{univ}}$ | competitor classes (Definition 4) |
 | $M_t[q]$, $G_t[q]$, $\xi$ | deterministic location, signed scale, shared exogenous process |
+| $s_q(t)$ | sign assigned to protocol $q$ at time $t$ by the shared sign functional $S_t$ |
+| $U$, $\mathfrak{F}$ | exogenous random object and causal functional of $\mathcal{E}_{\mathrm{univ}}$ (Definition 4) |
+| $Y$, $B$, $C$, $\Psi$ | state, drift, force map and initial-state map of a deterministic causal environment (Definition 4) |
+| $p_0$ | initial momentum coordinate, $p_0 = b$; also written $\dot x_0(0)$ |
 | $S_t$ | shared causal sign functional (Definition 4) |
 | $D_q$ | degeneracy set $\{t : \operatorname{Var} F_q(t) = 0\}$ |
 | $C_0(t_a, t_b)$ | reservoir-limit covariance $\langle x_0(t_a)\, x_0(t_b) \rangle_{\mathrm{Gibbs}}$, (S1.13) |
@@ -335,18 +347,18 @@ q_{\mathrm{ref}}(t) \equiv 0, \qquad
 q_{\mathrm{ramp}}(t) = \begin{cases} s(t/\pi), & 0 \leq t \leq \pi, \\ 1, & \pi < t \leq 2\pi, \end{cases} \qquad s(u) = 10u^3 - 15u^4 + 6u^5 .
 \tag{S1.6}
 $$
-Only the restriction of $q_{\mathrm{ramp}}$ to $[0, \pi]$, where it is the polynomial $s(t/\pi)$, enters Theorem 1; the plateau is part of the protocol's definition and is used only in Proposition 1 and in the numerical illustration.
+Only the restriction of $q_{\mathrm{ramp}}$ to $[0, \pi]$, where it is the polynomial $s(t/\pi)$, enters Theorem 1; the plateau is part of the protocol's definition and enters only the statements on $[0, 2\pi]$ (Lemmas 3 and 5 and Proposition 1), not Theorem 1 or the numerical illustration, whose times all lie in $[0, \pi]$.
 
 **Definition 3 (centred and standardised force; degeneracy set).** For a protocol $q$ and a time $t$, $\mathring F_q(t) = F_q(t) - \mathbb{E} F_q(t)$. The degeneracy set is $D_q = \{ t : \operatorname{Var} F_q(t) = 0 \}$, and for $t \notin D_q$ the standardised force is $Z_q(t) = \mathring F_q(t) / \operatorname{sd} F_q(t)$.
 
 **Definition 4 (competitor classes).** Every class below is a single model shared by *all* protocols in $\mathcal{X}$: its objects may depend on the prescribed path up to the current time, $q_{[0,t]}$, but not on a protocol label, and no Gaussian, Markov, finite-memory or stationarity restriction is imposed.
 
 - $\mathcal{E}_1$ (additive exogenous): $F_q(t) = M_t[q] + \xi(t)$, with $M$ an arbitrary deterministic causal functional and $\xi$ one exogenous process whose law does not depend on $q$.
-- $\mathcal{E}_2^{\pm}$ (shared signed-affine exogenous): $F_q(t) = M_t[q] + G_t[q]\, \xi(t)$, with $M$ an arbitrary deterministic causal functional, $G$ an arbitrary deterministic causal functional with $G_t[q] \in \mathbb{R} \setminus \{0\}$ (a *signed causal scale*: sign changes are allowed, zero is not), and $\xi$ one exogenous process with one protocol-independent path law. Equivalently, under clamping and finite second moments, $\mathcal{E}_2^{\pm}$ membership holds exactly when (i) the degeneracy set $D_q = D$ is common to all $q$, and (ii) there is one shared deterministic causal sign functional $S_t : q_{[0,t]} \mapsto \{+1, -1\}$ such that, with $s_q(t) = S_t[q_{[0,t]}]$, the finite-dimensional laws of $s_q Z_q$ off $D$ are the same for every $q \in \mathcal{X}$. *Prefix consistency* is part of membership: if $q_{[0,t]} = q'_{[0,t]}$ then $s_q(t) = s_{q'}(t)$.
+- $\mathcal{E}_2^{\pm}$ (shared signed-affine exogenous): $F_q(t) = M_t[q] + G_t[q]\, \xi(t)$, with $M$ an arbitrary deterministic causal functional, $G$ an arbitrary deterministic causal functional with $G_t[q] \in \mathbb{R} \setminus \{0\}$ (a *signed causal scale*: sign changes are allowed, zero is not), and $\xi$ one exogenous process with one protocol-independent path law. Equivalently — under clamping, finite second moments and environment causality (the law of $F_q$ on $[0, t]$ depends on $q$ only through $q_{[0,t]}$), and at the level of finite-dimensional distributions — $\mathcal{E}_2^{\pm}$ membership holds exactly when (i) the degeneracy set $D_q = D$ is common to all $q$, and (ii) there is one shared deterministic causal sign functional $S_t : q_{[0,t]} \mapsto \{+1, -1\}$ such that, with $s_q(t) = S_t[q_{[0,t]}]$, the finite-dimensional laws of $s_q Z_q$ off $D$ are the same for every $q \in \mathcal{X}$. *Prefix consistency* is part of membership: if $q_{[0,t]} = q'_{[0,t]}$ then $s_q(t) = s_{q'}(t)$.
 - $\mathcal{E}_{\mathrm{univ}}$ (universal causal exogenous): $F_q(t) = \mathfrak{F}_t[q, U]$, with $U$ one exogenous random object of protocol-independent law and $\mathfrak{F}$ an arbitrary deterministic functional that is causal in $q$.
 
 The harmonic class $\mathcal{H}$ (harmonic baths coupled linearly in the bath and system coordinates, with counterterm and a free-force law independent of the system's initial state) sits at the bottom, and the ladder $\mathcal{H} \subset \mathcal{E}_1 \subsetneq \mathcal{E}_2^{\pm} \subsetneq \mathcal{E}_{\mathrm{univ}}$ holds, with both inclusions among the $\mathcal{E}$-classes strict (Supplement S3).
-Every classical, deterministic, causal environment whose state obeys $\dot Y = B(Y, q)$ with force $C(Y, q)$ and initial state $\Psi(q(0), U)$ (with the regularity that excludes blow-up on $[0, T]$) lies in $\mathcal{E}_{\mathrm{univ}}$ (Supplement S3); model $\mathcal{D}$ is of this type. The question is therefore whether it lies in $\mathcal{E}_2^{\pm}$.
+Every classical, deterministic, causal environment whose state obeys $\dot Y = B(Y, q)$ with force $C(Y, q)$ and initial state $\Psi(q(0), U)$ — with $B$ jointly continuous and locally Lipschitz in $Y$, locally uniformly in $q$, $C$ measurable, and no blow-up on $[0, T]$ — lies in $\mathcal{E}_{\mathrm{univ}}$ (Proposition S3.7); model $\mathcal{D}$ is of this type (Lemma 3(i)). The question is therefore whether it lies in $\mathcal{E}_2^{\pm}$.
 
 **Definition 5 (response objects).** Write $X^{\varepsilon}_q(t)$ for the position of one oscillator obeying (S1.2) from $z_0 = (a, b) \sim \rho$, and $x_0(t) = X^{0}_q(t)$ for the unforced trajectory. For the ramp protocol the first-order response $y_1 = \partial_\varepsilon X^\varepsilon\rvert_{\varepsilon=0}$ solves
 $$
@@ -369,7 +381,7 @@ Odd moments vanish by symmetry, and the momentum $b$ is standard normal and inde
 
 ## S1.3 Statements {#sec:S1-statements}
 
-**Theorem 1 (finite-bath escape from the shared signed-affine class).** Consider model $\mathcal{D}$ with bath size $N_B$, prepared in the Gibbs state at $\beta = 1$, together with the reference protocol $q_{\mathrm{ref}} \equiv 0$ and the ramp protocol $q_{\mathrm{ramp}}$, which equals $s(t/\pi)$ on $[0,\pi]$. There exists $\delta \in (0, 1]$ such that, for each fixed $t \in (0, \delta)$, there is a finite integer $N_0(t)$ with the following property: for every bath size $N_B \geq N_0(t)$, the interventional force laws of model $\mathcal{D}$ under the reference and ramp protocols admit no common representation in the class $\mathcal{E}_2^{\pm}$. Equivalently, the interventional force family of model $\mathcal{D}$ lies outside $\mathcal{E}_2^{\pm}$ for all finite $N_B \geq N_0(t)$. The witness is the standardised skewness at the single time $t$: $\gamma_1[F_{\mathrm{ref}}(t)] = 0$ for every $N_B$, whereas $\gamma_1[F_{\mathrm{ramp}}(t)] < 0$ for every $N_B \geq N_0(t)$, and both force variances are strictly positive. The numbers $\delta$ and $N_0(t)$ are existential: no value of either is claimed, and $N_0(t)$ is not claimed to be uniform in $t$.
+**Theorem 1 (finite-bath escape from the shared signed-affine class).** Consider model $\mathcal{D}$ with bath size $N_B$, prepared in the Gibbs state at $\beta = 1$, together with the reference protocol $q_{\mathrm{ref}} \equiv 0$ and the ramp protocol $q_{\mathrm{ramp}}$, which equals $s(t/\pi)$ on $[0,\pi]$. There exists $\delta \in (0, 1]$ such that, for each fixed $t \in (0, \delta)$, there is a finite integer $N_0(t)$ with the following property: for every bath size $N_B \geq N_0(t)$, the interventional force laws of model $\mathcal{D}$ under the reference and ramp protocols admit no common representation in the class $\mathcal{E}_2^{\pm}$. Consequently, the interventional force family of model $\mathcal{D}$ over $\mathcal{X}$ lies outside $\mathcal{E}_2^{\pm}$ for all finite $N_B \geq N_0(t)$. The witness is the standardised skewness at the single time $t$: $\gamma_1[F_{\mathrm{ref}}(t)] = 0$ for every $N_B$, whereas $\gamma_1[F_{\mathrm{ramp}}(t)] < 0$ for every $N_B \geq N_0(t)$, and both force variances are strictly positive. The numbers $\delta$ and $N_0(t)$ are existential: no value of either is claimed, and $N_0(t)$ is not claimed to be uniform in $t$.
 
 **Lemma 1 (exact cumulant identity).** Under any clamp $q$ and for every finite $N_B$, $F_q = \varepsilon \sum_{j} X_j$ with $X_1, \dots, X_{N_B}$ independent copies of the process $X^{\varepsilon}_q$. Consequently, for every order $n$ and every finite tuple of times,
 $$
@@ -379,11 +391,12 @@ $$
 
 **Lemma 2 (reference parity).** Under the reference protocol, $\kappa_3(F_{\mathrm{ref}}(t)) = 0$ exactly for every $t$ and every $N_B$, and $\operatorname{Var} F_{\mathrm{ref}}(t) = m_2 > 0$.
 
-**Lemma 3 (first-order third cumulant).** Let $q \in \mathcal{X}$ satisfy $|q| \leq Q$ on $[0, 2\pi]$ (the ramp protocol qualifies), and let $|\varepsilon| \leq 1$. Then (i) for each $z_0$ the clamped solution exists on $[0, 2\pi]$ and is $C^\infty$ in $(z_0, \varepsilon)$; (ii) $y_1$ solves (S1.7); (iii) every moment $\mathbb{E}\big[\prod_{i \leq 3} \partial_\varepsilon^{k_i} X^\varepsilon(t_i)\big]$ with $t_i \in [0, 2\pi]$ and $\sum_i k_i \leq 3$ is finite, uniformly in $|\varepsilon| \leq 1$, and differentiation in $\varepsilon$ commutes with $\mathbb{E}$ up to third order; (iv) $\kappa_3(X^\varepsilon(t))$ is an odd $C^3$ function of $\varepsilon$ with derivative $K(t)$ at $\varepsilon = 0$. Hence for each fixed $t \in [0, 2\pi]$ there is $\Theta(t) < \infty$ with
+**Lemma 3 (first-order third cumulant).** Let $q = q_{\mathrm{ramp}}$, so that $|q| \leq 1$ on $[0, 2\pi]$, and let $|\varepsilon| \leq 1$. Then (i) for each $z_0$ the clamped solution exists on $[0, 2\pi]$ and is $C^\infty$ in $(z_0, \varepsilon)$; (ii) $y_1$ solves (S1.7); (iii) every moment $\mathbb{E}\big[\prod_{i \leq 3} \partial_\varepsilon^{k_i} X^\varepsilon(t_i)\big]$ with $t_i \in [0, 2\pi]$ and $\sum_i k_i \leq 3$ is finite, uniformly in $|\varepsilon| \leq 1$, and differentiation in $\varepsilon$ commutes with $\mathbb{E}$ up to third order; (iv) $\kappa_3(X^\varepsilon(t))$ is an odd $C^3$ function of $\varepsilon$ with derivative $K(t)$ at $\varepsilon = 0$. Hence for each fixed $t \in [0, 2\pi]$ there is $\Theta(t) < \infty$ with
 $$
 \kappa_3\!\left(F_{\mathrm{ramp}}(t)\right) = \frac{K(t)}{N_B} + R_N(t), \qquad |R_N(t)| \leq \Theta(t)\, N_B^{-2} .
 \tag{S1.11}
 $$
+Parts (i) and (iii), and their proofs, hold verbatim for any clamp with $|q| \leq Q$ on $[0, 2\pi]$, with constants depending on $Q$ and on the bounds for the derivatives of $q$; parts (ii) and (iv) are statements about the ramp protocol's response $y_1$ and its coefficient $K(t)$.
 
 **Lemma 4 (small-time sign).** The Taylor coefficients of $c(t)$ satisfy $c_0 = c_1 = \dots = c_6 = 0$ and
 $$
@@ -394,7 +407,7 @@ Since $\operatorname{Var}(x_0^2) > 0$, $c_7 < 0$, and there exists $\delta \in (
 
 **Lemma 5 (positive variances).** For every $N_B$ and every $t \in [0, 2\pi]$, $\operatorname{Var} F_{\mathrm{ramp}}(t) = \operatorname{Var} X^\varepsilon(t)$ is finite and strictly positive.
 
-**Lemma 6 (an invariant of $\mathcal{E}_2^{\pm}$).** If a force family lies in $\mathcal{E}_2^{\pm}$, then at every time $t$ outside the common degeneracy set the absolute standardised skewness $|\gamma_1[F_q(t)]|$ takes the same value for every protocol $q$.
+**Lemma 6 (an invariant of $\mathcal{E}_2^{\pm}$).** If a force family lies in $\mathcal{E}_2^{\pm}$ and $\mathbb{E}\,|F_q(t)|^3 < \infty$ for one protocol (hence, by the shared representation, for every protocol), then at every time $t$ outside the common degeneracy set the absolute standardised skewness $|\gamma_1[F_q(t)]|$ takes the same value for every protocol $q$.
 
 **Proposition 1 (reservoir limit; $\mathcal{E}_1$-type, finite-dimensional).** (a) For each fixed $t \in (0, \delta)$, $|\gamma_1[F_{\mathrm{ramp}}(t)]| = O(N_B^{-1})$ and tends to zero as $N_B \to \infty$. (b) For the reference and ramp protocols, and for any separately fixed admissible bounded clamp for which the moment estimates of Lemma 3 hold, and for each finite tuple of times in $[0, 2\pi]$, the centred force $\mathring F_{q}$ converges in finite-dimensional distribution, as $N_B \to \infty$, to the centred Gaussian law with covariance
 $$
@@ -443,13 +456,13 @@ $\partial_\varepsilon \kappa_3(X^\varepsilon(t))\rvert_{\varepsilon=0} = 3\left(
 
 *Step 1 (pathwise smoothness).* For fixed $z_0$, $x_0$ solves a polynomial ODE and $y_1$ solves the linear ODE (S1.7) with polynomial forcing $s(t/\pi)$ on $[0, 1] \subset [0, \pi]$. Both are $C^\infty$, hence so is $g(t; z_0) = (x_0(t)^2 - m_2)\, y_1(t)$, and $c(t) = \mathbb{E}\, g(t; z_0)$.
 
-*Step 2 (a derivative bound on $[0, 1]$).* Energy conservation gives $x_0^2 \leq 2\sqrt{E_0}$ and $p_0^2 \leq 2E_0$. With $k(t) = 1 + 3x_0^2 \leq \bar k = 1 + 6\sqrt{E_0}$ and $|q_{\mathrm{ramp}}| \leq 1$, Grönwall gives $|y_1|, |\dot y_1| \leq e^{1 + \bar k}$ on $[0, 1]$. Every time derivative of order at most eight of $x_0, \dot x_0, y_1, \dot y_1$ is, by repeated use of the equations, a polynomial in $(x_0, p_0, y_1, \dot y_1)$ and in derivatives of $q_{\mathrm{ramp}}$, which are bounded on $[0, 1]$. So $\sup_{[0,1]} |\partial_t^8 g(\cdot\,; z_0)| \leq D(z_0) = P(E_0)\, e^{1 + \bar k}$ for a polynomial $P$.
+*Step 2 (a derivative bound on $[0, 1]$).* Energy conservation gives $x_0^2 \leq 2\sqrt{E_0}$ and $p_0^2 \leq 2E_0$. With $k(t) = 1 + 3x_0^2 \leq \bar k = 1 + 6\sqrt{E_0}$ and $|q_{\mathrm{ramp}}| \leq 1$, Grönwall gives $|y_1|, |\dot y_1| \leq e^{1 + \bar k}$ on $[0, 1]$. Every time derivative of order at most eight of $x_0, \dot x_0, y_1, \dot y_1$ is, by repeated use of the equations, a polynomial in $(x_0, p_0, y_1, \dot y_1)$ and in derivatives of $q_{\mathrm{ramp}}$, which are bounded on $[0, 1]$. So $\sup_{[0,1]} |\partial_t^8 g(\cdot\,; z_0)| \leq D_8(z_0) = P(E_0)\, e^{1 + \bar k}$ for a polynomial $P$.
 
-*Step 3 (integrability).* Because $-E_0 + 6\sqrt{E_0} \leq -E_0/2 + \max_{u \geq 0}\left(6u - u^2/2\right)$ and phase-space volume grows polynomially in $E_0$, $D$ is $\rho$-integrable; likewise $|\partial_t^k g(0; z_0)|$ is a polynomial in $z_0$ for $k \leq 7$.
+*Step 3 (integrability).* Because $-E_0 + 6\sqrt{E_0} \leq -E_0/2 + \max_{u \geq 0}\left(6u - u^2/2\right)$ and phase-space volume grows polynomially in $E_0$, $D_8$ is $\rho$-integrable; likewise $|\partial_t^k g(0; z_0)|$ is a polynomial in $z_0$ for $k \leq 7$.
 
-*Step 4 (Taylor first, expectation second).* For each $z_0$, $g(t) = \sum_{k=0}^{7} g^{(k)}(0)\, t^k/k! + r(t; z_0)$ with $|r| \leq D(z_0)\, t^8/8!$. Take expectations of this pointwise identity; every term is integrable, so no interchange of derivative and expectation is needed:
+*Step 4 (Taylor first, expectation second).* For each $z_0$, $g(t) = \sum_{k=0}^{7} g^{(k)}(0)\, t^k/k! + r(t; z_0)$ with $|r| \leq D_8(z_0)\, t^8/8!$. Take expectations of this pointwise identity; every term is integrable, so no interchange of derivative and expectation is needed:
 $$
-c(t) = \sum_{k=0}^{7} c_k\, t^k + R(t), \qquad |R(t)| \leq \Lambda\, t^8, \qquad c_k = \frac{\mathbb{E}[g^{(k)}(0)]}{k!}, \qquad \Lambda = \frac{\mathbb{E} D}{8!} < \infty .
+c(t) = \sum_{k=0}^{7} c_k\, t^k + R(t), \qquad |R(t)| \leq \Lambda\, t^8, \qquad c_k = \frac{\mathbb{E}[g^{(k)}(0)]}{k!}, \qquad \Lambda = \frac{\mathbb{E} D_8}{8!} < \infty .
 \tag{S1.14}
 $$
 
@@ -514,9 +527,9 @@ Hence no common $\mathcal{E}_2^{\pm}$ representation exists for $N_B \geq N_0(t)
 
 ### Proof of Proposition 1 {#sec:S1-proof-prop}
 
-The proof, which uses only Lemmas 1 and 3 and a central limit theorem, is given in Supplement S4. Part (a) reads, explicitly,
+The proof, which uses Lemmas 1–3, the window $\delta$ of Lemma 4 for the domain of part (a), and a standard multivariate central limit theorem, is given in Supplement S4. Part (a) reads, explicitly,
 $$
-\gamma_1[F_{\mathrm{ramp}}(t)] = \frac{K(t)}{m_2^{3/2}\, N_B} + O(N_B^{-2}) \longrightarrow 0 .
+\gamma_1[F_{\mathrm{ramp}}(t)] = \frac{K(t)}{m_2^{3/2}\, N_B} + o(N_B^{-1}) \longrightarrow 0 .
 \tag{S1.20}
 $$
 
@@ -564,7 +577,7 @@ This supplement proves the nested ladder of Section 3 and assigns each environme
 
 **Proposition S3.1 (a single protocol never discriminates).** Fix one protocol: a potential $V$, a drive $u$, deterministic initial data $(q_0, \dot q_0)$ and a horizon $[0, T]$ for $m\ddot q = -V'(q) + u(t) + F_{\mathrm{env}}(t)$, and suppose the equation has a unique solution for every admissible forcing path $f$, with a measurable solution map $q = \Phi(q_0, \dot q_0, f)$. Define the realised environment force $F_{\mathrm{env}} = m \ddot q + V'(q) - u$. Then the additive exogenous model with no memory and $\operatorname{Law}(\xi) = \operatorname{Law}(F_{\mathrm{env}})$ reproduces the reduced path law of that protocol exactly.
 
-*Proof.* In the true system $q = \Phi(q_0, \dot q_0, F_{\mathrm{env}})$ pathwise; in the model $q = \Phi(q_0, \dot q_0, \xi)$. Equal input laws give equal push-forward laws. $\square$ With random initial data the same construction requires $\xi$ to be jointly distributed with the initial data as $F_{\mathrm{env}}$ is; the conclusion is unchanged. Every discriminating statement must therefore compare one shared model across several protocols.
+*Proof.* In the true system $q = \Phi(q_0, \dot q_0, F_{\mathrm{env}})$ pathwise; in the model $q = \Phi(q_0, \dot q_0, \xi)$. Equal input laws give equal push-forward laws. $\square$ With random initial data, an exogenous $\xi$ independent of the initial data suffices whenever $F_{\mathrm{env}}$ is independent of them; in either case a single protocol never discriminates. Every discriminating statement must therefore compare one shared model across several protocols.
 
 **Lemma S3.2 (harmonic bath coupled through a function of $q$).** Let the bath be harmonic, $H_B = \sum_j \big[ p_j^2/2 + (\omega_j^2/2)\big(x_j - c_j A(q)/\omega_j^2\big)^2 \big]$, with $A$ smooth and $A(0) = 0$, prepared at $q(0) = 0$ from one fixed law, and let the force be $F = -\partial H_B / \partial q$. Then for every clamp $q \in \mathcal{X}$
 $$
@@ -582,7 +595,7 @@ $$
 
 **Proposition S3.3 ($\mathcal{H} \subset \mathcal{E}_1$).** Under clamping, every environment in $\mathcal{H}$ has $F_q(t) = \xi(t) - \int_0^t \gamma(t - s)\, \dot q(s)\, \mathrm{d}s$, with $\xi$ the free force; hence its force family lies in $\mathcal{E}_1$, with $M_t[q] = -\int_0^t \gamma(t-s)\, \dot q(s)\, \mathrm{d}s$.
 
-*Proof.* Lemma S3.2 with $A(q) = q$ (so $A' \equiv 1$). The counterterm and initial-slip terms are deterministic in $q$ or vanish at $q(0) = 0$. $\square$
+*Proof.* Diagonalising the positive-definite quadratic bath into normal modes puts the Hamiltonian in the form of Lemma S3.2 with $A(q) = q$ (so $A' \equiv 1$). The counterterm and initial-slip terms are deterministic in $q$ or vanish at $q(0) = 0$. $\square$
 
 **Proposition S3.4 (characterisation of $\mathcal{E}_1$).** Assume $\mathbb{E} F_q(t)^2 < \infty$. A family lies in $\mathcal{E}_1$ if and only if the finite-dimensional laws of the centred force $\mathring F_q$ are the same for all clamps (equivalently, equal to those of the reference protocol).
 
@@ -593,15 +606,15 @@ $$
 *Proof.* ($\Rightarrow$) For a clamped $q$, $F_q(t) = m_q(t) + g_q(t)\, \xi(t)$ with deterministic causal $m_q, g_q$ and $g_q(t) \neq 0$. Then $\operatorname{Var} F_q(t) = g_q(t)^2 \operatorname{Var}\xi(t)$, so $D_q = \{t : \operatorname{Var}\xi(t) = 0\}$ for every $q$, and off $D$, $Z_q(t) = \operatorname{sgn}(g_q(t))\, Z_\xi(t)$. Put $S_t[q_{[0,t]}] = \operatorname{sgn} G_t[q]$, a functional of the prefix because $G$ is causal; then $s_q Z_q = Z_\xi$ has a protocol-independent law.
 ($\Leftarrow$) Let $\mathcal{L}$ be the common law of $s_q Z_q$ off $D$; let $\xi$ have finite-dimensional laws $\mathcal{L}$ off $D$ and $\xi = 0$ on $D$. Put $M_t[q] = \mathbb{E} F_q(t)$, and $G_t[q] = S_t[q_{[0,t]}]\, \operatorname{sd} F_q(t)$ off $D$, $G_t[q] = 1$ on $D$, so that $G \neq 0$ everywhere; both are causal. Off $D$, $M + G\xi$ has the finite-dimensional laws of $\mathbb{E} F_q + \operatorname{sd} F_q\, s_q (s_q Z_q) = F_q$ because $s_q^2 = 1$; on $D$ both sides equal $\mathbb{E} F_q$. $\square$
 
-The statement concerns finite-dimensional distributions; it is upgraded to path laws only when the force processes have continuous (or càdlàg) versions. Prefix consistency is essential: a family can satisfy the reflection condition at every finite tuple of times separately and still fail (ii), because the per-tuple sign choices need not be causal. A finite family of protocols can prove escape but can never prove membership.
+The statement concerns finite-dimensional distributions; it is upgraded to path laws when the force processes have continuous (or càdlàg) versions. Prefix consistency is part of membership, not an afterthought: condition (ii) requires one causal sign functional serving the whole family. Membership is a statement about all of $\mathcal{X}$; a finite family of protocols is used here only to exhibit escape, never to assert membership.
 
 **Proposition S3.6 (strict ladder).** $\mathcal{E}_1 \subsetneq \mathcal{E}_2^{\pm} \subsetneq \mathcal{E}_{\mathrm{univ}}$.
 
 *Proof.* Inclusions: take $G \equiv 1$; and take $U = \xi$, $\mathfrak{F}_t[q, U] = M_t[q] + G_t[q]\, U(t)$. Strictness, with $\xi(t)$ independent standard normal on a time grid: (a) $F_q(t) = (1 + q(t)^2)\, \xi(t)$ lies in $\mathcal{E}_2^{\pm}$ but not in $\mathcal{E}_1$, because $\operatorname{Var} F_q(t) = (1 + q(t)^2)^2$ depends on $q$ while Proposition S3.4 requires a protocol-invariant centred law. (b) $F_q(t) = \xi(t) + q(t)\left(\xi(t)^2 - 1\right)$ lies in $\mathcal{E}_{\mathrm{univ}}$; its variance is $1 + 2q^2$ and its third central moment is $6q + 8q^3$ with $q = q(t)$, so $|\gamma_1|$ vanishes when $q(t) = 0$ and not otherwise. Since $|\gamma_1|$ is invariant under signed-affine maps, the family is not in $\mathcal{E}_2^{\pm}$. $\square$
 
-**Proposition S3.7 (universal upper bound).** Let the environment state $Y \in \mathbb{R}^d$ obey $\dot Y = B(Y, q(t))$ with $B$ locally Lipschitz in $Y$ and continuous in $q$, with no blow-up on $[0, T]$ for admissible clamps; let the force be $F = C(Y, q)$ with $C$ measurable, and the initial state $Y(0) = \Psi(q(0), U)$ for one fixed map $\Psi$ and one exogenous random object $U$. Then $F_q(t) = C(\mathcal{Y}_t[q, U], q(t))$ with $\mathcal{Y}$ the solution flow, the pair $(\operatorname{Law} U, \mathfrak{F})$ is shared across clamps, and $\mathfrak{F}$ is causal in $q$. Hence every such environment lies in $\mathcal{E}_{\mathrm{univ}}$.
+**Proposition S3.7 (universal upper bound).** Let the environment state $Y \in \mathbb{R}^d$ obey $\dot Y = B(Y, q(t))$ with $B$ jointly continuous and locally Lipschitz in $Y$, locally uniformly in $q$, and with no blow-up on $[0, T]$ for admissible clamps; let the force be $F = C(Y, q)$ with $C$ measurable, and the initial state $Y(0) = \Psi(q(0), U)$ for one fixed map $\Psi$ and one exogenous random object $U$. Then $F_q(t) = C(\mathcal{Y}_t[q, U], q(t))$ with $\mathcal{Y}$ the solution flow, the pair $(\operatorname{Law} U, \mathfrak{F})$ is shared across clamps, and $\mathfrak{F}$ is causal in $q$. Hence every such environment lies in $\mathcal{E}_{\mathrm{univ}}$.
 
-*Proof.* Existence and uniqueness follow from the Picard–Lindelöf theorem and the no-blow-up hypothesis; two clamps that agree on $[0, t]$ give the same solution on $[0, t]$ by uniqueness, so $\mathcal{Y}_t$ depends only on $q_{[0,t]}$; continuous dependence on initial data and measurability of $\Psi$ give measurability in $U$; and $B$, $C$, $\Psi$, $\operatorname{Law} U$ belong to the environment, not to the protocol. $\square$ Reciprocal, energy-absorbing back-reaction is included, and model $\mathcal{D}$ is of this type. A continuous-time statement for general stochastic environments is not claimed, and quantum environments are out of scope.
+*Proof.* Existence and uniqueness follow from the Picard–Lindelöf theorem and the no-blow-up hypothesis; two clamps that agree on $[0, t]$ give the same solution on $[0, t]$ by uniqueness, so $\mathcal{Y}_t$ depends only on $q_{[0,t]}$; continuous dependence on initial data and measurability of $\Psi$ give measurability in $U$; and $B$, $C$, $\Psi$, $\operatorname{Law} U$ belong to the environment, not to the protocol. $\square$ Reciprocal, energy-absorbing back-reaction is included, and model $\mathcal{D}$ is of this type (Lemma 3(i) of Supplement S1). A continuous-time statement for general stochastic environments is not claimed, and quantum environments are out of scope.
 
 Together, Propositions S3.3, S3.6 and S3.7 give the ladder of Section 3,
 $$
@@ -611,35 +624,37 @@ $$
 
 ## S3.2 Mechanism map {#sec:S3-map}
 
-Each row assigns a mechanism to the smallest class proved to contain it, or records a proved escape.
+Each row assigns a mechanism to the smallest class proved to contain it, or records a proved escape or a proved limit statement.
 
 | mechanism | class assignment | basis |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------ | :-------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
 | harmonic bath, coupling linear in bath and system coordinates | $\mathcal{H}$, hence $\mathcal{E}_1$ | Proposition S3.3 |
 | additive exogenous forcing with deterministic causal memory | $\mathcal{E}_1$ | definition of $\mathcal{E}_1$ |
-| deterministic, protocol-dependent multiplicative modulation (magnitude and sign) of one shared noise | $\mathcal{E}_2^{\pm}$; does not escape it | definition of $\mathcal{E}_2^{\pm}$; Proposition S3.8 |
+| deterministic, protocol-dependent, non-vanishing multiplicative modulation (magnitude and sign) of one shared noise | $\mathcal{E}_2^{\pm}$; does not escape it | definition of $\mathcal{E}_2^{\pm}$; Proposition S3.8 |
 | finite reciprocal Duffing bath, model $\mathcal{D}$ | escapes $\mathcal{E}_2^{\pm}$ for every sufficiently large finite $N_B$ | Theorem 1 |
-| model $\mathcal{D}$ in the reservoir limit, fixed protocols | centred laws converge to one common Gaussian law | Proposition 1, Supplement S4 |
-| any deterministic causal environment of the parent type, model $\mathcal{D}$ included | $\mathcal{E}_{\mathrm{univ}}$ | Proposition S3.7 |
+| model $\mathcal{D}$ in the reservoir limit, fixed protocols | centred laws converge to one common Gaussian law ($\mathcal{E}_1$-type, finite-dimensional; not $\mathcal{H}$) | Proposition 1, Supplement S4 |
+| any deterministic causal environment of the type of Proposition S3.7 (finite-dimensional state, well posed on $[0, T]$), model $\mathcal{D}$ included | $\mathcal{E}_{\mathrm{univ}}$ | Proposition S3.7 |
 
-**Proposition S3.8 (multiplicative modulation does not escape).** The harmonic bath coupled through $A(q) = q + q^3/3$ has, by Lemma S3.2, $F_q(t) = M_t[q] + G_t[q]\, \xi(t)$ with $G_t[q] = A'(q(t)) = 1 + q(t)^2 \geq 1$ and the deterministic causal memory $M_t[q] = -A'(q(t)) \int_0^t \gamma(t-s)\, A'(q(s))\, \dot q(s)\, \mathrm{d}s$. Its force family therefore lies in $\mathcal{E}_2^{\pm}$. With a thermal preparation, $\operatorname{Var}\xi(t) > 0$ is constant in time, so the degeneracy set is empty for every protocol; and the family does not lie in $\mathcal{E}_1$ once it contains a protocol with $q \not\equiv 0$, because $\operatorname{Var} F_q(t) = (1 + q(t)^2)^2 \operatorname{Var}\xi(t)$ then depends on the protocol. $\square$
+**Proposition S3.8 (non-vanishing multiplicative modulation does not escape).** Prepare the bath of Lemma S3.2 thermally at $q(0) = 0$ at inverse temperature $\beta = 1$, so that $x_j(0) \sim \mathcal{N}(0, 1/\omega_j^2)$ and $p_j(0) \sim \mathcal{N}(0, 1)$ independently, with some $c_j \neq 0$, and couple it through $A(q) = q + q^3/3$. By Lemma S3.2, $F_q(t) = M_t[q] + G_t[q]\, \xi(t)$ with $G_t[q] = A'(q(t)) = 1 + q(t)^2 \geq 1$ and the deterministic causal memory $M_t[q] = -A'(q(t)) \int_0^t \gamma(t-s)\, A'(q(s))\, \dot q(s)\, \mathrm{d}s$. The force family over $\mathcal{X}$ therefore lies in $\mathcal{E}_2^{\pm}$. The preparation gives $\operatorname{Var}\xi(t) = \sum_j c_j^2/\omega_j^2 > 0$, constant in time, so the degeneracy set is empty for every protocol; and the family is not in $\mathcal{E}_1$, since for any clamp with $q(t) \neq 0$ the variance $(1 + q(t)^2)^2 \operatorname{Var}\xi(t)$ differs at $t$ from the reference clamp's. $\square$
 
-History-dependent noise amplitude, including sign changes of the amplitude, is therefore ordinary multiplicative response and is not the effect of Theorem 1. What model $\mathcal{D}$ adds is a protocol-dependent change of the *standardised shape* of the force, which no shared signed-affine modulation can produce.
+The non-vanishing of the factor is essential, not decorative: a modulation whose factor vanishes at some time for some protocols changes the degeneracy set with the protocol, so the family fails condition (i) of Proposition S3.5 and is outside $\mathcal{E}_2^{\pm}$ — through a degeneracy artefact, not through a change of standardised shape.
+
+History-dependent noise amplitude from a non-vanishing deterministic causal factor — sign changes included, since the class admits a signed scale by definition — is ordinary multiplicative response and is not the effect of Theorem 1. What model $\mathcal{D}$ adds is a protocol-dependent change of the *standardised shape* of the force, which no shared signed-affine modulation can produce.
 
 # S4. Reservoir-limit proof {#sec:S4}
 
-This supplement proves Proposition 1 (stated in Supplement S1 and Section 5). It uses only Lemma 1 and the moment bounds of Lemma 3 (Supplement S1), and a standard central limit theorem.
+This supplement proves Proposition 1 (stated in Supplement S1 and Section 5). It uses Lemmas 1–3 of Supplement S1 (the exact cumulant identity, reference parity and the first-order expansion with its moment bounds), the window $\delta$ of Lemma 4 for the domain of part (a), and a standard multivariate central limit theorem.
 
 **Proposition 1 (restated).** (a) For each fixed $t \in (0, \delta)$, $|\gamma_1[F_{\mathrm{ramp}}(t)]| = O(N_B^{-1})$ and tends to zero as $N_B \to \infty$. (b) For the reference and ramp protocols, and for any separately fixed admissible bounded clamp for which the moment estimates of Lemma 3 hold, and for each finite tuple of times in $[0, 2\pi]$, the centred force converges in finite-dimensional distribution, as $N_B \to \infty$, to the centred Gaussian law with covariance $C_0(t_a, t_b) = \langle x_0(t_a)\, x_0(t_b) \rangle_{\mathrm{Gibbs}}$, the same for every such protocol.
 
 ## S4.1 Proof of part (a): the rate {#sec:S4-a}
 
-By Lemma 3, $\kappa_3(F_{\mathrm{ramp}}(t)) = K(t)/N_B + R_N(t)$ with $|R_N(t)| \leq \Theta(t) N_B^{-2}$. By Lemma 1 with $n = 2$, $\operatorname{Var} F_{\mathrm{ramp}}(t) = \operatorname{Var} X^\varepsilon(t)$ with $\varepsilon = N_B^{-1/2}$. The variance is built from expectations of products of at most two factors $X^\varepsilon$, so Lemma 3(iii) makes it twice continuously differentiable in $\varepsilon$; the reflection $(x, p, \varepsilon) \mapsto (-x, -p, -\varepsilon)$ makes it even in $\varepsilon$. Hence $\operatorname{Var} X^\varepsilon(t) = m_2 + O(\varepsilon^2) = m_2 + O(N_B^{-1})$, with $m_2 = \operatorname{Var} x_0(t) > 0$, and
+By Lemma 3, $\kappa_3(F_{\mathrm{ramp}}(t)) = K(t)/N_B + R_N(t)$ with $|R_N(t)| \leq \Theta(t) N_B^{-2}$, and for $t \in (0, \delta)$ Lemma 4 gives $K(t) < 0$. By Lemma 1 with $n = 2$, $\operatorname{Var} F_{\mathrm{ramp}}(t) = \operatorname{Var} X^\varepsilon(t)$ with $\varepsilon = N_B^{-1/2}$; the variance is built from expectations of products of at most two factors $X^\varepsilon$, so by Lemma 3(iii) and dominated convergence it is continuous in $\varepsilon$ and tends to $\operatorname{Var} x_0(t) = m_2 > 0$ (Lemma 2). Hence
 $$
-\gamma_1[F_{\mathrm{ramp}}(t)] = \frac{\kappa_3(F_{\mathrm{ramp}}(t))}{\operatorname{Var}(F_{\mathrm{ramp}}(t))^{3/2}} = \frac{K(t)}{m_2^{3/2}\, N_B} + O(N_B^{-2}) \longrightarrow 0 .
+\gamma_1[F_{\mathrm{ramp}}(t)] = \frac{\kappa_3(F_{\mathrm{ramp}}(t))}{\operatorname{Var}(F_{\mathrm{ramp}}(t))^{3/2}} = \frac{K(t)}{m_2^{3/2}\, N_B} + o(N_B^{-1}) \longrightarrow 0 ,
 \tag{S4.1}
 $$
-In particular $|\gamma_1[F_{\mathrm{ramp}}(t)]| = O(N_B^{-1})$. $\square$
+and in particular $|\gamma_1[F_{\mathrm{ramp}}(t)]| = O(N_B^{-1})$. $\square$
 
 ## S4.2 Proof of part (b): the common Gaussian limit {#sec:S4-b}
 
@@ -662,7 +677,7 @@ which is Lyapunov's condition and implies Lindeberg's.
 
 ## S4.3 The mean {#sec:S4-mean}
 
-The mean is not part of the centred limit. By Lemma 1, $\mathbb{E} F_q(t) = \sqrt{N_B}\, \mathbb{E} X^\varepsilon(t)$. The reflection symmetry makes $\mathbb{E} X^\varepsilon$ odd in $\varepsilon$, and Lemma 3(iii) gives $\mathbb{E} X^\varepsilon(t) = \varepsilon\, \mathbb{E}\, y_1(t) + O(\varepsilon^3)$, so $\mathbb{E} F_q(t) = \mathbb{E}\, y_1(t) + O(N_B^{-1})$. The leading term is the equilibrium linear response of the bath to the clamp [CITATION NEEDED: classical fluctuation–dissipation theorem]. It is deterministic and causal, and is absorbed by the location functional $M$ of any shared model.
+The mean is not part of the centred limit. For a clamp $q$ satisfying the moment estimates of Lemma 3, write $y_{1,q} = \partial_\varepsilon X^\varepsilon_q\rvert_{\varepsilon=0}$, the first-order response to that clamp (for the ramp protocol this is the $y_1$ of Supplement S1). By Lemma 1, $\mathbb{E} F_q(t) = \sqrt{N_B}\, \mathbb{E} X^\varepsilon_q(t)$, and by Lemma 3(iii) and dominated convergence this tends to $\mathbb{E}\, y_{1,q}(t)$ as $N_B \to \infty$. The limit is the bath's equilibrium linear response to the clamp [CITATION NEEDED: classical fluctuation–dissipation theorem]. It is deterministic and causal, and is absorbed by the location functional $M$ of any shared model.
 
 ## S4.4 Scope {#sec:S4-scope}
 
@@ -678,15 +693,15 @@ By the exact single-oscillator reduction (Lemma 1), every bath size requires onl
 
 ## S5.2 Controls {#sec:S5-controls}
 
-**Gibbs marginal.** High-precision quadrature of $\rho(x) \propto e^{-x^2/2 - x^4/4}$ gives $m_2 = 0.467919916974$, $m_4 = 0.532080083026$ and $\operatorname{Var}(x_0^2) = m_4 - m_2^2 = 0.313131034326$, so that $c_7 = -3.60677\times 10^{-4}$. The variance lies inside the certified enclosure $0.3131310343256930878\ldots$ recorded with the proof. On the numerical grid, $m_2 + m_4 - 1 = 6.7\times 10^{-16}$, and an independent one-dimensional quadrature ($4000$ nodes) gives $m_2 = 0.4679199170$ and $m_4 = 0.5320800830$.
+**Gibbs marginal.** High-precision quadrature of $\rho(x) \propto e^{-x^2/2 - x^4/4}$ gives $m_2 = 0.467919916974$, $m_4 = 0.532080083026$ and $\operatorname{Var}(x_0^2) = m_4 - m_2^2 = 0.313131034326$, so that $c_7 = -3.60677\times 10^{-4}$. The variance lies inside the certified enclosure $0.3131310343256930878 \pm 4\times 10^{-21}$ recorded with the proof. On the numerical grid, $m_2 + m_4 - 1 = 6.7\times 10^{-16}$, and an independent one-dimensional quadrature ($4000$ nodes) gives $m_2 = 0.4679199170$ and $m_4 = 0.5320800830$.
 
 **Reference stationarity and sign reversal.** The reference-protocol variance stays at its Gibbs value within $1.2\times 10^{-8}$ over the sampled times (Table S5.3), and its mean and third cumulant stay at round-off level. Reversing the sign of the coupling reverses the single-oscillator third cumulant to within $3.3\times 10^{-11}$ in relative terms (Table S5.4). The stationarity and moment controls are independent of the witness; the sign-reversal check is a symmetry control of the implementation only.
 
 ## S5.3 Convergence {#sec:S5-convergence}
 
-The computation was run on a ladder of node counts $\{ 120, 240, 480 \}$ and steps $\{ 1.0\times 10^{-3}, 5.0\times 10^{-4}, 2.5\times 10^{-4} \}$, and the results archived with the record are reproduced in Table S5.1 without recomputation. In every archived cell, $\gamma_1$ at $t_\star$ is identical to the printed precision for all bath sizes (seven significant figures in $7$ cells, five in $8$ cells), the reference-protocol variance drift stays at $1.2\times 10^{-8}$ and the Gibbs identity holds to round-off. The finest cell ($480$ nodes, step $2.5\times 10^{-4}$) was started but its output is not in the archive, and it is not reported. Convergence shows that the implemented computation is stable; its correctness rests on the controls above and on the cross-check of Supplement S6.
+The computation was run on a ladder of node counts $\{ 120, 240, 480 \}$ and steps $\{ 1.0\times 10^{-3}, 5.0\times 10^{-4}, 2.5\times 10^{-4} \}$, and the results archived with the record are reproduced in Table S5.1 without recomputation. In every archived cell, $\gamma_1$ at $t_\star$ is identical to the printed precision for all bath sizes (to $7$ significant figures in $7$ of the $8$ archived cells and to $5$ in the remaining $1$), the reference-protocol variance drift stays at $1.2\times 10^{-8}$ and the Gibbs identity holds to round-off. The finest cell ($480$ nodes, step $2.5\times 10^{-4}$) was started but its output is not in the archive, and it is not reported. Convergence shows that the implemented computation is stable; its correctness rests on the exact and independent controls of Section S5.2. Supplement S6 reports a reproducibility cross-check.
 
-Table S5.1: Archived resolution ladder at $t_\star = 0.5$, extracted from the record's logs: nodes per dimension, RK4 step, $\gamma_1(t_\star)$, reference-protocol variance drift and Gibbs identity residual. $^{\ddagger}$ Five significant figures (the seven-figure log has no output for this cell); "not in log" marks a cell whose run is not archived.
+Table S5.1: Archived resolution ladder at $t_\star = 0.5$, extracted from the record's logs: nodes per dimension, RK4 step, $\gamma_1(t_\star)$, reference-protocol variance drift and Gibbs identity residual. $^{\ddagger}$ $5$ significant figures (the $7$-figure log has no output for this cell); "not in log" marks a cell whose run is not archived.
 
 | nodes | step | $\gamma_1$, $N_B=4$ | $\gamma_1$, $N_B=128$ | ref. drift | Gibbs res. |
 | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -702,7 +717,7 @@ Table S5.1: Archived resolution ladder at $t_\star = 0.5$, extracted from the re
 
 ## S5.4 Tables {#sec:S5-tables}
 
-All entries below are generated from the authoritative numerical output at the reference resolution, except Table S5.6, which also uses the independent small-time computation of Supplement S2.
+All entries below are generated from the authoritative numerical output at the reference resolution, except Table S5.6, which also uses the separately written small-time computation of Supplement S2.
 
 Table S5.2: Ramp protocol at $t_\star = 0.5$: single-oscillator and force cumulants.
 
@@ -741,7 +756,7 @@ Table S5.5: All fixed times. The relative spread is $(\max - \min)/|\mathrm{mean
 | $0.75$ | $-7.66741\times 10^{-5}$ | $-2.39607\times 10^{-6}$ | $-3.0669660\times 10^{-4}$ | $7.1\times 10^{-9}$ |
 | $1.0$ | $-4.64191\times 10^{-4}$ | $-1.45060\times 10^{-5}$ | $-0.0018567633$ | $1.4\times 10^{-7}$ |
 
-Table S5.6: Leading-order prediction $K(t)/m_2^{3/2}$ (independent small-time code, Supplement S2) against $N_B\gamma_1$ at the largest bath size.
+Table S5.6: Consistency note, not additional evidence: the fixed-$t$ limit $K(t)/m_2^{3/2}$ of $N_B\gamma_1$ (first-order expansion, Lemma 3, valid at every fixed $t \in [0, 2\pi]$; $K(t)$ from the separately written small-time code of Supplement S2) against $N_B\gamma_1$ at the largest bath size.
 
 | $t$ | $N_B\gamma_1$ at $N_B=128$ | $K(t)/m_2^{3/2}$ (independent) | rel. difference |
 | ---: | ---: | ---: | ---: |
@@ -752,9 +767,9 @@ Table S5.6: Leading-order prediction $K(t)/m_2^{3/2}$ (independent small-time co
 
 ## S6.1 Second numerical code path {#sec:S6-second}
 
-As a manuscript-stage cross-check of the frozen result, the finite-$N_B$ values of Section 6 were recomputed by a separately written implementation that shares only the model definition with the original computation. It uses Gauss–Legendre quadrature in position combined with Gauss–Hermite quadrature in momentum, and an adaptive eighth-order Dormand–Prince integrator, in place of a tensor Gauss–Legendre grid with a fixed-step fourth-order Runge–Kutta integrator. This cross-check is a reproducibility artifact. It is not an additional verification of the theorem, not an external replication, and it does not change the evidence grade of the illustration.
+As a reproducibility cross-check, the finite-$N_B$ values of Section 6 were recomputed after the fact by a separately written implementation that shares the model definition and the position domain $[-6, 6]$ with the original computation. It uses Gauss–Legendre quadrature in position combined with Gauss–Hermite quadrature in momentum, and an adaptive eighth-order Dormand–Prince integrator, in place of a tensor Gauss–Legendre grid with a fixed-step fourth-order Runge–Kutta integrator. This cross-check is a reproducibility artifact. It is not an additional verification of the theorem or of the authoritative computation, not an external replication, and it does not change the evidence grade of the illustration.
 
-The two computations agree in $\gamma_1$ to within $1.4\times 10^{-7}$ in relative terms at $t_\star = 0.5$ and $5.3\times 10^{-8}$ at $t = 1.0$, with the same sign, at every bath size (Table S6.1); the reference-protocol variances agree to $2.5\times 10^{-8}$. Like the original, the second implementation resolves the finite-$N_B$ correction at $t = 1.0$ (a drift of $N_B\gamma_1$ of $1.37\times 10^{-7}$ between the smallest and largest bath sizes) and none at $t_\star$.
+The two computations agree in $\gamma_1$ to within $1.4\times 10^{-7}$ in relative terms at $t_\star = 0.5$ and $5.3\times 10^{-8}$ at $t = 1.0$, with the same sign, at every bath size (Table S6.1); the reference-protocol variances agree to $2.5\times 10^{-8}$.
 
 Table S6.1: Standardised skewness of the ramp-protocol force from the authoritative output, and the relative difference of the second implementation from it.
 
@@ -769,8 +784,8 @@ Table S6.1: Standardised skewness of the ramp-protocol force from the authoritat
 
 ## S6.2 Reproducibility {#sec:S6-repro}
 
-The authoritative numerical output was regenerated by re-running, unchanged and in a separate directory, the script that produced it. All $221$ numerical entries were recovered with identical structure: the $208$ entries above round-off level agree to $3.7\times 10^{-9}$ in relative terms, and the remaining entries, which are at round-off level, to $2.8\times 10^{-17}$ in absolute terms. The agreement is not bitwise, as expected across numerical-library versions.
+The authoritative numerical output was regenerated by re-running, unchanged and in a separate directory, the archived script whose log records writing that output and whose output structure matches it exactly. All $221$ numerical entries were recovered with identical structure: the $208$ entries above round-off level agree to $3.7\times 10^{-9}$ in relative terms, and the remaining entries, which are at round-off level, to $2.8\times 10^{-17}$ in absolute terms. The agreement is not bitwise, as expected across numerical-library versions.
 
-This manuscript is compiled, not typed. A single build command regenerates every number, figure and table from the machine-readable outputs and runs the checks. A build manifest traces each definition, lemma, theorem and load-bearing equation to the proof record and each printed value to its origin, and the build fails if a placeholder is unresolved, a scientific number appears in the source text, a value lacks provenance, or a stated scope restriction is violated. The full verification history of the numerical illustration, including superseded computations, is preserved in the repository's audit trail and is not repeated here.
+This manuscript is compiled, not typed. A single build command regenerates every number, figure and table from the machine-readable outputs and runs the checks. A build manifest traces each definition, lemma, theorem and load-bearing equation to the proof record and each printed value to its origin, and the build runs automated checks for unresolved placeholders, numeric literals in the source text, missing provenance, internal vocabulary, the theorem's quantifier wording and a list of scope phrasings. The full verification history of the numerical illustration is preserved in the repository's audit trail and is not repeated here.
 
 [AI-USE DISCLOSURE — research: proof development, code, numerical verification]

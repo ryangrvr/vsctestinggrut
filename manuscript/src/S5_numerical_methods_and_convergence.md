@@ -8,23 +8,23 @@ By the exact single-oscillator reduction (Lemma 1), every bath size requires onl
 <!-- M:num.controls -->
 ## S5.2 Controls {#sec:S5-controls}
 
-**Gibbs marginal.** High-precision quadrature of $\rho(x) \propto e^{-x^2/2 - x^4/4}$ gives $m_2 = {{const.m2}}$, $m_4 = {{const.m4}}$ and $\operatorname{Var}(x_0^2) = m_4 - m_2^2 = {{const.var_x0sq}}$, so that $c_7 = {{const.C7}}$. The variance lies inside the certified enclosure ${{const.var_cert_mid}}\ldots$ recorded with the proof. On the numerical grid, $m_2 + m_4 - 1 = {{num.gibbs_residual}}$, and an independent one-dimensional quadrature (${{num.gl_1d}}$ nodes) gives $m_2 = {{num.ind1d_m2}}$ and $m_4 = {{num.ind1d_m4}}$.
+**Gibbs marginal.** High-precision quadrature of $\rho(x) \propto e^{-x^2/2 - x^4/4}$ gives $m_2 = {{const.m2}}$, $m_4 = {{const.m4}}$ and $\operatorname{Var}(x_0^2) = m_4 - m_2^2 = {{const.var_x0sq}}$, so that $c_7 = {{const.C7}}$. The variance lies inside the certified enclosure ${{const.var_cert_mid}} \pm {{const.var_cert_rad}}$ recorded with the proof. On the numerical grid, $m_2 + m_4 - 1 = {{num.gibbs_residual}}$, and an independent one-dimensional quadrature (${{num.gl_1d}}$ nodes) gives $m_2 = {{num.ind1d_m2}}$ and $m_4 = {{num.ind1d_m4}}$.
 
 **Reference stationarity and sign reversal.** The reference-protocol variance stays at its Gibbs value within ${{num.ref_var_drift}}$ over the sampled times (Table S5.3), and its mean and third cumulant stay at round-off level. Reversing the sign of the coupling reverses the single-oscillator third cumulant to within ${{num.odd_ratio_dev}}$ in relative terms (Table S5.4). The stationarity and moment controls are independent of the witness; the sign-reversal check is a symmetry control of the implementation only.
 
 <!-- M:num.convergence -->
 ## S5.3 Convergence {#sec:S5-convergence}
 
-The computation was run on a ladder of node counts $\{ {{conv.nx_list}} \}$ and steps $\{ {{conv.dt_list}} \}$, and the results archived with the record are reproduced in Table S5.1 without recomputation. In every archived cell, $\gamma_1$ at $t_\star$ is identical to the printed precision for all bath sizes (seven significant figures in ${{conv.cells_sevenfig}}$ cells, five in ${{conv.cells_fivefig}}$ cells), the reference-protocol variance drift stays at ${{conv.ref_drift_max}}$ and the Gibbs identity holds to round-off. The finest cell (${{conv.missing_nx}}$ nodes, step ${{conv.missing_dt}}$) was started but its output is not in the archive, and it is not reported. Convergence shows that the implemented computation is stable; its correctness rests on the controls above and on the cross-check of Supplement S6.
+The computation was run on a ladder of node counts $\{ {{conv.nx_list}} \}$ and steps $\{ {{conv.dt_list}} \}$, and the results archived with the record are reproduced in Table S5.1 without recomputation. In every archived cell, $\gamma_1$ at $t_\star$ is identical to the printed precision for all bath sizes (to ${{conv.sigfigs_auth}}$ significant figures in ${{conv.cells_sevenfig}}$ of the ${{conv.cells_archived}}$ archived cells and to ${{conv.sigfigs_five}}$ in the remaining ${{conv.cells_fivefig_only}}$), the reference-protocol variance drift stays at ${{conv.ref_drift_max}}$ and the Gibbs identity holds to round-off. The finest cell (${{conv.missing_nx}}$ nodes, step ${{conv.missing_dt}}$) was started but its output is not in the archive, and it is not reported. Convergence shows that the implemented computation is stable; its correctness rests on the exact and independent controls of Section S5.2. Supplement S6 reports a reproducibility cross-check.
 
-Table S5.1: Archived resolution ladder at $t_\star = 0.5$, extracted from the record's logs: nodes per dimension, RK4 step, $\gamma_1(t_\star)$, reference-protocol variance drift and Gibbs identity residual. $^{\ddagger}$ Five significant figures (the seven-figure log has no output for this cell); "not in log" marks a cell whose run is not archived.
+Table S5.1: Archived resolution ladder at $t_\star = 0.5$, extracted from the record's logs: nodes per dimension, RK4 step, $\gamma_1(t_\star)$, reference-protocol variance drift and Gibbs identity residual. $^{\ddagger}$ ${{conv.sigfigs_five}}$ significant figures (the ${{conv.sigfigs_auth}}$-figure log has no output for this cell); "not in log" marks a cell whose run is not archived.
 
 {{table:s5_convergence}}
 
 <!-- M:num.tables -->
 ## S5.4 Tables {#sec:S5-tables}
 
-All entries below are generated from the authoritative numerical output at the reference resolution, except Table S5.6, which also uses the independent small-time computation of Supplement S2.
+All entries below are generated from the authoritative numerical output at the reference resolution, except Table S5.6, which also uses the separately written small-time computation of Supplement S2.
 
 Table S5.2: Ramp protocol at $t_\star = 0.5$: single-oscillator and force cumulants.
 
@@ -42,6 +42,6 @@ Table S5.5: All fixed times. The relative spread is $(\max - \min)/|\mathrm{mean
 
 {{table:s5_diag}}
 
-Table S5.6: Leading-order prediction $K(t)/m_2^{3/2}$ (independent small-time code, Supplement S2) against $N_B\gamma_1$ at the largest bath size.
+Table S5.6: Consistency note, not additional evidence: the fixed-$t$ limit $K(t)/m_2^{3/2}$ of $N_B\gamma_1$ (first-order expansion, Lemma 3, valid at every fixed $t \in [0, 2\pi]$; $K(t)$ from the separately written small-time code of Supplement S2) against $N_B\gamma_1$ at the largest bath size.
 
 {{table:s5_cross}}

@@ -45,7 +45,7 @@ def main():
     r = d["p1"][ts]
     T["main_tstar"] = table(
         ["$N_B$", r"$\gamma_1[F(t_\star)]$", r"$N_B\,\gamma_1[F(t_\star)]$"],
-        [[n, m(r[n]["gamma1_F"], ("sig", 6)), m(r[n]["NB_gamma1"], ("sig", 10))] for n in nbs])
+        [[n, m(r[n]["gamma1_F"], ("sig", 6)), m(r[n]["NB_gamma1"], ("sig", 7))] for n in nbs])
     prov["main_tstar"] = {"source": AUTH_JSON_REL, "json_paths": [f"p1.{ts}.*.gamma1_F", f"p1.{ts}.*.NB_gamma1"]}
 
     T["s5_full"] = table(

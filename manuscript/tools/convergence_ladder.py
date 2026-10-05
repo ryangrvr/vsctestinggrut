@@ -19,7 +19,7 @@ nx/dt ladder). The only change is operational: one integration per (nx, dt, eps)
 is snapshotted at both times instead of being restarted from t = 0. The driver
 is verified bit-for-bit against the record's integrate_tensor before use.
 
-Output: data/convergence_ladder.json
+Output: data/reproducibility/convergence_ladder.json (archived only)
 """
 import importlib.util
 import os
@@ -131,7 +131,11 @@ def main():
     ref = ladder[f"nx{240}_dt{5e-4:g}"]
     dev = max(abs(ref["ramp"][nb][t]["gamma1_F"] - auth["p1"][t][nb]["gamma1_F"]) / abs(auth["p1"][t][nb]["gamma1_F"])
               for nb in ref["ramp"] for t in ("0.5", "1.0"))
-    dump_json({"source_functions": RECORD_DIR + "/publication_verification/v3_r2/v3_r2_authoritative.py",
+    dump_json({"label": "MANUSCRIPT REPRODUCIBILITY CHECK — NOT PART OF FROZEN SCIENTIFIC EVIDENCE",
+               "use_rule": "Not used by any theorem, disposition, fitted result, table, figure or publication claim. "
+                           "Archived only. The manuscript's convergence statement is extracted from the record's "
+                           "archived logs (data/frozen_convergence.json).",
+               "source_functions": RECORD_DIR + "/publication_verification/v3_r2/v3_r2_authoritative.py",
                "times": list(TIMES), "nx_list": list(R.NX_LIST), "dt_list": list(R.DT_LIST),
                "nb_grid": list(R.NB_GRID), "driver_equivalence_max_abs_diff": eq,
                "reference_cell_vs_authoritative_json_max_rel_diff_gamma1": dev,

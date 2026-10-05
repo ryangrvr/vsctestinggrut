@@ -31,7 +31,7 @@ $$
 q_{\mathrm{ref}}(t) \equiv 0, \qquad
 q_{\mathrm{ramp}}(t) = \begin{cases} s(t/\pi), & 0 \leq t \leq \pi, \\ 1, & \pi < t \leq 2\pi, \end{cases} \qquad s(u) = 10u^3 - 15u^4 + 6u^5 .
 $$ {#eq:protocols}
-The *reference protocol* holds the coordinate at rest; the *ramp protocol* moves it smoothly from $0$ to $1$. Theorem 1 uses only the polynomial part $s(t/\pi)$ of the ramp, at short times.
+The *reference protocol* holds the coordinate at rest; the *ramp protocol* moves it smoothly from $0$ to $1$ (@fig:schematic). Theorem 1 uses only the polynomial part $s(t/\pi)$ of the ramp, at short times.
 
 ![Model, protocols and witness (schematic). (a) The clamped coordinate exerts the force $q(t)/\sqrt{N_B}$ on each of $N_B$ Duffing oscillators and receives the force $F_q$ of @eq:force. (b) The two protocols, drawn exactly from their definitions @eq:protocols; the theorem concerns a short initial time window $(0, \delta)$ whose size is existential and is not drawn to scale. (c) The witness logic: the reference protocol has zero third cumulant for every $N_B$; the ramp protocol has a non-zero third cumulant for all sufficiently large $N_B$; since the absolute standardised skewness is invariant under shared location, scale and sign modulation, the two cannot share one signed-affine exogenous representation. The panel contains no data.](figure:fig1_schematic){#fig:schematic}
 

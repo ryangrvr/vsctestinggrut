@@ -1,7 +1,7 @@
 {
   "build": {
     "tool": "manuscript/Makefile",
-    "repo_head_at_check": "ca0f4d5c79a2be6663f7057b8ddd544163bbed3e",
+    "repo_head_at_check": "7d806e1a35b3b03a8e40a8b8297bef9d74de0e63",
     "header": "Working draft — not for submission. AI-assisted; disclosure statements pending.",
     "section_order": [
       "00_front.md",
@@ -60,12 +60,12 @@
     {
       "id": "F6",
       "type": "RECORD-GAP",
-      "finding": "No generator for the record's v3_r2_figures.png is committed in the record, so there was no existing figure generator to reuse. Figures 1-3 are produced by manuscript/tools/gen_figures.py directly from the authoritative JSON (and, for the Fig. 3 overlay, this build's independent small-time computation)."
+      "finding": "No generator for the record's committed figure is in the record, so there was no existing figure generator to reuse. Figs. 1–3 are produced by manuscript/tools/gen_figures.py; Figs. 2 and 3 draw only on the authoritative JSON, and Fig. 1 is a data-free schematic drawn from the protocol definitions."
     },
     {
       "id": "F7",
       "type": "RECORD-GAP",
-      "finding": "The resolution ladder (nx 120/240/480, dt 1e-3/5e-4/2.5e-4) is described in the record but is not in machine-readable output; the manuscript states this and prints no ladder numbers."
+      "finding": "Superseded by F10: the resolution ladder is reported in S5 from the record's archived logs (extracted by tools/extract_frozen_convergence.py), and the finest cell, absent from the archives, is reported as not archived."
     },
     {
       "id": "F8",
@@ -74,8 +74,8 @@
     },
     {
       "id": "F9",
-      "type": "INDEPENDENT-CHECK",
-      "finding": "The leading-order prediction N_B*gamma1 -> K(t)/m2^{3/2}, computed with this build's fresh small-time code, agrees with the record's finite-N_B numerics to 1.3e-7 relative at t_star = 0.5 and 2.0e-8 at t = 0.25."
+      "type": "CONSISTENCY-NOTE",
+      "finding": "Non-evidentiary consistency note: the fixed-t limit K(t)/m2^{3/2} of N_B*gamma1 (first-order expansion, Lemma 3), with K(t) from this build's fresh small-time code, differs from the record's finite-N_B numerics by 1.3e-7 relative at t_star = 0.5 and 2.0e-8 at t = 0.25 — within the small-time code's own run-to-run spread. Reported as consistency, not as verification of the frozen output."
     },
     {
       "id": "F10",
@@ -144,14 +144,14 @@
         }
       ],
       "blueprint": "MATCHES-PROMPT-EXTRACT: theorem for the ramp q(t)=s(t/pi) against the reference protocol only; quantifier form as required",
-      "notes": "Stated on the protocol pair {reference, ramp} as in the record's V1 proposed publication theorem; the family-level form follows a fortiori and is stated as the record's equivalent. Witness sign (negative) from THM T2 'with the sign of K, i.e. negative'."
+      "notes": "Stated on the protocol pair {reference, ramp} as in the record's V1 proposed publication theorem; the family-level form follows a fortiori and is joined with 'Consequently'. Witness sign (negative) from THM T2 'with the sign of K, i.e. negative'."
     },
     "def.model": {
       "kind": "definition",
       "label": "Definition 1 / Section 2 parent Hamiltonian",
       "manuscript_locations": [
         "src/02_model.md:3",
-        "src/S1_theorem_and_notation.md:49"
+        "src/S1_theorem_and_notation.md:59"
       ],
       "sources": [
         {
@@ -283,7 +283,7 @@
       "kind": "definition",
       "label": "Definition 2 (admissible clamps)",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:71"
+        "src/S1_theorem_and_notation.md:81"
       ],
       "sources": [
         {
@@ -310,7 +310,7 @@
       "kind": "definition",
       "label": "Definition 3",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:79"
+        "src/S1_theorem_and_notation.md:89"
       ],
       "sources": [
         {
@@ -338,7 +338,7 @@
       "label": "Definition 4 / Section 3 nested ladder",
       "manuscript_locations": [
         "src/03_classes.md:5",
-        "src/S1_theorem_and_notation.md:82"
+        "src/S1_theorem_and_notation.md:92"
       ],
       "sources": [
         {
@@ -367,14 +367,14 @@
         }
       ],
       "blueprint": "MATCHES-PROMPT-EXTRACT: nested class ladder only in main text (§3); S1/S4 restate it only as definitions/proofs supporting the main text",
-      "notes": "S4 gives the proofs; flag for blueprint review whether the ladder restatement in S1 Definition 4 is permitted."
+      "notes": "S3 gives the proofs of the ladder; flagged for blueprint review whether the restatement in S1 Definition 4 is permitted."
     },
     "def.e2pm": {
       "kind": "definition",
       "label": "E2± (signed causal scale, prefix consistency)",
       "manuscript_locations": [
         "src/03_classes.md:11",
-        "src/S1_theorem_and_notation.md:86"
+        "src/S1_theorem_and_notation.md:96"
       ],
       "sources": [
         {
@@ -407,7 +407,7 @@
     },
     "prop.c2pm": {
       "kind": "proposition",
-      "label": "characterisation of E2± (Section 3; Proposition S4.3)",
+      "label": "characterisation of E2± (Section 3; Proposition S3.5)",
       "manuscript_locations": [
         "src/03_classes.md:28",
         "src/S3_class_hierarchy_and_mechanism_map.md:38"
@@ -446,7 +446,7 @@
       "label": "Lemma 6 / Section 3 invariant",
       "manuscript_locations": [
         "src/03_classes.md:31",
-        "src/S1_theorem_and_notation.md:142"
+        "src/S1_theorem_and_notation.md:153"
       ],
       "sources": [
         {
@@ -482,7 +482,7 @@
       "label": "nested ladder strict (Section 3; S1)",
       "manuscript_locations": [
         "src/03_classes.md:19",
-        "src/S1_theorem_and_notation.md:90"
+        "src/S1_theorem_and_notation.md:100"
       ],
       "sources": [
         {
@@ -507,7 +507,7 @@
     },
     "prop.ladder_strict": {
       "kind": "proposition",
-      "label": "Proposition S4.4",
+      "label": "Proposition S3.6 (strict ladder)",
       "manuscript_locations": [
         "src/S3_class_hierarchy_and_mechanism_map.md:46"
       ],
@@ -534,10 +534,10 @@
     },
     "prop.upper": {
       "kind": "proposition",
-      "label": "universal upper bound (Section 3; Proposition S4.5)",
+      "label": "universal upper bound (Section 3; Proposition S3.7)",
       "manuscript_locations": [
         "src/03_classes.md:25",
-        "src/S1_theorem_and_notation.md:92",
+        "src/S1_theorem_and_notation.md:102",
         "src/S3_class_hierarchy_and_mechanism_map.md:51"
       ],
       "sources": [
@@ -571,7 +571,7 @@
     },
     "prop.vacuity": {
       "kind": "proposition",
-      "label": "Proposition S4.1 (single-protocol vacuity)",
+      "label": "Proposition S3.1 (single-protocol vacuity)",
       "manuscript_locations": [
         "src/S3_class_hierarchy_and_mechanism_map.md:10"
       ],
@@ -590,7 +590,7 @@
     },
     "prop.c1": {
       "kind": "proposition",
-      "label": "Proposition S4.2 (characterisation of E1)",
+      "label": "Proposition S3.4 (characterisation of E1)",
       "manuscript_locations": [
         "src/S3_class_hierarchy_and_mechanism_map.md:33"
       ],
@@ -611,7 +611,7 @@
       "kind": "definition",
       "label": "Definition 5: y1, c(t), K(t)",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:95"
+        "src/S1_theorem_and_notation.md:105"
       ],
       "sources": [
         {
@@ -646,7 +646,7 @@
       "kind": "equation",
       "label": "Gibbs moment identity",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:106"
+        "src/S1_theorem_and_notation.md:116"
       ],
       "sources": [
         {
@@ -674,7 +674,7 @@
       "label": "Lemma 1 / eq. (star)",
       "manuscript_locations": [
         "src/04_main_result.md:5",
-        "src/S1_theorem_and_notation.md:117"
+        "src/S1_theorem_and_notation.md:127"
       ],
       "sources": [
         {
@@ -702,7 +702,7 @@
       "label": "Lemma 2",
       "manuscript_locations": [
         "src/04_main_result.md:11",
-        "src/S1_theorem_and_notation.md:123"
+        "src/S1_theorem_and_notation.md:133"
       ],
       "sources": [
         {
@@ -730,7 +730,7 @@
       "label": "Lemma 3 (first-order third cumulant; record LEMMA BRI1-R1)",
       "manuscript_locations": [
         "src/04_main_result.md:14",
-        "src/S1_theorem_and_notation.md:126"
+        "src/S1_theorem_and_notation.md:136"
       ],
       "sources": [
         {
@@ -759,14 +759,14 @@
         }
       ],
       "blueprint": "MATCHES-PROMPT-EXTRACT",
-      "notes": "Record constant C(t*) renamed Theta(t) to avoid collision with the covariance C0(ta,tb). Record lemma is stated for the frozen tuple with |q| <= Q := 2; the record (THM T2) applies it verbatim to one-time tuples t in (0, 2pi]; the manuscript states it for a fixed t in [0, 2pi] with a general bound Q."
+      "notes": "Record constant C(t*) renamed Theta(t); Taylor coefficients C_k renamed c_k (collision with the covariance C0). Stated for the ramp protocol only, matching the use in Theorem 1; parts (i)/(iii) noted to hold for any clamp with |q| <= Q, as in the record's Grönwall machinery (the record states the lemma for its two frozen clamps with Q := 2)."
     },
     "lem.small_time": {
       "kind": "lemma",
       "label": "Lemma 4 / eq. c(t) small-time",
       "manuscript_locations": [
         "src/04_main_result.md:21",
-        "src/S1_theorem_and_notation.md:132"
+        "src/S1_theorem_and_notation.md:143"
       ],
       "sources": [
         {
@@ -809,7 +809,7 @@
       "kind": "lemma",
       "label": "Lemma 5",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:139"
+        "src/S1_theorem_and_notation.md:150"
       ],
       "sources": [
         {
@@ -829,7 +829,7 @@
       "label": "Proposition 1 / Section 5",
       "manuscript_locations": [
         "src/05_reservoir_limit.md:3",
-        "src/S1_theorem_and_notation.md:145",
+        "src/S1_theorem_and_notation.md:156",
         "src/S4_reservoir_limit_proof.md:5"
       ],
       "sources": [
@@ -873,7 +873,7 @@
       "kind": "equation",
       "label": "multitime covariance C0 (Section 5)",
       "manuscript_locations": [
-        "src/05_reservoir_limit.md:9"
+        "src/05_reservoir_limit.md:11"
       ],
       "sources": [
         {
@@ -892,8 +892,8 @@
       "kind": "scope",
       "label": "reservoir-limit scope (Section 5)",
       "manuscript_locations": [
-        "src/05_reservoir_limit.md:16",
-        "src/S4_reservoir_limit_proof.md:40"
+        "src/05_reservoir_limit.md:18",
+        "src/S4_reservoir_limit_proof.md:41"
       ],
       "sources": [
         {
@@ -940,7 +940,7 @@
       "label": "what is not claimed (S1.5, Section 7)",
       "manuscript_locations": [
         "src/07_discussion.md:6",
-        "src/S1_theorem_and_notation.md:271"
+        "src/S1_theorem_and_notation.md:282"
       ],
       "sources": [
         {
@@ -1046,7 +1046,7 @@
     },
     "num.method": {
       "kind": "method",
-      "label": "finite-N_B computation (Section 6; S6)",
+      "label": "finite-N_B computation (Section 6; S5)",
       "manuscript_locations": [
         "src/06_numerical_illustration.md:6",
         "src/S5_numerical_methods_and_convergence.md:3"
@@ -1121,7 +1121,7 @@
     },
     "num.crosscheck": {
       "kind": "result",
-      "label": "independent leading-order cross-check (Section 6)",
+      "label": "Section 6 cross-checks (non-evidentiary consistency note)",
       "manuscript_locations": [
         "src/06_numerical_illustration.md:19"
       ],
@@ -1136,7 +1136,7 @@
         }
       ],
       "blueprint": "§6 and S6; claim relations asserted in tools/gen_values.py",
-      "notes": "Uses data/t7_check.json and data/constants.json."
+      "notes": "Basis: the first-order expansion (Lemma 3), valid at every fixed t in [0, 2pi]; Proposition 1(a) is not invoked at numerical times. Uses data/t7_check.json and data/constants.json."
     },
     "num.tables": {
       "kind": "result",
@@ -1245,7 +1245,7 @@
       "kind": "proof",
       "label": "proof of Lemma 1",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:156"
+        "src/S1_theorem_and_notation.md:167"
       ],
       "sources": [
         {
@@ -1264,7 +1264,7 @@
       "kind": "proof",
       "label": "proof of Lemma 2",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:167"
+        "src/S1_theorem_and_notation.md:178"
       ],
       "sources": [
         {
@@ -1283,7 +1283,7 @@
       "kind": "proof",
       "label": "proof of Lemma 3",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:172"
+        "src/S1_theorem_and_notation.md:183"
       ],
       "sources": [
         {
@@ -1310,7 +1310,7 @@
       "kind": "proof",
       "label": "proof of Lemma 4",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:193"
+        "src/S1_theorem_and_notation.md:204"
       ],
       "sources": [
         {
@@ -1345,7 +1345,7 @@
       "kind": "proof",
       "label": "proof of Lemma 5",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:234"
+        "src/S1_theorem_and_notation.md:245"
       ],
       "sources": [
         {
@@ -1364,7 +1364,7 @@
       "kind": "proof",
       "label": "proof of Lemma 6",
       "manuscript_locations": [
-        "src/S1_theorem_and_notation.md:239"
+        "src/S1_theorem_and_notation.md:250"
       ],
       "sources": [
         {
@@ -1384,7 +1384,7 @@
       "label": "proof of Theorem 1",
       "manuscript_locations": [
         "src/04_main_result.md:33",
-        "src/S1_theorem_and_notation.md:250"
+        "src/S1_theorem_and_notation.md:261"
       ],
       "sources": [
         {
@@ -1694,7 +1694,8 @@
       "kind": "statement",
       "label": "S4.3 the mean (linear response)",
       "manuscript_locations": [
-        "src/S4_reservoir_limit_proof.md:35"
+        "src/S4_reservoir_limit_proof.md:35",
+        "src/S4_reservoir_limit_proof.md:38"
       ],
       "sources": [
         {
@@ -1715,7 +1716,7 @@
         }
       ],
       "blueprint": "MATCHES-REVIEW: S4 reservoir-limit proof",
-      "notes": "The O(1/N_B) correction to the mean is derived from Lemma 3(iii) and oddness; the record states it under ASSUMPTION R, which is not needed for that order."
+      "notes": "Stated as convergence only, per record T4; no rate is claimed (the record's rate statement sits under its unproved all-orders assumption and is not used)."
     },
     "num.convergence": {
       "kind": "result",
@@ -1766,18 +1767,9 @@
       "manuscript_locations": [
         "src/S6_second_code_path_and_reproducibility.md:3"
       ],
-      "sources": [
-        {
-          "repo": "ryangrvr/TestingGRUT",
-          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
-          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_FIGURE_REPORT_03.md",
-          "section": "§10",
-          "quote": "A separately written implementation (DOP853, rtol = 1e-12, 160-point tensor GL grid on [-6,6]^2) reproduced the following repository values to all printed digits:",
-          "quote_verified_verbatim": true
-        }
-      ],
+      "sources": [],
       "blueprint": "MATCHES-REVIEW: S6 second numerical code path, framed as reproducibility artifact",
-      "notes": "Manuscript-stage numerical cross-check of the frozen result (reproducibility artifact): not a new verification lane, not external replication, no evidence-grade change. gen_values.py stops the build on a material contradiction with the frozen data (sign mismatch or relative difference above 1e-4)."
+      "notes": "Reproducibility cross-check written for this build (tools/second_path.py; output data/second_path.json is the source of every S6.1 number). Not frozen evidence: the record's own separately written reproduction (REP3 §10) is a different computation and is not cited as the source. gen_values.py stops the build on a material contradiction with the frozen data (sign mismatch or relative difference above 1e-4)."
     },
     "repro.statement": {
       "kind": "result",
@@ -2573,6 +2565,21 @@
         "S5_numerical_methods_and_convergence.md"
       ]
     },
+    "const.var_cert_rad": {
+      "text": "4\\times 10^{-21}",
+      "fmt": [
+        "text"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+        "section": "T1 step 6"
+      },
+      "used_in": [
+        "S5_numerical_methods_and_convergence.md"
+      ]
+    },
     "const.C7": {
       "text": "-3.60677\\times 10^{-4}",
       "fmt": [
@@ -3354,9 +3361,7 @@
         "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
         "output": "data/frozen_convergence.json"
       },
-      "used_in": [
-        "S5_numerical_methods_and_convergence.md"
-      ]
+      "used_in": []
     },
     "conv.spread_sevenfig": {
       "text": "0",
@@ -3435,6 +3440,82 @@
       "text": "1.0\\times 10^{-3}, 5.0\\times 10^{-4}, 2.5\\times 10^{-4}",
       "fmt": [
         "text"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "logs": {
+          "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+          "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+        },
+        "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+        "output": "data/frozen_convergence.json"
+      },
+      "used_in": [
+        "S5_numerical_methods_and_convergence.md"
+      ]
+    },
+    "conv.sigfigs_auth": {
+      "text": "7",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "logs": {
+          "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+          "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+        },
+        "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+        "output": "data/frozen_convergence.json"
+      },
+      "used_in": [
+        "S5_numerical_methods_and_convergence.md"
+      ]
+    },
+    "conv.sigfigs_five": {
+      "text": "5",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "logs": {
+          "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+          "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+        },
+        "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+        "output": "data/frozen_convergence.json"
+      },
+      "used_in": [
+        "S5_numerical_methods_and_convergence.md"
+      ]
+    },
+    "conv.cells_archived": {
+      "text": "8",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "logs": {
+          "authoritative": "backreaction_identifiability_0/publication_verification/v3_r2/authoritative.log",
+          "v3_r2": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2.log"
+        },
+        "extracted_by": "manuscript/tools/extract_frozen_convergence.py",
+        "output": "data/frozen_convergence.json"
+      },
+      "used_in": [
+        "S5_numerical_methods_and_convergence.md"
+      ]
+    },
+    "conv.cells_fivefig_only": {
+      "text": "1",
+      "fmt": [
+        "int"
       ],
       "provenance": {
         "repo": "ryangrvr/TestingGRUT",
@@ -3545,9 +3626,7 @@
         "method": "GL(200) in x on [-6,6] x Gauss-Hermite(100) in p; DOP853 rtol=atol=1e-12",
         "output": "data/second_path.json"
       },
-      "used_in": [
-        "S6_second_code_path_and_reproducibility.md"
-      ]
+      "used_in": []
     },
     "second.spread_tstar": {
       "text": "2.2\\times 10^{-10}",
@@ -3734,7 +3813,7 @@
       "source": [
         "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json"
       ],
-      "quantity": "r(N_B) = N_B gamma1(N_B) / N_B gamma1(N_B max) - 1 at t_star and t = 1.0",
+      "quantity": "r(N_B) = N_B gamma1(N_B) / mean_over_grid(N_B gamma1) - 1 at t_star and t = 1.0",
       "json_paths": [
         "p1.0.5.*.NB_gamma1",
         "p1.1.0.*.NB_gamma1"

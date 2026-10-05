@@ -47,7 +47,7 @@
         }
       ],
       "blueprint": "MATCHES-PROMPT-EXTRACT: theorem for the ramp q(t)=s(t/pi) against the reference protocol only; quantifier form as required",
-      "notes": "Stated on the protocol pair {reference, ramp} as in the record's V1 proposed publication theorem; the family-level form follows a fortiori and is stated as the record's equivalent. Witness sign (negative) from THM T2 'with the sign of K, i.e. negative'."
+      "notes": "Stated on the protocol pair {reference, ramp} as in the record's V1 proposed publication theorem; the family-level form follows a fortiori and is joined with 'Consequently'. Witness sign (negative) from THM T2 'with the sign of K, i.e. negative'."
     },
     "def.model": {
       "kind": "definition",
@@ -193,7 +193,7 @@
         }
       ],
       "blueprint": "MATCHES-PROMPT-EXTRACT: nested class ladder only in main text (§3); S1/S4 restate it only as definitions/proofs supporting the main text",
-      "notes": "S4 gives the proofs; flag for blueprint review whether the ladder restatement in S1 Definition 4 is permitted."
+      "notes": "S3 gives the proofs of the ladder; flagged for blueprint review whether the restatement in S1 Definition 4 is permitted."
     },
     "def.e2pm": {
       "kind": "definition",
@@ -220,7 +220,7 @@
     },
     "prop.c2pm": {
       "kind": "proposition",
-      "label": "characterisation of E2± (Section 3; Proposition S4.3)",
+      "label": "characterisation of E2± (Section 3; Proposition S3.5)",
       "sources": [
         {
           "file": "B0",
@@ -284,7 +284,7 @@
     },
     "prop.ladder_strict": {
       "kind": "proposition",
-      "label": "Proposition S4.4",
+      "label": "Proposition S3.6 (strict ladder)",
       "sources": [
         {
           "file": "B0",
@@ -302,7 +302,7 @@
     },
     "prop.upper": {
       "kind": "proposition",
-      "label": "universal upper bound (Section 3; Proposition S4.5)",
+      "label": "universal upper bound (Section 3; Proposition S3.7)",
       "sources": [
         {
           "file": "B0",
@@ -325,7 +325,7 @@
     },
     "prop.vacuity": {
       "kind": "proposition",
-      "label": "Proposition S4.1 (single-protocol vacuity)",
+      "label": "Proposition S3.1 (single-protocol vacuity)",
       "sources": [
         {
           "file": "B0",
@@ -338,7 +338,7 @@
     },
     "prop.c1": {
       "kind": "proposition",
-      "label": "Proposition S4.2 (characterisation of E1)",
+      "label": "Proposition S3.4 (characterisation of E1)",
       "sources": [
         {
           "file": "B0",
@@ -447,7 +447,7 @@
         }
       ],
       "blueprint": "MATCHES-PROMPT-EXTRACT",
-      "notes": "Record constant C(t*) renamed Theta(t) to avoid collision with the covariance C0(ta,tb). Record lemma is stated for the frozen tuple with |q| <= Q := 2; the record (THM T2) applies it verbatim to one-time tuples t in (0, 2pi]; the manuscript states it for a fixed t in [0, 2pi] with a general bound Q."
+      "notes": "Record constant C(t*) renamed Theta(t); Taylor coefficients C_k renamed c_k (collision with the covariance C0). Stated for the ramp protocol only, matching the use in Theorem 1; parts (i)/(iii) noted to hold for any clamp with |q| <= Q, as in the record's Grönwall machinery (the record states the lemma for its two frozen clamps with Q := 2)."
     },
     "lem.small_time": {
       "kind": "lemma",
@@ -636,7 +636,7 @@
     },
     "num.method": {
       "kind": "method",
-      "label": "finite-N_B computation (Section 6; S6)",
+      "label": "finite-N_B computation (Section 6; S5)",
       "sources": [
         {
           "file": "REP3",
@@ -685,7 +685,7 @@
     },
     "num.crosscheck": {
       "kind": "result",
-      "label": "independent leading-order cross-check (Section 6)",
+      "label": "Section 6 cross-checks (non-evidentiary consistency note)",
       "sources": [
         {
           "file": "CAND",
@@ -694,7 +694,7 @@
         }
       ],
       "blueprint": "§6 and S6; claim relations asserted in tools/gen_values.py",
-      "notes": "Uses data/t7_check.json and data/constants.json."
+      "notes": "Basis: the first-order expansion (Lemma 3), valid at every fixed t in [0, 2pi]; Proposition 1(a) is not invoked at numerical times. Uses data/t7_check.json and data/constants.json."
     },
     "num.tables": {
       "kind": "result",
@@ -1082,7 +1082,7 @@
         }
       ],
       "blueprint": "MATCHES-REVIEW: S4 reservoir-limit proof",
-      "notes": "The O(1/N_B) correction to the mean is derived from Lemma 3(iii) and oddness; the record states it under ASSUMPTION R, which is not needed for that order."
+      "notes": "Stated as convergence only, per record T4; no rate is claimed (the record's rate statement sits under its unproved all-orders assumption and is not used)."
     },
     "num.convergence": {
       "kind": "result",
@@ -1115,15 +1115,9 @@
     "num.second": {
       "kind": "result",
       "label": "S6.1 second numerical code path",
-      "sources": [
-        {
-          "file": "REP3",
-          "section": "§10",
-          "quote": "A separately written implementation (DOP853, rtol = 1e-12, 160-point tensor GL grid on [-6,6]^2) reproduced the following repository values to all printed digits:"
-        }
-      ],
+      "sources": [],
       "blueprint": "MATCHES-REVIEW: S6 second numerical code path, framed as reproducibility artifact",
-      "notes": "Manuscript-stage numerical cross-check of the frozen result (reproducibility artifact): not a new verification lane, not external replication, no evidence-grade change. gen_values.py stops the build on a material contradiction with the frozen data (sign mismatch or relative difference above 1e-4)."
+      "notes": "Reproducibility cross-check written for this build (tools/second_path.py; output data/second_path.json is the source of every S6.1 number). Not frozen evidence: the record's own separately written reproduction (REP3 §10) is a different computation and is not cited as the source. gen_values.py stops the build on a material contradiction with the frozen data (sign mismatch or relative difference above 1e-4)."
     },
     "repro.statement": {
       "kind": "result",
@@ -1227,12 +1221,12 @@
     {
       "id": "F6",
       "type": "RECORD-GAP",
-      "finding": "No generator for the record's v3_r2_figures.png is committed in the record, so there was no existing figure generator to reuse. Figures 1-3 are produced by manuscript/tools/gen_figures.py directly from the authoritative JSON (and, for the Fig. 3 overlay, this build's independent small-time computation)."
+      "finding": "No generator for the record's committed figure is in the record, so there was no existing figure generator to reuse. Figs. 1–3 are produced by manuscript/tools/gen_figures.py; Figs. 2 and 3 draw only on the authoritative JSON, and Fig. 1 is a data-free schematic drawn from the protocol definitions."
     },
     {
       "id": "F7",
       "type": "RECORD-GAP",
-      "finding": "The resolution ladder (nx 120/240/480, dt 1e-3/5e-4/2.5e-4) is described in the record but is not in machine-readable output; the manuscript states this and prints no ladder numbers."
+      "finding": "Superseded by F10: the resolution ladder is reported in S5 from the record's archived logs (extracted by tools/extract_frozen_convergence.py), and the finest cell, absent from the archives, is reported as not archived."
     },
     {
       "id": "F8",
@@ -1241,8 +1235,8 @@
     },
     {
       "id": "F9",
-      "type": "INDEPENDENT-CHECK",
-      "finding": "The leading-order prediction N_B*gamma1 -> K(t)/m2^{3/2}, computed with this build's fresh small-time code, agrees with the record's finite-N_B numerics to 1.3e-7 relative at t_star = 0.5 and 2.0e-8 at t = 0.25."
+      "type": "CONSISTENCY-NOTE",
+      "finding": "Non-evidentiary consistency note: the fixed-t limit K(t)/m2^{3/2} of N_B*gamma1 (first-order expansion, Lemma 3), with K(t) from this build's fresh small-time code, differs from the record's finite-N_B numerics by 1.3e-7 relative at t_star = 0.5 and 2.0e-8 at t = 0.25 — within the small-time code's own run-to-run spread. Reported as consistency, not as verification of the frozen output."
     },
     {
       "id": "F10",

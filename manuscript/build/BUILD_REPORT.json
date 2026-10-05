@@ -20,21 +20,25 @@
     ]
   },
   "C4_provenance": {
-    "values": 114,
+    "values": 119,
     "without_provenance": [],
     "used": [
       "const.C7",
       "const.m2",
       "const.m4",
       "const.var_cert_mid",
+      "const.var_cert_rad",
       "const.var_x0sq",
-      "conv.cells_fivefig",
+      "conv.cells_archived",
+      "conv.cells_fivefig_only",
       "conv.cells_sevenfig",
       "conv.dt_list",
       "conv.missing_dt",
       "conv.missing_nx",
       "conv.nx_list",
       "conv.ref_drift_max",
+      "conv.sigfigs_auth",
+      "conv.sigfigs_five",
       "num.L",
       "num.dt",
       "num.g1_tstar_nbmax",
@@ -62,7 +66,6 @@
       "repro.max_rel",
       "repro.n_sig",
       "repro.n_values",
-      "second.drift_t1",
       "second.max_rel_diff",
       "second.max_rel_diff_t1",
       "second.max_rel_diff_tstar",
@@ -166,6 +169,7 @@
     ]
   },
   "citation_placeholders": [
+    "[CITATION NEEDED: Caldeira–Leggett-type linear-response universality]",
     "[CITATION NEEDED: Mori–Zwanzig projection-operator formalism]",
     "[CITATION NEEDED: classical fluctuation–dissipation theorem]",
     "[CITATION NEEDED: generalized Langevin equation from a harmonic bath with linear coupling (Zwanzig; Caldeira–Leggett)]",
@@ -175,18 +179,14 @@
     "[CITATION NEEDED: multivariate Lindeberg–Feller central limit theorem, standard probability text]"
   ],
   "pdf": {
-    "manuscript_pages": 28,
+    "manuscript_pages": 29,
     "s1_pages": 9,
     "outputs": {
       "BRI1_manuscript": {
-        "md": "build/BRI1_manuscript.md",
-        "pdf_rc": 0,
-        "html_rc": 0
+        "md": "build/BRI1_manuscript.md"
       },
       "S1_theorem_and_notation": {
-        "md": "build/S1_theorem_and_notation.md",
-        "pdf_rc": 0,
-        "html_rc": 0
+        "md": "build/S1_theorem_and_notation.md"
       }
     }
   },
@@ -245,12 +245,12 @@
     {
       "id": "F6",
       "type": "RECORD-GAP",
-      "finding": "No generator for the record's v3_r2_figures.png is committed in the record, so there was no existing figure generator to reuse. Figures 1-3 are produced by manuscript/tools/gen_figures.py directly from the authoritative JSON (and, for the Fig. 3 overlay, this build's independent small-time computation)."
+      "finding": "No generator for the record's committed figure is in the record, so there was no existing figure generator to reuse. Figs. 1–3 are produced by manuscript/tools/gen_figures.py; Figs. 2 and 3 draw only on the authoritative JSON, and Fig. 1 is a data-free schematic drawn from the protocol definitions."
     },
     {
       "id": "F7",
       "type": "RECORD-GAP",
-      "finding": "The resolution ladder (nx 120/240/480, dt 1e-3/5e-4/2.5e-4) is described in the record but is not in machine-readable output; the manuscript states this and prints no ladder numbers."
+      "finding": "Superseded by F10: the resolution ladder is reported in S5 from the record's archived logs (extracted by tools/extract_frozen_convergence.py), and the finest cell, absent from the archives, is reported as not archived."
     },
     {
       "id": "F8",
@@ -259,8 +259,8 @@
     },
     {
       "id": "F9",
-      "type": "INDEPENDENT-CHECK",
-      "finding": "The leading-order prediction N_B*gamma1 -> K(t)/m2^{3/2}, computed with this build's fresh small-time code, agrees with the record's finite-N_B numerics to 1.3e-7 relative at t_star = 0.5 and 2.0e-8 at t = 0.25."
+      "type": "CONSISTENCY-NOTE",
+      "finding": "Non-evidentiary consistency note: the fixed-t limit K(t)/m2^{3/2} of N_B*gamma1 (first-order expansion, Lemma 3), with K(t) from this build's fresh small-time code, differs from the record's finite-N_B numerics by 1.3e-7 relative at t_star = 0.5 and 2.0e-8 at t = 0.25 — within the small-time code's own run-to-run spread. Reported as consistency, not as verification of the frozen output."
     },
     {
       "id": "F10",

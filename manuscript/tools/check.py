@@ -83,6 +83,8 @@ def numeric_scan(rel, text):
         l = re.sub(r"\b(Supplements?|Section|Table|Lemma|Theorem|Proposition|Definition|Fig\.)\s+S?\d+(\.\d+)*", " ", l)
         l = re.sub(r"\bS\d+(\.\d+)*\b", " ", l)                # supplement labels
         l = re.sub(r"[\^_]\{?\s*[-+]?\s*\d+\s*\}?", " ", l)    # exponents, subscripts, indices
+        for mo in re.finditer(r"\b(one|two|three|four|five|six|seven|eight|nine|ten)\s+(orders?\s+of\s+magnitude|significant\s+(figures?|digits?)|per\s?cent)\b", l, re.I):
+            hits.append((rel, i, mo.group(0), line.strip()[:120]))
         for mo in re.finditer(r"(?<![A-Za-z\\])(\d+\.\d+|\d+)(?![A-Za-z]*\()", l):
             tok = mo.group(1)
             if "." in tok:
@@ -94,8 +96,14 @@ def numeric_scan(rel, text):
 
 def vocab_scan(name, text):
     hits = []
+    text = unicodedata.normalize("NFKC", text)
     for term in BANNED + BANNED_EXTRA:
-        for mo in re.finditer(r"(?<![A-Za-z0-9])" + re.escape(term) + r"(?![A-Za-z0-9])", text, flags=re.I):
+        # word terms also match simple inflections; short labels (digits inside) stay exact
+        stem = {"ontology": r"ontolog(?:y|ies|ical|ically)"}.get(term.lower())
+        if stem is None:
+            sfx = r"(?:'?s|es|ed|ing|ical|ically)?" if term.isalpha() and len(term) > 3 else ""
+            stem = re.escape(term) + sfx
+        for mo in re.finditer(r"(?<![A-Za-z0-9])" + stem + r"(?![A-Za-z0-9])", text, flags=re.I):
             line = text.count("\n", 0, mo.start()) + 1
             hits.append((name, line, term, text[max(0, mo.start() - 40): mo.end() + 40].replace("\n", " ")))
     return [h for h in hits if h[2] not in VOCAB_EXCEPTIONS]
@@ -218,6 +226,17 @@ def main():
     ai_log = os.path.join(MS, "AI_USE_LOG.md")
     arch = firewalls.architecture(lambda f: read(os.path.join(SRC, f)), rlog["section_order"],
                                   read(ai_log) if os.path.exists(ai_log) else None, list(DISCLOSURES))
+    repro_refs = []
+    for rel in src_files():
+        if "reproducibility/" in read(os.path.join(SRC, rel)):
+            repro_refs.append("src/" + rel)
+    for fn in ("values.json", "tables.json", "figures.json"):
+        if "reproducibility/" in read(os.path.join(DATA, fn)):
+            repro_refs.append("data/" + fn)
+    for fn in ("gen_values.py", "gen_tables.py", "gen_figures.py", "render.py"):
+        if "data/reproducibility" in read(os.path.join(MS, "tools", fn)).replace('"reproducibility"', ""):
+            repro_refs.append("tools/" + fn)
+    arch += [("scope", "build input references the archived reproducibility data", r) for r in repro_refs]
     report["C10_architecture"] = {"violations": arch, "supplement_titles": [t for _, t in firewalls.SUPP_TITLES],
                                   "ladder": firewalls.LADDER}
     fails += [f"C10 {a}: {b} ({c})" for a, b, c in arch]

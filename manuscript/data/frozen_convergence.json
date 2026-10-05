@@ -26,6 +26,7 @@
             "128": -1.668214e-07
           },
           "gamma1_line": 3,
+          "printed_sigfigs": 7,
           "complete": true
         },
         "nx120_dt0.0005": {
@@ -43,6 +44,7 @@
             "128": -1.668214e-07
           },
           "gamma1_line": 6,
+          "printed_sigfigs": 7,
           "complete": true
         },
         "nx120_dt0.00025": {
@@ -60,6 +62,7 @@
             "128": -1.668214e-07
           },
           "gamma1_line": 9,
+          "printed_sigfigs": 7,
           "complete": true
         },
         "nx240_dt0.001": {
@@ -77,6 +80,7 @@
             "128": -1.668214e-07
           },
           "gamma1_line": 12,
+          "printed_sigfigs": 7,
           "complete": true
         },
         "nx240_dt0.0005": {
@@ -94,6 +98,7 @@
             "128": -1.668214e-07
           },
           "gamma1_line": 15,
+          "printed_sigfigs": 7,
           "complete": true
         },
         "nx240_dt0.00025": {
@@ -111,6 +116,7 @@
             "128": -1.668214e-07
           },
           "gamma1_line": 18,
+          "printed_sigfigs": 7,
           "complete": true
         },
         "nx480_dt0.001": {
@@ -128,6 +134,7 @@
             "128": -1.668214e-07
           },
           "gamma1_line": 21,
+          "printed_sigfigs": 7,
           "complete": true
         },
         "nx480_dt0.0005": {
@@ -137,6 +144,7 @@
           "complete": false
         }
       },
+      "printed_sigfigs": 7,
       "n_cells_complete": 7,
       "n_cells_listed": 8,
       "missing": [
@@ -163,6 +171,7 @@
             "128": -1.6682e-07
           },
           "gamma1_line": 6,
+          "printed_sigfigs": 5,
           "complete": true
         },
         "nx120_dt0.0005": {
@@ -182,6 +191,7 @@
             "128": -1.6682e-07
           },
           "gamma1_line": 13,
+          "printed_sigfigs": 5,
           "complete": true
         },
         "nx120_dt0.00025": {
@@ -201,6 +211,7 @@
             "128": -1.6682e-07
           },
           "gamma1_line": 20,
+          "printed_sigfigs": 5,
           "complete": true
         },
         "nx240_dt0.001": {
@@ -220,6 +231,7 @@
             "128": -1.6682e-07
           },
           "gamma1_line": 27,
+          "printed_sigfigs": 5,
           "complete": true
         },
         "nx240_dt0.0005": {
@@ -239,6 +251,7 @@
             "128": -1.6682e-07
           },
           "gamma1_line": 34,
+          "printed_sigfigs": 5,
           "complete": true
         },
         "nx240_dt0.00025": {
@@ -258,6 +271,7 @@
             "128": -1.6682e-07
           },
           "gamma1_line": 41,
+          "printed_sigfigs": 5,
           "complete": true
         },
         "nx480_dt0.001": {
@@ -277,6 +291,7 @@
             "128": -1.6682e-07
           },
           "gamma1_line": 48,
+          "printed_sigfigs": 5,
           "complete": true
         },
         "nx480_dt0.0005": {
@@ -296,6 +311,7 @@
             "128": -1.6682e-07
           },
           "gamma1_line": 55,
+          "printed_sigfigs": 5,
           "complete": true
         },
         "nx480_dt0.00025": {
@@ -305,6 +321,7 @@
           "complete": false
         }
       },
+      "printed_sigfigs": 5,
       "n_cells_complete": 8,
       "n_cells_listed": 9,
       "missing": [
