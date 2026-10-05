@@ -128,7 +128,7 @@ Every finite result labels quantum status as exactly one of:
 (a valid monotone closure/admissibility rule exists but no positive successor-selection
 law is derived).
 
-## 7. R9 — THE WHOLE-LAW ORIGINALITY FIREWALL (explicit)
+## 8. R9 — THE WHOLE-LAW ORIGINALITY FIREWALL (explicit)
 Known theories and mathematics are **allowed and expected as components** — Hilbert spaces,
 graphs, probability, quantum information results, the Bell/Specker literature, standard
 mathematical structure of every kind. Using them is not restatement and not smuggling.
@@ -156,7 +156,9 @@ the components, taken separately and freely chosen, do not already impose.
   derivation. Each kill declares its terminal (`F0-LATENT-RELOCATION`,
   `F0-RESTATED`, `F0-OPERATIONAL-ONLY`, as applicable).
 
-## 8. Hard stop
+## 9. Hard stop
 This charter repair, plus `F0_BASELINE_AUDIT_01.md`, are the **only** artifacts of this
 cycle. No candidate-law implementation, no fixed-point search, no Born/geometry/gravity.
-**STOP for owner review.**
+**STOP for owner review.** The charter is **FROZEN** at the clerical-correction commit
+(`F0_REPAIR_IMPORT_PROVENANCE_01.md` §3): any further change requires a new numbered repair
+and an owner ruling.
