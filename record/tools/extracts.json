@@ -1,0 +1,648 @@
+{
+ "bridge-1": {
+  "status_verbatim_source": "GRUT BRIDGE-1 SCIENTIFICALLY SATURATED AT CURRENT PREMISE ENVELOPE — EXTERNAL REVIEW STILL WELCOME (bridge/BRIDGE_1_STATUS.md, headline blockquote; identical line heads bridge/BRIDGE_1_HANDOFF.md and bridge/BRIDGE_FRONTIER_QUEUE.md)",
+  "summary": [
+   "Bridge-1 compared the reviewed SCOUT residual (pinned at scout-2-reviewed @ 1f08ae156a346f6089ae3b3aab2be80b9ee4ef8f) against canonical GRUT (GRUT-RAI/master-w25bu9 @ b935099f61008acf111a762a6e346d947c2d0c38, read-only) through gates B0 crosswalk, B1 Sigma/local net, B3 access, B2 H_corr, B4 nine-layer compression matrix, and the B5 payoff firewall, all recorded DONE in bridge/BRIDGE_FRONTIER_QUEUE.md.",
+   "The recorded campaign result is 'TRUE COMPRESSION = 0' ('No canonical GRUT supplied information item was eliminated'), 'DEPENDENCY COMPRESSION > 0', and 'PHYSICAL PRIMITIVE COUNT CHANGE = NOT ESTABLISHED' [BR4-01] (bridge/BRIDGE_1_STATUS.md, bridge/BRIDGE_1_HANDOFF.md).",
+   "The B5 empirical terminal is 'NO DISTINCTIVE PAYOFF FOUND AT CURRENT BRIDGE-1 PREMISE ENVELOPE' and 'ZERO CONFIRMED DISTINCTIVE GRUT QUANTITATIVE PREDICTIONS'; 'No candidate passed all seven criteria' of the preregistered bar, with six per-candidate mechanical terminals listed (bridge/BRIDGE_1_HANDOFF.md).",
+   "Five canonical update candidates were 'collected; NONE applied' (bridge/B4_CANONICAL_UPDATE_CANDIDATES.md per the handoff table), and the integrity statement records canonical GRUT 'untouched', all Scout branches 'untouched', 'No PR opened. Nothing was merged.', and 'Scientific work on Bridge-1 has stopped' (bridge/BRIDGE_1_STATUS.md).",
+   "The handoff is marked 'Status: FINAL. Frozen by owner ruling.' with the immutable citation snapshot 'grut-bridge-1-frozen'; the frontier queue is CLOSED with 'No item remains \"next\"', while out-of-campaign items B1-o1/o2, B3-o1/o2, B2-o2/o3, B4-o1, an 'independent human / second-model review of the numerics', and owner-convention item B3-o3 (closure-rule standardization) are recorded as FUTURE SCOPE REFINEMENT / OWNER CONVENTION (bridge/BRIDGE_1_HANDOFF.md, bridge/BRIDGE_FRONTIER_QUEUE.md)."
+  ],
+  "key_quotes": [
+   {
+    "path": "bridge/BRIDGE_1_STATUS.md",
+    "quote": "GRUT BRIDGE-1 SCIENTIFICALLY SATURATED AT CURRENT PREMISE ENVELOPE — EXTERNAL REVIEW STILL WELCOME"
+   },
+   {
+    "path": "bridge/BRIDGE_1_HANDOFF.md",
+    "quote": "GRUT has not become a theory with fewer assumptions; we now know more precisely what those assumptions contain."
+   },
+   {
+    "path": "bridge/BRIDGE_1_STATUS.md",
+    "quote": "| TRUE COMPRESSION | **0** |\n| DEPENDENCY COMPRESSION | **> 0** |"
+   },
+   {
+    "path": "bridge/BRIDGE_1_HANDOFF.md",
+    "quote": "**NO DISTINCTIVE PAYOFF FOUND AT CURRENT BRIDGE-1 PREMISE ENVELOPE.** No candidate passed all seven criteria."
+   },
+   {
+    "path": "bridge/BRIDGE_1_STATUS.md",
+    "quote": "Final residual:\n\n    D_dyn ⊕ [Σ ⊗ (H_marginals, H_cross, H_epoch)] ⊕ [A_interface ⊕ A_partition ⊕ A_resolution ⊕ A_time]"
+   },
+   {
+    "path": "bridge/BRIDGE_1_STATUS.md",
+    "quote": "- **No canonical update candidate applied.**\n- **No PR opened.** Nothing was merged.\n- Scientific work on Bridge-1 has **stopped**."
+   },
+   {
+    "path": "bridge/BRIDGE_1_HANDOFF.md",
+    "quote": "**Status:** FINAL. Frozen by owner ruling. The immutable citation snapshot is `grut-bridge-1-frozen`"
+   },
+   {
+    "path": "bridge/BRIDGE_FRONTIER_QUEUE.md",
+    "quote": "# BRIDGE FRONTIER QUEUE (Bridge-1) — CLOSED\n...\n**No item remains \"next\".**"
+   },
+   {
+    "path": "bridge/BRIDGE_1_HANDOFF.md",
+    "quote": "The numerical work is an **independent code path, not an independent reviewer.** ... It has not received independent human peer review [BR5-02]."
+   }
+  ],
+  "classification": [
+   "ARCHIVED SCIENTIFIC RESULT",
+   "ARCHIVED NEGATIVE / FAILED ROUTE"
+  ],
+  "classification_basis": "ARCHIVED SCIENTIFIC RESULT from 'GRUT BRIDGE-1 SCIENTIFICALLY SATURATED AT CURRENT PREMISE ENVELOPE', 'Status: FINAL. Frozen by owner ruling.', and 'Scientific work on Bridge-1 has stopped'; ARCHIVED NEGATIVE / FAILED ROUTE from the recorded terminals 'TRUE COMPRESSION = 0', 'NO DISTINCTIVE PAYOFF FOUND AT CURRENT BRIDGE-1 PREMISE ENVELOPE', and 'ZERO CONFIRMED DISTINCTIVE GRUT QUANTITATIVE PREDICTIONS'. 'EXTERNAL REVIEW STILL WELCOME' and 'Independent human peer review is still welcome' are recorded, but no governance process is left active on the branch."
+ },
+ "scout-2": {
+  "status_verbatim_source": "SCOUT-2 SCIENTIFICALLY SATURATED AT CURRENT PREMISE ENVELOPE — INDEPENDENT REVIEW OWED (STATUS.md, headline line; file header reads \"# STATUS — FROZEN\")",
+  "summary": [
+   "SCOUT-2, \"the C5 Origin Campaign\", asked whether \"C5 itself [can] emerge from more primitive structure: systems (individuation), composition, probability / convexity, tomography, access, dimension and preparation? Or is it irreducible?\" (SCOUT_2_HANDOFF.md §A).",
+   "The method was to \"start below C5, in greenfield toy universes\", \"pre-register every probe\", \"distinguish inserted from forced structure\", run \"hostile tests and zoom-outs (eight in all, the last a formal saturation gate)\" and \"apply owner audits as visible repairs (REPAIR 01 … 06)\", with corrections Y-01…Y-13 recorded in ledgers/COUNTEREXAMPLE_LEDGER.md (SCOUT_2_HANDOFF.md §A and header).",
+   "The recorded final residual is \"C5 → D_dyn ⊕ [Σ ⊗ H_corr]_coupled ⊕ A_res\" with \"time orientation NOT selected\" and \"Lorentz structure NOT derived\" (SCOUT_2_HANDOFF.md §B; STATUS.md).",
+   "STATUS.md records \"Frozen by owner ruling after the ZOOM_OUT_08 saturation gate passed and REPAIR 06 (Y-13) was applied\", \"zero distinctive GRUT empirical predictions (structural / information-accounting results only)\", and \"No further SCOUT-2 probe follows the freeze commit\" (S2-D-arrow-∞ out-of-envelope; S2-Σb retired; \"The GRUT bridge is not opened\").",
+   "ledgers/FRONTIER_QUEUE.md closes with \"No open finite-envelope items. Every probe is DONE, RETIRED or OUT-OF-ENVELOPE. No 'next' marker remains\"; the only recorded post-freeze obligation is \"Owed: independent review (handoff §P)\" (STATUS.md), an eight-item unchecked checklist in SCOUT_2_HANDOFF.md §P."
+  ],
+  "key_quotes": [
+   {
+    "path": "STATUS.md",
+    "quote": "**SCOUT-2 SCIENTIFICALLY SATURATED AT CURRENT PREMISE ENVELOPE — INDEPENDENT REVIEW OWED**"
+   },
+   {
+    "path": "SCOUT_2_HANDOFF.md",
+    "quote": "C5  →  D_dyn  ⊕  [Σ ⊗ H_corr]_coupled  ⊕  A_res\n\nwith **time orientation NOT selected** and **Lorentz structure NOT derived**."
+   },
+   {
+    "path": "SCOUT_2_HANDOFF.md",
+    "quote": "**SCOUT-2 earned zero distinctive GRUT empirical predictions.** Its results are structural / information-accounting results about which inputs are supplied, derived, priced or gauge."
+   },
+   {
+    "path": "SCOUT_2_HANDOFF.md",
+    "quote": "**What SCOUT-2 contributes:** C5 did not emerge from dynamics. It was **dismantled into precise pieces**, and the nontrivial residual coupling was located"
+   },
+   {
+    "path": "ledgers/FRONTIER_QUEUE.md",
+    "quote": "**No open finite-envelope items.** Every probe is DONE, RETIRED or OUT-OF-ENVELOPE. No \"next\" marker remains."
+   },
+   {
+    "path": "STATUS.md",
+    "quote": "**No further SCOUT-2 probe follows the freeze commit.** S2-D-arrow-∞ is out-of-envelope (future scope extension); S2-Σb is retired. The GRUT bridge is not opened."
+   }
+  ],
+  "classification": [
+   "ARCHIVED SCIENTIFIC RESULT",
+   "REPRODUCIBILITY SUPPORT"
+  ],
+  "classification_basis": "STATUS.md: \"# STATUS — FROZEN\", \"Frozen by owner ruling\", \"No further SCOUT-2 probe follows the freeze commit\", \"zero distinctive GRUT empirical predictions (structural / information-accounting results only)\"; the branch carries pre-registrations, scripts and logs per probe (SCOUT_2_HANDOFF.md file map: \"probes/ (pre-registrations in probes/PROBE_CHARTERS.md; scripts + logs per probe)\"), which scout-2-review's reproductions ran against. Note the terminal also says \"INDEPENDENT REVIEW OWED\"; the review was subsequently recorded on scout-2-review, not on this frozen branch."
+ },
+ "scout-2-review": {
+  "status_verbatim_source": "# SCOUT-2 REVIEW STATUS (live; `scout-2-review`) (review/REVIEW_STATUS.md, line 1 — recorded state, not a terminal). The review handoff's own verdict line: \"SCOUT-2 SCIENTIFICALLY SATURATED AT CURRENT PREMISE ENVELOPE — HOSTILE REVIEW COMPLETED (independent code path + owner theorem / ledger review); RESIDUAL BOUNDARY CONFIRMED.\" (SCOUT_2_REVIEW_HANDOFF.md §Q8)",
+  "summary": [
+   "scout-2-review is the post-freeze hostile audit of SCOUT-2, \"built on the frozen SCOUT-2 head af0042f\"; \"The frozen record (scout-2) is unchanged\" and \"New material lives only under review/\" (SCOUT_2_REVIEW_HANDOFF.md header; review/README.md).",
+   "Its review layers are the owner's theorem review (IR-01…IR-04), the owner's ledger audit (IR-06, IR-07), and numerical reproductions that are \"an independent code path, not an independent reviewer (same agent; no shared code; different routines; fresh frames / seeds)\", which produced IR-05 (SCOUT_2_REVIEW_HANDOFF.md header).",
+   "Findings IR-01…IR-07 yielded proposed errata E-01…E-08 in review/ERRATA_PROPOSED.md (frozen files untouched); review/REVIEW_STATUS.md records \"none affects the residual boundary\" and, under open findings, \"none threatening C5 → D_dyn ⊕ [Σ ⊗ H_corr]_coupled ⊕ A_res\".",
+   "\"Only the S2-ΣH H1 conflict case as originally characterized\" was not reproduced (IR-05: it was \"coarse-compatible\"); the intended incompatibility result was \"re-established on a separate code path with certified-incompatible pairs, 3/3\", and every other targeted load-bearing conclusion reproduced (SCOUT_2_REVIEW_HANDOFF.md §Q4; review/REVIEW_STATUS.md §2).",
+   "Q7 lists what \"remains genuinely unreviewed\": \"an independent human or second-model reviewer for the numerics\", \"further decomposition of A_res\" (UNREVIEWED in review/REVIEW_STATUS.md §3), re-fetching primary sources (\"arXiv / APS blocked\"), \"the full Stoica theorem and the full-commutant epoch question (not adjudicated)\", and out-of-envelope questions; Q9 records \"No scout-2-reviewed branch has been created. That decision is brought to the owner\" with \"Creation is left to the owner\"."
+  ],
+  "key_quotes": [
+   {
+    "path": "review/REVIEW_STATUS.md",
+    "quote": "# SCOUT-2 REVIEW STATUS (live; `scout-2-review`)"
+   },
+   {
+    "path": "SCOUT_2_REVIEW_HANDOFF.md",
+    "quote": "**SCOUT-2 SCIENTIFICALLY SATURATED AT CURRENT PREMISE ENVELOPE — HOSTILE REVIEW COMPLETED (independent code path + owner theorem / ledger review); RESIDUAL BOUNDARY CONFIRMED.**"
+   },
+   {
+    "path": "review/REVIEW_STATUS.md",
+    "quote": "**Numerical reproductions are an *independent code path, not an independent reviewer*.**"
+   },
+   {
+    "path": "SCOUT_2_REVIEW_HANDOFF.md",
+    "quote": "**Only the S2-ΣH H1 conflict case as originally characterized** (IR-05). The intended incompatibility result was **re-established on a separate code path** with certified-incompatible pairs, 3/3."
+   },
+   {
+    "path": "review/REVIEW_STATUS.md",
+    "quote": "| IR-01 … IR-07 | recorded; errata E-01 … E-08 proposed; none affects the residual boundary |\n| open | none threatening `C5 → D_dyn ⊕ [Σ ⊗ H_corr]_coupled ⊕ A_res` |"
+   },
+   {
+    "path": "SCOUT_2_REVIEW_HANDOFF.md",
+    "quote": "**No `scout-2-reviewed` branch has been created.** That decision is brought to the owner (Q9)."
+   },
+   {
+    "path": "SCOUT_2_REVIEW_HANDOFF.md",
+    "quote": "**Do not merge review into `scout-2`.** Creation is left to the owner."
+   }
+  ],
+  "classification": [
+   "ACTIVE GOVERNANCE",
+   "REPRODUCIBILITY SUPPORT"
+  ],
+  "classification_basis": "review/REVIEW_STATUS.md is headed \"(live; scout-2-review)\"; SCOUT_2_REVIEW_HANDOFF.md Q9 says the branch \"may receive later review additions\" and that the scout-2-reviewed snapshot decision \"is brought to the owner\" / \"Creation is left to the owner\" (open governance decision). The branch's review/nr_*.py, ir06_check.py scripts and logs are the independent-code-path reproductions (\"fresh implementations; different numerical routines; fresh random frames\", review/README.md), i.e. reproducibility support for the frozen record."
+ },
+ "gravity-scout-1": {
+  "status_verbatim_source": "GRAVITY-SCOUT-1 SCIENTIFICALLY SATURATED AT CURRENT PREMISE ENVELOPE — EXTERNAL REVIEW STILL WELCOME (gravity_scout_1/GRAVITY_SCOUT_1_STATUS.md, blockquote at top; identical line heads gravity_scout_1/GRAVITY_SCOUT_1_HANDOFF.md and closes gravity_scout_1/GRAVITY_CORRECTION_LEDGER.md 'Final verdict (owner ruling)')",
+  "summary": [
+   "The campaign is recorded as a 'non-canonical playground campaign' that 'explicitly opens the gravity envelope' (closed under Bridge-1 and QFT-SCOUT-1), consuming gravitational inputs QG-1…QG-13 as priced premises while 'Every result stays auxiliary to canonical GRUT' (gravity_scout_1/GRAVITY_SCOUT_1_CHARTER.md).",
+   "It ran three gates with hard stops: G1 (minimum splitting distance d_min), G2 (gravitational subsystem structure) and G3 (operational access), each repaired by owner audits GRAVITY REPAIR 01–03 and 'accepted provisionally' after repair; an orientation gate was 'NOT RUN (owner scope ruling: orientation supplied in every route)' (gravity_scout_1/GRAVITY_SCOUT_1_STATUS.md queue; gravity_scout_1/GRAVITY_CORRECTION_LEDGER.md).",
+   "Recorded empirical terminal: 'NO DISTINCTIVE PAYOFF FOUND AT CURRENT GRAVITY-SCOUT-1 PREMISE ENVELOPE', 'ZERO CONFIRMED DISTINCTIVE GRUT QUANTITATIVE PREDICTIONS', 'CONDITIONALLY SELECTED: none', 'TRUE COMPRESSION: 0' (gravity_scout_1/GRAVITY_SCOUT_1_STATUS.md Results table; gravity_scout_1/GRAVITY_SCOUT_1_HANDOFF.md scorecard).",
+   "Gate terminals as recorded: G1 — 'No universal gravitational d_min^incl > 0', with candidate d* ~ (N ℓ_P² R)^{1/3} graded 'PREPARATION-CLASS CONSTRAINT — CONSTRAINED-NONUNIQUE — CONDITIONAL ON L_all — HEURISTIC'; G2 — 'Σ / A_partition = CONSTRAINED / OBSERVABLE-CLASS-PRICED. No unique gravitational 𝒩'; G3 — 'ACCESS COMBINATIONS CONSTRAINED; ACCESS VARIABLES NOT SELECTED' (gravity_scout_1/GRAVITY_SCOUT_1_HANDOFF.md gate verdicts).",
+   "The handoff separates 'Residual payoff: yes, as combination constraints' (the heuristic d* preparation-class restriction, observable-class-priced subsystem independence, the finite-time Bondi-charge access exclusion, the conditional AdS access exclusion) from 'Empirical payoff: none'; the queue is 'CLOSED (no item is NEXT)', the handoff is 'FINAL', the freeze is pinned by the immutable branch 'gravity-scout-1-frozen', and 'Scientific work on GRAVITY-SCOUT-1 has stopped.' with 'No canonical update applied. No PR opened. Nothing merged.' (gravity_scout_1/GRAVITY_SCOUT_1_HANDOFF.md; gravity_scout_1/GRAVITY_SCOUT_1_STATUS.md)."
+  ],
+  "key_quotes": [
+   {
+    "path": "gravity_scout_1/GRAVITY_SCOUT_1_STATUS.md",
+    "quote": "GRAVITY-SCOUT-1 SCIENTIFICALLY SATURATED AT CURRENT PREMISE ENVELOPE — EXTERNAL REVIEW STILL WELCOME"
+   },
+   {
+    "path": "gravity_scout_1/GRAVITY_SCOUT_1_STATUS.md",
+    "quote": "Empirical terminal | NO DISTINCTIVE PAYOFF FOUND AT CURRENT GRAVITY-SCOUT-1 PREMISE ENVELOPE ... Distinctive GRUT predictions | ZERO CONFIRMED DISTINCTIVE GRUT QUANTITATIVE PREDICTIONS"
+   },
+   {
+    "path": "gravity_scout_1/GRAVITY_SCOUT_1_HANDOFF.md",
+    "quote": "GRAVITY-SCOUT-1 found gravitational restrictions on product preparations, subsystem independence and finite-time observable access. It found no gravitational selector for the split scale, the subsystem algebra, coarse-graining, the time window or orientation. It earned no TRUE physical-information compression and no distinctive empirical payoff."
+   },
+   {
+    "path": "gravity_scout_1/GRAVITY_SCOUT_1_HANDOFF.md",
+    "quote": "Status: FINAL, frozen by owner ruling. The immutable snapshot is `gravity-scout-1-frozen`"
+   },
+   {
+    "path": "gravity_scout_1/G1_DMIN_RESULT.md",
+    "quote": "Overall inclusion conclusion. Gravity did not produce a positive universal minimum splitting length. In dynamical gravity, the stronger issue is that the ordinary split structure may be replaced or may fail, rather than acquire a finite d_min."
+   },
+   {
+    "path": "gravity_scout_1/G2_GRAVITATIONAL_SUBSYSTEM_RESULT.md",
+    "quote": "No unique gravitational analogue of 𝒩. CONDITIONALLY SELECTED: none at G ≠ 0."
+   },
+   {
+    "path": "gravity_scout_1/GRAVITY_CORRECTION_LEDGER.md",
+    "quote": "Terminal: ORIENTATION REMAINS SUPPLIED / NOT SELECTED. This is a campaign scope ruling, not a theorem that gravity can never select orientation."
+   },
+   {
+    "path": "gravity_scout_1/GRAVITY_SCOUT_1_STATUS.md",
+    "quote": "No canonical update applied. No PR opened. Nothing merged. ... Scientific work on GRAVITY-SCOUT-1 has stopped."
+   },
+   {
+    "path": "gravity_scout_1/GRAVITY_SCOUT_1_HANDOFF.md",
+    "quote": "Numerics (`g1/`, `g2/`, `g3/`) are an independent code path, not an independent reviewer. ... The lattice / finite toys are illustrations."
+   }
+  ],
+  "classification": [
+   "ARCHIVED NEGATIVE / FAILED ROUTE",
+   "ARCHIVED SCIENTIFIC RESULT"
+  ],
+  "classification_basis": "Frozen with 'NO DISTINCTIVE PAYOFF FOUND AT CURRENT GRAVITY-SCOUT-1 PREMISE ENVELOPE', 'ZERO CONFIRMED DISTINCTIVE GRUT QUANTITATIVE PREDICTIONS', 'TRUE COMPRESSION: 0', 'CONDITIONALLY SELECTED: none' and 'Scientific work on GRAVITY-SCOUT-1 has stopped.' (negative/failed-route wording), while the handoff simultaneously records 'Residual payoff: yes, as combination constraints' — the d* preparation-class constraint, observable-class-priced subsystem independence, and the Bondi/AdS access exclusions — as results 'auxiliary to canonical GRUT' (archived-result wording). 'EXTERNAL REVIEW STILL WELCOME' is recorded in the terminal itself."
+ },
+ "qft-scout-1": {
+  "status_verbatim_source": "QFT-SCOUT-1 SCIENTIFICALLY SATURATED AT CURRENT PREMISE ENVELOPE — EXTERNAL REVIEW STILL WELCOME (qft_scout_1/QFT_SCOUT_1_STATUS.md, blockquote line 3; identical banner in qft_scout_1/QFT_SCOUT_1_HANDOFF.md). Matches the index terminal verbatim.",
+  "summary": [
+   "QFT-SCOUT-1 is recorded as a 'non-canonical playground campaign, authorized by owner ruling (this thread, after the Bridge-1 freeze)' that asks whether an enlarged premise envelope of 'algebraic QFT, infinite-dimensional local algebras, and modular theory' can 'narrow, condition, or compress' the frozen Bridge-1 residual (qft_scout_1/QFT_SCOUT_1_CHARTER.md).",
+   "Its strongest recorded result is gate G1: 'H_cross = 0 is FORBIDDEN in the sharp normal-state class' while 'admissible with a split buffer', giving 'H_cross: CONSTRAINED-NONUNIQUE', described as 'the campaign's strongest genuine residual result. It is standard AQFT, but it narrows the frozen residual' (qft_scout_1/QFT_SCOUT_1_HANDOFF.md).",
+   "Gates G2 and G3 record conditional structural/specification compression only — an 'injective state-independent outer modular homomorphism δ_M' for type III₁ and 'HSMI ⇒ Borchers triple, not automatically an interval net' — with 'ORIENTATION NOT SELECTED; H_epoch NOT SELECTED' (qft_scout_1/QFT_SCOUT_1_HANDOFF.md, qft_scout_1/QFT_CORRECTION_LEDGER.md).",
+   "The G4 payoff firewall terminal is 'NO DISTINCTIVE PAYOFF FOUND AT CURRENT QFT-SCOUT-1 PREMISE ENVELOPE' with 'ZERO CONFIRMED DISTINCTIVE GRUT QUANTITATIVE PREDICTIONS', 'No candidate passes all seven criteria', and 'TRUE COMPRESSION | 0' (qft_scout_1/G4_PAYOFF_RESULT.md, qft_scout_1/QFT_SCOUT_1_STATUS.md).",
+   "The capsule is closed: the status queue reads 'Queue — CLOSED (no item is NEXT)' with 'Scientific work on QFT-SCOUT-1 has stopped', the handoff is 'FINAL, frozen by owner ruling. The immutable snapshot is qft-scout-1-frozen', and the correction ledger records 'G4 accepted. QFT-SCOUT-1 FROZEN by owner ruling, with Q4R-01 and Q4R-02 applied' (qft_scout_1/QFT_SCOUT_1_STATUS.md, qft_scout_1/QFT_SCOUT_1_HANDOFF.md, qft_scout_1/QFT_CORRECTION_LEDGER.md line 81). The capsule is 22 files under qft_scout_1/ (14 markdown docs plus g1/–g4/ script+log pairs), confirmed by ls-tree of origin/qft-scout-1."
+  ],
+  "key_quotes": [
+   {
+    "path": "qft_scout_1/QFT_SCOUT_1_STATUS.md",
+    "quote": "QFT-SCOUT-1 SCIENTIFICALLY SATURATED AT CURRENT PREMISE ENVELOPE — EXTERNAL REVIEW STILL WELCOME"
+   },
+   {
+    "path": "qft_scout_1/QFT_SCOUT_1_STATUS.md",
+    "quote": "Empirical terminal | **NO DISTINCTIVE PAYOFF FOUND AT CURRENT QFT-SCOUT-1 PREMISE ENVELOPE** ... TRUE COMPRESSION | **0**"
+   },
+   {
+    "path": "qft_scout_1/QFT_SCOUT_1_STATUS.md",
+    "quote": "**No canonical update applied. No PR opened.** Nothing merged. **Scientific work on QFT-SCOUT-1 has stopped.**"
+   },
+   {
+    "path": "qft_scout_1/QFT_SCOUT_1_HANDOFF.md",
+    "quote": "**Status:** FINAL, frozen by owner ruling. The immutable snapshot is `qft-scout-1-frozen` (see `QFT_SCOUT_1_STATUS.md`)."
+   },
+   {
+    "path": "qft_scout_1/QFT_SCOUT_1_HANDOFF.md",
+    "quote": "**H_cross = 0 is FORBIDDEN in the sharp normal-state class** (geometric reading via Haag duality); it is **admissible with a split buffer**. **H_cross: CONSTRAINED-NONUNIQUE.**"
+   },
+   {
+    "path": "qft_scout_1/QFT_SCOUT_1_HANDOFF.md",
+    "quote": "No route identified or tested under the present charter yields TRUE COMPRESSION or a distinctive observable. A further result would require an untested theorem / structure within AQFT or a materially altered premise envelope."
+   },
+   {
+    "path": "qft_scout_1/QFT_SCOUT_1_HANDOFF.md",
+    "quote": "**Residual payoff: yes.** H_cross has been narrowed, and the modular localization has been specification-compressed. ... **Empirical payoff: none.**"
+   },
+   {
+    "path": "qft_scout_1/G4_PAYOFF_RESULT.md",
+    "quote": "**No candidate passes all seven criteria.** ... **ZERO CONFIRMED DISTINCTIVE GRUT QUANTITATIVE PREDICTIONS** (preserved)."
+   },
+   {
+    "path": "qft_scout_1/QFT_CORRECTION_LEDGER.md",
+    "quote": "**Status:** G4 accepted. **QFT-SCOUT-1 FROZEN** by owner ruling, with Q4R-01 and Q4R-02 applied."
+   },
+   {
+    "path": "qft_scout_1/QFT_SCOUT_1_CHARTER.md",
+    "quote": "**Status:** non-canonical playground campaign, authorized by owner ruling (this thread, after the Bridge-1 freeze)."
+   }
+  ],
+  "classification": [
+   "ARCHIVED SCIENTIFIC RESULT",
+   "ARCHIVED NEGATIVE / FAILED ROUTE"
+  ],
+  "classification_basis": "ARCHIVED because the handoff is recorded 'FINAL, frozen by owner ruling' with an immutable snapshot branch and 'Scientific work on QFT-SCOUT-1 has stopped.' SCIENTIFIC RESULT because the record keeps a positive residual ledger: 'Residual payoff: yes. H_cross has been narrowed, and the modular localization has been specification-compressed' and 'H_cross: CONSTRAINED-NONUNIQUE ... the campaign's strongest genuine residual result.' NEGATIVE / FAILED ROUTE because the empirical terminal is 'NO DISTINCTIVE PAYOFF FOUND AT CURRENT QFT-SCOUT-1 PREMISE ENVELOPE', 'ZERO CONFIRMED DISTINCTIVE GRUT QUANTITATIVE PREDICTIONS', 'TRUE COMPRESSION: 0', and the saturation verdict says no route under the present charter yields TRUE COMPRESSION or a distinctive observable. The record itself keeps the two ledgers 'kept separate', so both labels are offered; 'EXTERNAL REVIEW STILL WELCOME' is recorded but no review item is open in the capsule queue (Queue — CLOSED)."
+ },
+ "residual-synthesis-1": {
+  "status_verbatim_source": "\"GRUT RESIDUAL SYNTHESIS 01 — FROZEN CONSOLIDATION OF EXISTING RESULTS\" — residual_synthesis/RESIDUAL_SYNTHESIS_STATUS.md (terminal blockquote; identical wording heads residual_synthesis/GRUT_RESIDUAL_SYNTHESIS_01.md)",
+  "summary": [
+   "The capsule is a consolidation of four frozen campaigns (scout-2-reviewed @ 1f08ae1…, grut-bridge-1-frozen @ 753b90a…, qft-scout-1-frozen @ 5b07573…, gravity-scout-1-frozen @ df25f29…) and states \"This is not a scientific campaign. It claims no new physics result\" (RESIDUAL_SYNTHESIS_STATUS.md) and \"No new physics. No theorem search, no numerics, no repair of frozen results\" (GRUT_RESIDUAL_SYNTHESIS_01.md).",
+   "Its queue is recorded as \"Queue — CLOSED\" with all seven capsule files DONE: MASTER_RESIDUAL_LEDGER.md, CONSTRAINT_COUPLING_MAP.md, SUPPLIED_INPUT_MASTER_TABLE.md, INFORMATION_FLOW_LEDGER.md, SELECTOR_CHALLENGE.md (\"entry conditions only; no selector campaign opened\"), GRUT_RESIDUAL_SYNTHESIS_01.md, and the status/integrity file.",
+   "The consolidated bookkeeping records \"TRUE COMPRESSION = 0\" for Bridge-1, QFT-SCOUT-1 and GRAVITY-SCOUT-1, \"Program total of supplied residual information eliminated: 0\", and \"ZERO CONFIRMED DISTINCTIVE GRUT QUANTITATIVE PREDICTIONS\" (GRUT_RESIDUAL_SYNTHESIS_01.md §§8-9).",
+   "GRUT_RESIDUAL_SYNTHESIS_01.md declares itself \"the adversarial target for any future selector\", and SELECTOR_CHALLENGE.md defines entry conditions S0–S7 with the rule \"GO only if a named candidate plausibly passes S1 and S2 before any calculation. Otherwise, do not open a selector campaign.\"",
+   "The supported key statement (§12) is: every uniqueness result obtained is \"conditional on a supplied criterion, class, state or seed that carries the selecting information\", and the integrity section records \"No PR. No merge. No selector branch opened.\""
+  ],
+  "key_quotes": [
+   {
+    "path": "residual_synthesis/RESIDUAL_SYNTHESIS_STATUS.md",
+    "quote": "This is not a scientific campaign. It claims **no new physics result**."
+   },
+   {
+    "path": "residual_synthesis/RESIDUAL_SYNTHESIS_STATUS.md",
+    "quote": "**TRUE COMPRESSION = 0** across Bridge-1, QFT-SCOUT-1 and GRAVITY-SCOUT-1."
+   },
+   {
+    "path": "residual_synthesis/RESIDUAL_SYNTHESIS_STATUS.md",
+    "quote": "**No PR. No merge. No selector branch opened.**"
+   },
+   {
+    "path": "residual_synthesis/GRUT_RESIDUAL_SYNTHESIS_01.md",
+    "quote": "This document is the **adversarial target** for any future selector."
+   },
+   {
+    "path": "residual_synthesis/GRUT_RESIDUAL_SYNTHESIS_01.md",
+    "quote": "**Program total of supplied residual information eliminated: 0.**"
+   },
+   {
+    "path": "residual_synthesis/GRUT_RESIDUAL_SYNTHESIS_01.md",
+    "quote": "Every uniqueness result obtained is conditional on a supplied criterion, class, state or seed that carries the selecting information. No tested result has selected a unique surviving realization without such an input, and none has eliminated any supplied target information (TRUE COMPRESSION = 0)."
+   },
+   {
+    "path": "residual_synthesis/SELECTOR_CHALLENGE.md",
+    "quote": "If no candidate can even in principle eliminate supplied information **and** choose between surviving admissible members: **DO NOT OPEN SELECTOR CAMPAIGN.**"
+   }
+  ],
+  "classification": [
+   "ACTIVE THEORY CONSTRAINT / EQUIVALENCE",
+   "ACTIVE GOVERNANCE"
+  ],
+  "classification_basis": "Recorded wording positions the capsule as a standing constraint record and gate rather than a new result or a dead end: it \"claims no new physics result\" and is a \"FROZEN CONSOLIDATION OF EXISTING RESULTS\" (status file), yet GRUT_RESIDUAL_SYNTHESIS_01.md is declared \"the adversarial target for any future selector\" (active constraint/equivalence record: residual grades, coupling map, witness table), and SELECTOR_CHALLENGE.md sets binding entry conditions S0–S7 and the GO/NO-GO rule for opening any future selector campaign (active governance)."
+ },
+ "selector-screen-1": {
+  "status_verbatim_source": "\"Terminal: SCREEN-NO-GO — NO NAMED CANDIDATE PLAUSIBLY PASSES S1 AND S2\" — selector_screen_1/SELECTOR_SCREEN_STATUS.md (header blockquote of \"SELECTOR SCREEN STATUS — GRUT SELECTOR SCREEN 01 (FINAL, FROZEN)\"); the same file's queue records \"TERMINAL | SELECTOR CAMPAIGN: NO-GO AT CURRENT SCREEN — REQUIRES A NEW NAMED CANDIDATE TO REOPEN\"",
+  "summary": [
+   "A \"pre-campaign reconnaissance only\" screen of \"49 named candidates in 18 families\" against rules S0–S7 restated \"without weakening\" from the frozen residual synthesis; the status table records Killed 45 (S1: 12, S2: 7, S4: 0, S5: 24, S6: 2) after SSR1-02, 4 \"NO-GO / nonselection results\", 0 ambiguous, 0 survivors.",
+   "The ruling is \"Terminal A: SCREEN-NO-GO — NO NAMED CANDIDATE PLAUSIBLY PASSES S1 AND S2\" and \"Per the selector-challenge GO / NO-GO rule: DO NOT OPEN SELECTOR CAMPAIGN on the present evidence\"; Stage 6 controlled numerics is recorded \"NOT TRIGGERED\" and owner review \"DONE: Terminal A accepted; SELECTOR SCREEN REPAIR 01 applied; screen FROZEN\".",
+   "The report scopes its own negative [SSR1-05]: the terminal means only that among the named candidates screened none \"is currently sufficiently specified and sufficiently input-independent to plausibly pass both S1 and S2 at the frozen target scope\"; \"It is not an impossibility theorem\", and \"A principle not in this census, or a primary-text reading that overturns an abstract-level input accounting, could reopen the question.\"",
+   "Reopening is gated: \"a new screen is justified only by a named new candidate\" that states before calculation its frozen target pair, predicted member, complete input set, and why those inputs carry strictly less selecting information, then survives the C7 twin test; the most instructive near-miss recorded is \"L1 (LQC dynamical initial conditions), the strongest state-selection near-miss [SSR1-03]\".",
+   "Integrity records no frozen branch modified, \"No PR. No merge. No canonical update.\" and \"No selector-campaign branch created.\"; source grades were \"PRIMARY ABSTRACT VERIFIED (search) at best, because full-text fetch is blocked in this environment\", with owner upgrades for Carroll–Singh and Zanardi et al."
+  ],
+  "key_quotes": [
+   {
+    "path": "selector_screen_1/SELECTOR_SCREEN_STATUS.md",
+    "quote": "**Terminal: SCREEN-NO-GO — NO NAMED CANDIDATE PLAUSIBLY PASSES S1 AND S2**"
+   },
+   {
+    "path": "selector_screen_1/SELECTOR_SCREEN_STATUS.md",
+    "quote": "**Owner review was required before any selector campaign. It found a NO-GO, so no selector campaign opens without a new named candidate.**"
+   },
+   {
+    "path": "selector_screen_1/GRUT_SELECTOR_SCREEN_01.md",
+    "quote": "**Per the selector-challenge GO / NO-GO rule: DO NOT OPEN SELECTOR CAMPAIGN** on the present evidence."
+   },
+   {
+    "path": "selector_screen_1/GRUT_SELECTOR_SCREEN_01.md",
+    "quote": "It is not an impossibility theorem."
+   },
+   {
+    "path": "selector_screen_1/GRUT_SELECTOR_SCREEN_01.md",
+    "quote": "**No candidate eliminated supplied information.** The Stage 7 meta-test classifies every near-miss as a **NEW SUPPLIED SELECTOR** (primitive substitution or renaming), not candidate compression."
+   },
+   {
+    "path": "selector_screen_1/GRUT_SELECTOR_SCREEN_01.md",
+    "quote": "**Every sufficiently developed candidate examined either remains conditional on a supplied element of the frozen residual / coupled class, fails to distinguish a frozen surviving pair, or is itself a nonselection result.**"
+   },
+   {
+    "path": "selector_screen_1/GRUT_SELECTOR_SCREEN_01.md",
+    "quote": "**Final queue terminal: SELECTOR CAMPAIGN: NO-GO AT CURRENT SCREEN — REQUIRES A NEW NAMED CANDIDATE TO REOPEN.**"
+   }
+  ],
+  "classification": [
+   "ARCHIVED NEGATIVE / FAILED ROUTE",
+   "ACTIVE GOVERNANCE"
+  ],
+  "classification_basis": "The screen's own terminal is a frozen negative: \"SCREEN-NO-GO — NO NAMED CANDIDATE PLAUSIBLY PASSES S1 AND S2\", 0 survivors, \"screen FROZEN\" (archived negative / failed route); but the terminal also carries a standing gate on future work — \"NO-GO AT CURRENT SCREEN — REQUIRES A NEW NAMED CANDIDATE TO REOPEN\" with an explicit four-part reopening condition and the C7 twin test — which is governance wording that remains in force after freeze. Its own scope note (\"not an impossibility theorem\") cautions against reading the NO-GO as a scientific impossibility result."
+ },
+ "program-governance-1": {
+  "status_verbatim_source": "\"**Result:** **FROZEN BY OWNER RULING.**\" — program_governance/PROGRAM_GOVERNANCE_OWNER_RULING_01.md",
+  "summary": [
+   "The branch holds the program's governance set in three program_governance/ files; the owner ruling on `grut-program-governance-1 @ 2236e93` records \"Governance accepted. The governance state at `2236e93` is accepted as scientifically correct\" and the result \"FROZEN BY OWNER RULING.\" (program_governance/PROGRAM_GOVERNANCE_OWNER_RULING_01.md).",
+   "PROGRAM_CAMPAIGN_GATE_01.md is \"program law, FROZEN BY OWNER RULING\" and governs \"the opening of every new scientific campaign in the GRUT program\" through two doors — Door D (derivation/selector, requirements D-1 to D-4) and Door C (conjecture) — with \"A proposal that fits neither door is refused: NO CAMPAIGN.\"",
+   "CONJECTURE_MODE_CHARTER_01.md is \"ACCEPTED IN SUBSTANCE\" with editorial repairs ER-1 to ER-3 applied, carries Annex A (refiled historical cards) and Annex B (Card #1 rerun requirements), and at this freeze states \"CARD #1 IS NOT EXECUTABLE\" with every numerical kill boundary \"an OWNER-LOCK slot, left empty on purpose.\"",
+   "The ruling states \"Program law creates no physics and modifies no frozen scientific result,\" makes the Prior-Exposure Disclosure permanent (Charter §4D), and creates the immutable snapshot `grut-program-governance-1-frozen`, from which \"The execution branch `grut-conjecture-mode-1` descends.\"",
+   "On the execution branch, CONJECTURE_MODE_IMPORT_MANIFEST_01.md assigns all three program_governance/ files the role \"ACTIVE GOVERNANCE REFERENCE\" (\"rules a future campaign may cite\")."
+  ],
+  "key_quotes": [
+   {
+    "path": "program_governance/PROGRAM_GOVERNANCE_OWNER_RULING_01.md",
+    "quote": "**Result:** **FROZEN BY OWNER RULING.**"
+   },
+   {
+    "path": "program_governance/PROGRAM_GOVERNANCE_OWNER_RULING_01.md",
+    "quote": "6. **Program law creates no physics and modifies no frozen scientific result.**"
+   },
+   {
+    "path": "program_governance/PROGRAM_CAMPAIGN_GATE_01.md",
+    "quote": "A proposed campaign must enter through exactly one of two legal doors. A proposal that fits neither door is refused: **NO CAMPAIGN**."
+   },
+   {
+    "path": "program_governance/CONJECTURE_MODE_CHARTER_01.md",
+    "quote": "**Execution status:** **CARD #1 IS NOT EXECUTABLE.**"
+   },
+   {
+    "path": "program_governance/CONJECTURE_MODE_CHARTER_01.md",
+    "quote": "> **A postulate may be unearned. It may never be hidden.**"
+   },
+   {
+    "path": "CONJECTURE_MODE_IMPORT_MANIFEST_01.md (on grut-conjecture-mode-1)",
+    "quote": "| `program_governance/PROGRAM_GOVERNANCE_OWNER_RULING_01.md` | ACTIVE GOVERNANCE REFERENCE | `9f5c893c0311dfcba9978887f2dd0dd1fd96d9c539789dd1947d0cb1c4bcba13` |"
+   }
+  ],
+  "classification": [
+   "ACTIVE GOVERNANCE"
+  ],
+  "classification_basis": "The three files are headed \"program law\" and \"FROZEN BY OWNER RULING\" (PROGRAM_CAMPAIGN_GATE_01.md, PROGRAM_GOVERNANCE_OWNER_RULING_01.md), and the execution branch's import manifest assigns each the role \"ACTIVE GOVERNANCE REFERENCE: rules a future campaign may cite\" (CONJECTURE_MODE_IMPORT_MANIFEST_01.md lines 79–81)."
+ },
+ "conjecture-mode-1": {
+  "status_verbatim_source": "\"## **TERMINAL: CARD-01-v1R2 — COMPUTATIONALLY UNRESOLVED AT AVAILABLE MINIMIZATION METHOD**\" — conjecture_mode/cards/CARD_01_V1R2_RESULT.md (also recorded in conjecture_mode/CARD_LEDGER.md and CONJECTURE_MODE_FINAL_SYNTHESIS_01.md §3)",
+  "summary": [
+   "Earned (CONJECTURE_MODE_FINAL_SYNTHESIS_01.md §1): Conjecture Mode governance (two legal doors, owner-locked thresholds, prior-exposure disclosure, network preflight, nested-null result states, C-F1–C-F10); \"Card #1 (horizon relaxor) was implemented and brought into contact with official DESI DR2 products\"; \"Provenance was verified\" (all consumed likelihood data pinned and SHA-256 hashed); \"The first apparent mechanical result was invalidated by convergence auditing\" (v1's mechanical EXPLANATORY-SURVIVES failed the frozen 0.2 start-spread diagnostic and \"was never accepted\"); \"The local-optimizer terminal was reached honestly\" (v1 → v1R → v1R2, each frozen before execution, \"no v1R3\"); and \"EQ-01 equivalence banked (narrow scope).\"",
+   "Not earned (§2): \"No accepted empirical verdict for Card #1\" (not EXPLANATORY-SURVIVES, EXPLANATORY-KILLED or MODEL-KILLED by any accepted run); \"No GRUT prediction, and no validation\" (a DR2 comparison is \"retrospective by construction\"); \"No evidence that Card #1 is GRUT's generative law\" (its response form is \"POSTULATED HEURISTIC TOY LAW — NOT DERIVED FROM THE GRUT EFFECTIVE STRESS TENSOR\"); \"Cards #2–#4 remain historical and unrepaired\"; \"The supernova extensions, the ε > 0 control and the MCMC posterior were never run.\"",
+   "Card #1 final status line (§3): \"**Card #1** | **POSTULATED; COMPUTATIONALLY UNRESOLVED** (`CARD-01-v1R2 — COMPUTATIONALLY UNRESOLVED AT AVAILABLE MINIMIZATION METHOD`, commit `a8dbf3f`)\"; further optimizer campaigns: \"None (no v1R3). Any further work needs a new owner ruling, e.g. a fundamentally different, independent likelihood / minimization implementation.\"",
+   "Orientation-only numbers, exactly as stated under the header \"Orientation only — not a verdict, and not an S5 evaluation. These are the reproduced v1R2 core minima\": χ²_Λ ≈ 10976.08; χ²_CPL ≈ 10963.81; χ²_Card ≈ 10972.72 (free-ε fit, ε ≈ −0.084); I_Card ≈ 3.36; I_CPL ≈ 12.28; F ≈ 0.27.",
+   "The v1R2 terminal mechanism (CARD_01_V1R2_RESULT.md): ΛCDM, CPL and free-ε were reproduced under the frozen lower-minimum criterion, but \"fixed ε = −0.08 was not reproduced\" — \"only 1 start within 0.2 of L = 10972.769. The closest independent route is 0.287 above it\" — so \"no Stage B\" was run and \"no S5 state is assigned.\""
+  ],
+  "key_quotes": [
+   {
+    "path": "conjecture_mode/cards/CARD_01_V1R2_RESULT.md",
+    "quote": "## **TERMINAL: CARD-01-v1R2 — COMPUTATIONALLY UNRESOLVED AT AVAILABLE MINIMIZATION METHOD**"
+   },
+   {
+    "path": "CONJECTURE_MODE_FINAL_SYNTHESIS_01.md",
+    "quote": "**No accepted empirical verdict for Card #1.** v1, v1R and v1R2 are all unresolved. Card #1 is not EXPLANATORY-SURVIVES, EXPLANATORY-KILLED or MODEL-KILLED by any accepted run."
+   },
+   {
+    "path": "CONJECTURE_MODE_FINAL_SYNTHESIS_01.md",
+    "quote": "**Orientation only — not a verdict, and not an S5 evaluation.** These are the reproduced v1R2 core minima."
+   },
+   {
+    "path": "CONJECTURE_MODE_FINAL_SYNTHESIS_01.md",
+    "quote": "| χ²_Λ | ≈ 10976.08 | / | χ²_CPL | ≈ 10963.81 | / | χ²_Card | ≈ 10972.72 (free-ε fit, ε ≈ −0.084) | / | I_Card | ≈ 3.36 | / | I_CPL | ≈ 12.28 | / | F | ≈ 0.27 |"
+   },
+   {
+    "path": "conjecture_mode/EQUIVALENCE_REGISTRY.md",
+    "quote": "| **EQ-01** | Card #3 (linear geometric target) | In flat homogeneous FRW with pressureless matter and a `w = −1` vacuum, at the declared background level, targets linear in `ρ_m`, `ρ_v`, `H²` and `Ḣ` collapse to the same linear-response family after coefficient redefinition. | radiation; curvature; perturbations; different interaction laws; nonlinear target functions | **C1-EQUIVALENT (narrow)**, per governance Annex A |"
+   },
+   {
+    "path": "conjecture_mode/EQUIVALENCE_REGISTRY.md",
+    "quote": "Under C-F3, every proven collapse or reparameterization is banked here permanently. A mathematically equivalent model may not return as a new card under different notation."
+   },
+   {
+    "path": "conjecture_mode/CARD_LEDGER.md",
+    "quote": "**v1R2 (final local-optimizer campaign, `af647ac`): TERMINAL — CARD-01-v1R2 — COMPUTATIONALLY UNRESOLVED AT AVAILABLE MINIMIZATION METHOD.** Stage A: ΛCDM (10976.08), CPL (10963.81) and free-ε (10972.72 at ε ≈ −0.084) reproduced; fixed ε = −0.08 not reproduced (next distinct route +0.287 > 0.2). No Stage B, no S5 state."
+   },
+   {
+    "path": "CONJECTURE_MODE_IMPORT_MANIFEST_01_ADDENDUM_A.md",
+    "quote": "Manifest 01 §4 recorded these files as not yet in the repository. They are now committed, byte-exact, under `conjecture_mode/cards/raw/`. ... The copy was verified byte-exact: 232/232 sha256 match between source and copy before commit."
+   }
+  ],
+  "classification": [
+   "ARCHIVED SCIENTIFIC RESULT",
+   "ACTIVE OPEN QUESTION",
+   "ACTIVE THEORY CONSTRAINT / EQUIVALENCE",
+   "REPRODUCIBILITY SUPPORT"
+  ],
+  "classification_basis": "The import manifest labels the card record files \"ARCHIVED SCIENTIFIC RECORD\" and the code/configs/logs \"REPRODUCIBILITY SUPPORT\" (CONJECTURE_MODE_IMPORT_MANIFEST_01.md; Addendum A adds 232 raw files). The terminal is an unresolved computation, left open on recorded wording: \"COMPUTATIONALLY UNRESOLVED AT AVAILABLE MINIMIZATION METHOD\" and \"Any further work needs a new owner ruling\" (open question). EQ-01 is a standing constraint: \"banked here permanently. A mathematically equivalent model may not return as a new card under different notation,\" verdict \"C1-EQUIVALENT (narrow), per governance Annex A\" (conjecture_mode/EQUIVALENCE_REGISTRY.md)."
+ },
+ "scout-0": {
+  "status_verbatim_source": "\"**Status:** PROVISIONALLY SATURATED — OWED CHECKS ONLY (`SATURATION_CERTIFICATION_02.md`).\" — playground/SCOUT_0/SCOUT_0_HANDOFF.md (matching index terminal; final verdict in playground/SCOUT_0/SATURATION_CERTIFICATION_02.md: \"PROVISIONALLY SATURATED — OWED CHECKS ONLY.\")",
+  "summary": [
+   "SCOUT-0 is described in its handoff as a \"wide-net reconnaissance of the GRUT record\" that \"set out to see whether wide exploration could find a way around GRUT's pattern of supplied selectors\"; the discipline line states \"everything here is NEW HYPOTHESIS CLASS / candidate physics. No canonical terminal was altered.\" (playground/SCOUT_0/SCOUT_0_HANDOFF.md).",
+   "Per the handoff, every route either \"rediscovered standard physics\" or \"reduced the observable result to a smaller effective object whose determining structure GRUT still supplies\", and \"Zero distinctive GRUT predictions were earned\"; the one apparent exception, the lock K1 Sigma_0 = mu_0/2, \"collapsed under hostile comparison into a standard luminal-Horndeski degeneracy\", with K1-Z \"RETIRED\" (SCOUT_0_HANDOFF.md sections 0 and 6).",
+   "The campaign banked exact/structural results (P-06b CM boundary theorem, P-08/P-09 lift audit negatives, P-17 identifiability theorem, P-18 chaotic-driver result, P-02/P-02b sector-formation theorems, P-15 Born/martingale theorem, K1-H/K1-HS Horndeski constraint results, EDA-01 edge-data audit) and eight \"Killed route families\", plus a \"quotient principle\" whose global form is fenced as \"a conjecture\" (SCOUT_0_HANDOFF.md sections 1, 3, 4).",
+   "SATURATION_CERTIFICATION_02.md grades criterion 2 PARTIAL — \"Genuinely independent reproduction is still owed for the top results (handoff §7)\" — and rules \"The remaining work is verification/packaging, not another exploratory wave. No new wave is opened.\"",
+   "The frontier queue is closed: \"CAMPAIGN CLOSED — PROVISIONALLY SATURATED, OWED CHECKS ONLY ... No route below is open for exploration; remaining work is independent reproduction (handoff §7)\" (playground/SCOUT_0/FRONTIER_QUEUE.md).",
+   "The owed checks (handoff §7, \"Packaging/verification work, not exploration\") are: (1) independent re-derivation of the P-17 identifiability theorem and its exact Taylor checks; (2) independent reproduction of the P-02 edge-velocity theorem plus the hard-core-boson/SF-1 match; (3) independent re-derivation of the P-15 Born ⟺ martingale ⟺ decomposition-independence chain; (4) an independent K1-H/K1-HS reproduction with the primary texts (Linder 2020; Peirone et al. 2018; Bellini–Sawicki 2014) read in full; (5) EDA-01's row classification checked by a second reader; (6) primary-text checks still marked secondary (small-alpha Horndeski ratio; Pogosian–Silvestri conjecture; P-18 homogenization citations)."
+  ],
+  "key_quotes": [
+   {
+    "path": "playground/SCOUT_0/SCOUT_0_HANDOFF.md",
+    "quote": "Zero distinctive GRUT predictions were earned."
+   },
+   {
+    "path": "playground/SCOUT_0/SCOUT_0_HANDOFF.md",
+    "quote": "The one apparent exception, the lock K1 `Σ₀ = μ₀/2`, collapsed under hostile comparison into a standard luminal-Horndeski degeneracy."
+   },
+   {
+    "path": "playground/SCOUT_0/SATURATION_CERTIFICATION_02.md",
+    "quote": "PROVISIONALLY SATURATED — OWED CHECKS ONLY. Not \"scientifically saturated\": criterion 2 is PARTIAL because several top results lack genuinely independent reproduction. The remaining work is verification/packaging, **not** another exploratory wave."
+   },
+   {
+    "path": "playground/SCOUT_0/FRONTIER_QUEUE.md",
+    "quote": "CAMPAIGN CLOSED — PROVISIONALLY SATURATED, OWED CHECKS ONLY ... No route below is open for exploration; remaining work is independent reproduction (handoff §7)."
+   },
+   {
+    "path": "playground/SCOUT_0/SCOUT_0_HANDOFF.md",
+    "quote": "Packaging/verification work, not exploration: 1. Independent re-derivation of the P-17 identifiability theorem and its exact Taylor checks."
+   },
+   {
+    "path": "playground/SCOUT_0/SCOUT_0_HANDOFF.md",
+    "quote": "**SCOUT-0 stops here.**"
+   }
+  ],
+  "classification": [
+   "ARCHIVED SCIENTIFIC RESULT",
+   "ARCHIVED NEGATIVE / FAILED ROUTE",
+   "REPRODUCIBILITY SUPPORT"
+  ],
+  "classification_basis": "\"PROVISIONALLY SATURATED — OWED CHECKS ONLY\" and \"SCOUT-0 stops here\" mark the record archived; \"Killed route families\" plus \"Zero distinctive GRUT predictions were earned\" ground the negative/failed-route reading; section 7 \"Owed independent reproductions ... Packaging/verification work, not exploration\" grounds reproducibility support. Note the task states all 1758 files of this tree are byte-identical inside vsctestinggrut main, so the capsule is a reference, not a copy."
+ },
+ "scout-1": {
+  "status_verbatim_source": "\"**Status:** FROZEN.\" — playground/SCOUT_1/SCOUT_1_HANDOFF.md (frontier queue concurs: \"**Status: SCOUT-1 is FROZEN** (owner ruling). No further scientific probes are authorized in this campaign.\" — playground/SCOUT_1/FRONTIER_QUEUE.md). Campaign verdict (handoff §L): \"SCOUT-1 SCIENTIFICALLY SATURATED AT CURRENT QUESTION / PREMISE ENVELOPE — INDEPENDENT REVIEW OWED.\"",
+  "summary": [
+   "SCOUT-1, the \"Quotient Selection Campaign\", was \"forked from the frozen SCOUT-0 head ab2da47\" and began with \"Can anything actually FIX a quotient value, rather than merely classify consequences of supplied values?\", evolving into \"Where does irreducible specification information enter a physical theory, and where does GRUT sit relative to that boundary?\" (playground/SCOUT_1/SCOUT_1_HANDOFF.md §A).",
+   "Its final product is a hierarchy C1–C5 explicitly labelled \"candidate; not a universal theorem\", with C5 (operational framework / composition / dimension) as the \"current universal stopping point of the scout\" and the note \"In GRUT, C4 remains supplied\" (handoff §B); the one CANONICAL-CANDIDATE result is TC-1 (\"earned-layer non-selection under G\") with \"Owed: independent review\" (handoff §C).",
+   "The handoff's empirical status is \"SCOUT-1 earned zero distinctive GRUT empirical predictions\", and §I records GRUT as \"a theory-construction / dependency framework over supplied C4/C5 and basin/state structure\" — \"a statement about the current record, not a proof about every imaginable future GRUT extension\".",
+   "Owed checks at freeze (handoff §K): independent reproduction of TC-1 (W1-C lemma + census); an independent hostile review of the final hierarchy / TC-4' lineage (D1 → W4 → W5 → D3); a full primary-text review of the D3 reconstruction proofs (headlines are PRIMARY-ABSTRACT-VERIFIED only); verification of SECONDARY-graded literature claims in LITERATURE_LEDGER.md (e.g. N_c ≈ 2.9; PrimEx width; Koecher–Vinberg / fermionic local tomography; alpha-vacua; Renou et al.; quaternionic composites); a second reader for the information-accounting classifications; and review of numerical probes carrying finite-size/noise qualifications (W2-ETH L ≤ 12; W3-NL small-epsilon exponents; W4 width/skewness inconclusive; W5 anisotropic drift; W2-QE grid norm drift).",
+   "Queue items not run at freeze (playground/SCOUT_1/FRONTIER_QUEUE.md): W2-POS \"PARKED ... literature-gated; not run\"; \"C17/C18 positivity bounds, C29 TKNN | not run (deferred at freeze)\"; D2 and D4 \"CLOSED by owner ruling, not opened\"; \"W6+ | not authorized\".",
+   "The capsule delta is confirmed in git: `git diff --name-only origin/scout-0 origin/scout-1` lists exactly 98 paths, all under playground/SCOUT_1/; corrections are tracked visibly (\"There are banners on the affected files, ledger entries X-01…X-13, and AUDIT REPAIR 01/02\", handoff header)."
+  ],
+  "key_quotes": [
+   {
+    "path": "playground/SCOUT_1/SCOUT_1_HANDOFF.md",
+    "quote": "**Status:** FROZEN."
+   },
+   {
+    "path": "playground/SCOUT_1/SCOUT_1_HANDOFF.md",
+    "quote": "**SCOUT-1 SCIENTIFICALLY SATURATED AT CURRENT QUESTION / PREMISE ENVELOPE — INDEPENDENT REVIEW OWED.**"
+   },
+   {
+    "path": "playground/SCOUT_1/SCOUT_1_HANDOFF.md",
+    "quote": "**SCOUT-1 earned zero distinctive GRUT empirical predictions.**"
+   },
+   {
+    "path": "playground/SCOUT_1/SCOUT_1_HANDOFF.md",
+    "quote": "Nothing here carries canonical ACCEPTED status. Results judged promotion-worthy are labelled CANONICAL-CANDIDATE."
+   },
+   {
+    "path": "playground/SCOUT_1/FRONTIER_QUEUE.md",
+    "quote": "**Status: SCOUT-1 is FROZEN** (owner ruling). No further scientific probes are authorized in this campaign. Every row is CLOSED / DONE / RETIRED / PARKED."
+   },
+   {
+    "path": "playground/SCOUT_1/FRONTIER_QUEUE.md",
+    "quote": "| C17/C18 positivity bounds, C29 TKNN | not run (deferred at freeze) |"
+   },
+   {
+    "path": "playground/SCOUT_1/SCOUT_1_HANDOFF.md",
+    "quote": "**SCOUT-1 stops here.**"
+   }
+  ],
+  "classification": [
+   "ARCHIVED SCIENTIFIC RESULT",
+   "ARCHIVED NEGATIVE / FAILED ROUTE",
+   "REPRODUCIBILITY SUPPORT"
+  ],
+  "classification_basis": "\"FROZEN\" and \"SCOUT-1 stops here\" mark the record archived; §F \"Major negative results / killed routes\" plus \"SCOUT-1 earned zero distinctive GRUT empirical predictions\" ground the negative reading; §E's theorem-grade positive results (KRI/NIG/SFR labelled) and the CANONICAL-CANDIDATE TC-1 ground the scientific-result reading; §K \"Owed checks\" and the verdict's \"INDEPENDENT REVIEW OWED\" ground reproducibility support."
+ },
+ "reflexive-autonomy-0": {
+  "status_verbatim_source": "RA0 COMPLETE — CONDITIONAL DYNAMICAL PARTITION DERIVATION; CONSCIOUSNESS HYPOTHESIS SECTOR ELIGIBLE BUT UNOPENED (reflexive_autonomy_0/RA0_STATUS.md, line: \"**Terminal:** `RA0 COMPLETE — CONDITIONAL DYNAMICAL PARTITION DERIVATION; CONSCIOUSNESS HYPOTHESIS SECTOR ELIGIBLE BUT UNOPENED`\")",
+  "summary": [
+   "RA0 is a five-gate new theory construction (G1 FINITE REFLEXIVE AUTONOMY NO-GO through G5 METASTABLE BLIND RECOVERY PROVED), with G5 recorded as \"CONDITIONAL DYNAMICAL PARTITION DERIVATION — THEOREM-GRADE IN G4-T CLASS (vanishing misclassified π-mass); ASYMPTOTIC UNIQUENESS WITHIN THE G5 CLASS\" and \"PASSES after RA0 REPAIR 03\" (reflexive_autonomy_0/RA0_STATUS.md).",
+   "The handoff records what was earned: \"Within the certified G5 metastable class, a macrostate partition can be recovered from dynamics alone, without supplying that partition to the recovery map,\" with that partition \"asymptotically unique within the class\" (reflexive_autonomy_0/RA0_FINAL_HANDOFF.md).",
+   "All proofs carry the recorded grade \"INTERNALLY PROVED / NOT EXTERNALLY REVIEWED\", and the construction \"is non-canonical, it is not a GRUT prediction, and it does not update canonical GRUT\" (reflexive_autonomy_0/RA0_FINAL_HANDOFF.md).",
+   "The scorecard records \"TRUE COMPRESSION relative to frozen GRUT: 0\", \"frozen witnesses distinguished: 0\", and \"residual inputs eliminated globally: 0\"; open items left recorded are CONJECTURE G4-C, exact recovery under H4, and blind certification of metastability from a single finite kernel (reflexive_autonomy_0/RA0_STATUS.md).",
+   "The branch is recorded closed: \"**NEXT scientific gate on RA0:** none. The branch is closed and frozen as `grut-reflexive-autonomy-0-frozen`\", with consciousness ruled \"ELIGIBLE AS A NEW HYPOTHESIS SECTOR — NOT DERIVED\" and \"not opened on RA0\" (reflexive_autonomy_0/RA0_STATUS.md)."
+  ],
+  "key_quotes": [
+   {
+    "path": "reflexive_autonomy_0/RA0_STATUS.md",
+    "quote": "**Terminal:** `RA0 COMPLETE — CONDITIONAL DYNAMICAL PARTITION DERIVATION; CONSCIOUSNESS HYPOTHESIS SECTOR ELIGIBLE BUT UNOPENED`"
+   },
+   {
+    "path": "reflexive_autonomy_0/RA0_STATUS.md",
+    "quote": "**Status of the proofs.** INTERNALLY PROVED / NOT EXTERNALLY REVIEWED."
+   },
+   {
+    "path": "reflexive_autonomy_0/RA0_FINAL_HANDOFF.md",
+    "quote": "New theory construction. It is non-canonical, it is not a GRUT prediction, and it does not update canonical GRUT."
+   },
+   {
+    "path": "reflexive_autonomy_0/RA0_FINAL_HANDOFF.md",
+    "quote": "**EARNED.** Within the certified G5 metastable class, a macrostate partition can be recovered from dynamics alone, without supplying that partition to the recovery map. That partition is asymptotically unique within the class."
+   },
+   {
+    "path": "reflexive_autonomy_0/RA0_FINAL_HANDOFF.md",
+    "quote": "**TRUE COMPRESSION relative to frozen GRUT: 0.** No frozen witness pair or canonical residual item has been eliminated globally."
+   },
+   {
+    "path": "reflexive_autonomy_0/RA0_STATUS.md",
+    "quote": "**NEXT scientific gate on RA0:** none. The branch is closed and frozen as `grut-reflexive-autonomy-0-frozen`."
+   },
+   {
+    "path": "reflexive_autonomy_0/RA0_FINAL_HANDOFF.md",
+    "quote": "**MATHEMATICALLY ELIGIBLE AS A NEW HYPOTHESIS SECTOR — NOT DERIVED.**"
+   }
+  ],
+  "classification": [
+   "ARCHIVED SCIENTIFIC RESULT"
+  ],
+  "classification_basis": "The terminal reads \"RA0 COMPLETE — CONDITIONAL DYNAMICAL PARTITION DERIVATION\" and the status records \"**NEXT scientific gate on RA0:** none. The branch is closed and frozen as `grut-reflexive-autonomy-0-frozen`.\" The result itself is a positive constructive theorem (\"New constructive result: CONDITIONAL DYNAMICAL PARTITION DERIVATION IN A CERTIFIED METASTABLE CLASS\"), internally proved, not externally reviewed. The recorded Open items (CONJECTURE G4-C, exact recovery under H4, blind certification) and the \"ELIGIBLE BUT UNOPENED\" consciousness sector are listed separately under open_questions rather than altering the closed/frozen classification."
+ },
+ "directed-autonomy-0": {
+  "status_verbatim_source": "C3 ARCHITECTURE TRACK — HOLD: OPERATIONAL DEFINITION UNRESOLVED. (directed_autonomy_0/DA0_STATUS.md, line: \"**State:** **C3 ARCHITECTURE TRACK — HOLD: OPERATIONAL DEFINITION UNRESOLVED.** C3-D0 result accepted (D0-B); PM2 Stage A is accepted and closed. (C2 closed; C2 final handoff accepted.)\")",
+  "summary": [
+   "DA0's C2 track is recorded closed with the accepted terminal \"C2 COMPLETE — GROWING BLIND RECOVERY PROVED CONDITIONALLY; ENDOGENOUS GROWING ARCHITECTURE FROM A SIMPLE FIXED RULE NOT FOUND; INTRINSIC K-GROWTH OBSTRUCTION OPEN\" (directed_autonomy_0/DA0_STATUS.md; directed_autonomy_0/C2_FINAL_HANDOFF.md).",
+   "C3 Primary Model 2 Stage A was run and closed under owner ruling with terminal \"PM2-B — GENERATED TREE / NETWORK; REGISTERED HIERARCHY IS GENERIC / RANDOM-TREE-LIKE; NO DISTINCT GROWING COLLECTIVE ARCHITECTURE ESTABLISHED\", with a scope firewall (PM2-O2) recording \"this is not a universal negative\" (directed_autonomy_0/DA0_STATUS.md).",
+   "The C3-D0 architecture-detector qualification was accepted with terminal \"D0-B — REGISTERED TREE OBSERVABLES INSUFFICIENT — HIERARCHY NOT OPERATIONALLY IDENTIFIED\", and the status records \"C3 must repair its operational definition of architecture before any further physical-model search\" (directed_autonomy_0/DA0_STATUS.md; directed_autonomy_0/C3_D0_RESULT.md).",
+   "The recorded state is a hold, not a terminal: \"The architecture question is **not** closed permanently, but the current detector programme is stopped\" and \"No further physical architecture generator is opened until a new operational definition is justified independently\"; PM2-BIS remains unopened, C3-B remains closed, and \"TRUE COMPRESSION remains 0\" (directed_autonomy_0/DA0_STATUS.md).",
+   "A forward-program note records that \"the next substantive GRUT research direction is being chartered separately from DA0 and is not part of this branch\" (directed_autonomy_0/DA0_STATUS.md)."
+  ],
+  "key_quotes": [
+   {
+    "path": "directed_autonomy_0/DA0_STATUS.md",
+    "quote": "**State:** **C3 ARCHITECTURE TRACK — HOLD: OPERATIONAL DEFINITION UNRESOLVED.** C3-D0 result accepted (D0-B); PM2 Stage A is accepted and closed. (C2 closed; C2 final handoff accepted.)"
+   },
+   {
+    "path": "directed_autonomy_0/C2_FINAL_HANDOFF.md",
+    "quote": "**Terminal:** **C2 COMPLETE — GROWING BLIND RECOVERY PROVED CONDITIONALLY; ENDOGENOUS GROWING ARCHITECTURE FROM A SIMPLE FIXED RULE NOT FOUND; INTRINSIC K-GROWTH OBSTRUCTION OPEN.**"
+   },
+   {
+    "path": "directed_autonomy_0/DA0_STATUS.md",
+    "quote": "Terminal: **PM2-B — GENERATED TREE / NETWORK; REGISTERED HIERARCHY IS GENERIC / RANDOM-TREE-LIKE; NO DISTINCT GROWING COLLECTIVE ARCHITECTURE ESTABLISHED.**"
+   },
+   {
+    "path": "directed_autonomy_0/DA0_STATUS.md",
+    "quote": "**Terminal: D0-B — REGISTERED TREE OBSERVABLES INSUFFICIENT — HIERARCHY NOT OPERATIONALLY IDENTIFIED.**"
+   },
+   {
+    "path": "directed_autonomy_0/DA0_STATUS.md",
+    "quote": "The architecture question is **not** closed permanently, but the current detector programme is stopped.\n  - No further physical architecture generator is opened until a new operational definition is justified independently."
+   },
+   {
+    "path": "directed_autonomy_0/DA0_STATUS.md",
+    "quote": "**C3 must repair its operational definition of architecture before any further physical-model search.**"
+   },
+   {
+    "path": "directed_autonomy_0/DA0_STATUS.md",
+    "quote": "**Forward-program note:** the next substantive GRUT research direction is being chartered separately from DA0 and is not part of this branch."
+   }
+  ],
+  "classification": [
+   "ACTIVE OPEN QUESTION",
+   "ARCHIVED NEGATIVE / FAILED ROUTE"
+  ],
+  "classification_basis": "ACTIVE OPEN QUESTION rests on the recorded state \"C3 ARCHITECTURE TRACK — HOLD: OPERATIONAL DEFINITION UNRESOLVED\" together with \"The architecture question is **not** closed permanently, but the current detector programme is stopped.\" ARCHIVED NEGATIVE / FAILED ROUTE rests on the accepted sub-terminals: C2's \"ENDOGENOUS GROWING ARCHITECTURE FROM A SIMPLE FIXED RULE NOT FOUND\", PM2 Stage A's \"NO DISTINCT GROWING COLLECTIVE ARCHITECTURE ESTABLISHED\" (with PM2-O2 recording it is not a universal negative), and D0-B's \"REGISTERED TREE OBSERVABLES INSUFFICIENT — HIERARCHY NOT OPERATIONALLY IDENTIFIED\"."
+ },
+ "independent-verification-0": {
+  "status_verbatim_source": "\"**State:** **PAUSED FOR OWNER PROGRAM-LEVEL DISCUSSION.** VER0-B-A accepted (with S-1 banked). V0-1-C, V0-2-C, V0-3-C (with T3-F) and V0-4-C accepted.\" — verification_0/VER0_STATUS.md (a recorded state, not a terminal; VER0_STATUS.md ends \"No PR. No merge.\")",
+  "summary": [
+   "The branch was \"created from the frozen scientific parent scout-0 @ ab2da47407bb670d94e2a52c87599fa13fd8ab99 (unmodified)\" with \"Purpose (verification / reproduction, not exploration)\" (verification_0/VER0_CHARTER.md), to discharge the SCOUT-0 criterion-2 reproduction debts (VER0-A) and independently reconstruct the BRI1-X1 theorem from a sealed statement-only target (VER0-B).",
+   "git diff ab2da47..origin/grut-independent-verification-0 confirms the capsule is exactly 48 added files, all under verification_0/ (charter, ledger, status, 5 target specs, 5 reproduction/comparison doc pairs plus a second-reader report, and 22 code/log files); no file of scout-0 was modified or deleted.",
+   "Five items were accepted by owner ruling at grade VER-I1 (orchestrator-exposed), each reproduction performed by a \"context-isolated sub-agent\" with an audited file-access report: V0-1-C (P-17, correction CL-1), V0-2-C (P-15 chain, CR-1..3), V0-3-C with subgrade V0-3-T3-F (\"the single-v_b theorem refuted as stated\"), V0-4-C (EDA-01 second read: \"Headline NO-FIX confirmed (22 / 22)\", \"6 / 22 rows discordant at the CON boundary\"), and VER0-B-A with \"S-1 banked: X1 ∉ E₂± for every N_B ≥ 1 on a common small-time interval (internally reproduced, not externally reviewed)\".",
+   "VER0_STATUS.md records \"SCOUT-0: PROVISIONALLY SATURATED — OWED CHECKS ONLY. **Criterion 2 is not met.**\", with \"Items 4 and 6 are **OUTSTANDING — PRIMARY-TEXT ACCESS DEPENDENT**. Every item is at most VER-I1.\" (VER0_CHARTER.md: \"VER-I1 is the **maximum grade the present automated workflow can earn**\" and is \"not independent external review\").",
+   "The final owner ruling in verification_0/VER0_LEDGER.md (boundary ae56ed0) reads \"**STOP:** no governance branch, no V0-5 / V0-6, no BRI0 change, no new campaign. The owner will discuss program-level questions\" — consistent with the index recorded state; no branch document contradicts \"PAUSED FOR OWNER PROGRAM-LEVEL DISCUSSION.\""
+  ],
+  "key_quotes": [
+   {
+    "path": "verification_0/VER0_CHARTER.md",
+    "quote": "Purpose (verification / reproduction, not exploration) ... Nothing here modifies `scout-0` ... No PR, no merge."
+   },
+   {
+    "path": "verification_0/VER0_STATUS.md",
+    "quote": "SCOUT-0: PROVISIONALLY SATURATED — OWED CHECKS ONLY. **Criterion 2 is not met.** ... Items 4 and 6 are **OUTSTANDING — PRIMARY-TEXT ACCESS DEPENDENT**. Every item is at most VER-I1."
+   },
+   {
+    "path": "verification_0/VER0_LEDGER.md",
+    "quote": "**STOP:** no governance branch, no V0-5 / V0-6, no BRI0 change, no new campaign. The owner will discuss program-level questions"
+   },
+   {
+    "path": "verification_0/VER0_CHARTER.md",
+    "quote": "VER-I1 is the **maximum grade the present automated workflow can earn**. It is **not** \"independent external review\" and **not** \"independent scientific replication by another researcher\"."
+   },
+   {
+    "path": "verification_0/VER0_LEDGER.md",
+    "quote": "**Owner ruling, V0-3.** Accepted: overall **V0-3-C**, plus subgrade **V0-3-T3-F** (the single-v_b theorem refuted as stated). Edge-data-set replacement banked."
+   }
+  ],
+  "classification": [
+   "REPRODUCIBILITY SUPPORT",
+   "ACTIVE OPEN QUESTION"
+  ],
+  "classification_basis": "REPRODUCIBILITY SUPPORT from VER0_CHARTER.md's own purpose line, \"verification / reproduction, not exploration\", and the ledger's reproduction/comparison/owner-ruling structure. ACTIVE OPEN QUESTION because the recorded state is a pause, not a terminal (\"PAUSED FOR OWNER PROGRAM-LEVEL DISCUSSION.\"), with \"Criterion 2 is not met\" and items V0-5/V0-6 \"OUTSTANDING — PRIMARY-TEXT ACCESS DEPENDENT\" (VER0_STATUS.md)."
+ }
+}
