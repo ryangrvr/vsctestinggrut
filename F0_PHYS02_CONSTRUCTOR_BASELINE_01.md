@@ -20,17 +20,17 @@ not exhaustive (NOT FOUND ≠ DOES NOT EXIST).
   facts**, not statements about what an experimenter can build; constructors are idealized
   physical systems; approximate constructors suffice for physical content.
 
-## 2. CT primitives (as used here)
+## 2. CT primitives (as used here; R1-corrected definitions)
 
-| CT primitive | definition (verified) |
+| CT primitive | definition (source-faithful, R1) |
 |---|---|
 | **substrate** | a physical system, characterized by the set of its **attributes** |
 | **attribute** | a distinguishable set of physical states of a substrate |
-| **task** | a finite specification T = {outputs that must be produced} ↢ {outputs that must not}; on a substrate |
+| **task** (R1 corrected) | an abstract specification of a physical transformation as a **finite set of ordered input/output attribute pairs** T = {x₁→y₁, …, xₙ→yₙ} on one or more substrates — NOT the earlier "outputs to produce / outputs to forbid" wording, which is withdrawn |
 | **possible task** | ∃ constructor (physical system) that performs T with arbitrarily high accuracy, arbitrarily many times |
 | **constructor** | anything that can cause tasks on substrates and remains unchanged on the attribute-level after each cycle (idealized) |
-| **serial composition** | perform T₁ then T₂ (task-level composition; possible tasks compose serially) |
-| **parallel composition** | perform T₁ and T₂ on independent substrates jointly; possible tasks compose in parallel |
+| **serial composition** | perform T₁ then T₂ (defined where substrates chain appropriately) |
+| **parallel composition** | perform T₁ and T₂ on the composite substrate M⊕N — **defined only when the composite substrate conditions hold** (see §5, R2) |
 | **time** | emergent, not primitive |
 
 ## 3. Comparison table (charter §8)
@@ -51,49 +51,115 @@ not exhaustive (NOT FOUND ≠ DOES NOT EXIST).
 | information price | substrate + attribute + task + predicate + 2 compositions (5 primitives) | at least the same 5 if re-based on CT |
 | empirical accessibility | via approximate constructors on lab substrates | via the same route |
 
-## 4. Verdict on F0's task-possibility candidate (M-3/M-4 + I-3)
+## 4. Verdict on F0's task-possibility candidate (M-3/M-4 + I-3) — REVISED BY R2/R3
 
-**At the tested scope, the F0 task-possibility access candidate IS constructor-theoretic
-possibility structure under a projective reading**: take the possible parallel/serial
-composite tasks on a set of substrates; define two (or n) tasks to be "jointly
-realizable" iff their parallel composite is a possible task. Then:
+The original PHYS-02 reduction claimed: "context = set of tasks whose parallel composite
+is possible." **That equivalence has not been established and, after the R3 hostile
+control, is REFUTED as a general identification.** Two distinct relations must be kept
+apart (R2):
 
-- pairwise joint realizability = the parallel task {T₁, T₂} is possible;
-- the family of jointly realizable task-sets = F0's context hypergraph **C**;
-- the anti-correlated-triangle and Bell four-cycle of Exec-01 are just task-possibility
-  patterns on this reading;
-- Γ would be *additional statistical data about constructor performance*, not part of the
-  possibility structure itself.
+- **CT-PARALLEL:** T₁ ∥ T₂ is a well-defined parallel composite task on the composite
+  substrate M⊕N, subject to CT's composition law — possible tasks compose, so if T₁ and
+  T₂ are possible and the composite substrate exists, the composite is possible.
+- **CONTEXT-COMPATIBLE:** {x₁,…,xₙ} ∈ C means the corresponding interventions/tasks
+  possess the F0 contextual joint-realizability relation — which may involve alternative
+  measurements/transformations on the **same** underlying substrate (exactly the K2
+  situation).
 
-So, at this scope: **the F0 access candidate reduces to constructor-theoretic
-possible/impossible task structure plus the standard empirical-model mathematics of
-Exec-01. F0 adds no additional relation at this scope.**
+These are not automatically the same notion: CT parallel composition is about tasks on
+composite substrates; contextual compatibility is about jointly implementable
+interventions, possibly on one system.
 
-**Status: `F0-PHYS-CONSTRUCTOR-RESTATED`** (candidate verdict, subject to the one open
-price question below).
+### R3 — the K2 interface control (decisive, computed exactly)
 
-## 5. What F0 would need to add to escape restatement (forecast, no law)
+K2/Specker triangle: three singleton contexts, three pair contexts, **no triple
+context**. Under the naive mapping (contexts = possible parallel task-sets, composite
+substrates defined as K2's pair contexts presuppose them), **full CT closure forces the
+triple**: {T1,T2} possible + {T3} possible + defined composite ⇒ {T1,T2,T3} possible.
+K2 has no triple. The exact computation (`f0_phys02_toy.py`, `k2_interface_control`)
+finds **12 closure violations, all forcing the triple**.
 
-The only visible non-CT content available to GRUT is the **coupling**:
+**Verdict: the direct embedding FAILS.** Escape routes examined and rejected:
+1. declare the triple substrate undefined — unavailable, since K2's pair substrates are
+   defined and coexist on the same underlying scenario;
+2. weaken composition — forbidden (would modify CT to save the reduction);
+3. restrict to independent-substrate scope — yields at most a restricted **one-way
+   implication** (independent-substrate contexts correspond to possible parallel
+   composites), not the general reduction.
 
-> objective possibility structure ↔ empirical influence (statistics) structure,
+**Answer to R2's question "under what conditions does CT-PARALLEL induce
+CONTEXT-COMPATIBLE?":** at most a **restricted one-way implication under an explicit
+independent-substrate assumption**; no general reduction; the general relation is
+**unresolved**. No answer was favored; this one is forced by the control.
 
-i.e. a principled relation between what tasks are possible on a substrate and the
-context-indexed statistics actually realized. CT does not supply such a coupling (its
-information theory lives inside possibility statements); empirical-model mathematics
-consumes statistics without grounding it in possibility. If a future F0 law made that
-coupling force nontrivial constraints (e.g. which possibility structures are compatible
-with which empirical models), that would be content beyond CT + empirical-model
-mathematics. **That coupling is recorded as a FUTURE REQUIREMENT (not built, per charter).**
+### Consequences for the earlier claims (withdrawn)
+
+- "the Exec-01 C-hypergraph, including K2, embeds directly as jointly-possible task
+  sets" — **withdrawn**; K2 is exactly the counterexample.
+- The prior `F0-PHYS-CONSTRUCTOR-RESTATED` verdict is **withdrawn** (see result doc).
+
+## 4b. What survives
+
+- CT remains the **nearest primitive-possibility framework** found: objective,
+  compositional, counterfactual, timeless, with a law-grade possibility predicate.
+- The failure is informative: it exposes a **previously hidden interface** —
+  CT task possibility and F0 contextual compatibility are related, but not by
+  identification. Characterizing that interface is a distinct open problem (recorded as
+  the likely next scientific question, R9 — not executed here).
+
+## 5. What F0 would need to add (forecast, no law) — R7-revised
+
+The prior claim that "the only visible non-CT content is the Γ↔C coupling because CT
+supplies no possibility/statistics bridge" was **too strong and is withdrawn**.
+
+### R7 — Constructor Theory of Probability (Marletto, arXiv:1507.03287 / Proc. R. Soc. A 472, 20150883) — audited
+
+What it **does** establish (source-verified):
+- **Unpredictability** as a theoretical property of substrates/attributes: a substrate is
+  unpredictable with respect to an attribute if no possible task can force a particular
+  outcome on every execution — i.e. unpredictability is defined through possible/impossible
+  tasks, not through probability postulates.
+- **Repeated measurements / apparent stochasticity**: deterministic-looking and
+  apparently-stochastic behaviors are both modeled via constructors and possible/impossible
+  tasks across multiple instances; a formal connection between unpredictability and
+  **entropy/information theory** is derived inside CT.
+- **Decision-supporting superinformation theories**: a class of theories (including
+  quantum and higher theories) characterized abstractly by how unpredictability behaves;
+  probabilities emerge as **derived quantities** (decision-supporting weights) within such
+  theories, not primitives.
+
+What it **does not** (as far as this audit found):
+- It does not provide a bridge from **contextual empirical models** (F0's Γ: context-indexed
+  compatible distributions with no-signalling-type constraints) to task-possibility
+  structure; its probability notion is defined over **repeated executions of tasks on
+  substrates**, not over context families.
+- It does not derive Born-type structure for arbitrary contexts, nor the specific
+  compatibility/statistics coupling F0 would need.
+
+### Permissible statement (revised novelty forecast)
+
+> **No F0-specific relation between the contextual empirical-model layer and objective
+> task-possibility structure has yet been established.** Existing constructor-theoretic
+> work on probability (Marletto) defines unpredictability and derived probabilities via
+> task possibility, and must be included before deciding whether such a coupling lies
+> beyond CT. Additionally, the **upstream interface** — what maps CT task possibility to
+> contextual joint compatibility — is itself unresolved (R3: not identity).
+
+Two distinct open relations, in order:
+1. **Interface (upstream):** CT task possibility ↔ contextual joint compatibility.
+   (R9: likely next scientific question, not executed.)
+2. **Coupling (downstream):** that combined structure ↔ contextual statistics Γ.
+   (Original Γ↔C question; must wait for the interface.)
+
+No formula for either is authorized.
 
 ## 6. What this verdict does NOT establish
 
-- That F0 *should* adopt CT (a choice for the owner); that F0's deeper program is CT;
-  that Γ↔C coupling is impossible or possible; that no smaller primitive exists
-  (targeted audit: NOT FOUND ≠ DOES NOT EXIST).
-- No RESTATED-by-renaming is hidden: the price count (§3 last row) shows the F0
-  candidate, taken seriously, costs the CT primitives — the honest reading is
-  containment, not novelty.
+- That F0 *should* adopt CT; that the interface (relation 1) is impossible or is
+  identity; that the Γ-coupling (relation 2) is impossible; that no smaller primitive
+  exists (targeted audit: NOT FOUND ≠ DOES NOT EXIST).
+- No RESTATED-by-renaming is hidden: the direct reduction was **tested and failed**,
+  which is a stronger (and more useful) result than an assumed restatement.
 
 ## 7. Sources
 
@@ -101,6 +167,12 @@ mathematics. **That coupling is recorded as a FUTURE REQUIREMENT (not built, per
   constructors, counterfactual laws, ideal measurements, scalable formulation.
 - arXiv:1405.5563 (Deutsch–Marletto, *Constructor theory of information*) — verified:
   substrates/attributes; information via possible tasks.
-- constructortheory.org and /faqs — verified: objective (non-anthropocentric) reading of
-  possible/impossible; constructors as physical, idealized; approximate constructors.
+- arXiv:1507.03287 / Proc. R. Soc. A 472, 20150883 (Marletto, *Constructor theory of
+  probability*) — verified (R7): unpredictability via possible/impossible tasks;
+  repeated measurements; apparent stochasticity; decision-supporting superinformation
+  theories; probabilities as derived decision weights.
+- constructortheory.org and /faqs, and the CT papers (e.g. constructortheory.org PDFs,
+  arXiv:1210.7439 §2, ct-life.pdf) — verified (R1): task = finite set of ordered
+  input/output attribute pairs; constructors as physical, idealized; approximate
+  constructors; parallel composition on composite substrates.
 - Marletto, constructor theory of time — timeless fundamental specifications.
