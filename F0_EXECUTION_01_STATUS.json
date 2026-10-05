@@ -17,7 +17,12 @@
   },
   "date": "2026-10-05",
   "repository": "ryangrvr/vsctestinggrut",
-  "branch": "ggc0-f0-exec01-repair-0",
+  "branch": "ggc0-f0-exec01-validator-final-0",
+  "validator_final_repair": {
+    "base_sha": "003ffcdd35822513be5f6e5aeeaa004331760b2b",
+    "commit": "e3f1ab473a6c8556a2daac92e26b765c8c366fbd",
+    "scope": "V1-V5 validator/source-precision repair only; no terminal change"
+  },
   "frozen_parent": "bef8b9480c9f7569c70837c6ee5c4776fc2e0f3c",
   "frozen_parent_branch": "ggc0-f0-influence-access-0",
   "authorization_scope": ["F0-A", "F0-PHYS"],
