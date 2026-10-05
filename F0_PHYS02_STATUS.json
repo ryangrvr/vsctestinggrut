@@ -6,17 +6,30 @@
   "final_record_repair": {
     "ruling": "PHYS-02 CORE SCIENTIFIC RESULT PASS; TERMINAL F0-PHYS-OPEN-02; FINAL RECORD/COUNT REPAIR REQUIRED BEFORE BANKING; F0-B remains prohibited; next campaign (after this repair): F0-I0 TASK/CONTEXT INTERFACE (not started here)",
     "base_sha": "6e9b5d628e83d0a3b539b730e09069f4d40442a3",
-    "repairs": ["FR1 n=3 enumeration recomputed under the FROZEN F0-A convention: 19 downward-closed families (empty family allowed) / 18 (if nonempty-family required); the imported Dedekind count 20 WITHDRAWN",
-                 "FR2 K2 substrate claim weakened to exactly what was proved; 'triple substrate undefined is unavailable' WITHDRAWN; violation count 12 is checker output, not invariant content",
-                 "FR3 status JSON cleaned of all stale pre-repair claims (this file, after repair)",
-                 "FR4 CT-information baseline added: measurers, observables, information observables, superinformation media, complementary observables, impossibility of simultaneous measurement (arXiv:1405.5563); I0 target restated as CT measurer/observable compatibility, NOT parallel composition; no equivalence claimed",
-                 "FR5 I0 null comparators recorded (CT measurers/superinformation, quantum joint measurability, compatibility hypergraphs incl. PRR 2,043147 POVM-vs-projective control, effect algebras, partial Boolean algebras, sheaf scenarios); baseline only, no mapping authorized"]
+    "repairs": [
+      "FR1 n=3 enumeration recomputed under the FROZEN F0-A convention: 19 downward-closed families (empty family allowed) / 18 (if nonempty-family required); the imported Dedekind count 20 WITHDRAWN",
+      "FR2 K2 substrate claim weakened to exactly what was proved; 'triple substrate undefined is unavailable' WITHDRAWN; violation count 12 is checker output, not invariant content",
+      "FR3 status JSON cleaned of all stale pre-repair claims (this file, after repair)",
+      "FR4 CT-information baseline added: measurers, observables, information observables, superinformation media, complementary observables, impossibility of simultaneous measurement (arXiv:1405.5563); I0 target restated as CT measurer/observable compatibility, NOT parallel composition; no equivalence claimed",
+      "FR5 I0 null comparators recorded (CT measurers/superinformation, quantum joint measurability, compatibility hypergraphs incl. PRR 2,043147 POVM-vs-projective control, effect algebras, partial Boolean algebras, sheaf scenarios); baseline only, no mapping authorized"
+    ]
   },
-  "parent": "aa9c2b3077b4bd2748aad6c729f8e43274df53d4",
   "parent_lineage": "aa9c2b3 (banked exec01) -> e3f1ab4 -> f45fb90 -> bef8b948 (frozen charter)",
   "authorization": "F0-PHYS-02 only",
-  "prohibited": ["R_Gamma", "A_Gamma", "Cl_Gamma", "S", "U", "access_law_searches",
-                 "fixed_point_searches", "born_rule", "geometry", "gravity", "third_phys_campaign", "merge_to_main"],
+  "prohibited": [
+    "R_Gamma",
+    "A_Gamma",
+    "Cl_Gamma",
+    "S",
+    "U",
+    "access_law_searches",
+    "fixed_point_searches",
+    "born_rule",
+    "geometry",
+    "gravity",
+    "third_phys_campaign",
+    "merge_to_main"
+  ],
   "artifacts": [
     "F0_PHYS02_CHARTER.md",
     "F0_PHYS02_LEDGER.md",
@@ -29,10 +42,12 @@
   ],
   "primary_question": "What is the smallest observer-independent primitive structure sufficient to make physical accessibility well-defined, what information price does it carry, and can it be connected to the operational context structure without simply declaring the answer?",
   "terminal": "F0-PHYS-OPEN-02",
-  "withdrawn": ["F0-PHYS-CONSTRUCTOR-RESTATED (direct CT-parallel reduction FAILED: K2 interface control refutes it)",
-                  "'exactly 20 downward-closed families' (Dedekind count imported under the full-Boolean-lattice convention; frozen F0-A convention gives 19/18)",
-                  "'triple substrate undefined is unavailable' (not earned: pairwise contextual compatibility does not establish a three-way CT composite substrate)",
-                  "'composition reduces all-possible instance to 0 free decisions' (composition constrains composites conditionally; singletons remain free)"],
+  "withdrawn": [
+    "F0-PHYS-CONSTRUCTOR-RESTATED (direct CT-parallel reduction FAILED: K2 interface control refutes it)",
+    "'exactly 20 downward-closed families' (Dedekind count imported under the full-Boolean-lattice convention; frozen F0-A convention gives 19/18)",
+    "'triple substrate undefined is unavailable' (not earned: pairwise contextual compatibility does not establish a three-way CT composite substrate)",
+    "'composition reduces all-possible instance to 0 free decisions' (composition constrains composites conditionally; singletons remain free)"
+  ],
   "decisive_finding": "CONTEXT-COMPATIBLE != CT-PARALLEL as a general identification. Proved: IF K2 contexts are identified with CT parallel-composite task sets AND the triple composite substrate is declared available, THEN CT closure forces the triple (12 closure violations, checker output); K2 has none. What maps objective task possibility to contextual joint compatibility is the F0-I0 problem — now targeted at CT measurer/observable compatibility (superinformation media, complementary observables), not parallel composition",
   "terminal_meaning": "CT is clearly the nearest primitive-possibility framework, but the contextual-access mapping is UNRESOLVED after the hostile control; no favored terminal; the negative is the result",
   "noun_verdicts": {
@@ -41,10 +56,17 @@
   },
   "candidates": {
     "surviving_observer_independent": "task-possibility structure is the NEAREST primitive-possibility framework (constructor theory), but the direct CT-parallel reduction to contextual compatibility FAILED; general interface UNRESOLVED",
-    "primitive_but_unexplanatory": ["binary compatibility relation (3 arbitrary bits at n=3, no higher-order jointness)",
-                                     "arbitrary context hypergraph (7 arbitrary bits at n=3, isomorphic to arbitrary C)"],
+    "primitive_but_unexplanatory": [
+      "arbitrary Boolean subset table: 7 free bits / 128 tables at n=3 — NOT the F0-A object (distinct object, contrast only)",
+      "bare F0-A context complex: 19 downward-closed families under the frozen convention if the empty family is allowed, 18 if an additional nonempty-family condition is imposed — still PRIMITIVE-BUT-UNEXPLANATORY if simply supplied as unconstrained physical data"
+    ],
     "physical_candidate": "task-possibility structure: composition constrains instance data (declared possible tasks must close under composition; inconsistent tables exactly detectable)",
-    "unresolved": ["physical transformation without supplied formalism", "state-transition specs", "deeper Gamma objects (B-1/B-2)", "transformation algebra (M-5)"]
+    "unresolved": [
+      "physical transformation without supplied formalism",
+      "state-transition specs",
+      "deeper Gamma objects (B-1/B-2)",
+      "transformation algebra (M-5)"
+    ]
   },
   "information_price_table": {
     "arbitrary_boolean_table_n3": "7 free bits (128 tables) — NOT the F0-A object (contrast only)",
@@ -59,18 +81,27 @@
     "representational": "task definitions (specification objects); written hypergraph/pair-table forms"
   },
   "constructor_comparison": "see F0_PHYS02_CONSTRUCTOR_BASELINE_01.md; the old 'key reduction: C = family of jointly possible task sets under the parallel-composite reading' is WITHDRAWN — the direct reduction FAILED (K2 control). Stronger interface target (FR4): contextual joint compatibility vs CT measurer/observable compatibility (superinformation media; complementary observables cannot be simultaneously measured — arXiv:1405.5563). No equivalence claimed",
-  "future_requirement_recorded_not_built": ["F0-I0 upstream interface: what maps CT task possibility to contextual joint compatibility (must be resolved first)",
-                "downstream Gamma coupling: must wait for the interface; R7 revised statement: no F0-specific relation established; CT probability work (Marletto arXiv:1507.03287) must be included first"],
-  "i0_null_comparators_recorded_not_executed": ["CT measurers / information observables / superinformation media (arXiv:1405.5563)",
-                 "quantum joint measurability (POVMs)",
-                 "compatibility hypergraphs — PRR 2,043147 control: general POVMs realize arbitrary joint-measurability structures, projective measurements more restricted",
-                 "effect algebras / compatibility support mappings",
-                 "partial Boolean algebras / commeasurability",
-                 "sheaf/contextuality scenarios (Exec-01 B5)"],
+  "future_requirement_recorded_not_built": [
+    "F0-I0 upstream interface: what maps CT task possibility to contextual joint compatibility (must be resolved first)",
+    "downstream Gamma coupling: must wait for the interface; R7 revised statement: no F0-specific relation established; CT probability work (Marletto arXiv:1507.03287) must be included first"
+  ],
+  "i0_null_comparators_recorded_not_executed": [
+    "CT measurers / information observables / superinformation media (arXiv:1405.5563)",
+    "quantum joint measurability (POVMs)",
+    "compatibility hypergraphs — PRR 2,043147 control: general POVMs realize arbitrary joint-measurability structures, projective measurements more restricted",
+    "effect algebras / compatibility support mappings",
+    "partial Boolean algebras / commeasurability",
+    "sheaf/contextuality scenarios (Exec-01 B5)"
+  ],
   "toy_model": {
     "file": "f0_phys02_toy.py",
     "result": "exact arithmetic; composition-closure controls pass; K2 interface control: full CT closure with defined composite substrates FORCES the triple context (12 violations) — the direct embedding of the Exec-01 K2 hypergraph into CT task possibility FAILS; price accounting per the revised price doc (FROZEN F0-A convention: 19/18 families, not 20)",
-    "not_done": ["evolution", "transition law", "fixed points", "fitting"]
+    "not_done": [
+      "evolution",
+      "transition law",
+      "fixed points",
+      "fitting"
+    ]
   },
   "not_earned": [
     "no access-transition law",
@@ -95,5 +126,9 @@
     "execution01_artifacts_unmodified": true,
     "frozen_charter_unmodified": true
   },
-  "stop": "STOP FOR OWNER REVIEW; no F0-B; no third PHYS campaign automatically; no merge to main"
+  "stop": "STOP FOR OWNER REVIEW; no F0-B; no third PHYS campaign automatically; no merge to main",
+  "campaign_parent": "aa9c2b3077b4bd2748aad6c729f8e43274df53d4",
+  "immediate_parent": "6e9b5d628e83d0a3b539b730e09069f4d40442a3",
+  "lineage": "986fbfc (final record repair) -> 6e9b5d6 (interface repair) -> 6a97712 (PHYS-02 campaign) -> aa9c2b3 (banked exec01) -> e3f1ab4 -> f45fb90 -> bef8b948 (frozen charter)",
+  "bank_boundary": "set after bank-seal commit"
 }

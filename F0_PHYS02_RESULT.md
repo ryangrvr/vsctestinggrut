@@ -4,7 +4,8 @@ Execution 01 (`aa9c2b3077b4bd2748aad6c729f8e43274df53d4`).
 **Ruling on `6a97712`:** GOVERNANCE/SCOPE PASS; SCIENTIFIC RESULT REPAIR REQUIRED;
 `F0-PHYS-CONSTRUCTOR-RESTATED` **NOT YET EARNED**; temporary terminal
 `F0-PHYS-OPEN-02`. This repaired result is on branch
-`ggc0-f0-phys02-interface-repair-0` from `6a97712`. **Machine-readable:**
+`ggc0-f0-phys02-final-record-repair-0` from `6a97712`, with a bank-seal commit on top.
+**Machine-readable:**
 `F0_PHYS02_STATUS.json`.
 
 ## 1. Primary terminal (revised)
