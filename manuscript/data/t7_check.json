@@ -1,0 +1,85 @@
+{
+  "times": [
+    0.1,
+    0.2,
+    0.25,
+    0.5
+  ],
+  "primary_run": "A_GH96_RK4dt0.0001",
+  "C7": -0.0003606770119878022,
+  "rows": [
+    {
+      "t": 0.1,
+      "K_numerical": -1.0525743196449485e-10,
+      "K_leading": -1.082031035963407e-10,
+      "ratio": 0.9727764589559751,
+      "ratio_method_B": 0.972776452895866,
+      "ratio_series_t7_to_t14": 0.97277645633944,
+      "max_abs_spread_c_across_runs": 2.918154764139765e-16,
+      "relative_spread": 8.31719350266148e-06,
+      "c_by_run": {
+        "A_GH64_RK4dt0.0002": -3.50855188393552e-11,
+        "A_GH64_RK4dt0.0001": -3.5085518842637454e-11,
+        "A_GH96_RK4dt0.0002": -3.508581065158907e-11,
+        "A_GH96_RK4dt0.0001": -3.5085810654831616e-11,
+        "B_GL160_DOP853": -3.508581043625741e-11
+      }
+    },
+    {
+      "t": 0.2,
+      "K_numerical": -1.3008365573310313e-08,
+      "K_leading": -1.384999726033161e-08,
+      "ratio": 0.9392323571476905,
+      "ratio_method_B": 0.9392323554934073,
+      "ratio_series_t7_to_t14": 0.939232360649628,
+      "max_abs_spread_c_across_runs": 3.0488170395557646e-14,
+      "relative_spread": 7.031207008383409e-06,
+      "c_by_run": {
+        "A_GH64_RK4dt0.0002": -4.336091369599709e-09,
+        "A_GH64_RK4dt0.0001": -4.336091369623002e-09,
+        "A_GH96_RK4dt0.0002": -4.3361218577463875e-09,
+        "A_GH96_RK4dt0.0001": -4.3361218577701044e-09,
+        "B_GL160_DOP853": -4.336121850132832e-09
+      }
+    },
+    {
+      "t": 0.25,
+      "K_numerical": -6.077876417040859e-08,
+      "K_leading": -6.604193334737589e-08,
+      "ratio": 0.9203056465763441,
+      "ratio_method_B": 0.9203056399353974,
+      "ratio_series_t7_to_t14": 0.920305597449244,
+      "max_abs_spread_c_across_runs": 1.1962163674699138e-13,
+      "relative_spread": 5.90444565859888e-06,
+      "c_by_run": {
+        "A_GH64_RK4dt0.0002": -2.0259468435166115e-08,
+        "A_GH64_RK4dt0.0001": -2.0259468435211854e-08,
+        "A_GH96_RK4dt0.0002": -2.0259588056752887e-08,
+        "A_GH96_RK4dt0.0001": -2.0259588056802862e-08,
+        "B_GL160_DOP853": -2.025958791060921e-08
+      }
+    },
+    {
+      "t": 0.5,
+      "K_numerical": -6.834695874965502e-06,
+      "K_leading": -8.453367468464113e-06,
+      "ratio": 0.8085175405497063,
+      "ratio_method_B": 0.8085174060603791,
+      "ratio_series_t7_to_t14": 0.8085002735345252,
+      "max_abs_spread_c_across_runs": 2.3691799390379575e-12,
+      "relative_spread": 1.0399204217919568e-06,
+      "c_by_run": {
+        "A_GH64_RK4dt0.0002": -2.278234327501502e-06,
+        "A_GH64_RK4dt0.0001": -2.278234327501773e-06,
+        "A_GH96_RK4dt0.0002": -2.2782319583214818e-06,
+        "A_GH96_RK4dt0.0001": -2.278231958321834e-06,
+        "B_GL160_DOP853": -2.2782315793592664e-06
+      }
+    }
+  ],
+  "method": {
+    "computed_by": "manuscript/tools/check_t7.py",
+    "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+  },
+  "note": "Computed by this build; the expected ratios quoted in the build prompt were not used."
+}

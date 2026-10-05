@@ -1,0 +1,100 @@
+{
+  "gibbs": {
+    "m2": "0.467919916973665188637421298331",
+    "m4": "0.532080083026334811362578701669",
+    "m6": "0.871679667894660754549685193322",
+    "var_x0sq": "0.313131034325693087855862145362",
+    "identity_m2_plus_m4_minus_1": "0.0",
+    "var_from_identity_1_minus_m2_minus_m2sq": "0.313131034325693087855862145362",
+    "record_certified_var": {
+      "midpoint": "0.3131310343256930878",
+      "radius": "4e-21",
+      "contains_computed": true,
+      "source": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+        "section": "T1 step 6"
+      }
+    },
+    "method": {
+      "computed_by": "manuscript/tools/gen_constants.py",
+      "method": "mpmath.quad on (-inf,0,inf), 40 digits"
+    }
+  },
+  "series": {
+    "order": 14,
+    "C_latex_in_m2": {
+      "0": "0",
+      "1": "0",
+      "2": "0",
+      "3": "0",
+      "4": "0",
+      "5": "0",
+      "6": "0",
+      "7": "\\frac{m_{2}^{2} + m_{2} - 1}{28 \\pi^{3}}",
+      "8": "- \\frac{3 \\left(m_{2}^{2} + m_{2} - 1\\right)}{112 \\pi^{4}}",
+      "9": "\\frac{\\pi^{2} m_{2}^{2} + 12 m_{2}^{2} + 12 m_{2} + 19 \\pi^{2} m_{2} - 12 - \\pi^{2}}{2016 \\pi^{5}}",
+      "10": "- \\frac{m_{2}^{2} + 19 m_{2} - 1}{3360 \\pi^{4}}",
+      "11": "\\frac{2 m_{2}^{2} + 11 \\pi^{2} m_{2}^{2} + 38 m_{2} + 38 \\pi^{2} m_{2} - 60 \\pi^{2} - 2}{36960 \\pi^{5}}",
+      "12": "- \\frac{11 m_{2}^{2} + 38 m_{2} - 60}{73920 \\pi^{4}}",
+      "13": "\\frac{792 m_{2}^{2} + 617 \\pi^{2} m_{2}^{2} + 2736 m_{2} + 19607 \\pi^{2} m_{2} - 725 \\pi^{2} - 4320}{34594560 \\pi^{5}}",
+      "14": "- \\frac{617 m_{2}^{2} + 19607 m_{2} - 725}{80720640 \\pi^{4}}"
+    },
+    "C_numeric": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0,
+      "7": -0.0003606770119878022,
+      "8": 8.610529397621027e-05,
+      "9": 0.00012364217301943218,
+      "10": -2.4777154319938017e-05,
+      "11": -3.33050235097774e-05,
+      "12": 5.528881903462402e-06,
+      "13": 7.732424968999313e-06,
+      "14": -1.0917817836542099e-06
+    },
+    "C7_denominator_coefficient": 28,
+    "latex": {
+      "C7": "- \\frac{\\operatorname{Var}(x_0^2)}{28 \\pi^{3}}",
+      "C8": "\\frac{3 \\operatorname{Var}(x_0^2)}{112 \\pi^{4}}",
+      "ratio_C8_C7": "- \\frac{3}{4 \\pi}",
+      "y1_b5": "\\frac{1}{2 \\pi^{3}}",
+      "y1_b6": "- \\frac{1}{2 \\pi^{4}}",
+      "y1_b7": "-\\frac{1 + 3a^{2}}{84\\pi^{3}} + \\frac{1}{7\\pi^{5}}",
+      "x0_a2": "- \\frac{a^{3}}{2} - \\frac{a}{2}",
+      "x0sq_d2": "- a^{4} - a^{2} + b^{2}",
+      "y1_b7_a2coef": "- \\frac{1}{28 \\pi^{3}}",
+      "C7_in_m2": "\\frac{m_{2}^{2} + m_{2} - 1}{28 \\pi^{3}}",
+      "q3": "\\frac{10}{\\pi^{3}}",
+      "q4": "- \\frac{15}{\\pi^{4}}",
+      "q5": "\\frac{6}{\\pi^{5}}"
+    },
+    "record_log_agreement": {
+      "7": true,
+      "8": true,
+      "9": true,
+      "10": true,
+      "11": true,
+      "12": true,
+      "13": true,
+      "14": true
+    },
+    "all_record_terms_agree": true,
+    "C0_to_C6_vanish": true,
+    "method": {
+      "computed_by": "manuscript/tools/gen_constants.py",
+      "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}"
+    },
+    "record_source": {
+      "repo": "ryangrvr/TestingGRUT",
+      "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+      "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+      "section": "lines (2)"
+    }
+  }
+}

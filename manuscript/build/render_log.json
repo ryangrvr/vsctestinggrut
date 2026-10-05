@@ -1,0 +1,627 @@
+{
+  "used_values": {
+    "sym.C7": [
+      "00_front.md",
+      "01_introduction.md",
+      "04_main_result.md",
+      "S1_theorem_and_notation.md",
+      "S1_theorem_and_notation.md",
+      "S1_theorem_and_notation.md",
+      "S2_t7_check.md"
+    ],
+    "num.t_diag_1": [
+      "06_numerical_illustration.md",
+      "06_numerical_illustration.md"
+    ],
+    "num.t_diag_2": [
+      "06_numerical_illustration.md"
+    ],
+    "num.t_diag_3": [
+      "06_numerical_illustration.md",
+      "06_numerical_illustration.md"
+    ],
+    "num.L": [
+      "06_numerical_illustration.md",
+      "06_numerical_illustration.md",
+      "S6_methods_and_provenance.md",
+      "S6_methods_and_provenance.md"
+    ],
+    "num.nx": [
+      "06_numerical_illustration.md",
+      "S6_methods_and_provenance.md"
+    ],
+    "num.dt": [
+      "06_numerical_illustration.md",
+      "S6_methods_and_provenance.md"
+    ],
+    "num.ref_var_t0": [
+      "06_numerical_illustration.md"
+    ],
+    "num.ref_var_drift": [
+      "06_numerical_illustration.md"
+    ],
+    "num.ref_mean_max": [
+      "06_numerical_illustration.md"
+    ],
+    "num.ref_k3_max": [
+      "06_numerical_illustration.md"
+    ],
+    "num.gl_1d": [
+      "06_numerical_illustration.md"
+    ],
+    "num.ind1d_m2": [
+      "06_numerical_illustration.md",
+      "S5_numerical_tables.md"
+    ],
+    "num.ref_rel_disc": [
+      "06_numerical_illustration.md"
+    ],
+    "const.m2": [
+      "06_numerical_illustration.md",
+      "S5_numerical_tables.md"
+    ],
+    "const.var_x0sq": [
+      "06_numerical_illustration.md",
+      "S5_numerical_tables.md"
+    ],
+    "num.gibbs_residual": [
+      "06_numerical_illustration.md",
+      "S5_numerical_tables.md"
+    ],
+    "num.odd_ratio_dev": [
+      "06_numerical_illustration.md"
+    ],
+    "num.odd_nbs": [
+      "06_numerical_illustration.md"
+    ],
+    "num.g1_tstar_nbmin": [
+      "06_numerical_illustration.md"
+    ],
+    "num.g1_tstar_nbmax": [
+      "06_numerical_illustration.md"
+    ],
+    "num.global_p": [
+      "06_numerical_illustration.md",
+      "06_numerical_illustration.md"
+    ],
+    "num.local_p_min": [
+      "06_numerical_illustration.md"
+    ],
+    "num.local_p_max": [
+      "06_numerical_illustration.md"
+    ],
+    "num.nbg1_tstar_relspread": [
+      "06_numerical_illustration.md"
+    ],
+    "num.nbg1_diag_3_drift": [
+      "06_numerical_illustration.md"
+    ],
+    "x.pred_tstar": [
+      "06_numerical_illustration.md"
+    ],
+    "x.obs_tstar": [
+      "06_numerical_illustration.md"
+    ],
+    "x.reldiff_tstar": [
+      "06_numerical_illustration.md"
+    ],
+    "x.reldiff_t025": [
+      "06_numerical_illustration.md"
+    ],
+    "sym.q3": [
+      "S1_theorem_and_notation.md"
+    ],
+    "sym.q4": [
+      "S1_theorem_and_notation.md"
+    ],
+    "sym.q5": [
+      "S1_theorem_and_notation.md"
+    ],
+    "sym.y1_b5": [
+      "S1_theorem_and_notation.md"
+    ],
+    "sym.y1_b6": [
+      "S1_theorem_and_notation.md"
+    ],
+    "sym.y1_b7": [
+      "S1_theorem_and_notation.md"
+    ],
+    "sym.x0_a2": [
+      "S1_theorem_and_notation.md"
+    ],
+    "sym.x0sq_d2": [
+      "S1_theorem_and_notation.md"
+    ],
+    "sym.y1_b7_a2coef": [
+      "S1_theorem_and_notation.md",
+      "S1_theorem_and_notation.md"
+    ],
+    "sym.C7_in_m2": [
+      "S1_theorem_and_notation.md"
+    ],
+    "sym.order_max": [
+      "S1_theorem_and_notation.md",
+      "S2_t7_check.md",
+      "S2_t7_check.md"
+    ],
+    "sym.ratio_C8_C7": [
+      "S2_t7_check.md"
+    ],
+    "const.m4": [
+      "S5_numerical_tables.md"
+    ],
+    "const.C7": [
+      "S5_numerical_tables.md"
+    ],
+    "const.var_cert_mid": [
+      "S5_numerical_tables.md"
+    ],
+    "num.ind1d_m4": [
+      "S5_numerical_tables.md"
+    ]
+  },
+  "unresolved": [],
+  "markers": [
+    [
+      "def.model",
+      "02_model.md",
+      3
+    ],
+    [
+      "eq.clamp",
+      "02_model.md",
+      10
+    ],
+    [
+      "eq.prep",
+      "02_model.md",
+      21
+    ],
+    [
+      "def.protocols",
+      "02_model.md",
+      28
+    ],
+    [
+      "def.classes",
+      "03_classes.md",
+      5
+    ],
+    [
+      "def.e2pm",
+      "03_classes.md",
+      9
+    ],
+    [
+      "prop.ladder",
+      "03_classes.md",
+      17
+    ],
+    [
+      "prop.upper",
+      "03_classes.md",
+      19
+    ],
+    [
+      "prop.c2pm",
+      "03_classes.md",
+      22
+    ],
+    [
+      "lem.e2pm_necessity",
+      "03_classes.md",
+      25
+    ],
+    [
+      "lem.cumulant_identity",
+      "04_main_result.md",
+      5
+    ],
+    [
+      "lem.parity",
+      "04_main_result.md",
+      11
+    ],
+    [
+      "lem.first_order",
+      "04_main_result.md",
+      14
+    ],
+    [
+      "lem.small_time",
+      "04_main_result.md",
+      21
+    ],
+    [
+      "proof.thm",
+      "04_main_result.md",
+      32
+    ],
+    [
+      "scope.theorem",
+      "04_main_result.md",
+      35
+    ],
+    [
+      "thm.main",
+      "_include/thm_main.md",
+      1
+    ],
+    [
+      "prop.reservoir",
+      "05_reservoir_limit.md",
+      3
+    ],
+    [
+      "eq.C0",
+      "05_reservoir_limit.md",
+      9
+    ],
+    [
+      "scope.reservoir",
+      "05_reservoir_limit.md",
+      16
+    ],
+    [
+      "scope.numerics",
+      "06_numerical_illustration.md",
+      3
+    ],
+    [
+      "num.method",
+      "06_numerical_illustration.md",
+      6
+    ],
+    [
+      "num.controls",
+      "06_numerical_illustration.md",
+      9
+    ],
+    [
+      "num.results",
+      "06_numerical_illustration.md",
+      12
+    ],
+    [
+      "num.crosscheck",
+      "06_numerical_illustration.md",
+      19
+    ],
+    [
+      "scope.result",
+      "07_discussion.md",
+      3
+    ],
+    [
+      "scope.not_claimed",
+      "07_discussion.md",
+      6
+    ],
+    [
+      "scope.review",
+      "07_discussion.md",
+      11
+    ],
+    [
+      "disclosure.ack",
+      "08_back_matter.md",
+      3
+    ],
+    [
+      "ref.1",
+      "08_back_matter.md",
+      13
+    ],
+    [
+      "ref.2",
+      "08_back_matter.md",
+      16
+    ],
+    [
+      "ref.3",
+      "08_back_matter.md",
+      19
+    ],
+    [
+      "ref.4",
+      "08_back_matter.md",
+      22
+    ],
+    [
+      "def.model",
+      "S1_theorem_and_notation.md",
+      48
+    ],
+    [
+      "def.clamp_class",
+      "S1_theorem_and_notation.md",
+      70
+    ],
+    [
+      "def.standardised",
+      "S1_theorem_and_notation.md",
+      78
+    ],
+    [
+      "def.classes",
+      "S1_theorem_and_notation.md",
+      81
+    ],
+    [
+      "def.e2pm",
+      "S1_theorem_and_notation.md",
+      85
+    ],
+    [
+      "prop.ladder",
+      "S1_theorem_and_notation.md",
+      89
+    ],
+    [
+      "prop.upper",
+      "S1_theorem_and_notation.md",
+      91
+    ],
+    [
+      "def.c",
+      "S1_theorem_and_notation.md",
+      94
+    ],
+    [
+      "eq.moment_identity",
+      "S1_theorem_and_notation.md",
+      105
+    ],
+    [
+      "lem.cumulant_identity",
+      "S1_theorem_and_notation.md",
+      116
+    ],
+    [
+      "lem.parity",
+      "S1_theorem_and_notation.md",
+      122
+    ],
+    [
+      "lem.first_order",
+      "S1_theorem_and_notation.md",
+      125
+    ],
+    [
+      "lem.small_time",
+      "S1_theorem_and_notation.md",
+      131
+    ],
+    [
+      "lem.variance",
+      "S1_theorem_and_notation.md",
+      138
+    ],
+    [
+      "lem.e2pm_necessity",
+      "S1_theorem_and_notation.md",
+      141
+    ],
+    [
+      "prop.reservoir",
+      "S1_theorem_and_notation.md",
+      144
+    ],
+    [
+      "proof.lem1",
+      "S1_theorem_and_notation.md",
+      155
+    ],
+    [
+      "proof.lem2",
+      "S1_theorem_and_notation.md",
+      166
+    ],
+    [
+      "proof.lem3",
+      "S1_theorem_and_notation.md",
+      171
+    ],
+    [
+      "proof.lem4",
+      "S1_theorem_and_notation.md",
+      192
+    ],
+    [
+      "proof.lem5",
+      "S1_theorem_and_notation.md",
+      233
+    ],
+    [
+      "proof.lem6",
+      "S1_theorem_and_notation.md",
+      238
+    ],
+    [
+      "proof.thm",
+      "S1_theorem_and_notation.md",
+      249
+    ],
+    [
+      "proof.prop1",
+      "S1_theorem_and_notation.md",
+      263
+    ],
+    [
+      "scope.not_claimed",
+      "S1_theorem_and_notation.md",
+      273
+    ],
+    [
+      "thm.main",
+      "_include/thm_main.md",
+      1
+    ],
+    [
+      "check.t7",
+      "S2_t7_check.md",
+      3
+    ],
+    [
+      "check.symbolic",
+      "S2_t7_check.md",
+      20
+    ],
+    [
+      "mech.parity",
+      "S3_mechanism_map.md",
+      5
+    ],
+    [
+      "mech.orders",
+      "S3_mechanism_map.md",
+      8
+    ],
+    [
+      "mech.physical",
+      "S3_mechanism_map.md",
+      23
+    ],
+    [
+      "mech.control",
+      "S3_mechanism_map.md",
+      26
+    ],
+    [
+      "prop.vacuity",
+      "S4_classes_proofs.md",
+      5
+    ],
+    [
+      "prop.c1",
+      "S4_classes_proofs.md",
+      10
+    ],
+    [
+      "prop.c2pm",
+      "S4_classes_proofs.md",
+      15
+    ],
+    [
+      "prop.ladder_strict",
+      "S4_classes_proofs.md",
+      23
+    ],
+    [
+      "prop.upper",
+      "S4_classes_proofs.md",
+      28
+    ],
+    [
+      "num.tables",
+      "S5_numerical_tables.md",
+      3
+    ],
+    [
+      "num.method",
+      "S6_methods_and_provenance.md",
+      3
+    ],
+    [
+      "num.history",
+      "S6_methods_and_provenance.md",
+      6
+    ],
+    [
+      "check.t7",
+      "S6_methods_and_provenance.md",
+      9
+    ],
+    [
+      "build.provenance",
+      "S6_methods_and_provenance.md",
+      12
+    ],
+    [
+      "disclosure.research",
+      "S6_methods_and_provenance.md",
+      15
+    ]
+  ],
+  "includes": [
+    [
+      "thm_main",
+      "04_main_result.md"
+    ],
+    [
+      "thm_main",
+      "S1_theorem_and_notation.md"
+    ]
+  ],
+  "equations": {
+    "eq:H": "1",
+    "eq:clamp": "2",
+    "eq:force": "3",
+    "eq:prep": "4",
+    "eq:protocols": "5",
+    "eq:e2pm": "6",
+    "eq:g1-invariant": "7",
+    "eq:star": "8",
+    "eq:kappa3": "9",
+    "eq:c-small": "10",
+    "eq:g1-rate": "11",
+    "eq:C0": "12",
+    "eq:S1-H": "S1.1",
+    "eq:S1-clamp": "S1.2",
+    "eq:S1-force": "S1.3",
+    "eq:S1-H0": "S1.4",
+    "eq:S1-gibbs": "S1.5",
+    "eq:S1-protocols": "S1.6",
+    "eq:S1-y1": "S1.7",
+    "eq:S1-c-def": "S1.8",
+    "eq:S1-moments": "S1.9",
+    "eq:S1-star": "S1.10",
+    "eq:S1-kappa3": "S1.11",
+    "eq:S1-c-small": "S1.12",
+    "eq:S1-C0": "S1.13",
+    "eq:S1-taylor": "S1.14",
+    "eq:S1-recursion": "S1.15",
+    "eq:S1-eta": "S1.16",
+    "eq:S1-cn": "S1.17",
+    "eq:S1-c7": "S1.18",
+    "eq:S1-g1-invariant": "S1.19",
+    "eq:S1-g1-rate": "S1.20",
+    "eq:S2-cov": "S2.1"
+  },
+  "figures": {
+    "fig:schematic": "1",
+    "fig:scaling": "2",
+    "fig:scaling-flat": "3"
+  },
+  "outputs": {
+    "BRI1_manuscript": {
+      "md": "build/BRI1_manuscript.md",
+      "pdf_rc": 0,
+      "html_rc": 0
+    },
+    "S1_theorem_and_notation": {
+      "md": "build/S1_theorem_and_notation.md",
+      "pdf_rc": 0,
+      "html_rc": 0
+    }
+  },
+  "section_order": [
+    "00_front.md",
+    "01_introduction.md",
+    "02_model.md",
+    "03_classes.md",
+    "04_main_result.md",
+    "05_reservoir_limit.md",
+    "06_numerical_illustration.md",
+    "07_discussion.md",
+    "08_back_matter.md",
+    "S0_supplement_front.md",
+    "S1_theorem_and_notation.md",
+    "S2_t7_check.md",
+    "S3_mechanism_map.md",
+    "S4_classes_proofs.md",
+    "S5_numerical_tables.md",
+    "S6_methods_and_provenance.md"
+  ],
+  "header": "Working draft — not for submission. AI-assisted; disclosure statements pending."
+}

@@ -1,0 +1,51 @@
+{
+  "main_tstar": {
+    "source": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+    "json_paths": [
+      "p1.0.5.*.gamma1_F",
+      "p1.0.5.*.NB_gamma1"
+    ]
+  },
+  "s5_full": {
+    "source": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+    "json_paths": [
+      "p1.0.5.*"
+    ]
+  },
+  "s5_diag": {
+    "source": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+    "json_paths": [
+      "p1.*.*.gamma1_F",
+      "p1.*.*.NB_gamma1"
+    ],
+    "derived": "relative spread = (max - min)/|mean| over the N_B grid (gen_tables.py)"
+  },
+  "s5_ref": {
+    "source": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+    "json_paths": [
+      "p0.*"
+    ]
+  },
+  "s5_odd": {
+    "source": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+    "json_paths": [
+      "odd_epsilon.*"
+    ]
+  },
+  "s5_cross": {
+    "source": [
+      "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+      "manuscript/data/t7_check.json",
+      "manuscript/data/constants.json"
+    ],
+    "json_paths": [
+      "p1.*.128.NB_gamma1",
+      "rows.*.K_numerical",
+      "gibbs.m2"
+    ]
+  },
+  "s2_t7": {
+    "source": "manuscript/data/t7_check.json",
+    "computed_by": "manuscript/tools/check_t7.py"
+  }
+}

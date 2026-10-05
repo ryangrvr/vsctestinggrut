@@ -1,0 +1,3163 @@
+{
+  "build": {
+    "tool": "manuscript/Makefile",
+    "repo_head_at_check": "7baf2f13b9524da75b217c0c64a687ff22b4c1a5",
+    "header": "Working draft — not for submission. AI-assisted; disclosure statements pending.",
+    "section_order": [
+      "00_front.md",
+      "01_introduction.md",
+      "02_model.md",
+      "03_classes.md",
+      "04_main_result.md",
+      "05_reservoir_limit.md",
+      "06_numerical_illustration.md",
+      "07_discussion.md",
+      "08_back_matter.md",
+      "S0_supplement_front.md",
+      "S1_theorem_and_notation.md",
+      "S2_t7_check.md",
+      "S3_mechanism_map.md",
+      "S4_classes_proofs.md",
+      "S5_numerical_tables.md",
+      "S6_methods_and_provenance.md"
+    ]
+  },
+  "record": {
+    "repo": "ryangrvr/TestingGRUT",
+    "branch": "grut-backreaction-identifiability-0",
+    "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+    "imported_as": "backreaction_identifiability_0",
+    "ledger": "manuscript/RECORD_IMPORT.json",
+    "authoritative_numerics": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+    "blueprint": "Blueprint v1.1 not present in this repository or in the source repository; binding constraints taken from the build prompt. Items marked BLUEPRINT-UNVERIFIED await a conformance pass against the full blueprint."
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "type": "BLUEPRINT-MISSING",
+      "finding": "Blueprint v1.1 is not present in ryangrvr/vsctestinggrut or in any branch of ryangrvr/TestingGRUT. The binding constraints quoted in the build prompt were applied; section-level placement that only the full blueprint can settle is marked BLUEPRINT-UNVERIFIED (S4 contents: competitor-class proofs; S6 contents: methods, verification history, provenance). No record-vs-blueprint disagreement can be assessed until the blueprint is supplied."
+    },
+    {
+      "id": "F2",
+      "type": "RECORD-VS-PROMPT",
+      "finding": "All four load-bearing formulas named in the prompt match the record: parent Hamiltonian (CAND §1, V1-1); E2± with G_t[q] != 0 and prefix consistency (B0 §R BRI-O2/O3, §R2 BRI-O9); c(t) = -Var(x0^2) t^7/(28 pi^3) + O(t^8), K = 3c (THM T1/T2, preflight log); C0(ta,tb) = <x0(ta)x0(tb)>_Gibbs (THM T4). The theorem quantifiers match THM §T4-R and the synthesis §2. No disagreement found."
+    },
+    {
+      "id": "F3",
+      "type": "NOTATION",
+      "finding": "The record uses C_k (Taylor coefficients of c), C_R, C(t*) and b_k (y1 coefficients), which collide with the covariance C0(ta,tb) fixed by the prompt and with the initial momentum b. The manuscript writes c_k, Lambda, Theta(t) and eta_k. Values and statements are unchanged."
+    },
+    {
+      "id": "F4",
+      "type": "RECORD-INTERNAL",
+      "finding": "BRI1_PUBLICATION_FIGURE_REPORT_03.md §9 states 'Relative drift (t=1.0, N_B 4->128): 1.748e-10'. The authoritative JSON gives 1.37e-7 for that quantity (the synthesis §4 agrees with the JSON). The manuscript prints the JSON-derived value."
+    },
+    {
+      "id": "F5",
+      "type": "RECORD-INTERNAL",
+      "finding": "The record names v3_r2_authoritative.py as the sole authoritative script, but the committed v3_r2_results.json has the output schema of extract_data.py (single reference resolution, no resolution ladder, no fit residuals). Re-running extract_data.py in this build environment reproduced the JSON: identical schema, 208 significant values within 3.7e-9 relative, round-off-level entries within 3e-17 absolute (not bitwise; different numpy build)."
+    },
+    {
+      "id": "F6",
+      "type": "RECORD-GAP",
+      "finding": "No generator for the record's v3_r2_figures.png is committed in the record, so there was no existing figure generator to reuse. Figures 1-3 are produced by manuscript/tools/gen_figures.py directly from the authoritative JSON (and, for the Fig. 3 overlay, this build's independent small-time computation)."
+    },
+    {
+      "id": "F7",
+      "type": "RECORD-GAP",
+      "finding": "The resolution ladder (nx 120/240/480, dt 1e-3/5e-4/2.5e-4) is described in the record but is not in machine-readable output; the manuscript states this and prints no ladder numbers."
+    },
+    {
+      "id": "F8",
+      "type": "REFERENCES",
+      "finding": "Only four references carry full bibliographic details in the record (Immer et al. 2023; Makri 1999; Makri 2024; Carcaterra & Akay 2016). Verification depth in the record: Immer primary-source extracts (no page numbers recorded); the other three search-level only. Kiefer et al. (arXiv:2505.15665) and Zweig et al. (arXiv:2505.15987) lack full details and remain CITATION NEEDED placeholders."
+    },
+    {
+      "id": "F9",
+      "type": "INDEPENDENT-CHECK",
+      "finding": "The leading-order prediction N_B*gamma1 -> K(t)/m2^{3/2}, computed with this build's fresh small-time code, agrees with the record's finite-N_B numerics to 1.3e-7 relative at t_star = 0.5 and 2.0e-8 at t = 0.25."
+    }
+  ],
+  "items": {
+    "thm.main": {
+      "kind": "theorem",
+      "label": "Theorem 1",
+      "manuscript_locations": [
+        "src/_include/thm_main.md:1",
+        "src/_include/thm_main.md:1"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T3 THEOREM BRI1-X1",
+          "quote": "such that **for every finite bath size N_B ≥ N₀, the X1 interventional force family lies outside E₂±**",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "§T4-R Owner reading (accepted)",
+          "quote": "There exists δ > 0 such that, **for every fixed t ∈ (0, δ)**, there is a finite threshold",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T1 LEMMA BRI1-T1",
+          "quote": "There exists δ ∈ (0, 1] such that **c(t) < 0 for every 0 < t < δ**",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§2 quantifiers preserved",
+          "quote": "for each fixed sufficiently small t > 0, there exists finite N₀(t) such that for all N_B ≥ N₀(t), the standardized skewness witness is nonzero. No uniform statement over an interval.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_INDEPENDENT_REPRODUCTION_01.md",
+          "section": "V1-8 quantifiers",
+          "quote": "The threshold depends on t; **no uniform N₀ over the whole interval is claimed**",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: theorem for the ramp q(t)=s(t/pi) against the reference protocol only; quantifier form as required",
+      "notes": "Stated on the protocol pair {reference, ramp} as in the record's V1 proposed publication theorem; the family-level form follows a fortiori and is stated as the record's equivalent. Witness sign (negative) from THM T2 'with the sign of K, i.e. negative'."
+    },
+    "def.model": {
+      "kind": "definition",
+      "label": "Definition 1 / Section 2 parent Hamiltonian",
+      "manuscript_locations": [
+        "src/02_model.md:3",
+        "src/S1_theorem_and_notation.md:48"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§1 X1 Hamiltonian",
+          "quote": "with **g = 1** and\n**V(q) = q²/2 + q⁴/4**.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§1 sign convention",
+          "quote": "**F_q(t) = −∂H_int/∂q = (1/√N_B)·Σ_j x_j(t)**",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§1 preparation",
+          "quote": "the pairs (x_j, p_j) are i.i.d. with ρ ∝ exp[−(p²/2 + x²/2 + x⁴/4)]",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_INDEPENDENT_REPRODUCTION_01.md",
+          "section": "V1-1",
+          "quote": "H = p_q²/2M + V(q) + Σ_j [p_j²/2 + x_j²/2\n+ x_j⁴/4] − ε q Σ_j x_j, ε = N_B^(−1/2), g = 1, V(q) = q²/2 + q⁴/4.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: parent Hamiltonian in §2; beta = 1 (record: Gibbs law at temperature 1)",
+      "notes": "beta = 1 written explicitly; record writes rho ~ exp(-H0)."
+    },
+    "eq.clamp": {
+      "kind": "equation",
+      "label": "clamped equation and force (Section 2)",
+      "manuscript_locations": [
+        "src/02_model.md:10"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§1 sign convention",
+          "quote": "x_j″ + x_j + x_j³ = q(t)/√N_B",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_INDEPENDENT_REPRODUCTION_01.md",
+          "section": "V1-1",
+          "quote": "**x_j'' + x_j + x_j³ = q(t)/√N_B.** ✓",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "eq.prep": {
+      "kind": "equation",
+      "label": "preparation (Section 2)",
+      "manuscript_locations": [
+        "src/02_model.md:21"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§3 PF-2 item 4",
+          "quote": "the canonical q = 0 law is the product of single-Duffing Gibbs laws at temperature 1",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§6 moment fact",
+          "quote": "m₂ ∈ (0, 1) follows from m₂ + m₄ = 1 with m₄ > 0",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: beta = 1; m2 symbolic outside §6/S5",
+      "notes": ""
+    },
+    "def.protocols": {
+      "kind": "definition",
+      "label": "protocols (Section 2)",
+      "manuscript_locations": [
+        "src/02_model.md:28"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§1 Protocols",
+          "quote": "With s(u) = 10u³ − 15u⁴ + 6u⁵:",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§1 Protocols",
+          "quote": "**P1:** q = s(t/π) on [0, π]; q = 1 on (π, 2π].",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§1 Protocols",
+          "quote": "**P0:** q ≡ 0.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: 'reference protocol' and 'ramp protocol' replace internal labels",
+      "notes": "The third record protocol (P2) is not used in the manuscript."
+    },
+    "def.clamp_class": {
+      "kind": "definition",
+      "label": "Definition 2 (admissible clamps)",
+      "manuscript_locations": [
+        "src/S1_theorem_and_notation.md:70"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§4 clamp family",
+          "quote": "**q(0) = 0** and **q̇(0) = 0**;",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§4 clamp family",
+          "quote": "**no protocol-dependent environment preparation:** the environment is prepared from one fixed law before every\n  protocol.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "def.standardised": {
+      "kind": "definition",
+      "label": "Definition 3",
+      "manuscript_locations": [
+        "src/S1_theorem_and_notation.md:78"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§R BRI-O3",
+          "quote": "**Degeneracy set:** D_q := {t : Var F_q(t) = 0}.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§R BRI-O4",
+          "quote": "**Definition.** At non-degenerate times, Z_q(t) := (F_q(t) − E F_q(t)) / sd F_q(t).",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "def.classes": {
+      "kind": "definition",
+      "label": "Definition 4 / Section 3 nested ladder",
+      "manuscript_locations": [
+        "src/03_classes.md:5",
+        "src/S1_theorem_and_notation.md:81"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§5 E1",
+          "quote": "**E₁ — additive exogenous.** F_q(t) = M_t[q] + ξ(t).",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§5 E_univ",
+          "quote": "**E_univ — universal causal exogenous representation.** F_q(t) = 𝔉_t[q, U].",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§5 shared",
+          "quote": "**no** finite-memory, Gaussian, Markov or stationarity restriction is imposed anywhere.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: nested class ladder only in main text (§3); S1/S4 restate it only as definitions/proofs supporting the main text",
+      "notes": "S4 gives the proofs; flag for blueprint review whether the ladder restatement in S1 Definition 4 is permitted."
+    },
+    "def.e2pm": {
+      "kind": "definition",
+      "label": "E2± (signed causal scale, prefix consistency)",
+      "manuscript_locations": [
+        "src/03_classes.md:9",
+        "src/S1_theorem_and_notation.md:85"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§R BRI-O2",
+          "quote": "**G is an arbitrary deterministic causal functional with G_t[q] ∈ ℝ \\ {0}**",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§R BRI-O3",
+          "quote": "G = 0 is **not** allowed in E₂±.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§R2 BRI-O9",
+          "quote": "**Prefix consistency is part of membership:** q_[0,t] = q′_[0,t] ⟹ s_q(t) = s_{q′}(t).",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: E2± with signed causal scale G_t[q] != 0 and prefix consistency in §3",
+      "notes": ""
+    },
+    "prop.c2pm": {
+      "kind": "proposition",
+      "label": "characterisation of E2± (Section 3; Proposition S4.3)",
+      "manuscript_locations": [
+        "src/03_classes.md:22",
+        "src/S4_classes_proofs.md:15"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§R2 BRI-O9",
+          "quote": "there exists **one shared deterministic causal sign functional** S_t: q_[0,t] ↦ {+1, −1}, defined on admissible\n  protocol prefixes",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§R BRI-O4 proof",
+          "quote": "Set G_t[q] := s_q(t)·sd F_q(t) off D, and G_t[q] := 1 on D, so that G ≠ 0 everywhere.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§R BRI-O6",
+          "quote": "**Fdd equality is not silently upgraded** to equality of arbitrary path-space measures.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": "Repaired (§R2) statement used; it supersedes §R."
+    },
+    "lem.e2pm_necessity": {
+      "kind": "lemma",
+      "label": "Lemma 6 / Section 3 invariant",
+      "manuscript_locations": [
+        "src/03_classes.md:25",
+        "src/S1_theorem_and_notation.md:141"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T3 reflection safety",
+          "quote": "|γ(Z_{P1}(t*))| = |γ(Z_{P0}(t*))| = 0, contradicting γ(F_{P1,N}(t*)) ≠ 0",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§R BRI-O5",
+          "quote": "**absolute values** of standardised odd cumulants (e.g. |skewness|);",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_INDEPENDENT_REPRODUCTION_01.md",
+          "section": "V1-10",
+          "quote": "**|γ(Z_q(t))| = |γ(ℒ_t)| is the same for every q ∈ 𝒳.**",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "n/a (proof device)",
+      "notes": "Proved directly from the E2± form (sgn G factor) rather than via the reflection-orbit lemma; the two arguments are equivalent at a single time (record V1-10 uses the common-law form)."
+    },
+    "prop.ladder": {
+      "kind": "proposition",
+      "label": "nested ladder strict (Section 3; S1)",
+      "manuscript_locations": [
+        "src/03_classes.md:17",
+        "src/S1_theorem_and_notation.md:89"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§R BRI-O8",
+          "quote": "So **E₁ ⊊ E₂± ⊊ E_univ.**",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "prop.ladder_strict": {
+      "kind": "proposition",
+      "label": "Proposition S4.4",
+      "manuscript_locations": [
+        "src/S4_classes_proofs.md:23"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§R BRI-O8",
+          "quote": "Its third central moment is 6q + 8q³, where q = q(t), and its variance is 1 + 2q².",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§R BRI-O8",
+          "quote": "F_q(t) = (1 + q(t)²)·ξ(t), with ξ i.i.d. standard normal. It is in E₂± (G > 0 is allowed).",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "BLUEPRINT-UNVERIFIED: S4 contents inferred (blueprint v1.1 not available)",
+      "notes": ""
+    },
+    "prop.upper": {
+      "kind": "proposition",
+      "label": "universal upper bound (Section 3; Proposition S4.5)",
+      "manuscript_locations": [
+        "src/03_classes.md:19",
+        "src/S1_theorem_and_notation.md:91",
+        "src/S4_classes_proofs.md:28"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§6 THEOREM BRI-UPPER",
+          "quote": "**Hence every such environment's interventional force law\nlies in E_univ.**",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§R BRI-O7",
+          "quote": "**A continuous-time statement for general stochastic environments is not claimed.**",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§3 PF-2",
+          "quote": "X1 is in the BRI-UPPER parent class, hence **X1 ∈ E_univ**.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT (statement in §3); BLUEPRINT-UNVERIFIED (S4 placement)",
+      "notes": ""
+    },
+    "prop.vacuity": {
+      "kind": "proposition",
+      "label": "Proposition S4.1 (single-protocol vacuity)",
+      "manuscript_locations": [
+        "src/S4_classes_proofs.md:5"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§3 PROP BRI-V",
+          "quote": "Then the additive exogenous model with **M ≡ 0** and **ξ with Law(ξ) := Law(F_env)**\nreproduces the reduced path law of that protocol exactly.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "BLUEPRINT-UNVERIFIED: S4 contents inferred",
+      "notes": ""
+    },
+    "prop.c1": {
+      "kind": "proposition",
+      "label": "Proposition S4.2 (characterisation of E1)",
+      "manuscript_locations": [
+        "src/S4_classes_proofs.md:10"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§5.2 PROP BRI-C1",
+          "quote": "**PROP BRI-C1.** F ∈ E₁ ⟺ the finite-dimensional distributions (fdd) of F̊_q are identical for all q ∈ 𝒳",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "BLUEPRINT-UNVERIFIED: S4 contents inferred",
+      "notes": ""
+    },
+    "def.c": {
+      "kind": "definition",
+      "label": "Definition 5: y1, c(t), K(t)",
+      "manuscript_locations": [
+        "src/S1_theorem_and_notation.md:94"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "Notation",
+          "quote": "c(t) := c_{P1}(t, t; t) = Cov(x₀(t)², y₁(t)) = E[(x₀(t)² − m₂)·y₁(t)]",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_INDEPENDENT_REPRODUCTION_01.md",
+          "section": "V1-5",
+          "quote": "**ÿ₁ + (1 + 3x₀²) y₁ = q(t), y₁(0) = 0, ẏ₁(0) = 0.** ✓",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T2",
+          "quote": "**K_{P1}(t*, t*, t*) = 3c(t*) < 0.**",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: K(t) = 3c(t)",
+      "notes": ""
+    },
+    "eq.moment_identity": {
+      "kind": "equation",
+      "label": "Gibbs moment identity",
+      "manuscript_locations": [
+        "src/S1_theorem_and_notation.md:105"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_INDEPENDENT_REPRODUCTION_01.md",
+          "section": "V1-6 moment inputs",
+          "quote": "**m_{k+1} + m_{k+3} = k\nm_{k−1}**, where m_j := E a^j. In particular **m₂ + m₄ = 1**",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "Notation",
+          "quote": "Var(x₀²) = m₄ − m₂² = 1 − m₂ − m₂², using the exact identity m₂ + m₄ = 1.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "lem.cumulant_identity": {
+      "kind": "lemma",
+      "label": "Lemma 1 / eq. (star)",
+      "manuscript_locations": [
+        "src/04_main_result.md:5",
+        "src/S1_theorem_and_notation.md:116"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§4.1",
+          "quote": "**κ_n(F_q(t₁), …, F_q(t_n)) = N_B^{1 − n/2}·κ_n(X^ε_q(t₁), …, X^ε_q(t_n)).**   (★)",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_INDEPENDENT_REPRODUCTION_01.md",
+          "section": "V1-3",
+          "quote": "K_F(θ) = N_B · K_X(εθ).",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "lem.parity": {
+      "kind": "lemma",
+      "label": "Lemma 2",
+      "manuscript_locations": [
+        "src/04_main_result.md:11",
+        "src/S1_theorem_and_notation.md:122"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T3 P0 third cumulant",
+          "quote": "**So κ₃(F_{P0,N}(t)) = 0 exactly for every t and every N_B.**",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T3 positive variances",
+          "quote": "Var F_{P0,N}(t) = m₂ > 0.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "lem.first_order": {
+      "kind": "lemma",
+      "label": "Lemma 3 (first-order third cumulant; record LEMMA BRI1-R1)",
+      "manuscript_locations": [
+        "src/04_main_result.md:14",
+        "src/S1_theorem_and_notation.md:125"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PF4Q.md",
+          "section": "§1 LEMMA BRI1-R1 (iii)",
+          "quote": "**(iii)** Every moment E[Π_{i≤3} ∂_ε^{k_i} X^ε(t_{j_i})] with Σk_i ≤ 3 is finite, uniformly in |ε| ≤ 1, and\n  differentiation in ε commutes with E up to third order.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PF4Q.md",
+          "section": "§1 LEMMA BRI1-R1 (iv)",
+          "quote": "**κ₃(F_q(t_a), F_q(t_b), F_q(t_c)) = K_q[a,b,c]/N_B + R, with |R| ≤ C_q·N_B⁻²**",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T2",
+          "quote": "κ₃(F_{P1,N}(t*)) = K_{P1}(t*, t*, t*)/N_B + R_N, with |R_N| ≤ C(t*)·N_B⁻², and C(t*) < ∞.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": "Record constant C(t*) renamed Theta(t) to avoid collision with the covariance C0(ta,tb). Record lemma is stated for the frozen tuple with |q| <= Q := 2; the record (THM T2) applies it verbatim to one-time tuples t in (0, 2pi]; the manuscript states it for a fixed t in [0, 2pi] with a general bound Q."
+    },
+    "lem.small_time": {
+      "kind": "lemma",
+      "label": "Lemma 4 / eq. c(t) small-time",
+      "manuscript_locations": [
+        "src/04_main_result.md:21",
+        "src/S1_theorem_and_notation.md:131"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T1 step 5",
+          "quote": "Its output: **C₀ = … = C₆ = 0 and C₇ = (m₂² + m₂ − 1)/(28π³) = −Var(x₀²)/(28π³).**",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T1 step 4",
+          "quote": "**c(t) = Σ_{k=0}^{7} C_k t^k + R(t), with |R(t)| ≤ C_R·t⁸, where C_k := E[g⁽ᵏ⁾(0)]/k! and C_R := E D/8! < ∞.**",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T1 step 7",
+          "quote": "Choose δ := min(1, |C₇|/(2C_R)).",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "line (2) t^7",
+          "quote": "(2) X1/P1: c(t) coefficient of t^7: (m2**2 + m2 - 1)/(28*pi**3)",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: c(t) = -Var(x0^2) t^7/(28 pi^3) + O(t^8), K(t) = 3c(t)",
+      "notes": "Record Taylor coefficients C_k renamed c_k; record C_R renamed Lambda (collision avoidance with C0(ta,tb)). The constant 28 and the response coefficients are generated by tools/gen_constants.py and agree with the record log through t^14."
+    },
+    "lem.variance": {
+      "kind": "lemma",
+      "label": "Lemma 5",
+      "manuscript_locations": [
+        "src/S1_theorem_and_notation.md:138"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T3 positive variances",
+          "quote": "The forced flow z₀ ↦ z(t*; z₀, ε) is a C¹ diffeomorphism of ℝ² (a time-t* map of a smooth global flow), and ρ has a\n  density.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "prop.reservoir": {
+      "kind": "proposition",
+      "label": "Proposition 1 / Section 5",
+      "manuscript_locations": [
+        "src/05_reservoir_limit.md:3",
+        "src/S1_theorem_and_notation.md:144"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "§T4-R scope repair",
+          "quote": "For the frozen Candidate-1 protocols P0 / P1 / P2, the centred finite-dimensional force laws converge to the\n>   **same** Gaussian law, with covariance C₀.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "§T4-R scope repair",
+          "quote": "The same pointwise argument applies to any separately fixed admissible bounded clamp for which the BRI1-R1 moment\n>   estimates hold.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "§T4-R scope repair",
+          "quote": "**No theorem** establishes one shared E₁ representation **uniformly over the entire infinite clamp class 𝒳**.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_INDEPENDENT_REPRODUCTION_01.md",
+          "section": "V1-11",
+          "quote": "**|γ₁[F_{P1,N}(t)]| = O(N_B^(−1)) → 0 as N_B → ∞.** ✓",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: reservoir limit stated as E1-type finite-dimensional convergence, not the harmonic class",
+      "notes": "The record's narrowed (§T4-R) wording supersedes T4/T6 and is the one used."
+    },
+    "eq.C0": {
+      "kind": "equation",
+      "label": "multitime covariance C0 (Section 5)",
+      "manuscript_locations": [
+        "src/05_reservoir_limit.md:9"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T4 limit law",
+          "quote": "so it tends to C₀(t_a, t_b) = ⟨x₀(t_a)x₀(t_b)⟩_Gibbs.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: C0(ta,tb) = <x0(ta) x0(tb)>_Gibbs in §5",
+      "notes": ""
+    },
+    "scope.reservoir": {
+      "kind": "scope",
+      "label": "reservoir-limit scope (Section 5)",
+      "manuscript_locations": [
+        "src/05_reservoir_limit.md:16"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "§T4-R",
+          "quote": "It is\n>   not needed for BRI1-X1 and is not claimed.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_FINAL_SYNTHESIS.md",
+          "section": "§4",
+          "quote": "**Scope kept explicit:** no theorem gives one shared E₁ representation uniformly over the whole infinite clamp class 𝒳,\n  and none is claimed.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: not the harmonic class",
+      "notes": ""
+    },
+    "scope.theorem": {
+      "kind": "scope",
+      "label": "pointwise quantifier and no data fishing (Section 4)",
+      "manuscript_locations": [
+        "src/04_main_result.md:35"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T5",
+          "quote": "**no numerical scan was used to select t***: the statement is existential over the interval (0, δ), which is forced by\n  the sign of the first non-zero Taylor coefficient;",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "scope.not_claimed": {
+      "kind": "scope",
+      "label": "what is not claimed (S1.5, Section 7)",
+      "manuscript_locations": [
+        "src/07_discussion.md:6",
+        "src/S1_theorem_and_notation.md:273"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T4 not claimed",
+          "quote": "any topological discontinuity of E₂± membership (no topology or closure statement is proved);",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§10 claims prohibited",
+          "quote": "certified finite-N threshold N0; certified numerical δ; external replication; human peer review",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§2",
+          "quote": "The numerically illustrated t* = 0.5 is not proven to lie inside the analytic δ interval.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "scope.result": {
+      "kind": "scope",
+      "label": "what is shown (Section 7)",
+      "manuscript_locations": [
+        "src/07_discussion.md:3"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§9 claims permitted",
+          "quote": "the reservoir limit restores the common Gaussian/linear-response description;",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "§T4-R relation to P-17/P-18",
+          "quote": "The result locates the boundary of the **affine quotient**, not the boundary of universal exogenous representation.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": "The record's internal wording ('affine quotient') is not used in the manuscript."
+    },
+    "scope.review": {
+      "kind": "scope",
+      "label": "limitations (Section 7)",
+      "manuscript_locations": [
+        "src/07_discussion.md:11"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§13",
+          "quote": "The novelty audit was targeted, not exhaustive.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§1 V1",
+          "quote": "This was an **independent internal re-derivation under a provenance firewall**, not external replication or independent human review.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "scope.numerics": {
+      "kind": "scope",
+      "label": "numerics are illustration only (Section 6)",
+      "manuscript_locations": [
+        "src/06_numerical_illustration.md:3"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§3",
+          "quote": "V3-R2 illustrates the finite-N behavior at preregistered finite times using deterministic quadrature. It is not part of the proof.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: t_star = 0.5",
+      "notes": ""
+    },
+    "num.method": {
+      "kind": "method",
+      "label": "finite-N_B computation (Section 6; S6)",
+      "manuscript_locations": [
+        "src/06_numerical_illustration.md:6",
+        "src/S6_methods_and_provenance.md:3"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_FIGURE_REPORT_03.md",
+          "section": "§1",
+          "quote": "Quadrature domain: **[-6, 6]^2**",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_FIGURE_REPORT_03.md",
+          "section": "§2",
+          "quote": "Explicit 2-D tensor grids with **every `(x_i, p_j)` pair evolved independently**",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "BLUEPRINT-UNVERIFIED for S6 placement",
+      "notes": "Numerical parameters (L, nx, dt, 1-D node count) are rendered from values.json, parsed from the record script whose output schema matches the authoritative JSON."
+    },
+    "num.controls": {
+      "kind": "result",
+      "label": "numerical controls (Section 6)",
+      "manuscript_locations": [
+        "src/06_numerical_illustration.md:9"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§12 NG-1",
+          "quote": "Every numerical illustration must include at least one exact or independently known control logically distinct from the primary witness.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: m2 numeric only in §6/S5",
+      "notes": "All numbers from values.json."
+    },
+    "num.results": {
+      "kind": "result",
+      "label": "numerical results (Section 6)",
+      "manuscript_locations": [
+        "src/06_numerical_illustration.md:12"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§4",
+          "quote": "Global fitted exponent: p ≈ 1.000000",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§4",
+          "quote": "At t = 1: monotone relative correction of approximately 1.37e-7 is resolved",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": "RECORD-INTERNAL DISCREPANCY: Figure Report 03 §9 states 'Relative drift (t=1.0, N_B 4->128): 1.748e-10'; the authoritative JSON gives 1.4e-7 (agreeing with the synthesis). The manuscript prints the value computed from the JSON."
+    },
+    "num.crosscheck": {
+      "kind": "result",
+      "label": "independent leading-order cross-check (Section 6)",
+      "manuscript_locations": [
+        "src/06_numerical_illustration.md:19"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§5 PF-4",
+          "quote": "γ₁[F_q(t)] = 3c(t, t; t) / (N_B·m₂^{3/2}) + O(N_B^{−2})",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "ADDITION (not in prompt): independent check computed by this build",
+      "notes": "Uses data/t7_check.json and data/constants.json."
+    },
+    "num.tables": {
+      "kind": "result",
+      "label": "S5 tables",
+      "manuscript_locations": [
+        "src/S5_numerical_tables.md:3"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_FIGURE_REPORT_03.md",
+          "section": "§5",
+          "quote": "## 5. P1 finite-ε results (primary witness t★ = 0.5)",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: S5 tables from the JSON",
+      "notes": ""
+    },
+    "num.history": {
+      "kind": "method",
+      "label": "verification history (S6)",
+      "manuscript_locations": [
+        "src/S6_methods_and_provenance.md:6"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§11",
+          "quote": "**Failed Monte Carlo:** the original preregistered MC visualization failed because the theorem's small-time signal was orders of magnitude below feasible sampling noise.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§11",
+          "quote": "It was caught because the P0 Gibbs variance violated stationarity and an exact moment identity.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "BLUEPRINT-UNVERIFIED for S6 contents",
+      "notes": ""
+    },
+    "check.t7": {
+      "kind": "check",
+      "label": "S2 small-time consistency check",
+      "manuscript_locations": [
+        "src/S2_t7_check.md:3",
+        "src/S6_methods_and_provenance.md:9"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PF4Q.md",
+          "section": "§3 V3 validation",
+          "quote": "c_P1(t_v, t_v; t_v) from A and B, compared with the exact series c = Σ_{k=7}^{14} c_k t^k",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: S2 check at t = 0.1, 0.2, 0.25, 0.5 with fresh code",
+      "notes": "Values computed by tools/check_t7.py; the expected ratios quoted in the prompt were not used."
+    },
+    "check.symbolic": {
+      "kind": "check",
+      "label": "S2 symbolic cross-check",
+      "manuscript_locations": [
+        "src/S2_t7_check.md:20"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2) t^7..t^14",
+          "quote": "(2) X1/P1: c(t) coefficient of t^14: -(617*m2**2 + 19607*m2 - 725)/(80720640*pi**4)",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "ADDITION (not in prompt)",
+      "notes": "tools/gen_constants.py reproduces all eight logged coefficients exactly."
+    },
+    "mech.parity": {
+      "kind": "statement",
+      "label": "S3 expansion and parity",
+      "manuscript_locations": [
+        "src/S3_mechanism_map.md:5"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§4.2",
+          "quote": "By induction, **y_k is odd in x₀ for even k and even in x₀ for odd k**:",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT: mechanism map in S3",
+      "notes": ""
+    },
+    "mech.orders": {
+      "kind": "statement",
+      "label": "S3 order table",
+      "manuscript_locations": [
+        "src/S3_mechanism_map.md:8"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§4.4",
+          "quote": "| n | N_B^{(1−n)/2} for odd n; N_B^{−n/2} for even n | |",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§4.3 ASSUMPTION R",
+          "quote": "**Not proved\n  here.**",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PF4Q.md",
+          "section": "§1 scope",
+          "quote": "The all-orders ASSUMPTION R remains unproved and is not needed here.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": "Rows other than the third cumulant are labelled as resting on the unproved all-orders expansion, as in the record."
+    },
+    "mech.physical": {
+      "kind": "statement",
+      "label": "S3 physical mechanism; Section 4 physical reading",
+      "manuscript_locations": [
+        "src/S3_mechanism_map.md:23"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§5 PF-4",
+          "quote": "Physically,\n  a stiffer, higher-energy oscillator responds less, so response amplitude anticorrelates with x₀².",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "mech.control": {
+      "kind": "statement",
+      "label": "S3 nonlinear-coupling harmonic control",
+      "manuscript_locations": [
+        "src/S3_mechanism_map.md:26"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§2 PROP BRI1-C1",
+          "quote": "G_t[q] := A′(q(t)) = 1 + q(t)² is deterministic, causal and **≥ 1, never zero**.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_CANDIDATE_CHARTER.md",
+          "section": "§2",
+          "quote": "**C1 ∉ E₁** for any protocol with q ≢ 0",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "proof.lem1": {
+      "kind": "proof",
+      "label": "proof of Lemma 1",
+      "manuscript_locations": [
+        "src/S1_theorem_and_notation.md:155"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_INDEPENDENT_REPRODUCTION_01.md",
+          "section": "V1-2, V1-3",
+          "quote": "**F_q(t) = ε Σ_j X_j^ε_q(t), exactly, for every finite N_B.** ✓",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "proof.lem2": {
+      "kind": "proof",
+      "label": "proof of Lemma 2",
+      "manuscript_locations": [
+        "src/S1_theorem_and_notation.md:166"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_INDEPENDENT_REPRODUCTION_01.md",
+          "section": "V1-4",
+          "quote": "**κ₃(F_{P0,N}(t)) = 0 exactly, for every t and every finite N_B.** ✓",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "proof.lem3": {
+      "kind": "proof",
+      "label": "proof of Lemma 3",
+      "manuscript_locations": [
+        "src/S1_theorem_and_notation.md:171"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PF4Q.md",
+          "section": "§1 proof (i)",
+          "quote": "Hence √H₀(t) ≤ √H₀(0) + √2·Q·π =: √E₀ + c_Q for t ≤ 2π.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PF4Q.md",
+          "section": "§1 proof (iv)",
+          "quote": "So d/dε κ₃|₀ = Σ_{3 perms}(E[x x y] − E[x x]·E[y]) = **K_q[a,b,c]**.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "proof.lem4": {
+      "kind": "proof",
+      "label": "proof of Lemma 4",
+      "manuscript_locations": [
+        "src/S1_theorem_and_notation.md:192"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_INDEPENDENT_REPRODUCTION_01.md",
+          "section": "V1-6",
+          "quote": "**b₇ = −(1+3a²)/(84π³) + 1/(7π⁵)**.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_INDEPENDENT_REPRODUCTION_01.md",
+          "section": "V1-6",
+          "quote": "The π⁵ terms cancel identically — an internal consistency check on the\narithmetic.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T1 step 3",
+          "quote": "Since −E₀ + 6√E₀ ≤ −E₀/2 + 18",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": "Record y1 coefficients b_k renamed eta_k (collision with the momentum b)."
+    },
+    "proof.lem5": {
+      "kind": "proof",
+      "label": "proof of Lemma 5",
+      "manuscript_locations": [
+        "src/S1_theorem_and_notation.md:233"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_INDEPENDENT_REPRODUCTION_01.md",
+          "section": "V1-9",
+          "quote": "The time-map argument is sufficient: non-degeneracy of the initial law\npropagates exactly through diffeomorphisms. ✓",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "proof.lem6": {
+      "kind": "proof",
+      "label": "proof of Lemma 6",
+      "manuscript_locations": [
+        "src/S1_theorem_and_notation.md:238"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI0_CHARTER.md",
+          "section": "§R BRI-O4 proof",
+          "quote": "Off D, Z_q(t) = sgn(g_q(t))·Z_ξ(t), where Z_ξ is the standardised ξ.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "proof.thm": {
+      "kind": "proof",
+      "label": "proof of Theorem 1",
+      "manuscript_locations": [
+        "src/04_main_result.md:32",
+        "src/S1_theorem_and_notation.md:249"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T2 claim",
+          "quote": "**Claim.** Let N₀(t*) := ⌊C(t*)/|K(t*)|⌋ + 1.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T3",
+          "quote": "This is a one-time **reflection-orbit\nviolation** (BRI-O4 (a)), with no degeneracy involved, so it is not BRI-DEG.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "proof.prop1": {
+      "kind": "proof",
+      "label": "proof of Proposition 1",
+      "manuscript_locations": [
+        "src/S1_theorem_and_notation.md:263"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+          "section": "T4",
+          "quote": "The Lyapunov condition therefore holds: N_B·E|N_B^{−1/2}(X − E X)|⁴ = N_B⁻¹·O(1) → 0.",
+          "quote_verified_verbatim": true
+        },
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_INDEPENDENT_REPRODUCTION_01.md",
+          "section": "V1-11 scope",
+          "quote": "**no uniform theorem over the entire infinite clamp\nclass 𝒳 is established or claimed.**",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "MATCHES-PROMPT-EXTRACT",
+      "notes": ""
+    },
+    "build.provenance": {
+      "kind": "method",
+      "label": "build provenance (S6)",
+      "manuscript_locations": [
+        "src/S6_methods_and_provenance.md:12"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_PUBLICATION_VERIFICATION_SYNTHESIS_01.md",
+          "section": "§12 NG-3",
+          "quote": "Publication-facing numerics follow: computation → authoritative machine-readable output → generated table/figure → prose interpretation.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "BLUEPRINT-UNVERIFIED for S6 contents",
+      "notes": ""
+    },
+    "disclosure.ack": {
+      "kind": "placeholder",
+      "label": "AI-use disclosure, acknowledgments",
+      "manuscript_locations": [
+        "src/08_back_matter.md:3"
+      ],
+      "sources": [],
+      "blueprint": "PROMPT §7",
+      "notes": "Text deliberately not drafted."
+    },
+    "disclosure.research": {
+      "kind": "placeholder",
+      "label": "AI-use disclosure, methods/supplement",
+      "manuscript_locations": [
+        "src/S6_methods_and_provenance.md:15"
+      ],
+      "sources": [],
+      "blueprint": "PROMPT §7",
+      "notes": "Text deliberately not drafted."
+    },
+    "ref.1": {
+      "kind": "reference",
+      "label": "[1] Immer et al.",
+      "manuscript_locations": [
+        "src/08_back_matter.md:13"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_NOVELTY_POSITIONING_AUDIT_SUPPLEMENT_01.md",
+          "section": "Comparator A",
+          "quote": "**Source:** A. Immer, C. Utans, I. Khemakhem, B. Schölkopf, *On the Identifiability and Estimation of Causal Location-Scale Noise Models*, ICML 2023 (PMLR 202); arXiv:2210.09054.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "PROMPT §5: verified in record",
+      "notes": "Record verification level: primary source inspected (abstract + text extracts). Page numbers not in record."
+    },
+    "ref.2": {
+      "kind": "reference",
+      "label": "[2] Makri 1999",
+      "manuscript_locations": [
+        "src/08_back_matter.md:16"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_NOVELTY_POSITIONING_AUDIT_SUPPLEMENT_01.md",
+          "section": "Comparator C",
+          "quote": "**Source:** N. Makri, *The Linear Response Approximation and Its Lowest Order Corrections: An Influence Functional Approach*, J. Phys. Chem. B 103, 2823 (1999), DOI 10.1021/jp9847540.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "PROMPT §5: verified in record",
+      "notes": "Record verification level: search-level inspection (abstract/summary)."
+    },
+    "ref.3": {
+      "kind": "reference",
+      "label": "[3] Makri 2024",
+      "manuscript_locations": [
+        "src/08_back_matter.md:19"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_NOVELTY_POSITIONING_AUDIT_SUPPLEMENT_01.md",
+          "section": "Comparator D",
+          "quote": "**Source:** N. Makri, *Parsing the Influence Functional: Harmonic Bath Mapping and Anharmonic Small Matrix Path Integral*, J. Phys. Chem. Lett. 15, 4616 (2024), DOI 10.1021/acs.jpclett.4c00908.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "PROMPT §5: verified in record",
+      "notes": "Record verification level: search-level inspection."
+    },
+    "ref.4": {
+      "kind": "reference",
+      "label": "[4] Carcaterra & Akay 2016",
+      "manuscript_locations": [
+        "src/08_back_matter.md:22"
+      ],
+      "sources": [
+        {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/BRI1_NOVELTY_POSITIONING_AUDIT_SUPPLEMENT_01.md",
+          "section": "Comparator F",
+          "quote": "**Source:** A. Carcaterra, A. Akay, *Fluctuation-dissipation and energy properties of a finite bath*, Phys. Rev. E 93, 032142 (2016), DOI 10.1103/PhysRevE.93.032142.",
+          "quote_verified_verbatim": true
+        }
+      ],
+      "blueprint": "PROMPT §5: verified in record",
+      "notes": "Record verification level: search-level inspection. The record's heading misspells the first author as 'Carcarra'; the source line spells 'Carcaterra'."
+    }
+  },
+  "values": {
+    "num.nx": {
+      "text": "240",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "settings.nx",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "06_numerical_illustration.md",
+        "S6_methods_and_provenance.md"
+      ]
+    },
+    "num.dt": {
+      "text": "5\\times 10^{-4}",
+      "fmt": [
+        "sig",
+        1
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "settings.dt",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "06_numerical_illustration.md",
+        "S6_methods_and_provenance.md"
+      ]
+    },
+    "num.t_star": {
+      "text": "0.5",
+      "fmt": [
+        "text"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p1 (first key)",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": []
+    },
+    "num.t_diag_1": {
+      "text": "0.25",
+      "fmt": [
+        "text"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p1 key #2",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.t_diag_2": {
+      "text": "0.75",
+      "fmt": [
+        "text"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p1 key #3",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.t_diag_3": {
+      "text": "1.0",
+      "fmt": [
+        "text"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p1 key #4",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.nb_min": {
+      "text": "4",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p1.0.5 keys",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": []
+    },
+    "num.nb_max": {
+      "text": "128",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p1.0.5 keys",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": []
+    },
+    "num.nb_count": {
+      "text": "6",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p1.0.5 keys",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": []
+    },
+    "num.L": {
+      "text": "6",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/extract_data.py",
+        "section": "L= (quadrature half-width)",
+        "note": "script whose output schema matches the authoritative JSON"
+      },
+      "used_in": [
+        "06_numerical_illustration.md",
+        "S6_methods_and_provenance.md"
+      ]
+    },
+    "num.gl_1d": {
+      "text": "4000",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/extract_data.py",
+        "section": "independent 1-D check: leggauss(n)",
+        "note": "script whose output schema matches the authoritative JSON"
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.ref_var_t0": {
+      "text": "0.4679199170",
+      "fmt": [
+        "sig",
+        10
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p0.0.0.var",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.ref_var_drift": {
+      "text": "1.2\\times 10^{-8}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "max_t |Var x(t) - Var x(0)| over p0 times",
+        "inputs": [
+          "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json:p0.*.var"
+        ]
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.ref_k3_max": {
+      "text": "7.8\\times 10^{-17}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "max_t |kappa3| over p0 times",
+        "inputs": [
+          "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json:p0.*.k3"
+        ]
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.ref_mean_max": {
+      "text": "5.6\\times 10^{-17}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "max_t |mean| over p0 times",
+        "inputs": [
+          "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json:p0.*.mean"
+        ]
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.gibbs_residual": {
+      "text": "6.7\\times 10^{-16}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "gibbs_identity_residual",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "06_numerical_illustration.md",
+        "S5_numerical_tables.md"
+      ]
+    },
+    "num.ind1d_m2": {
+      "text": "0.4679199170",
+      "fmt": [
+        "sig",
+        10
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "independent_1d.m2",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "06_numerical_illustration.md",
+        "S5_numerical_tables.md"
+      ]
+    },
+    "num.ind1d_m4": {
+      "text": "0.5320800830",
+      "fmt": [
+        "sig",
+        10
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "independent_1d.m4",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "S5_numerical_tables.md"
+      ]
+    },
+    "num.ref_rel_disc": {
+      "text": "2.4\\times 10^{-16}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "|Var x(0) - m2(1-D)| / m2(1-D)",
+        "inputs": [
+          "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json:p0.0.0.var",
+          "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json:independent_1d.m2"
+        ]
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.g1_tstar_nbmin": {
+      "text": "-5.338\\times 10^{-6}",
+      "fmt": [
+        "sig",
+        4
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p1.0.5.4.gamma1_F",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.g1_tstar_nbmax": {
+      "text": "-1.668\\times 10^{-7}",
+      "fmt": [
+        "sig",
+        4
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p1.0.5.128.gamma1_F",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.nbg1_tstar": {
+      "text": "-2.13531\\times 10^{-5}",
+      "fmt": [
+        "sig",
+        6
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p1.0.5.4.NB_gamma1",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": []
+    },
+    "num.nbg1_tstar_relspread": {
+      "text": "1.7\\times 10^{-10}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "(max - min)/|mean| of N_B*gamma1 over the N_B grid",
+        "inputs": [
+          "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json:p1.0.5.*.NB_gamma1"
+        ]
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.g1_diag_1_nbmin": {
+      "text": "-4.747\\times 10^{-8}",
+      "fmt": [
+        "sig",
+        4
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p1.0.25.4.gamma1_F",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": []
+    },
+    "num.nbg1_diag_1_relspread": {
+      "text": "1.8\\times 10^{-8}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "(max - min)/|mean| of N_B*gamma1 over the N_B grid",
+        "inputs": [
+          "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json:p1.0.25.*.NB_gamma1"
+        ]
+      },
+      "used_in": []
+    },
+    "num.nbg1_diag_1_drift": {
+      "text": "1.8\\times 10^{-8}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "|NBg1(N_B min) - NBg1(N_B max)| / |NBg1(N_B max)|",
+        "inputs": [
+          "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json:p1.0.25.*.NB_gamma1"
+        ]
+      },
+      "used_in": []
+    },
+    "num.g1_diag_2_nbmin": {
+      "text": "-7.667\\times 10^{-5}",
+      "fmt": [
+        "sig",
+        4
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p1.0.75.4.gamma1_F",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": []
+    },
+    "num.nbg1_diag_2_relspread": {
+      "text": "7.1\\times 10^{-9}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "(max - min)/|mean| of N_B*gamma1 over the N_B grid",
+        "inputs": [
+          "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json:p1.0.75.*.NB_gamma1"
+        ]
+      },
+      "used_in": []
+    },
+    "num.nbg1_diag_2_drift": {
+      "text": "7.1\\times 10^{-9}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "|NBg1(N_B min) - NBg1(N_B max)| / |NBg1(N_B max)|",
+        "inputs": [
+          "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json:p1.0.75.*.NB_gamma1"
+        ]
+      },
+      "used_in": []
+    },
+    "num.g1_diag_3_nbmin": {
+      "text": "-4.642\\times 10^{-4}",
+      "fmt": [
+        "sig",
+        4
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p1.1.0.4.gamma1_F",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": []
+    },
+    "num.nbg1_diag_3_relspread": {
+      "text": "1.4\\times 10^{-7}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "(max - min)/|mean| of N_B*gamma1 over the N_B grid",
+        "inputs": [
+          "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json:p1.1.0.*.NB_gamma1"
+        ]
+      },
+      "used_in": []
+    },
+    "num.nbg1_diag_3_drift": {
+      "text": "1.4\\times 10^{-7}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "|NBg1(N_B min) - NBg1(N_B max)| / |NBg1(N_B max)|",
+        "inputs": [
+          "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json:p1.1.0.*.NB_gamma1"
+        ]
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.global_p": {
+      "text": "1.000000",
+      "fmt": [
+        "fixed",
+        6
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "scaling_fit.global_p",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.local_p_min": {
+      "text": "1.000000",
+      "fmt": [
+        "fixed",
+        6
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "scaling_fit.local_p (min)",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.local_p_max": {
+      "text": "1.000000",
+      "fmt": [
+        "fixed",
+        6
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "scaling_fit.local_p (max)",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.odd_ratio_dev": {
+      "text": "3.3\\times 10^{-11}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "max |ratio + 1| over odd_epsilon",
+        "inputs": [
+          "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json:odd_epsilon.*.ratio"
+        ]
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "num.odd_sum_max": {
+      "text": "7.8\\times 10^{-17}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "max |kappa3(+eps) + kappa3(-eps)|",
+        "inputs": [
+          "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json:odd_epsilon.*.sum"
+        ]
+      },
+      "used_in": []
+    },
+    "num.odd_nbs": {
+      "text": "4, 16",
+      "fmt": [
+        "text"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "odd_epsilon keys",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "const.m2": {
+      "text": "0.467919916974",
+      "fmt": [
+        "sig",
+        12
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "mpmath.quad on (-inf,0,inf), 40 digits"
+      },
+      "used_in": [
+        "06_numerical_illustration.md",
+        "S5_numerical_tables.md"
+      ]
+    },
+    "const.m4": {
+      "text": "0.532080083026",
+      "fmt": [
+        "sig",
+        12
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "mpmath.quad on (-inf,0,inf), 40 digits"
+      },
+      "used_in": [
+        "S5_numerical_tables.md"
+      ]
+    },
+    "const.var_x0sq": {
+      "text": "0.313131034326",
+      "fmt": [
+        "sig",
+        12
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "mpmath.quad on (-inf,0,inf), 40 digits"
+      },
+      "used_in": [
+        "06_numerical_illustration.md",
+        "S5_numerical_tables.md"
+      ]
+    },
+    "const.identity_residual": {
+      "text": "0",
+      "fmt": [
+        "sig",
+        1
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "mpmath.quad on (-inf,0,inf), 40 digits"
+      },
+      "used_in": []
+    },
+    "const.var_cert_mid": {
+      "text": "0.3131310343256930878",
+      "fmt": [
+        "text"
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/BRI1_ANALYTIC_ESCAPE_THEOREM.md",
+        "section": "T1 step 6"
+      },
+      "used_in": [
+        "S5_numerical_tables.md"
+      ]
+    },
+    "const.C7": {
+      "text": "-3.60677\\times 10^{-4}",
+      "fmt": [
+        "sig",
+        6
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}"
+      },
+      "used_in": [
+        "S5_numerical_tables.md"
+      ]
+    },
+    "sym.C7": {
+      "text": "- \\frac{\\operatorname{Var}(x_0^2)}{28 \\pi^{3}}",
+      "fmt": [
+        "latex"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}",
+        "record_cross_check": {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2)"
+        },
+        "agreement_t7_to_t14": true
+      },
+      "used_in": [
+        "00_front.md",
+        "01_introduction.md",
+        "04_main_result.md",
+        "S1_theorem_and_notation.md",
+        "S2_t7_check.md"
+      ]
+    },
+    "sym.C8": {
+      "text": "\\frac{3 \\operatorname{Var}(x_0^2)}{112 \\pi^{4}}",
+      "fmt": [
+        "latex"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}",
+        "record_cross_check": {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2)"
+        },
+        "agreement_t7_to_t14": true
+      },
+      "used_in": []
+    },
+    "sym.ratio_C8_C7": {
+      "text": "- \\frac{3}{4 \\pi}",
+      "fmt": [
+        "latex"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}",
+        "record_cross_check": {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2)"
+        },
+        "agreement_t7_to_t14": true
+      },
+      "used_in": [
+        "S2_t7_check.md"
+      ]
+    },
+    "sym.y1_b5": {
+      "text": "\\frac{1}{2 \\pi^{3}}",
+      "fmt": [
+        "latex"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}",
+        "record_cross_check": {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2)"
+        },
+        "agreement_t7_to_t14": true
+      },
+      "used_in": [
+        "S1_theorem_and_notation.md"
+      ]
+    },
+    "sym.y1_b6": {
+      "text": "- \\frac{1}{2 \\pi^{4}}",
+      "fmt": [
+        "latex"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}",
+        "record_cross_check": {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2)"
+        },
+        "agreement_t7_to_t14": true
+      },
+      "used_in": [
+        "S1_theorem_and_notation.md"
+      ]
+    },
+    "sym.y1_b7": {
+      "text": "-\\frac{1 + 3a^{2}}{84\\pi^{3}} + \\frac{1}{7\\pi^{5}}",
+      "fmt": [
+        "latex"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}",
+        "record_cross_check": {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2)"
+        },
+        "agreement_t7_to_t14": true
+      },
+      "used_in": [
+        "S1_theorem_and_notation.md"
+      ]
+    },
+    "sym.x0_a2": {
+      "text": "- \\frac{a^{3}}{2} - \\frac{a}{2}",
+      "fmt": [
+        "latex"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}",
+        "record_cross_check": {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2)"
+        },
+        "agreement_t7_to_t14": true
+      },
+      "used_in": [
+        "S1_theorem_and_notation.md"
+      ]
+    },
+    "sym.x0sq_d2": {
+      "text": "- a^{4} - a^{2} + b^{2}",
+      "fmt": [
+        "latex"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}",
+        "record_cross_check": {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2)"
+        },
+        "agreement_t7_to_t14": true
+      },
+      "used_in": [
+        "S1_theorem_and_notation.md"
+      ]
+    },
+    "sym.y1_b7_a2coef": {
+      "text": "- \\frac{1}{28 \\pi^{3}}",
+      "fmt": [
+        "latex"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}",
+        "record_cross_check": {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2)"
+        },
+        "agreement_t7_to_t14": true
+      },
+      "used_in": [
+        "S1_theorem_and_notation.md"
+      ]
+    },
+    "sym.C7_in_m2": {
+      "text": "\\frac{m_{2}^{2} + m_{2} - 1}{28 \\pi^{3}}",
+      "fmt": [
+        "latex"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}",
+        "record_cross_check": {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2)"
+        },
+        "agreement_t7_to_t14": true
+      },
+      "used_in": [
+        "S1_theorem_and_notation.md"
+      ]
+    },
+    "sym.q3": {
+      "text": "\\frac{10}{\\pi^{3}}",
+      "fmt": [
+        "latex"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}",
+        "record_cross_check": {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2)"
+        },
+        "agreement_t7_to_t14": true
+      },
+      "used_in": [
+        "S1_theorem_and_notation.md"
+      ]
+    },
+    "sym.q4": {
+      "text": "- \\frac{15}{\\pi^{4}}",
+      "fmt": [
+        "latex"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}",
+        "record_cross_check": {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2)"
+        },
+        "agreement_t7_to_t14": true
+      },
+      "used_in": [
+        "S1_theorem_and_notation.md"
+      ]
+    },
+    "sym.q5": {
+      "text": "\\frac{6}{\\pi^{5}}",
+      "fmt": [
+        "latex"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}",
+        "record_cross_check": {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2)"
+        },
+        "agreement_t7_to_t14": true
+      },
+      "used_in": [
+        "S1_theorem_and_notation.md"
+      ]
+    },
+    "sym.C7_den": {
+      "text": "28",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}",
+        "record_cross_check": {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2)"
+        },
+        "agreement_t7_to_t14": true
+      },
+      "used_in": []
+    },
+    "sym.order_max": {
+      "text": "14",
+      "fmt": [
+        "int"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_constants.py",
+        "method": "sympy order-by-order Taylor recursion; Gibbs moments reduced by m_{k+1}+m_{k+3}=k m_{k-1}",
+        "record_cross_check": {
+          "repo": "ryangrvr/TestingGRUT",
+          "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+          "path": "backreaction_identifiability_0/preflight/bri1_preflight_symbolic.log",
+          "section": "lines (2)"
+        },
+        "agreement_t7_to_t14": true
+      },
+      "used_in": [
+        "S1_theorem_and_notation.md",
+        "S2_t7_check.md"
+      ]
+    },
+    "t7.t_1": {
+      "text": "0.1",
+      "fmt": [
+        "text"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.K_1": {
+      "text": "-1.05257\\times 10^{-10}",
+      "fmt": [
+        "sig",
+        6
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.Klead_1": {
+      "text": "-1.08203\\times 10^{-10}",
+      "fmt": [
+        "sig",
+        6
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.ratio_1": {
+      "text": "0.9728",
+      "fmt": [
+        "fixed",
+        4
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.ratioB_1": {
+      "text": "0.9728",
+      "fmt": [
+        "fixed",
+        4
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.ratioS_1": {
+      "text": "0.9728",
+      "fmt": [
+        "fixed",
+        4
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.spread_1": {
+      "text": "8\\times 10^{-6}",
+      "fmt": [
+        "sig",
+        1
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.t_2": {
+      "text": "0.2",
+      "fmt": [
+        "text"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.K_2": {
+      "text": "-1.30084\\times 10^{-8}",
+      "fmt": [
+        "sig",
+        6
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.Klead_2": {
+      "text": "-1.38500\\times 10^{-8}",
+      "fmt": [
+        "sig",
+        6
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.ratio_2": {
+      "text": "0.9392",
+      "fmt": [
+        "fixed",
+        4
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.ratioB_2": {
+      "text": "0.9392",
+      "fmt": [
+        "fixed",
+        4
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.ratioS_2": {
+      "text": "0.9392",
+      "fmt": [
+        "fixed",
+        4
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.spread_2": {
+      "text": "7\\times 10^{-6}",
+      "fmt": [
+        "sig",
+        1
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.t_3": {
+      "text": "0.25",
+      "fmt": [
+        "text"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.K_3": {
+      "text": "-6.07788\\times 10^{-8}",
+      "fmt": [
+        "sig",
+        6
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.Klead_3": {
+      "text": "-6.60419\\times 10^{-8}",
+      "fmt": [
+        "sig",
+        6
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.ratio_3": {
+      "text": "0.9203",
+      "fmt": [
+        "fixed",
+        4
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.ratioB_3": {
+      "text": "0.9203",
+      "fmt": [
+        "fixed",
+        4
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.ratioS_3": {
+      "text": "0.9203",
+      "fmt": [
+        "fixed",
+        4
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.spread_3": {
+      "text": "6\\times 10^{-6}",
+      "fmt": [
+        "sig",
+        1
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.t_4": {
+      "text": "0.5",
+      "fmt": [
+        "text"
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.K_4": {
+      "text": "-6.83470\\times 10^{-6}",
+      "fmt": [
+        "sig",
+        6
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.Klead_4": {
+      "text": "-8.45337\\times 10^{-6}",
+      "fmt": [
+        "sig",
+        6
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.ratio_4": {
+      "text": "0.8085",
+      "fmt": [
+        "fixed",
+        4
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.ratioB_4": {
+      "text": "0.8085",
+      "fmt": [
+        "fixed",
+        4
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.ratioS_4": {
+      "text": "0.8085",
+      "fmt": [
+        "fixed",
+        4
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "t7.spread_4": {
+      "text": "1\\times 10^{-6}",
+      "fmt": [
+        "sig",
+        1
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/check_t7.py",
+        "method": "Gauss-Hermite/RK4 (primary) and Gauss-Legendre/DOP853 (independent); c(t) = Cov(x0(t)^2, y1(t)) by quadrature over the beta = 1 Gibbs law"
+      },
+      "used_in": []
+    },
+    "x.pred_t025": {
+      "text": "-1.89887\\times 10^{-7}",
+      "fmt": [
+        "sig",
+        6
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "K(t)/m2^{3/2} with K from check_t7.py and m2 from gen_constants.py",
+        "inputs": [
+          "data/t7_check.json",
+          "data/constants.json"
+        ]
+      },
+      "used_in": []
+    },
+    "x.obs_t025": {
+      "text": "-1.89887\\times 10^{-7}",
+      "fmt": [
+        "sig",
+        6
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p1.0.25.128.NB_gamma1",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": []
+    },
+    "x.reldiff_t025": {
+      "text": "2.0\\times 10^{-8}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "|pred - obs| / |obs|",
+        "inputs": [
+          "x.pred",
+          "x.obs"
+        ]
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "x.pred_tstar": {
+      "text": "-2.13531\\times 10^{-5}",
+      "fmt": [
+        "sig",
+        6
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "K(t)/m2^{3/2} with K from check_t7.py and m2 from gen_constants.py",
+        "inputs": [
+          "data/t7_check.json",
+          "data/constants.json"
+        ]
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "x.obs_tstar": {
+      "text": "-2.13531\\times 10^{-5}",
+      "fmt": [
+        "sig",
+        6
+      ],
+      "provenance": {
+        "repo": "ryangrvr/TestingGRUT",
+        "commit": "27829f1fa8fd52353f596921da9630a9bf70397e",
+        "path": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "json_path": "p1.0.5.128.NB_gamma1",
+        "section": "authoritative numerical output (reference resolution)"
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    },
+    "x.reldiff_tstar": {
+      "text": "1.3\\times 10^{-7}",
+      "fmt": [
+        "sig",
+        2
+      ],
+      "provenance": {
+        "computed_by": "manuscript/tools/gen_values.py",
+        "method": "|pred - obs| / |obs|",
+        "inputs": [
+          "x.pred",
+          "x.obs"
+        ]
+      },
+      "used_in": [
+        "06_numerical_illustration.md"
+      ]
+    }
+  },
+  "equations": {
+    "eq:H": "1",
+    "eq:clamp": "2",
+    "eq:force": "3",
+    "eq:prep": "4",
+    "eq:protocols": "5",
+    "eq:e2pm": "6",
+    "eq:g1-invariant": "7",
+    "eq:star": "8",
+    "eq:kappa3": "9",
+    "eq:c-small": "10",
+    "eq:g1-rate": "11",
+    "eq:C0": "12",
+    "eq:S1-H": "S1.1",
+    "eq:S1-clamp": "S1.2",
+    "eq:S1-force": "S1.3",
+    "eq:S1-H0": "S1.4",
+    "eq:S1-gibbs": "S1.5",
+    "eq:S1-protocols": "S1.6",
+    "eq:S1-y1": "S1.7",
+    "eq:S1-c-def": "S1.8",
+    "eq:S1-moments": "S1.9",
+    "eq:S1-star": "S1.10",
+    "eq:S1-kappa3": "S1.11",
+    "eq:S1-c-small": "S1.12",
+    "eq:S1-C0": "S1.13",
+    "eq:S1-taylor": "S1.14",
+    "eq:S1-recursion": "S1.15",
+    "eq:S1-eta": "S1.16",
+    "eq:S1-cn": "S1.17",
+    "eq:S1-c7": "S1.18",
+    "eq:S1-g1-invariant": "S1.19",
+    "eq:S1-g1-rate": "S1.20",
+    "eq:S2-cov": "S2.1"
+  },
+  "figures": {
+    "fig1_schematic": {
+      "kind": "schematic",
+      "data": "none",
+      "curves": "protocol definitions q = 0 and q = s(t/pi) on [0, pi], q = 1 on (pi, 2pi]",
+      "source": "protocol definition (record: BRI1_CANDIDATE_CHARTER.md §1)"
+    },
+    "fig2_scaling": {
+      "source": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+      "json_paths": [
+        "p1.0.5.*.gamma1_F",
+        "p1.0.5.*.NB_gamma1",
+        "scaling_fit.global_p",
+        "scaling_fit.intercept"
+      ],
+      "reference_line": "slope -1 through 3x|gamma1(N_B min)| (display offset only)"
+    },
+    "fig3_flat": {
+      "source": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+      "json_paths": [
+        "p1.0.5.*.gamma1_F",
+        "p1.0.5.*.NB_gamma1",
+        "scaling_fit.global_p",
+        "scaling_fit.intercept"
+      ],
+      "overlay": "K(t_star)/m2^{3/2}: data/t7_check.json (primary run) and data/constants.json m2",
+      "y_window": "mean +/- 20% (display choice)"
+    }
+  },
+  "tables": {
+    "main_tstar": {
+      "source": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+      "json_paths": [
+        "p1.0.5.*.gamma1_F",
+        "p1.0.5.*.NB_gamma1"
+      ]
+    },
+    "s5_full": {
+      "source": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+      "json_paths": [
+        "p1.0.5.*"
+      ]
+    },
+    "s5_diag": {
+      "source": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+      "json_paths": [
+        "p1.*.*.gamma1_F",
+        "p1.*.*.NB_gamma1"
+      ],
+      "derived": "relative spread = (max - min)/|mean| over the N_B grid (gen_tables.py)"
+    },
+    "s5_ref": {
+      "source": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+      "json_paths": [
+        "p0.*"
+      ]
+    },
+    "s5_odd": {
+      "source": "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+      "json_paths": [
+        "odd_epsilon.*"
+      ]
+    },
+    "s5_cross": {
+      "source": [
+        "backreaction_identifiability_0/publication_verification/v3_r2/v3_r2_results.json",
+        "manuscript/data/t7_check.json",
+        "manuscript/data/constants.json"
+      ],
+      "json_paths": [
+        "p1.*.128.NB_gamma1",
+        "rows.*.K_numerical",
+        "gibbs.m2"
+      ]
+    },
+    "s2_t7": {
+      "source": "manuscript/data/t7_check.json",
+      "computed_by": "manuscript/tools/check_t7.py"
+    }
+  },
+  "check": {
+    "result": "PASS",
+    "failures": []
+  }
+}

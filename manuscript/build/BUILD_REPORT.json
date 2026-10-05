@@ -1,0 +1,229 @@
+{
+  "C1_record_import": {
+    "files": 56,
+    "problems": []
+  },
+  "C2_placeholders": {
+    "unresolved_in_render": [],
+    "leftover_in_output": []
+  },
+  "C3_numeric_literals": {
+    "violations": [],
+    "allowlist": [
+      "t_star = 0.5 (prompt allowlist)",
+      "beta = 1 (prompt allowlist)",
+      "protocol definition (prompt allowlist)",
+      "integer N_B values 4, 8, 16, 32, 64, 128",
+      "single-digit structural integers (exponents, orders, combinatorial factors)",
+      "section, table, figure, lemma and equation numbers",
+      "bibliographic entries inside the references block"
+    ]
+  },
+  "C4_provenance": {
+    "values": 93,
+    "without_provenance": [],
+    "used": [
+      "const.C7",
+      "const.m2",
+      "const.m4",
+      "const.var_cert_mid",
+      "const.var_x0sq",
+      "num.L",
+      "num.dt",
+      "num.g1_tstar_nbmax",
+      "num.g1_tstar_nbmin",
+      "num.gibbs_residual",
+      "num.gl_1d",
+      "num.global_p",
+      "num.ind1d_m2",
+      "num.ind1d_m4",
+      "num.local_p_max",
+      "num.local_p_min",
+      "num.nbg1_diag_3_drift",
+      "num.nbg1_tstar_relspread",
+      "num.nx",
+      "num.odd_nbs",
+      "num.odd_ratio_dev",
+      "num.ref_k3_max",
+      "num.ref_mean_max",
+      "num.ref_rel_disc",
+      "num.ref_var_drift",
+      "num.ref_var_t0",
+      "num.t_diag_1",
+      "num.t_diag_2",
+      "num.t_diag_3",
+      "sym.C7",
+      "sym.C7_in_m2",
+      "sym.order_max",
+      "sym.q3",
+      "sym.q4",
+      "sym.q5",
+      "sym.ratio_C8_C7",
+      "sym.x0_a2",
+      "sym.x0sq_d2",
+      "sym.y1_b5",
+      "sym.y1_b6",
+      "sym.y1_b7",
+      "sym.y1_b7_a2coef",
+      "x.obs_tstar",
+      "x.pred_tstar",
+      "x.reldiff_t025",
+      "x.reldiff_tstar"
+    ]
+  },
+  "C5_numeric_zone": {
+    "violations": []
+  },
+  "C6_vocabulary": {
+    "banned": [
+      "GRUT",
+      "ontology",
+      "quotient",
+      "X1",
+      "P0",
+      "P1",
+      "V1",
+      "V2",
+      "V3",
+      "owner",
+      "ruling",
+      "charter",
+      "tier",
+      "gate"
+    ],
+    "added_by_build": [
+      "BRI",
+      "BRI0",
+      "BRI1",
+      "PF4Q",
+      "SCOUT",
+      "Candidate"
+    ],
+    "exceptions": {},
+    "violations": []
+  },
+  "C7_trace": {
+    "markers": 58,
+    "items": 58,
+    "missing_items": [],
+    "unused_items": [],
+    "quote_failures": []
+  },
+  "C8_disclosure_and_header": {
+    "disclosures": {
+      "[AI-USE DISCLOSURE — research: proof development, code, numerical verification]": {
+        "file": "S6_methods_and_provenance.md",
+        "present": true
+      },
+      "[AI-USE DISCLOSURE — manuscript preparation]": {
+        "file": "08_back_matter.md",
+        "present": true
+      }
+    },
+    "header": "Working draft — not for submission. AI-assisted; disclosure statements pending.",
+    "header_on_every_page": true
+  },
+  "C9_artefacts": {
+    "missing": []
+  },
+  "citation_placeholders": [
+    "[CITATION NEEDED: Mori–Zwanzig projection-operator formalism]",
+    "[CITATION NEEDED: classical fluctuation–dissipation theorem]",
+    "[CITATION NEEDED: generalized Langevin equation from a harmonic bath with linear coupling (Zwanzig; Caldeira–Leggett)]",
+    "[CITATION NEEDED: generalized Langevin equations with non-Gaussian orthogonal forces, Kiefer et al., arXiv:2505.15665 — full bibliographic details to be verified]",
+    "[CITATION NEEDED: identifiability of interventional stochastic differential equations, Zweig et al., arXiv:2505.15987 — full bibliographic details to be verified]",
+    "[CITATION NEEDED: location-scale / conditional-transformation regression literature]",
+    "[CITATION NEEDED: multivariate Lindeberg–Feller central limit theorem, standard probability text]"
+  ],
+  "pdf": {
+    "manuscript_pages": 23,
+    "s1_pages": 9,
+    "outputs": {
+      "BRI1_manuscript": {
+        "md": "build/BRI1_manuscript.md",
+        "pdf_rc": 0,
+        "html_rc": 0
+      },
+      "S1_theorem_and_notation": {
+        "md": "build/S1_theorem_and_notation.md",
+        "pdf_rc": 0,
+        "html_rc": 0
+      }
+    }
+  },
+  "t7_check": [
+    {
+      "t": 0.1,
+      "ratio": 0.9727764589559751,
+      "ratio_method_B": 0.972776452895866,
+      "ratio_series": 0.97277645633944
+    },
+    {
+      "t": 0.2,
+      "ratio": 0.9392323571476905,
+      "ratio_method_B": 0.9392323554934073,
+      "ratio_series": 0.939232360649628
+    },
+    {
+      "t": 0.25,
+      "ratio": 0.9203056465763441,
+      "ratio_method_B": 0.9203056399353974,
+      "ratio_series": 0.920305597449244
+    },
+    {
+      "t": 0.5,
+      "ratio": 0.8085175405497063,
+      "ratio_method_B": 0.8085174060603791,
+      "ratio_series": 0.8085002735345252
+    }
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "type": "BLUEPRINT-MISSING",
+      "finding": "Blueprint v1.1 is not present in ryangrvr/vsctestinggrut or in any branch of ryangrvr/TestingGRUT. The binding constraints quoted in the build prompt were applied; section-level placement that only the full blueprint can settle is marked BLUEPRINT-UNVERIFIED (S4 contents: competitor-class proofs; S6 contents: methods, verification history, provenance). No record-vs-blueprint disagreement can be assessed until the blueprint is supplied."
+    },
+    {
+      "id": "F2",
+      "type": "RECORD-VS-PROMPT",
+      "finding": "All four load-bearing formulas named in the prompt match the record: parent Hamiltonian (CAND §1, V1-1); E2± with G_t[q] != 0 and prefix consistency (B0 §R BRI-O2/O3, §R2 BRI-O9); c(t) = -Var(x0^2) t^7/(28 pi^3) + O(t^8), K = 3c (THM T1/T2, preflight log); C0(ta,tb) = <x0(ta)x0(tb)>_Gibbs (THM T4). The theorem quantifiers match THM §T4-R and the synthesis §2. No disagreement found."
+    },
+    {
+      "id": "F3",
+      "type": "NOTATION",
+      "finding": "The record uses C_k (Taylor coefficients of c), C_R, C(t*) and b_k (y1 coefficients), which collide with the covariance C0(ta,tb) fixed by the prompt and with the initial momentum b. The manuscript writes c_k, Lambda, Theta(t) and eta_k. Values and statements are unchanged."
+    },
+    {
+      "id": "F4",
+      "type": "RECORD-INTERNAL",
+      "finding": "BRI1_PUBLICATION_FIGURE_REPORT_03.md §9 states 'Relative drift (t=1.0, N_B 4->128): 1.748e-10'. The authoritative JSON gives 1.37e-7 for that quantity (the synthesis §4 agrees with the JSON). The manuscript prints the JSON-derived value."
+    },
+    {
+      "id": "F5",
+      "type": "RECORD-INTERNAL",
+      "finding": "The record names v3_r2_authoritative.py as the sole authoritative script, but the committed v3_r2_results.json has the output schema of extract_data.py (single reference resolution, no resolution ladder, no fit residuals). Re-running extract_data.py in this build environment reproduced the JSON: identical schema, 208 significant values within 3.7e-9 relative, round-off-level entries within 3e-17 absolute (not bitwise; different numpy build)."
+    },
+    {
+      "id": "F6",
+      "type": "RECORD-GAP",
+      "finding": "No generator for the record's v3_r2_figures.png is committed in the record, so there was no existing figure generator to reuse. Figures 1-3 are produced by manuscript/tools/gen_figures.py directly from the authoritative JSON (and, for the Fig. 3 overlay, this build's independent small-time computation)."
+    },
+    {
+      "id": "F7",
+      "type": "RECORD-GAP",
+      "finding": "The resolution ladder (nx 120/240/480, dt 1e-3/5e-4/2.5e-4) is described in the record but is not in machine-readable output; the manuscript states this and prints no ladder numbers."
+    },
+    {
+      "id": "F8",
+      "type": "REFERENCES",
+      "finding": "Only four references carry full bibliographic details in the record (Immer et al. 2023; Makri 1999; Makri 2024; Carcaterra & Akay 2016). Verification depth in the record: Immer primary-source extracts (no page numbers recorded); the other three search-level only. Kiefer et al. (arXiv:2505.15665) and Zweig et al. (arXiv:2505.15987) lack full details and remain CITATION NEEDED placeholders."
+    },
+    {
+      "id": "F9",
+      "type": "INDEPENDENT-CHECK",
+      "finding": "The leading-order prediction N_B*gamma1 -> K(t)/m2^{3/2}, computed with this build's fresh small-time code, agrees with the record's finite-N_B numerics to 1.3e-7 relative at t_star = 0.5 and 2.0e-8 at t = 0.25."
+    }
+  ],
+  "result": "PASS",
+  "failures": []
+}
