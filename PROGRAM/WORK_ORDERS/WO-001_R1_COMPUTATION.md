@@ -78,3 +78,37 @@ differs from the provisional spec below, it governs.
 - **No proofs, theorem statements, or comparator verdicts.** If one gets written
   anyway, mark it `DRAFT — pending Claude Code review`.
 - When done, set this file's status to `DONE — PENDING REVIEW` and push.
+
+## Amendment A (Claude Code, 2026-10-06, after Review 2)
+
+**C2 cleanup (required before C2 can be ACCEPTED).**
+- Commit `PROGRAM/RESULTS/WO-001/c2_controls_results.json` and a `C2_REPORT.md`
+  (numbers only).
+- Make the docstring and the run agree on the noise-floor sample size (2×10⁶ vs
+  2×20,000).
+- Replace "false positive" for C2-F with: "correct nonzero value under E₂±. E₂± is not
+  closed under calibrated linear filters, and C2-F is one orbit of path-level linear
+  interfaces (ε_R = 0 under T_lin)."
+- Update this file's status line and `STATE.md`.
+
+**C3 conditions.** The classes are defined in `PROGRAM/RESULTS/R1/R1_T_LADDER.md`.
+- **Two classes, reported separately.**
+  - **E₂±** (primary; this WO's class).
+  - **T_lin on the observed grid** (secondary). Its witness is the Mardia witness, ladder
+    Prop. B2: ε_R^lin ≥ |Δ√β₁|/(2Λ).
+  - Do not report T_mono: it absorbs every per-time h_q by construction (Prop. D1).
+- **Report for each case:**
+  - the exact single-time d_q from the sorted coupling;
+  - the two-protocol bracket ½d ≤ ε_R ≤ d;
+  - the witness lower bounds.
+- **Mandatory symmetry test (can fail; it tests Theorem C's mechanism).** Use a driver ξ
+  whose sample is exactly symmetric: stack ξ and −ξ.
+  - **(i) Odd interface,** h_q(ξ) = tanh(α_q ξ)/α_q. Every odd-moment witness (skewness,
+    Mardia) must be 0 to rounding at every α_q. Report d_q anyway: it may be > 0 through
+    even-order shape.
+  - **(ii) Even-part interface,** h_q(ξ) = ξ + α_q(ξ² − 1). The skewness and Mardia
+    witnesses must be > 0, grow with α_q, and equal 0 at α_q = 0.
+- The class definitions are now issued, so they are not DRAFT. Any interpretive sentence
+  beyond numbers is DRAFT.
+
+**Next after C3:** C4, then `WO-002_BRI1_MULTITIME_TMONO.md`.

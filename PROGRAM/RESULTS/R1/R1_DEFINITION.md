@@ -2,7 +2,9 @@
 
 **Scope.** This fixes ε_R for the class T = E₂±, BRI1's own competitor class. That is
 the instance Stage 2 and WO-001 need. The general "maximal independently calibrated,
-environment-preserving" class from `STATE.md` is not specified here; it stays OPEN.
+environment-preserving" class from `STATE.md` is not specified here.
+**Update (v2):** the enlarged classes are treated in `R1_T_LADDER.md`. Its §7
+supersedes §3 below where the two differ.
 
 **Status of the pieces.**
 - Propositions 1–3 and Corollary 4: DERIVED (proofs below). Sanity checks:

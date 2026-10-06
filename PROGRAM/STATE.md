@@ -51,6 +51,19 @@ Kill condition: R1 is killed only if the object is trivial, unidentifiable, or r
 to non-Markovianity or to generic nonlinear response. ε_R is an observable, not the
 law, so overlap with known machinery is acceptable here.
 
+**Stage 2 progress (2026-10-06).**
+- **R1 definition v1 (E₂±):** `PROGRAM/RESULTS/R1/R1_DEFINITION.md`.
+- **v2 interface ladder:** `R1_T_LADDER.md`.
+  - BRI1 escapes every linear interface class, causal or not, at the path level too.
+  - Per-time nonlinear interfaces absorb it at a single time.
+  - The multi-time case is OPEN (WO-002).
+  - Unrestricted T makes R1 trivial.
+- **WO-001 (VS Code):** C1 ACCEPTED. C2 numbers reproduced, with process cleanup
+  pending (Amendment A). Next are C3, then C4.
+- **WO-002 (VS Code):** BRI1's multi-time leading-order channels under T_mono. OPEN.
+- **Identifiability flag:** BRI1's witness at these parameters needs about 10¹¹ samples
+  (Review 2).
+
 ## Stage definitions 3–6 (pointer)
 
 - **Stage 3.** Ξ ≠ Γ, with Γ_Π = Obs_Π(Ξ). At most three 𝒦 cards. Each card states:
@@ -77,7 +90,12 @@ law, so overlap with known machinery is acceptable here.
 
 ## Blockers
 
-None.
+None blocking.
+
+**Owner decision pending: freeze T for R1** (`R1_T_LADDER.md` §6).
+- Recommended: protocol-dependent linear interfaces, with independently calibrated
+  nonlinearities inverted, not fitted.
+- This does not block WO-001 C3/C4 or WO-002.
 
 ## Branch map (read-only references)
 
