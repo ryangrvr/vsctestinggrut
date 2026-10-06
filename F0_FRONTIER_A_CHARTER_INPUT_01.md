@@ -1,6 +1,8 @@
 # F0 — FRONTIER A CHARTER INPUT 01 (support determination)
 **Date:** 2026-10-06 · **Authorized by:** `F0_OWNER_RULING_02.md` §4 ("fold these
 corrections into the charter input before the actual Frontier A charter is written").
+**Narrow input repair IR1–IR2 applied 2026-10-06 per `F0_OWNER_RULING_03.md`** (two
+sentences superseded by the dimension verification; marked [IR*]).
 **Status:** charter *input* only — **the Frontier A charter is not written here, no
 campaign is opened, no law is proposed, F0-B remains prohibited.** Binding context: the
 governing requirements map `F0_REQUIREMENTS_CONSOLIDATION_01.md` @
@@ -111,9 +113,13 @@ sides. Owner to confirm A-BQ and the restated stretch gate.
   recovered.
 - **A3 — Quantum controls.** Hardy (2,2,2), GHZ strong contextuality (n ≥ 3), and at
   least one KS/Peres–Mermin strong-contextuality example are **included**.
-- **A4 — Post-quantum control.** The PR support in (2,2,2) is **excluded**; stretch:
-  reproduce the absence of bipartite quantum strong contextuality while permitting
-  multipartite/KS strong contextuality.
+- **A4 — Post-quantum control.** The PR support in (2,2,2) is **excluded**. Stretch
+  (dimension-scoped per owner ruling 03 [IR1]): FORBID bipartite perfect/strong
+  nonlocality when either local quantum system is only a qubit, even allowing
+  generalized measurements (the BMT lower bound is proved for POVMs); ALLOW at least
+  one bipartite 3×3 strong-contextual/perfect quantum support; ALLOW multipartite
+  2×2×2 GHZ-type strong contextuality — **without encoding any of these as a
+  scenario-name, party-count, or dimension lookup table.**
 - **A5 — Discipline.** Representation invariance, restriction/coarse-graining,
   composition (incl. §3's closure properties), and R1–R15.
 
@@ -190,8 +196,10 @@ Per `F0_OWNER_RULING_02.md` §3: Frontier A must **attempt an actual generative
 principle or prove that such a principle cannot be obtained from the surviving
 primitives**. A campaign whose only result is "known framework X needs input Y" is not
 permitted; that job is done. The gates above are finite, exact, and cannot be passed by
-a filter: a law passing A3+A4 must encode *why* strong contextuality needs more parties
-or settings — real structure. Expected difficulty is acknowledged: quantum possibility
+a filter: a law passing A3+A4 must encode *why* the quantum-admissible support classes
+change across the verified local-resource boundary — without inserting Hilbert
+dimension, party count, setting count, or scenario labels by hand [IR2] — real
+structure. Expected difficulty is acknowledged: quantum possibility
 structure normally comes from Hilbert-space geometry; generating it without that
 geometry is exactly where GRUT would have to invent something. Success would be a
 genuine result; failure at these gates sharply narrows the search — both are
