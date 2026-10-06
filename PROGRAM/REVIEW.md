@@ -71,3 +71,55 @@ C2–C4 unchanged.
 
 *(Review 1 first appeared on branch `grut2-review` @ `d6da37f`. That branch is
 superseded by this file on `grut2`.)*
+
+## Review 2 — 2026-10-06, of `edd274c` (C1 redo) and `bc113f3` (C2)
+
+**C1 redo — REVIEWED — ACCEPTED.**
+- Method:
+  - `R1/v3_r2_authoritative.py` is byte-identical to the BRI1 record.
+  - ε = N_B^(−1/2) is in the dynamics.
+  - The only N_B factor applied afterwards is the exact identity for independent
+    oscillators, which is asserted in the code.
+  - The fitted exponent could have failed.
+- Claude Code compared the outputs with the archived V3-R2 results. The γ₁ values at
+  t* = 0.5 match the record **to every printed digit**, for all N_B ∈ {4, …, 128}.
+- So N_B·γ₁ is flat because BRI1's frozen model is flat; the flatness is not an
+  insertion. This is a faithful transfer of the record, not an independent confirmation.
+
+**C2 — numbers REPRODUCED (Claude Code re-ran `R1/c2_controls.py`). Process: REVISE.**
+- Every quantity reproduces exactly:
+  - C2-G witness 0;
+  - C2-NG ε_R = 0, recovered-driver deviation 4.4e−16;
+  - C2-F witness 0.294556 under E₂±, and ε_R = 0 once the calibrated filters are added to T.
+- **Missing artifacts (Rule 6 and the WO-001 output spec):**
+  - the run writes `PROGRAM/RESULTS/WO-001/c2_controls_results.json`, but it was not
+    committed;
+  - there is no `C2_REPORT.md`;
+  - the numbers exist only in the commit message.
+  Commit both.
+- **Inconsistency:** the docstring says the sampled noise floor uses N = 2×10⁶, but the
+  run uses 2×20,000. Fix the docstring or the run.
+- **WO-001 status line is stale.** It says "C2 next" while the commit says C2 is complete.
+- **`STATE.md` has not been updated in two sessions.** Rule: update it at every session end.
+
+**C2-F is scientifically the most important result so far. Its framing needs one
+correction.**
+- It is not a "false positive" under the definition. A protocol-dependent linear filter
+  of a shared driver lies **outside** E₂±, and ε_R^(E₂±) > 0 is the correct value.
+- What it shows is that **E₂± is not closed under independently calibrated linear
+  interface maps.** The build prompt's T ("maximal independently calibrated,
+  environment-preserving interface transformations") plausibly includes such filters.
+- So whether BRI1's Duffing bath escapes **that larger class** is **OPEN**. Corollary 4
+  covers only E₂±.
+- This is now the central definitional question for R1, and it belongs to Claude Code.
+  BRI1's protocol dependence is state-dependent: the response kernel depends on each
+  oscillator's own state. That is not a fixed linear filter of a shared driver. The
+  argument is not made yet, so nothing is claimed.
+
+**Identifiability flag (D4, and any lock target).**
+- BRI1's witness at t* = 0.5, N_B = 4 is 5.3×10⁻⁶.
+- The sampled skewness noise floor is 0.074 at 2×20,000 samples. The standard error of
+  sample skewness is roughly √(6/n).
+- Resolving BRI1's effect would therefore need about 10¹¹ samples.
+- The escape is real analytically, but not identifiable from realistic finite data at
+  these parameters. Record this before BRI1 is considered as part of any Stage-5 lock.
