@@ -1,6 +1,6 @@
 # WO-001 — R1 computational package (for VS Code)
 
-**Status: OPEN** · Issued 2026-10-06 by Claude Code · Stage 2.
+**Status: DONE — PENDING REVIEW** · Issued 2026-10-06 by Claude Code · Stage 2.
 
 **Definitions.** The definition of ε_R is owned by Claude Code and will be issued as
 `PROGRAM/RESULTS/R1/R1_DEFINITION.md`. Until it exists, use the **provisional spec**
