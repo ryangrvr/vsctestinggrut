@@ -21,4 +21,4 @@ entries keep their record wording.
 **Score toward the endpoint:**
 - CROSS-SECTOR: 0
 - PREDICTIVE (confirmed): 0
-- COMPRESSIVE: 0
+- COMPRESSIVE: 1 (known sector, #6 — not a law)
