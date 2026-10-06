@@ -1,0 +1,33 @@
+{
+ "C1_affine_invariance_dq": 1.0855123516376448e-15,
+ "C2_trials": 300,
+ "C2_max_lhs_over_rhs": 0.7158287483860829,
+ "C2_inequality_holds": true,
+ "C3_TV_counterexample": [
+  {
+   "eta": 0.1,
+   "TV_to_N01": 0.1,
+   "skewness": 0.0914290855506564
+  },
+  {
+   "eta": 0.01,
+   "TV_to_N01": 0.01,
+   "skewness": 0.6305918279883522
+  },
+  {
+   "eta": 0.001,
+   "TV_to_N01": 0.001,
+   "skewness": 0.839466916980475
+  },
+  {
+   "eta": 0.0001,
+   "TV_to_N01": 0.0001,
+   "skewness": 0.9280293415822037
+  },
+  {
+   "eta": 1e-06,
+   "TV_to_N01": 1e-06,
+   "skewness": 0.9848883033141212
+  }
+ ]
+}

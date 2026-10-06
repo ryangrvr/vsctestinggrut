@@ -1,10 +1,12 @@
 # WO-001 — R1 computational package (for VS Code)
 
-**Status: DONE — PENDING REVIEW** · Issued 2026-10-06 by Claude Code · Stage 2.
+**Status: OPEN** · Issued 2026-10-06 by Claude Code · Stage 2.
+**Reopened after review (2026-10-06):** C1 = REVIEWED — REVISE. The witness scaling was
+inserted analytically and contradicts BRI1. See `PROGRAM/REVIEW.md`. C2–C4 are not run.
 
-**Definitions.** The definition of ε_R is owned by Claude Code and will be issued as
-`PROGRAM/RESULTS/R1/R1_DEFINITION.md`. Until it exists, use the **provisional spec**
-below. If the final definition differs, results get re-run, not re-interpreted.
+**Definitions.** The definition is now issued: `PROGRAM/RESULTS/R1/R1_DEFINITION.md`
+(v1). It fixes **d_op = W₃ between per-time-standardized multi-time laws**. Where it
+differs from the provisional spec below, it governs.
 
 ## Provisional spec
 
@@ -21,20 +23,33 @@ below. If the final definition differs, results get re-run, not re-interpreted.
   `bri1-manuscript` @ `92dc6bb`. E₂ is defined there with G > 0; E₂± allows
   G ∈ ℝ∖{0} (same file, line 9).
 - **ε_R^(T) = inf over (P★, {t_a}) of max_a d_op(P_a, (t_a)#P★).**
-  - Report results for **two** declared choices of d_op, plus the sensitivity between
-    them. Suggested pair: sliced Wasserstein-1 on the k-dimensional path vector, and a
-    standardized-cumulant distance.
-  - Computable lower bound (use it as the primary witness): any positive affine map
-    leaves per-time standardized cumulants of order ≥ 3 unchanged, and a negative map
-    only flips the odd ones. So the spread across protocols of per-time |standardized
-    skewness| lower-bounds the distance to E₂±. This is BRI1's own witness.
+  - **Superseded (erratum, Claude Code).** The earlier suggested distance pair
+    (sliced W₁, cumulant distance) and the claim that skewness spread "lower-bounds the
+    distance" were written before any d_op was fixed. The claim is false for TV, W₁
+    and W₂ (R1_DEFINITION Prop. 3).
+  - **Use instead:** d_op = W₃∘std (sensitivity check: W₄∘std).
+  - **Witness and bound (R1_DEFINITION Prop. 2a, 2b):**
+    - ε_R ≥ max | |γ_a| − |γ_b| | / (2·L_ab), with L_ab = m_a² + m_a·m_b + m_b² and
+      m = ‖standardized force‖₃;
+    - ε_R ≥ max | Δ|ρ| | / 4 for cross-time correlations.
+  - Report the **skewness witness** |Δ|γ|| itself, plus the data-computed bound.
 
 ## Tasks
 
 - **C1 — BRI1 reproduction under ε_R.**
   - Use BRI1's frozen finite Duffing bath (the record and code on `bri1-manuscript`).
-  - Compute the skewness-witness lower bound on ε_R along an N_B ladder and show the
-    ∝ 1/N_B scaling.
+  - **Redo from dynamics (owner instruction).** For each N_B in {4, …, 128}, integrate
+    the bath with coupling **ε = N_B^(−1/2)**. Compute κ₂, κ₃ and γ₁ of the force
+    directly from the ensemble. Report **N_B·γ₁ and √N_B·γ₁ side by side.**
+  - **Nothing about the N_B scaling may be inserted analytically.** Any check must be
+    able to fail.
+  - Reuse the V3-R2 machinery
+    (`publication_verification/v3_r2/v3_r2_authoritative.py`) for the single-time
+    case.
+  - Expected per BRI1: N_B·γ₁ is approximately constant, with small finite-N
+    corrections. Report whatever is found.
+  - Keep the first run, labelled RETRACTED (the scaling was imposed analytically),
+    in the result file. Don't delete it.
   - Where quantities are comparable, the outputs must reproduce BRI1's frozen archived
     numbers. This is reproduction, not new science. Do **not** restate BRI1's theorem;
     its quantifiers belong to the record.
