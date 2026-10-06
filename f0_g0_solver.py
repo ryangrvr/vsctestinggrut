@@ -181,26 +181,69 @@ if __name__ == "__main__":
         print(f"  {r['name']}: {r['status']}")
     else:
         print(f"  {r['name']}: rank={r['rank']} free={r['free_dims']} {r['classification']}")
-    print("\n-- G0-K4 hostile identifiability control: same everything, different Gamma --")
-    # Bell four-cycle with full support: exhibit two distinct admissible models
+    print("\n-- G0-K4 hostile identifiability control (REPAIRED, R1): machine-checked witnesses --")
+    # Semantics declaration (owner ruling 2026-10-06): G0's "support" is a DECLARED
+    # possibility input (zeros imposed off the set; p>0 on the set permitted, not
+    # enforced). The DERIVED support of a model is its p>0 sections (the standard
+    # empirical-model meaning). The primary K4 witness pair below is strictly positive,
+    # so its declared and derived supports coincide (full) under BOTH readings.
     sc = sc_K3_bell()
-    # model 1: all correlations = perfect (deterministic-ish): p(ab)=p(bc)=p(cd)=p(ad) correlated
-    # model 2: all correlations = anti-correlated with same marginals
-    # Both are normalized + no-disturbing with full support. Exhibit explicitly:
-    def explicit_models_bell():
-        # sections of pair contexts (x,y); singletons uniform.
-        # Model 1: correlated pairs uniform on {00,11}
-        m1 = {"ab": {(0,0): Fr(1,2), (1,1): Fr(1,2)}, "bc": {(0,0): Fr(1,2), (1,1): Fr(1,2)},
-              "cd": {(0,0): Fr(1,2), (1,1): Fr(1,2)}, "ad": {(0,0): Fr(1,2), (1,1): Fr(1,2)}}
-        # Model 2: anti-correlated pairs uniform on {01,10}
-        m2 = {"ab": {(0,1): Fr(1,2), (1,0): Fr(1,2)}, "bc": {(0,1): Fr(1,2), (1,0): Fr(1,2)},
-              "cd": {(0,1): Fr(1,2), (1,0): Fr(1,2)}, "ad": {(0,1): Fr(1,2), (1,0): Fr(1,2)}}
-        return m1, m2
-    m1, m2 = explicit_models_bell()
-    print("  model 1 (correlated pairs):", {k: dict(v) for k, v in m1.items()})
-    print("  model 2 (anti-correlated pairs):", {k: dict(v) for k, v in m2.items()})
-    print("  identical X, alphabets, C, full support; both normalized + no-disturbing; m1 != m2")
-    print("  => C + E + full support does NOT identify Gamma (structural baseline)")
+
+    def full_bell_model(pair_probs):
+        """A complete model over ALL contexts of the Bell four-cycle: singletons
+        uniform (1/2, 1/2); every pair context carries pair_probs (a dict over
+        the four sections in sorted-variable order)."""
+        m = {}
+        for c in sc["contexts"]:
+            if len(c) == 1:
+                m[c] = {(0,): Fr(1, 2), (1,): Fr(1, 2)}
+            else:
+                m[c] = dict(pair_probs)
+        return m
+
+    def check_model(scenario, model, label):
+        """Exact verification: normalization + no-disturbance residuals, negativity
+        count, and the DERIVED (p>0) support. Returns (admissible, full_derived)."""
+        A, b, var_list, n = build_constraints(scenario)
+        p = [model[c][s] for (c, s) in var_list]
+        viol = sum(1 for row, bb in zip(A, b)
+                   if sum(r * x for r, x in zip(row, p)) != bb)
+        neg = sum(1 for x in p if x < 0)
+        total = len(var_list)
+        pos = sum(1 for x in p if x > 0)
+        full_derived = (pos == total)
+        print(f"  {label}: constraint violations={viol}/{len(A)}, negative entries={neg}, "
+              f"derived (p>0) support = {pos}/{total} sections"
+              f" ({'FULL' if full_derived else 'NOT full'})")
+        return (viol == 0 and neg == 0), full_derived
+
+    # PRIMARY witness pair (interior): strictly positive everywhere, so declared-full
+    # and derived-full support agree; both no-disturbing; m_u != m_t.
+    m_u = full_bell_model({(0,0): Fr(1,4), (0,1): Fr(1,4), (1,0): Fr(1,4), (1,1): Fr(1,4)})
+    m_t = full_bell_model({(0,0): Fr(3,8), (0,1): Fr(1,8), (1,0): Fr(1,8), (1,1): Fr(3,8)})
+    ok_u, full_u = check_model(sc, m_u, "witness U (uniform pairs)")
+    ok_t, full_t = check_model(sc, m_t, "witness T (tilted pairs 3/8,1/8,1/8,3/8)")
+    assert ok_u and ok_t and full_u and full_t and m_u != m_t
+    print("  => identical X, alphabets, C; identical FULL support under BOTH the declared")
+    print("     and the derived (p>0) reading; both admissible; U != T.")
+    print("  => C + E + full support does NOT identify Gamma.")
+    print("  Remark (owner ruling): the basic statement needs no cycle — a single context")
+    print("  with >=2 outcomes already admits many full-support distributions;")
+    print("  the cyclic exhibit shows the freedom persists under the full no-disturbance")
+    print("  coupling of a contextual cover.")
+
+    # SECONDARY exhibit (relabeled, R1): the original correlated/anti-correlated pair.
+    # Both admissible under DECLARED-full support, but their DERIVED supports are
+    # disjoint on every pair context — so this pair shows something different: the
+    # declared possibility set does not even pin the derived support.
+    m_corr = full_bell_model({(0,0): Fr(1,2), (0,1): Fr(0), (1,0): Fr(0), (1,1): Fr(1,2)})
+    m_anti = full_bell_model({(0,0): Fr(0), (0,1): Fr(1,2), (1,0): Fr(1,2), (1,1): Fr(0)})
+    ok_c, full_c = check_model(sc, m_corr, "exhibit C (correlated pairs)")
+    ok_a, full_a = check_model(sc, m_anti, "exhibit A (anti-correlated pairs)")
+    assert ok_c and ok_a and not full_c and not full_a
+    print("  => exhibits C and A: admissible under declared-full support, DERIVED supports")
+    print("     disjoint on every pair context — declared support does not pin derived support.")
+
     print("\nNote: 'no local/noncontextual subset' analysis: local polytope is a strict subset")
     print("of the no-disturbance set; its separate computation is standard (CHSH facet) and")
     print("not needed for the identifiability question.")

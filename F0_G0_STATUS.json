@@ -1,65 +1,119 @@
 {
-  "campaign": "F0_G0_POSSIBILITY_STATISTICS_IDENTIFIABILITY",
-  "date": "2026-10-05",
-  "repository": "ryangrvr/vsctestinggrut",
-  "branch": "ggc0-f0-g0-possibility-statistics-identifiability-0",
-  "parent_bank_sha": "I0 bank boundary = 2573fa1287ab9072c1d1fda1fed990ff1d63f32a",
-  "lineage": "G0 branch -> 2573fa1 (I0 bank) -> b80c9be (I0 repair) -> 0a75c52 (I0) -> 1a1edd5 (PHYS-02 bank) -> 986fbfc -> 6e9b5d6 -> 6a97712 -> aa9c2b3 -> e3f1ab4 -> f45fb90 -> bef8b948 (frozen charter)",
-  "authorization": "static possibility/statistics identifiability audit only",
-  "prohibited": ["F0_B_access_evolution", "R_Gamma", "A_Gamma", "Cl_Gamma", "S", "U",
-                 "outcome_selection", "born_rule_derivation", "geometry", "gravity",
-                 "fitting_law_to_quantum_data", "coupling_equation_invention", "merge_to_main"],
-  "artifacts": [
-    "F0_G0_CHARTER.md",
-    "F0_G0_LEDGER.md",
-    "F0_G0_STATIC_INPUT_LADDER_01.md",
-    "F0_G0_BASELINE_AUDIT_01.md",
-    "F0_G0_IDENTIFIABILITY_01.md",
-    "f0_g0_solver.py",
-    "F0_G0_RESULT.md",
-    "F0_G0_STATUS.json"
-  ],
-  "central_question": "How much of Gamma is identifiable from the physical possibility/compatibility structure before any quantitative probability law is postulated?",
-  "terminal": "F0-G0-SUPPORT-COUPLING",
-  "coupling_classification": "C1 — SUPPORT ONLY (general); C4 reached locally by special supports; C2/C3 only via supplied richer structure",
-  "input_level_results": {
-    "G0_A_C_only": "degenerate: no event data, no weights definable",
-    "G0_B_C_plus_E": {"K0_complete": {"variables": 8, "affine_dim": 3},
-                       "K1_path": {"variables": 14, "affine_dim": 5},
-                       "K2_triangle": {"variables": 18, "affine_dim": 6},
-                       "K3_bell_four_cycle": {"variables": 24, "affine_dim": 8}},
-    "G0_C_C_plus_E_plus_support": {"full_support": "dimensions unchanged",
-                                    "K2_correlated_pair_support": {"affine_dim": 1},
-                                    "K2_anti_correlated_support": {"affine_dim": 0, "unique": true}},
-    "G0_D_plus_event_relations": "constrain regions when supplied; no static principle selects the relations",
-    "G0_E_comparators": "Gleason geometry / GPT cones / CT superinformation conditions supply probability structure wholesale"
+ "campaign": "F0_G0_POSSIBILITY_STATISTICS_IDENTIFIABILITY",
+ "date": "2026-10-05",
+ "repository": "ryangrvr/vsctestinggrut",
+ "branch": "ggc0-f0-g0-repair-0 (numbered repair of the campaign banked at ggc0-f0-g0-possibility-statistics-identifiability-0 = c5bfcb911ee1761442c15a6d548af336759ad5ab)",
+ "parent_bank_sha": "I0 bank boundary = 2573fa1287ab9072c1d1fda1fed990ff1d63f32a",
+ "lineage": "G0 branch -> 2573fa1 (I0 bank) -> b80c9be (I0 repair) -> 0a75c52 (I0) -> 1a1edd5 (PHYS-02 bank) -> 986fbfc -> 6e9b5d6 -> 6a97712 -> aa9c2b3 -> e3f1ab4 -> f45fb90 -> bef8b948 (frozen charter)",
+ "authorization": "static possibility/statistics identifiability audit only",
+ "prohibited": [
+  "F0_B_access_evolution",
+  "R_Gamma",
+  "A_Gamma",
+  "Cl_Gamma",
+  "S",
+  "U",
+  "outcome_selection",
+  "born_rule_derivation",
+  "geometry",
+  "gravity",
+  "fitting_law_to_quantum_data",
+  "coupling_equation_invention",
+  "merge_to_main"
+ ],
+ "artifacts": [
+  "F0_G0_CHARTER.md",
+  "F0_G0_LEDGER.md",
+  "F0_G0_STATIC_INPUT_LADDER_01.md",
+  "F0_G0_BASELINE_AUDIT_01.md",
+  "F0_G0_IDENTIFIABILITY_01.md",
+  "f0_g0_solver.py",
+  "F0_G0_RESULT.md",
+  "F0_G0_STATUS.json"
+ ],
+ "central_question": "How much of Gamma is identifiable from the declared possibility/compatibility structure (no physicality assumption priced; F0-PHYS gate OPEN) [R5] before any quantitative probability law is postulated?",
+ "terminal": "F0-G0-SUPPORT-COUPLING",
+ "coupling_classification": "C1 — SUPPORT ONLY (general); C4 reached locally by special supports; C2/C3 only via supplied richer structure",
+ "input_level_results": {
+  "G0_A_C_only": "degenerate: no event data, no weights definable",
+  "G0_B_C_plus_E": {
+   "K0_complete": {
+    "variables": 8,
+    "affine_dim": 3
+   },
+   "K1_path": {
+    "variables": 14,
+    "affine_dim": 5
+   },
+   "K2_triangle": {
+    "variables": 18,
+    "affine_dim": 6
+   },
+   "K3_bell_four_cycle": {
+    "variables": 24,
+    "affine_dim": 8
+   }
   },
-  "no_go_control": {
-    "name": "G0-K4 same-support different-weights",
-    "exhibited": "Gamma1 (all Bell pairs uniformly correlated) vs Gamma2 (all uniformly anti-correlated): identical X, alphabets, C, FULL support, both normalized and no-disturbing, Gamma1 != Gamma2",
-    "conclusion": "C + E + full support does NOT identify Gamma; generalizes to any cover with a cycle"
+  "G0_C_C_plus_E_plus_support": {
+   "full_support": "dimensions unchanged",
+   "K2_correlated_pair_support": {
+    "affine_dim": 1
+   },
+   "K2_anti_correlated_support": {
+    "affine_dim": 0,
+    "unique": true
+   }
   },
-  "possibility_vs_zero_probability": {
-    "impossible_implies_p0": "definitional at support level",
-    "p0_implies_impossible": "NOT assumed; concrete instance: K2 full support, anti-correlated model gives correlated sections weight 0 while they remain possible",
-    "grut_relevance": "the zero-weight-but-possible boundary is where a future possibility-to-weights principle could carry content that standard frameworks leave silent"
-  },
-  "symmetry": "uniform Gamma follows only after a state-invariance postulate (priced, not assumed); scenario symmetry != state symmetry; UNRESOLVED",
-  "baseline_comparison": "admissible-set computation = standard empirical-model polytope (labeled); possibilistic contextuality = support obstructions; exclusivity = inequality layer requiring supplied structure (do not conflate with compatibility); Gleason-type = probability only after supplied Hilbert geometry + additivity (arXiv:2205.00493 context); GPT cones = supplied cone geometry; CT probability (Marletto) = decision weights only under superinformation conditions (DOI 10.1098/rspa.2015.0883)",
-  "grut_room": [
-    "support determination: what fixes Supp_C and the zero-weight-but-possible boundary from physical possibility (standard frameworks assume it as data or buy it with geometry/conditions)",
-    "within-support selection: any principle choosing among admissible Gammas without importing Hilbert geometry, GPT cones, exclusivity axioms, or decision-weight structures"
-  ],
-  "if_both_fail": "possibility structure is qualitatively too weak to determine quantitative statistics; GRUT must supply the missing primitive or accept C1",
-  "not_earned": ["born rule", "outcome selection", "fundamental randomness", "quantum theory",
-                 "F0-B dynamics", "GRUT novelty", "theory of reality"],
-  "firewall_confirmation": {
-    "no_coupling_equation_invented": true,
-    "no_f0_b": true,
-    "no_born_derivation": true,
-    "historical_artifacts_unmodified": true,
-    "quantum_used_only_as_comparator": true,
-    "exact_computation_no_monte_carlo": true
-  },
-  "stop": "STOP FOR OWNER REVIEW; no coupling equation invented automatically; no F0-B; no merge to main"
+  "G0_D_plus_event_relations": "constrain regions when supplied; no static principle selects the relations",
+  "G0_E_comparators": "Gleason geometry / GPT cones / CT superinformation conditions supply probability structure wholesale"
+ },
+ "no_go_control": {
+  "semantics": "'support' in this campaign = DECLARED possibility input (zeros imposed off the set; p>0 on the set permitted, not enforced). Derived support = p>0 sections (standard empirical-model meaning).",
+  "primary_witnesses": "Gamma_U (uniform pairs, p=1/4 each) vs Gamma_T (tilted pairs 3/8,1/8,1/8,3/8), singletons uniform: identical X/alphabets/C; identical FULL support under BOTH declared and derived readings; both normalized + no-disturbing (machine-checked: 0/24 violations each, 24/24 sections p>0); Gamma_U != Gamma_T",
+  "conclusion": "C + E + full support does NOT identify Gamma",
+  "single_context_remark": "owner ruling: the basic statement needs no cycle - a single context with >=2 outcomes already admits many full-support distributions; cycles matter for contextual structure",
+  "secondary_exhibit": "pre-repair correlated/anti-correlated pair relabeled: admissible under DECLARED-full support but derived supports disjoint on every pair context (16/24 each, machine-checked) - witnesses that declared support does not pin derived support, NOT same-derived-support/different-weights",
+  "machine_checked": true
+ },
+ "possibility_vs_zero_probability": {
+  "impossible_implies_p0": "definitional at support level",
+  "p0_implies_impossible": "NOT assumed; concrete instance: K2 full support, anti-correlated model gives correlated sections weight 0 while they remain in the declared support (declared-possible)",
+  "grut_relevance": "the zero-weight-but-possible boundary is where a future possibility-to-weights principle could carry content that standard frameworks leave silent"
+ },
+ "symmetry": "uniform Gamma follows only after a state-invariance postulate (priced, not assumed); scenario symmetry != state symmetry; UNRESOLVED",
+ "baseline_comparison": "admissible-set computation = standard empirical-model polytope (labeled); possibilistic contextuality = support obstructions; exclusivity = inequality layer requiring supplied structure (do not conflate with compatibility); Gleason-type = probability only after supplied Hilbert geometry + additivity (arXiv:2205.00493 context); GPT cones = supplied cone geometry; CT probability (Marletto) = decision weights only under superinformation conditions (DOI 10.1098/rspa.2015.0883)",
+ "grut_room": [
+  "support determination: what fixes Supp_C and the zero-weight-but-possible boundary from the declared possibility/support structure's physical origin (no physicality assumption priced; F0-PHYS gate OPEN) [R5] (standard frameworks assume it as data or buy it with geometry/conditions)",
+  "within-support selection: any principle choosing among admissible Gammas without importing Hilbert geometry, GPT cones, exclusivity axioms, or decision-weight structures"
+ ],
+ "if_both_fail": "possibility structure is qualitatively too weak to determine quantitative statistics; GRUT must supply the missing primitive or accept C1",
+ "not_earned": [
+  "born rule",
+  "outcome selection",
+  "fundamental randomness",
+  "quantum theory",
+  "F0-B dynamics",
+  "GRUT novelty",
+  "theory of reality"
+ ],
+ "firewall_confirmation": {
+  "no_coupling_equation_invented": true,
+  "no_f0_b": true,
+  "no_born_derivation": true,
+  "historical_artifacts_unmodified": true,
+  "quantum_used_only_as_comparator": true,
+  "exact_computation_no_monte_carlo": true
+ },
+ "stop": "STOP FOR OWNER REVIEW; no coupling equation invented automatically; no F0-B; no merge to main",
+ "qualification": "NO POSSIBILITY->SUPPORT LAW WAS DERIVED (owner ruling, 2026-10-06). Support zeros are the only coupling CHANNEL exhibited; every support in this campaign is a supplied input. Terminal retained strictly as the preregistered C1 classification (charter section 7).",
+ "prose_descriptor": "C1 supplied-support constraint",
+ "repairs": {
+  "ruling": "F0_G0_OWNER_RULING_01.md (2026-10-06): PROGRAM AUDIT - PASS WITH GOVERNANCE WARNINGS; G0 TERMINAL - RETAIN C1 / SUPPORT-COUPLING CLASSIFICATION; NO POSSIBILITY->SUPPORT RELATION EARNED; K4 WITNESS - REPAIR REQUIRED; NEXT FRONTIER - SUPPORT DETERMINATION, AFTER CONSOLIDATION",
+  "R1": "K4 witness repaired: strictly positive interior pair (machine-checked by the solver, which now verifies all witnesses against the constraint rows instead of printing them); pre-repair disjoint-derived-support pair retained, relabeled; semantics declared at the K4 site; single-context remark recorded",
+  "R2": "Terminal definition reworded to the narrower earned statement; explicit qualification NO POSSIBILITY->SUPPORT LAW WAS DERIVED added; prose descriptor fixed as C1 supplied-support constraint",
+  "R3": "Abramsky-Brandenburger arXiv ID corrected 1006.0484 -> 1102.0264 in F0_G0_BASELINE_AUDIT_01.md (same wrong ID also present in the SEALED exec01 artifact F0_PHYS_BASELINE_AUDIT_01.md:19,59 - reported for a future numbered repair of that record, not edited here)",
+  "R4": "Stale charter section references corrected (5 instances): IDENTIFIABILITY s11->s7, s12->s8; RESULT s12->s8; LEDGER G10 s9->s6; BASELINE_AUDIT s9->s6",
+  "R5": "'physical possibility' wording replaced by declared possibility/support structure per Future-Law Requirement 11 (F0-PHYS gate OPEN; no physicality assumption priced). The frozen G0 charter's own s2 wording and its incomplete lineage header are NOT edited; recorded in F0_G0_REPAIR_PROVENANCE_01.md",
+  "R6": "this status JSON synchronized; terminal unchanged"
+ }
 }

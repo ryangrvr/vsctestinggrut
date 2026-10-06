@@ -2,7 +2,7 @@
 **Status:** campaign artifact. Targeted comparison against the frameworks that already
 connect possibility/compatibility structure to probability. NOT FOUND ≠ DOES NOT EXIST.
 
-## 1. Sheaf-theoretic empirical models (Abramsky–Brandenburger, arXiv:1006.0484)
+## 1. Sheaf-theoretic empirical models (Abramsky–Brandenburger, arXiv:1102.0264) [R3: ID corrected; 1006.0484 is an unrelated galactic-dynamics paper]
 
 - **What it supplies:** measurement covers, compatible families of distributions
   (empirical models), support, global/hidden-section hierarchy; the admissible-set
@@ -57,7 +57,7 @@ connect possibility/compatibility structure to probability. NOT FOUND ≠ DOES N
   compatibility hypergraph. **Do not say CT derives ordinary Γ merely because it derives
   decision weights under additional conditions.**
 
-## 7. Possibility vs zero probability (charter §9 — audited per framework)
+## 7. Possibility vs zero probability (charter §6 [R4] — audited per framework)
 
 | framework | impossible ⇒ p=0 | p=0 ⇒ impossible? |
 |---|---|---|

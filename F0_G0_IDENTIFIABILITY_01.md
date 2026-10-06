@@ -1,6 +1,7 @@
 # F0 G0 — IDENTIFIABILITY 01
 **Status:** campaign artifact. Exact results (`f0_g0_solver.py`, rational arithmetic).
 Summary of the identifiability computation per level and per control.
+**Repaired 2026-10-06 under owner ruling (R1, R4, R5):** `F0_G0_REPAIR_PROVENANCE_01.md`.
 
 ## 1. Setup
 
@@ -44,21 +45,44 @@ Gleason-type, GPT-cone, CT-probability: all derive statistics only after supplyi
 additional structure (geometry/cones/superinformation conditions). Details: baseline
 audit.
 
-## 3. The hostile no-go control (G0-K4)
+## 3. The hostile no-go control (G0-K4) — witness repaired [R1]
 
-Two models with **identical** X, alphabets, C, and **full support**, both normalized and
-no-disturbing (Bell four-cycle, binary outcomes):
+**Semantics declaration (previously stated only in §5, now binding at this site):** in
+this campaign "support" is a **declared possibility input** — zeros are imposed *off*
+the declared set, while p>0 *on* the set is permitted, not enforced. A model's
+**derived support** (the standard empirical-model meaning) is its set of p>0 sections.
 
-- Γ₁: all four pair contexts uniformly correlated — p(00) = p(11) = 1/2;
-- Γ₂: all four pair contexts uniformly anti-correlated — p(01) = p(10) = 1/2.
+**Primary witnesses** (Bell four-cycle, binary outcomes; machine-checked by the solver:
+0/24 constraint violations each, strictly positive on all 24 sections):
 
-Both are admissible; Γ₁ ≠ Γ₂. **Therefore C + E + full support does not identify Γ.**
-Generalization: any scenario whose cover admits multiple closed walk-consistent
-assignment families (any cycle) admits such pairs. The K2 anti-correlated case shows the
-*limit*: uniqueness can occur, but only when the support itself is so restrictive that it
-forces the model.
+- Γ_U: singletons uniform; all four pair contexts uniform — p = 1/4 on each section;
+- Γ_T: singletons uniform; all four pair contexts tilted — p(00) = p(11) = 3/8,
+  p(01) = p(10) = 1/8.
 
-## 4. Coupling classification (charter §11)
+Identical X, alphabets, C; **identical full support under BOTH the declared and the
+derived reading**; both normalized and no-disturbing; Γ_U ≠ Γ_T. **Therefore
+C + E + full support does not identify Γ.**
+
+**Remark (owner ruling, 2026-10-06).** The basic statement needs no cycle: a single
+context with ≥2 outcomes already admits many full-support distributions.
+Cyclic covers matter for *contextual structure* — the cyclic exhibit shows the freedom
+persists under the full no-disturbance coupling of a contextual cover — not for the
+basic statement that possibility does not determine weights.
+
+**Secondary exhibit (the pre-repair pair, relabeled).** Γ₁ (all pair contexts uniformly
+correlated — p(00) = p(11) = 1/2) vs Γ₂ (uniformly anti-correlated — p(01) = p(10) =
+1/2): both admissible under **declared**-full support (0/24 violations each,
+machine-checked), but their **derived** supports are disjoint on every pair context
+(16/24 sections each). This pair therefore witnesses a different fact: **the declared
+possibility set does not even pin the derived support.** Its pre-repair description
+("identical X, alphabets, C, **full support**") was true only in the declared sense, which was not stated at
+this site; it does not witness same-*derived*-support/different-weights (the primary
+pair above does).
+
+The K2 anti-correlated case still shows the *limit*: uniqueness can occur, but only when
+the supplied support is so restrictive that it forces the model.
+
+## 4. Coupling classification (charter §7) [R4]
 
 | class | reached? | evidence |
 |---|---|---|
@@ -77,7 +101,7 @@ supports and C2/C3 only via supplied richer structure.
   **definitional at the support level**); the converse is **not** assumed — a section may
   lie in the support yet receive weight 0 in a particular admissible model. Concrete
   instance: K2 with full support — the anti-correlated model assigns weight 0 to
-  correlated sections, which remain in the support (physically possible). This gap is
+  correlated sections, which remain in the declared support (declared-possible) [R5]. This gap is
   recorded as potentially load-bearing for a future GRUT relation (it is exactly where a
   possibility→weights principle could bite, and where standard frameworks are silent or
   definitional).
@@ -90,7 +114,7 @@ priced, not assumed: scenario symmetry and state symmetry are different claims. 
 state-invariance principle is available in the static structure. (Recorded; `UNRESOLVED`
 as to whether a future law could justify such a postulate.)
 
-## 7. Critical whole-law question (charter §12)
+## 7. Critical whole-law question (charter §8) [R4]
 
 > Is there room for a genuinely F0-specific possibility/statistics relation?
 
@@ -100,7 +124,7 @@ bare static level the possibility structure is **C1-class**. The room for a GRUT
 relation is therefore exactly:
 
 - the **support-determination problem**: what fixes Supp_C (and, more finely, the
-  zero-weight-but-possible boundary) from physical possibility — the standard frameworks
+  zero-weight-but-possible boundary) from the declared possibility/support structure's physical origin — no physicality assumption is priced here (F0-PHYS gate OPEN) [R5]; the standard frameworks
   either assume it as data or derive it from geometry;
 - and, downstream of that, any principle that selects *within* the support polytope
   without importing Hilbert geometry, GPT cones, exclusivity axioms, or decision-weight

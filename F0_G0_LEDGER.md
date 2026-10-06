@@ -11,8 +11,8 @@
 | G6 | G0-C full-support level: identical dims (support ⊇ E(C) adds zero constraints) | `DERIVED` | solver; support ≠ weights confirmed at full support |
 | G7 | G0-C restricted-support: correlated-pair support on K2 → affine dim 1 | `DERIVED` | support DOES remove freedom (C1-class behavior at restricted support) |
 | G8 | G0-C restricted-support: anti-correlated support on K2 → **UNIQUE** (the K2 empirical model forced) | `DERIVED` | support can even force uniqueness in special cases (C4 locally) |
-| G9 | G0-K4 hostile no-go: Γ₁ ≠ Γ₂ with identical C, full support, both normalized+no-disturbing (correlated vs anti-correlated Bell pairs) | `DERIVED` | **C + E + full support does NOT identify Γ** |
-| G10 | Possibility ⇒ zero probability | `POSTULATED` as a convention at the support level (support zeros imposed as constraints); the converse (p=0 ⇒ impossible) NOT assumed | charter §9; result §possibility |
+| G9 | G0-K4 hostile no-go (witness repaired [R1]): Γ_U ≠ Γ_T (uniform vs tilted pairs), strictly positive, identical full support under BOTH the declared and the derived (p>0) reading, both normalized+no-disturbing, machine-checked | `DERIVED` | **C + E + full support does NOT identify Γ**; the pre-repair correlated/anti-correlated pair is relabeled a secondary exhibit — its derived supports are disjoint, so it witnesses only that declared support does not pin derived support |
+| G10 | Possibility ⇒ zero probability | `POSTULATED` as a convention at the support level (support zeros imposed as constraints); the converse (p=0 ⇒ impossible) NOT assumed | charter §6 [R4]; result §possibility |
 | G11 | Symmetry | `UNRESOLVED` (tested conceptually: uniform Γ follows only after a state-invariance postulate, which is priced, not assumed) | result §symmetry |
 | G12 | G0-E comparator analysis (Gleason, GPT, CT-probability) | `REPRESENTATIONAL` baseline | baseline audit |
 | G13 | Coupling classification | `DERIVED`: **C1 — SUPPORT ONLY** in general; special supports reach C4 locally | result |
