@@ -5,8 +5,11 @@
 requirements map `F0_REQUIREMENTS_CONSOLIDATION_01.md` @
 `0a9a941c0951ffeb8f1cccafa12892057a62c884` (R1–R15, none discharged).
 **Status: CHARTER FROZEN ALONE. Campaign execution is NOT authorized by this charter
-and requires a separate owner authorization. No control is executed, no candidate law
-is stated, and no reconnaissance is run in this commit.**
+and requires a separate owner authorization naming this (repaired) charter's SHA. No
+control is executed, no candidate law is stated, and no reconnaissance is run.**
+**Numbered charter repair CR1–CR3 applied 2026-10-06 per `F0_OWNER_RULING_04.md`**
+(scope normalization of SD-K4/SD-K7; dimension-pricing and capacity-pair precision;
+marked [CR*]). The charter is re-frozen at this repair's commit SHA.
 
 ## 1. Authorization scope
 
@@ -40,7 +43,9 @@ First serious discriminator: **PR₍₂ₓ₂₎ forbidden while quantum strong 
    (§7).
 3. **No lookup tables:** scenario names, party counts, setting counts, and Hilbert
    dimensions may not appear as case-splits, parameters, or side conditions of a
-   candidate law. "Dimension" is not a fundamental variable GRUT is allowed to see.
+   candidate law. "Dimension" is not a fundamental variable GRUT is allowed to see;
+   **any dimension-like structure a candidate law uses must be declared and priced
+   (R10)** [CR3].
 4. **Possibility/probability firewall:** all SD0 gates are support-level (Boolean
    patterns). Probability inequalities (Local Orthogonality included) are comparators,
    never inputs; crossing from possibility into weights anywhere in a candidate law's
@@ -51,18 +56,18 @@ First serious discriminator: **PR₍₂ₓ₂₎ forbidden while quantum strong 
    finite-checkable rule **before** it is evaluated on the controls; post-hoc
    modification of an evaluated candidate is a new candidate.
 
-## 4. Required controls (preregistered; each exact and finite)
+## 4. Required controls (preregistered; each exact — finite as scoped, per CR1/CR2)
 
 | # | Control | Required verdict |
 |---|---|---|
 | SD-K1 | Classical/global-section supports | **ALLOW** |
 | SD-K2 | Hardy support, (2,2,2) — quantum-realizable, logically contextual, global section exists | **ALLOW** |
 | SD-K3 | PR-box supports, (2,2,2) — all 8 relabellings (Lal, Prop 6.2 of arXiv:1102.0264) | **FORBID** |
-| SD-K4 | GHZ supports, (n,2,2), n ≥ 3 — quantum strong contextuality at total dimension 2×2×2 = 8 | **ALLOW** |
+| SD-K4 | GHZ support, (3,2,2) — three-qubit quantum strong contextuality at total dimension 2×2×2 = 8. **Finite gate = the three-qubit case; larger n is an extension check, not part of the pass/fail gate** [CR1] | **ALLOW** |
 | SD-K5 | A Kochen–Specker / Peres–Mermin strong-contextuality configuration (additional positive control; magic-square games sit at 4×4 — **not** the minimum-dimension witness) | **ALLOW** |
 | SD-K6 | **A-BQ:** at least one bipartite 3×3 perfect/strongly-contextual quantum support, e.g. the CHTW/Heywood–Redhead-derived construction. Existence beginning at 3×3 — **not** "all bipartite d ≥ 3" | **ALLOW** |
-| SD-K7 | Bipartite perfect/strong nonlocality with a qubit on **either** side, under general measurements (the BMT lower bound is POVM-inclusive, via Naimark) | **FORBID** |
-| SD-K8 | **Capacity hostile control:** pairs with the same local capacity (number of perfectly distinguishable local states) but different admissible correlation/support behavior — the law's discriminator must not reduce to capacity or dimension counting | law must distinguish **not by capacity** |
+| SD-K7 | Qubit-side exclusion, in two parts [CR2]: (i) **finite representative hostile control** — a declared finite family of bipartite qubit-on-either-side support patterns the law must FORBID; (ii) **BMT universal theorem-boundary audit** — the law's claimed exclusion is compared against the POVM-inclusive BMT theorem scope (an audit obligation, not a finite computation) | **FORBID** (i); **audit** (ii) |
+| SD-K8 | **Capacity hostile control:** pairs with the same local capacity but different admissible correlation/support behavior — canonical instance: **qubit vs boxworld gbit, both capacity 2** (one forbids strong contextuality in (2,2,2), the other produces PR boxes; Barrett quant-ph/0508211) [CR3] — the law's discriminator must not reduce to capacity or dimension counting | law must distinguish **not by capacity** |
 | SD-K9 | Closure controls (input §3): mixing-union over whole realized families (no downward closure, no intersection closure); product-support on the independent sector (correlation, not entanglement per se, breaks factorization) | law's family must **respect both** |
 | SD-K10 | **Invariant-distinguishability test:** can any invariant definable from the surviving F0 primitives distinguish the qubit / gbit / 3×3-quantum controls? (Feeds the preregistered RELOCATED statement, §6) | must be **answered**, either way |
 
