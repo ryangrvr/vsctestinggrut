@@ -1,0 +1,64 @@
+{
+ "campaign": "F0-SD0 (Frontier A: support determination)",
+ "execution": "EXEC01",
+ "date": "2026-10-06",
+ "repository": "ryangrvr/vsctestinggrut",
+ "branch": "ggc0-f0-sd0-exec01-0",
+ "charter_sha": "909eaf86c032f58628f2e63eead0f915e6d439dd",
+ "candidate": {
+  "name": "Anchored-Support Principle (ASP)",
+  "sha": "aacbc5215f36ba3ccae4c9ca3dca87c30cc0e21b",
+  "modified_after_freeze": false
+ },
+ "holdout_selection_sha": "38332fb",
+ "evaluation_sha": "49cdebd",
+ "terminal": "F0-SD0-OPEN",
+ "terminal_basis": "LAW-CANDIDATE not earned (charter section-5 comparator audit not completed; the one completed comparator returned OVERLAPS-PARTIALLY); RESTATED strongly indicated (risk HIGH) but not established; RELOCATED not established; NO-GO not applicable. Closed at owner direction.",
+ "gates": {
+  "SD-K1": "PASS",
+  "SD-K2": "PASS",
+  "SD-K3": "PASS (forbidden set = exactly the 8 PR boxes)",
+  "SD-K4": "PASS",
+  "SD-K5": "PASS",
+  "SD-K6": "PASS (CHTW KS game, certified 94-ray/67-triad pure-triad R^3 KS core, 3x3 minimum dimension)",
+  "SD-K7(i)": "PASS",
+  "SD-K7(ii)": "PARTIAL: binary-output bipartite sector consistent via T2 (pending review); multi-outcome qubit-side POVM patterns UNRESOLVED",
+  "SD-K8": "PASS (discriminator is hereditary anchoring; capacity/dimension absent)",
+  "SD-K9": "PASS (proofs + spot checks)",
+  "SD-K10": "answered YES by the candidate"
+ },
+ "generalization_checks": {
+  "G1": "ALLOW (matches)",
+  "G2": "ALLOW (matches)",
+  "G3": "ALLOW (defining properties machine-verified; quantum status open in literature)"
+ },
+ "genuine_holdouts": {
+  "H1_C7": "FORBID (matches: non-quantum)",
+  "H2_pentagram": "ALLOW (matches: quantum)",
+  "H3_pentagon_Hardy": "ALLOW (matches)",
+  "H4_C6": "ALLOW (matches)"
+ },
+ "structural_findings": {
+  "T1": "admits every non-strongly-contextual table (any scenario)",
+  "T2": "pairwise-binary sector: ASP-admissible <=> not strongly contextual (orchestrator proof; independent review pending)",
+  "content": "forbids arc-consistency-refutable strong contextuality; allows AC-invisible strong contextuality",
+  "known_over_allowance": "theta parity system (strong, J=e, non-quantum) ALLOWED -> outer approximation"
+ },
+ "comparator_audit": {
+  "completed": "1/5",
+  "AKS_BulatovZivny": "OVERLAPS-PARTIALLY: forbid mechanism extends Bulatov-Zivny Lemma 16 (SLAC soundness for operators); forces state-independent ALLOW verdicts; not a corollary for state-dependent quantumness",
+  "not_run": [
+   "bounded-width/quantum-advantage (Ciardo, quantum monad, O Conghaile)",
+   "contextuality-side comparators",
+   "Slofstra decidability bound",
+   "independent refuter of T1/T2/evaluation"
+  ]
+ },
+ "compactness_audit": "sketched, not judged (~5.6 bits + ~2.3 bits panel selection vs 8 gate distinctions; F1 effectively forced by K3/K4)",
+ "status_vocabulary": {
+  "DERIVED": "all computed verdicts; T1",
+  "UNRESOLVED": "T2 independent review; K7(ii) multi-outcome; quantum-soundness of ASP in state-dependent semantics",
+  "SUPPLIED": "literature expected statuses"
+ },
+ "stop": "STOP FOR OWNER REVIEW; no R16; no F0-B; no merge to main"
+}
