@@ -1,0 +1,48 @@
+== SD-K1..K3: full (2,2,2) sweep against the Stage-1 enumeration ==
+  local: allow 1721, forbid 0
+  logical: allow 1232, forbid 0
+  strong: allow 0, forbid 8
+  forbidden set == the 8 PR boxes: True
+== SD-K4: GHZ (3,2,2) ==
+  GHZ3: pNS=True class=strong ASP=ALLOW events=76/108
+== SD-K5: Peres-Mermin square ==
+  PM: pNS=True class=strong ASP=ALLOW events=114/114
+== SD-K6: CHTW KS-game over the certified pure-triad KS core (3x3 minimum dimension) ==
+  instance: 201 contexts; strong contextuality guaranteed by the certified uncolorability (f0_sd0_k6_build.py)
+  bare anchored: True | events: (992, 992)
+  heredity sampling (40 single-removals + 210 random subsets): all anchored
+  supplementary (4x4): CEG-18 bipartite admitted at design stage (432/864; 298-subset heredity check)
+== SD-K7(i): declared finite FORBID family ==
+  PR(000): pNS=True class=strong ASP=FORBID events=0/16
+  PR(001): pNS=True class=strong ASP=FORBID events=0/16
+  PR(010): pNS=True class=strong ASP=FORBID events=0/16
+  PR(011): pNS=True class=strong ASP=FORBID events=0/16
+  PR(100): pNS=True class=strong ASP=FORBID events=0/16
+  PR(101): pNS=True class=strong ASP=FORBID events=0/16
+  PR(110): pNS=True class=strong ASP=FORBID events=0/16
+  PR(111): pNS=True class=strong ASP=FORBID events=0/16
+  PR boxes forbidden: 8/8
+  strong XOR-(2,3,2): 480/480 forbidden
+  embedded-PR (2,3,2): pNS=True class=strong ASP=FORBID events=2/26
+  fine-grained PR: pNS=True class=strong ASP=FORBID events=0/28
+  K7(ii): BMT POVM-inclusive theorem-boundary audit — see F0_SD0_EVALUATION_01.md
+== SD-K8: capacity hostile control (computed facts) ==
+  gbit (boxworld) realizes the PR support exactly (Stage-1, exact rationals);
+  ASP forbids it; ASP admits every realizable qubit-(2,2,2) support (all local+logical);
+  discriminator = hereditary anchoring; capacity/dimension appear nowhere in the law.
+== SD-K9: closure spot checks ==
+  Hardy x GHZ product: bare anchored = True (factors admissible; product lemma)
+  PR x PR: bare anchored = False (composition obstruction)
+== G1-G3 generalization checks (verdicts computed before comparison) ==
+  G1 GHZ(4,2,2): pNS=True class=strong ASP=ALLOW events=432/432
+  G2 (2,2,3) coarse-grained Hardy: pNS=True class=logical ASP=ALLOW events=15/22
+  G3 MF Table-(b) (zeros from the exact LaTeX source): pNS=True class=logical ASP=ALLOW events=35/36
+== H1-H4 genuine post-freeze holdouts (verdicts computed before comparison) ==
+  H1 C7-anticorrelation: pNS=True class=strong ASP=FORBID events=0/28
+  H2 Mermin pentagram: pNS=True class=strong ASP=ALLOW events=340/340
+  H3 pentagon Hardy-like: pNS=True class=logical ASP=ALLOW events=20/23
+  H4 C6-anticorrelation: pNS=True class=local ASP=ALLOW events=24/24
+== known over-allowances (preregistered; recomputed for the record) ==
+  theta-graph (J=e, non-quantum): pNS=True class=strong ASP=ALLOW events=10/38
+  padded-PR (2,2,3): pNS=True class=logical ASP=ALLOW events=8/24
+done.
