@@ -1,8 +1,9 @@
 # RULES — the entire governance (one page)
 
 **Session protocol.**
-- Start: read `PROGRAM/NORTH_STAR.md`, then `PROGRAM/STATE.md`, then
-  `PROGRAM/SCOREBOARD.md`, before doing anything else.
+- Start: read `PROGRAM/NORTH_STAR.md`, then `PROGRAM/DIVISION_OF_LABOR.md`, then
+  `PROGRAM/STATE.md`, then `PROGRAM/SCOREBOARD.md`, then any `OPEN` order in
+  `PROGRAM/WORK_ORDERS/`, before doing anything else.
 - End: update `STATE.md` (where we are, what changed, what's next, what's blocked),
   commit, push, and verify the push from the remote.
 - Work at forest level: every step moves one of the six stages. Target about 80%

@@ -18,7 +18,8 @@ automatically.
   at 3×3. Owner Ruling 03.
 - **ASP as a new generative support law:** its mechanism overlaps known
   arc-consistency soundness for operator solutions (Bulatov–Živný; AKS), and it
-  over-allows the theta parity system. SD0 → `F0-SD0-OPEN`.
+  over-allows the theta parity system. SD0 → `F0-SD0-OPEN`. Only the "new law" reading is
+  killed: the rule itself is banked as a compressive known sector (SCOREBOARD #6).
 - **Pairwise/sub-cover locality, single-context-deletion solvability, cohomology/AvN
   classes as support laws:** each either passes PR or puts PR and GHZ on the same
   side. SD0 design survey.

@@ -1,5 +1,8 @@
 # NORTH STAR — GRUT 2
 
+> **Next file to read: `PROGRAM/DIVISION_OF_LABOR.md`** (who does what; the DRAFT rule;
+> work orders in `PROGRAM/WORK_ORDERS/`). It governs over `STATE.md`'s task lists.
+
 ## Destination (verbatim)
 
 Find the smallest compositional law on relational influence structures that
