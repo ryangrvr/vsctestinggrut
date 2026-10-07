@@ -73,6 +73,9 @@ separability; it does not by itself say why separability fails. That is §2–§
 - Example (E2): a symmetric mode S read alone versus S + U read together reproduces
   BRI1's "symmetric reference, skewed driven" signature with no back-reaction.
 
+**This limit is pre-result.** It is a consequence of the frozen definition at
+`82d311e` (G2-10 item 1).
+
 **Closest established results** are named in D5 (§5): universal exogenous /
 functional-causal-model representations and latent-variable non-identifiability. The
 R1 statement is an instance of that general fact, specialized to interface classes. It
@@ -86,10 +89,13 @@ is not claimed as new.
 - **Common carrier:** one fixed readout channel h, applied to the environment's
   **instantaneous** state on one time base, for every protocol. A calibrated fixed
   filter of it also counts.
-- This is the dynamical analog of **measurement invariance**: the same construct is
-  measured by the same instrument across groups (here, protocols). Without it, a
-  difference between groups cannot be attributed to the construct. D5 records the
-  precise correspondence and its limits.
+- *(POST-RESULT SYNTHESIS / STAGE-3 SEED, G2-10.)* This is the dynamical analog of
+  **measurement invariance**: the same construct is measured by the same instrument
+  across groups (here, protocols). Without it, a difference between groups cannot be
+  attributed to the construct. D5 records the precise correspondence and its limits.
+- **Frozen pre-result form:** "one latent-to-record map h for all protocols; no h_a"
+  (`82d311e`). The instantaneous-state precision and the checklist below are
+  post-result clarifications.
 - **The mode-stability certificate** must cover the ten applicability items:
   1. the interface is deterministic, invertible and calibrated, within a curvature
      tolerance;

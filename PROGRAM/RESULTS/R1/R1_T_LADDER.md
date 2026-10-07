@@ -5,6 +5,38 @@ and govern where they differ.*
 
 ## 0. FROZEN R1 DEFINITION (owner rulings G2-01 … G2-06, `PROGRAM/OWNER_RULINGS.md`)
 
+> **Pre-result vs post-result labeling (ruling G2-10).**
+>
+> **FROZEN PRE-RESULT** (text at `82d311e`, committed before the WO-002 numbers were
+> opened):
+> - T_R1, d_op and the verdict table;
+> - the common-carrier commitment as "one latent-to-record map h for all protocols; no
+>   h_a";
+> - Prop. E, §10 E1/E2, and the D5 mode-selection mandate;
+> - the G2-08 carrier certificate.
+>
+> **The non-identifiability is pre-result.** "With unrestricted protocol-dependent
+> readouts, any record family has an exogenous explanation; hence every reciprocity
+> claim is conditional on a certified common readout" is a consequence of the frozen
+> definition and is cited as such.
+>
+> **POST-RESULT** (`cb81a3b` and later, written after the WO-002 numbers were open). The
+> following are labeled **POST-RESULT SYNTHESIS / STAGE-3 SEED**:
+> - the "precise form v3.1" of the carrier (instantaneous state);
+> - "Why instantaneous";
+> - record completeness;
+> - the 10-item certificate checklist;
+> - and, per G2-10, Z_A (interventionally sufficient predictive carrier state relative
+>   to a frozen repertoire A), [h]_T (the protocol-invariant readout equivalence class)
+>   and the measurement-invariance framing.
+>
+> They are **not** modifications of the frozen definition and **not** retroactive
+> inputs to WO-002. WO-002's verdict rests only on the pre-result G2-08 carrier
+> certificate.
+>
+> Mathematical errata from adversarial verification (F1/F2 justification, D3, the F4
+> example, Prop. 2b) correct proofs, not the definition.
+
 **Interface class.**
 - **T_R1 = GL(k) with translations** on the observed path record.
 - Independently calibrated nonlinearities and filters are either removed with their
@@ -17,7 +49,9 @@ and govern where they differ.*
 
 **Common-carrier / mode-stability commitment** (replaces G2-01's "latent dimension").
 
-*Precise form, v3.1, after workflow verification; see "Why instantaneous" below.*
+*Precise form, v3.1 — POST-RESULT SYNTHESIS / STAGE-3 SEED (G2-10). It clarifies,
+and does not replace, the frozen pre-result commitment "one latent-to-record map h for
+all protocols; no h_a".*
 - **Environment state process.** Z = (Z(t))_t is the environment's state process. Its
   state space may have any dimension.
 - **Common carrier.** **One** fixed readout channel h is applied to the environment's
@@ -80,9 +114,9 @@ N_B^(−1/2)·Σ_j x_j(t)), and its protocol dependence is back-reaction.
   that (i) the interface nonlinearity is known, and (ii) the protocols do not change
   which environmental modes couple.
 - Without a certificate the verdict is **NO RECIPROCITY VERDICT**, not ε_R > 0.
-- **What the certificate must cover.** Each item is tied to a mechanism that a loophole
-  hunt found NOT excluded by the earlier wording. Workflow verification is recorded in
-  CHECKS.
+- **What the certificate must cover** — POST-RESULT SYNTHESIS / STAGE-3 SEED (G2-10).
+  Each item is tied to a mechanism that a loophole hunt found NOT excluded by the
+  earlier wording. Workflow verification is recorded in CHECKS.
   1. **Interface is deterministic, invertible and calibrated.** Residual uncalibrated
      curvature must be below the witness: 3σ·|φ″_res/φ′| < |witness| at every
      operating point. For BRI1 at N_B = 4 that is about 1.8×10⁻⁶/σ.

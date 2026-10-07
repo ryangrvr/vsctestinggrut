@@ -211,3 +211,93 @@ read.
 **Owner context (verbatim excerpt):** "the measurement-invariance analogy is the established name for exactly the identification issue we found, and Stage 3 should aim to derive an objective equivalence class of readouts, [h]_T, rather than a unique formula." … "This is the first result in the program's history that is both genuinely positive and fully checked … It isn't new fundamental physics yet — but it's a real, defensible operational object, which is exactly what Stage 3 needed to start from."
 
 **Implemented in:** the SCOREBOARD #11 / CHECKS commit after `eb980f1`; `PROGRAM/RESULTS/R1/R1_SYNTHESIS.md`; D5 (`PROGRAM/RESULTS/R1/D5_COMPARATOR_AUDIT.md`).
+
+---
+
+## G2-10 — Post-WO-002 R1 boundary (with labeling and D5 preregistration additions) · 2026-10-07
+
+**Owner text (verbatim):**
+
+> Let me confirm the remote state and one labeling detail before weighing in.Confirmed on the remote: `7c2b447` records G2-09 and scoreboard row #11 exactly as ChatGPT describes. I agree with the ruling — WO-002 is done, the interface ladder is closed at T_mono, D5 is the next gate, and the frozen-versus-post-result distinction is the right protection. Two refinements, one of them a labeling correction in R1's favor.
+> 1. The non-identifiability result is pre-result, not a post-result refinement. I checked the frozen record at `82d311e`, committed before the WO-002 numbers were opened. It already contains Prop. E ("unrestricted interfaces trivialize R1"), the explicit exclusion of protocol-dependent mode selection (h ↦ h_a), and D5's mandate to include mode selection. So "with unrestricted protocol-dependent readouts, any record family has an exogenous explanation" — and therefore "every reciprocity claim is conditional on a certified common readout" — is a consequence of the frozen definition and can be cited as such. What genuinely emerged after the result is narrower: the interventional carrier state Z_A, the readout equivalence class [h]_T, and the measurement-invariance framing. Those are the parts to label POST-RESULT SYNTHESIS / STAGE-3 SEED.
+> 2. Preregister D5's verdict categories before the audit starts. D5 is now the gate most exposed to pressure, because it runs right after a positive result and the natural wish is for R1 to come out "new." The categories should be fixed in advance:
+>
+> * RESTATED — ε_R is an existing quantity under new names, with no added structure.
+> * STANDARD MATHEMATICS, NEW OPERATIONAL DEFINITION — the mathematics is known (maximal invariants, copulas, statistical-experiment comparison, measurement invariance), but the combination — certified common readout plus quotient-irreducible process change — defines a useful physical observable with an explicit identifying assumption.
+> * DISTINCTIVE — R1 yields a relation or prediction the comparators don't.
+>
+> My honest prior is the middle category, and that's a perfectly good outcome. R1's job was never to be new physics by itself; it was to supply a well-defined observable that a future law has to explain. Writing that expectation down beforehand keeps D5 from inflating it.
+> FOR CLAUDE CODE — additions to the post-WO-002 boundary ruling (adopt with ChatGPT's text)
+>
+> 1. Labeling: the non-identifiability under unrestricted protocol-dependent readouts (Prop. E; mode-selection exclusion h ↦ h_a; D5 mode-selection mandate) is part of the frozen pre-result record (`82d311e`) and is cited as such. Only Z_A, [h]_T, and the measurement-invariance framing are labeled POST-RESULT SYNTHESIS / STAGE-3 SEED.
+> 2. D5 preregistration (commit before the audit begins): verdict categories — RESTATED / STANDARD MATHEMATICS, NEW OPERATIONAL DEFINITION / DISTINCTIVE — each with its criterion as above. The mathematics and the physical interpretation are classified separately. The middle category is recorded in advance as an expected and acceptable outcome; it does not block the R1 terminal or Stage 3.
+> 3. Everything else in ChatGPT's ruling stands: no WO-002 extension, ladder closed at T_mono, D5 comparator list A–D and items 1–10, R1 terminal synthesis contents, stop for owner review, no Stage 3 card before review, no merge yet, M5 and Prop. G continue in parallel.
+>
+> The question has changed, as ChatGPT says: not "does BRI1 survive?" but "is what survived the right thing for a law of reality to explain?" D5 answers that, and preregistering its categories makes sure the answer is honest. OWNER RULING — POST-WO-002 R1 BOUNDARY
+> WO-002 is accepted as complete and banked under G2-09.
+> Current earned state:
+>
+> * Tier 1: BRI1 R1-PASS under calibrated linear/common-carrier interface class — DERIVED conditional on the frozen carrier commitment.
+> * Tier 2: BRI1 R1-PASS at EVIDENCE GRADE under T_mono.
+> * Odd channel = dual-branch escape: T_lin and T_mono separately.
+> * Even channel = T_mono-only escape.
+> * No claim about the generated join.
+> * Theorem grade for Tier 2 remains OPEN pending M5.
+>
+> Do not rerun, extend, reinterpret, or enlarge WO-002.
+> Do not introduce any interface class beyond T_mono. The R1 nuisance ladder is closed.
+> Do not modify the frozen pre-result R1 definition to incorporate post-result conceptual refinements.
+> The interventional-carrier / protocol-invariant readout-class formulation is accepted only as a POST-RESULT SYNTHESIS / STAGE-3 SEED:
+>
+> * Z_A = interventionally sufficient predictive carrier state relative to a frozen intervention repertoire A;
+> * [h]_T = protocol-invariant physical readout/interface equivalence class;
+> * unrestricted protocol-dependent h_a makes reciprocity non-identifiable from the test intervention-record family alone;
+> * therefore every R1 reciprocity claim is conditional on an independently certified common carrier/readout class.
+>
+> This is not retroactive input to WO-002.
+> NEXT REQUIRED TASK: D5 — comparator / identification audit.
+> D5 must explicitly compare R1 against:
+>
+> 1. generic nonlinear-response diagnostics;
+> 2. non-Markovianity measures;
+> 3. process tensors / quantum combs;
+> 4. invariant causal prediction;
+> 5. independent causal mechanisms;
+> 6. Janzing–Schölkopf algorithmic causal inference;
+> 7. MDL causal discovery;
+> 8. Blackwell–Le Cam / statistical-experiment comparison;
+> 9. measurement-invariance / latent-measurement identification analogues;
+> 10. input-output predictive-state / epsilon-transducer formalisms.
+>
+> D5 must answer:
+> A. Is epsilon_R merely an existing generic nonlinear-response or process-distance quantity under renamed variables?
+> B. Is the quotient construction itself known mathematics but the physical identification rule new only in application?
+> C. Is the common-carrier/readout certificate an unavoidable identifying assumption?
+> D. Does the product-latent construction prove non-identifiability when protocol-dependent readouts h_a are unrestricted?
+> If D5 shows R1 is merely RESTATED with no additional physically meaningful structure, record that honestly.
+> If D5 shows the mathematics is largely standard but the operational combination
+> common-carrier/readout invariance + quotient-irreducible process change
+> defines a genuinely useful physical observable, classify the mathematics and the physical interpretation separately.
+> After D5, produce an R1 TERMINAL SYNTHESIS with:
+>
+> * exact definition;
+> * identifying assumptions;
+> * no-go / non-identifiability statement;
+> * Tier 1 result;
+> * Tier 2 result;
+> * evidence/theorem-grade distinction;
+> * portability limits;
+> * common-carrier requirement;
+> * no-claim-about-join statement;
+> * M5 status;
+> * what Stage 3 must derive rather than assume.
+>
+> Then STOP for owner review.
+> Do not open or optimize any Stage-3 K card before the R1 terminal is reviewed.
+> Do not merge grut2 into main yet.
+> M5 and Prop. G may continue as theorem-grade upgrades, but they do not alter the already banked evidence-grade WO-002 result unless they uncover a substantive contradiction.
+
+**Implemented in:**
+- `PROGRAM/RESULTS/R1/D5_PREREGISTRATION.md`, committed before the governing D5 audit.
+- The labeling block in `R1_T_LADDER.md` §0.
+- The D5 audit, then `R1_SYNTHESIS.md` as the R1 TERMINAL SYNTHESIS.
