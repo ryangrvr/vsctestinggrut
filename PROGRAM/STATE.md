@@ -105,7 +105,7 @@ law, so overlap with known machinery is acceptable here.
 - **Next (Claude Code):**
   - D5, the comparator audit (A / B / C, including mode selection), which is the last
     exit-gate item;
-  - the proof obligations M5 and Prop. G (§8.1);
+  - the proof obligation M5 (Prop. G is done);
   - WO-001 C3, then C4 (laboratory preparation; does not block Stage 3).
 
 ## Stage definitions 3–6 (pointer)
@@ -145,7 +145,7 @@ None blocking.
   - `grut2` is not merged into `main` until the R1 terminal.
 - Open proof obligations, all Claude Code's:
   - M5: the theorem-grade BRI1 copula expansion;
-  - the theorem-grade BRI1 rate for a bounded odd surrogate (`R1_T_LADDER.md` §8.1).
+  - (the BRI1 bounded-surrogate rate, Prop. G, is now DERIVED: `R1_T_LADDER.md` §8.1).
 
 ## Branch map (read-only references)
 

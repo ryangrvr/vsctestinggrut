@@ -55,7 +55,19 @@ N_B^(−1/2)·Σ_j x_j(t)), and its protocol dependence is back-reaction.
   d_BL(P, Q) := sup{ |E_P f − E_Q f| : ‖f‖_∞ ≤ 1, Lip(f) ≤ 1 }, with Euclidean
   distance on ℝ^k.
 - **Normalization stated:** ‖f‖_BL := max(‖f‖_∞, Lip f). Dudley's β uses
-  ‖f‖_∞ + Lip f, and β ≤ d_BL ≤ 2β.
+  ‖f‖_∞ + Lip f, and β ≤ d_BL ≤ 2β (sharp).
+  - **Coupling form.** d_BL equals W₁ for the truncated cost min(|x − y|, 2).
+  - **Citations.** Dudley, *Real Analysis and Probability*, 2nd ed. 2002: Prop. 11.3.2
+    for the metric; Thm. 11.3.3 for metrization of weak convergence (stated for
+    sequences).
+  - **Mixing conventions.** The witness bound ε_R ≥ |E f|/(2‖f‖) holds for (d_BL, max
+    norm) and for (β, sum norm). (d_BL, sum norm) is valid but looser. Only (β, max
+    norm) can fail, by a factor of up to 2.
+- **Caution for estimation (D4).**
+  - d_q^BL is **not** weakly continuous in the raw laws, because whitening uses second
+    moments. A vanishing contamination can move d_q by O(1).
+  - The plug-in d_BL in dimension k ≥ 3 converges only like n^(−1/k).
+  - So estimation should use the per-f witness form, not plug-in d_BL.
 - ε_R := inf over P★ of max_a d_q^BL(P_a, P★). Its theorems are §8.
 - **Skewness (and the W₃ results of v1/v2) stay as the analytic BRI calibration layer.**
   Because d_BL ≤ W₁ ≤ W₃, the W₃ lower bounds do **not** transfer to d_BL. The d_BL
@@ -609,8 +621,9 @@ Let 𝒮 be the set of laws on ℝ^k that are centrally symmetric about 0, and R
   - **It fails in raw coordinates.** Coordinatewise monotone maps do not commute with
     R.
     - Example: k = 1, Y ~ N(0,1), and φ(y) = y for y ≤ 0, φ(y) = 2y for y > 0. This φ
-      is a T_mono element; the earlier example e^Y was not, because it is not a
-      bijection of ℝ.
+      is valid under both T_mono definitions: §5's bijections of ℝ, and §9's bijections
+      between support intervals. **§9 governs.** e^Y is excluded under §5 but
+      admissible under §9.
     - φ#N(0,1) has exact skewness 0.7595. So P0's T_mono-orbit is not contained in 𝒮.
     - The **conclusion** fails as well as the proof route, by D1.
   - **It survives in normal-score (copula) coordinates.** There the T_mono-orbit acts by
@@ -636,26 +649,86 @@ Let 𝒮 be the set of laws on ℝ^k that are centrally symmetric about 0, and R
 
 **Prop. G (BRI1: rate of a bounded odd surrogate)** — see §8.1 below.
 
-### 8.1 Prop. G — BRI1 rate of a bounded odd surrogate (G2-02 item 4, second part)
+### 8.1 Prop. G — BRI1 rate of a bounded odd surrogate (G2-02 item 4, second part) — DERIVED
 
-**Claim, at a single time t*.**
-- **Witness.** f_c := tanh(c·H₃), with H₃(z) = z³ − 3z. It is odd, C^∞ with bounded
-  derivatives, and has ‖f_c‖_∞ ≤ 1 and finite Lip.
-- **Expansion.** E_{P1} f_c(W₁) = (γ₁(P1)/6)·E_φ[f_c H₃] + o(N_B⁻¹), where
-  - γ₁(P1) = K(t*,t*,t*)/(N_B m₂^(3/2)) + O(N_B⁻²);
-  - E_φ[f_c H₃] > 0, because x·tanh(cx) ≥ 0.
-- **The constant.** C = K·E_φ[f_c H₃]/(6m₂^(3/2)) ≠ 0, negative, by BRI1 T1–T2, under
-  BRI1's quantifiers. No numerical δ or N₀ is claimed.
-- **Consequence.** By (F3), ε_R^(T_R1) ≥ |C|/(2‖f_c‖_BL N_B) + o(N_B⁻¹).
+**Setting.**
+- Fix t* ∈ (0, δ), with δ from BRI1 T1. Take any observed grid containing t* on which
+  Cov F_{P1} is nonsingular (always true for k = 1).
+- Let f be odd and bounded with f″ Lipschitz. For example f_c = tanh(c·H₃) for any
+  c > 0, with H₃(z) = z³ − 3z, or a C^{2,1} mollification of any bounded-Lipschitz odd
+  function.
 
-**Status: under verification.**
-- The leading structure is confirmed by the workflow verification so far: odd f
-  annihilates the κ₄ and κ₃² Hermite terms, and E_φ[f_c H₃] > 0.
-- The remainder needs a smooth-function expansion whose constants are **uniform over
-  BRI1's triangular array** (the summand law depends on ε = N_B^(−1/2)). The source
-  (Barbour 1986 / Bhattacharya–Rao) and that uniformity are being checked.
-- This is not claimed as DERIVED until the check closes. The result is recorded in
-  CHECKS.
+**Claims.**
+- **(G1)** E_{P1} f(W₁(t*)) = (γ₁(P1)/6)·E_φ[f H₃] + O(N_B^(−3/2)), where:
+  - W₁(t*) is the standardized force at t*;
+  - γ₁(P1) = K/(N_B m₂^(3/2)) + O(N_B⁻²);
+  - K = K_{P1}(t*, t*, t*) < 0, by BRI1 T1.
+- **(G2)** Hence there is N₁(t*, f) such that for every N_B ≥ N₁:
+
+  **ε_R^(T_R1)({P0, P1}) ≥ |K|·E_φ[f H₃] / (24·m₂^(3/2)·‖f‖_BL·N_B).**
+
+  N₁ is a new threshold, distinct from BRI1's N₀.
+  - Equivalently, liminf N_B·ε_R ≥ |K|·E_φ[f H₃] / (12·m₂^(3/2)·‖f‖_BL).
+  - Taking the sup over smooth odd f: **liminf N_B·ε_R ≥ |K|·V*/(12·m₂^(3/2)),
+    with V* = 0.943578.**
+  - V* is the LP optimum of sup{E_φ[f H₃] : f odd, ‖f‖_∞ ≤ 1, Lip f ≤ 1}. Its
+    closed-form optimizer is piecewise linear with kink a = 1.0653381390. Mollifying by
+    an even kernel keeps f odd and both norms, so the sup over smooth f equals V*.
+  - For the tanh family, the best c is c* ≈ 0.1442, with
+    E_φ[f H₃]/‖f‖_BL = 0.4185.
+- **(G3)** The bound transfers to **any** grid containing t*, with no loss of constant.
+  Take f(w) = g(v·w), with v = Σ^(1/2)e_{t*}/√Σ_{t*t*} and |v| = 1. Then v·W₁ is exactly
+  the standardized F(t*), and Lip f = Lip g.
+
+**Quantifiers.** ∃δ (BRI1), ∀t* ∈ (0, δ), ∃N₁(t*, f), ∀N_B ≥ N₁. No numerical value of
+δ, N₀ or N₁ is claimed. The sign of C = K·E_φ[f H₃]/(6m₂^(3/2)) is negative in BRI1's
+convention, F = +ε·Σ_j X_j.
+
+*Proof.*
+- **(i) Smooth-function expansion without Cramér's condition.**
+  - **Source.** Barbour, *Asymptotic expansions based on smooth functions in the central
+    limit theorem*, PTRF 72 (1986) 289–303: the Theorem, eq. (8), p. 294, case (i) with
+    k = 4, α = 1, p = 0. The primary text was read from page images during workflow
+    verification.
+  - **Statement.** For independent mean-zero summands with Σ E X_i² = 1 and h ∈ C²
+    with h″ Lipschitz:
+
+    E h(W) = E h(N) + (κ₃/6)·E[H₃h] + (κ₄/24)·E[H₄h] + (κ₃²/72)·E[H₆h] + η,
+    with |η| ≤ C·L(h″)·Σ E|X_i|⁵,
+
+    where C is universal but not explicit.
+  - **For odd h,** E h(N) = E[H₄h] = E[H₆h] = 0.
+  - **A self-contained alternative** with explicit constants is the Lindeberg "Lemma A"
+    (f ∈ C⁷ or C⁹) in the workflow record (CHECKS). Barbour is the load-bearing citation.
+- **(ii) Uniformity over BRI1's triangular array.**
+  - Set X_j = (X_j^ε − μ_ε)/(σ_ε √N_B), so Σ E|X_j|⁵ = N_B^(−3/2)·β₅(ε). Here β₅(ε) is
+    the fifth absolute moment of X^ε(t*) − μ_ε divided by σ_ε⁵, and it is bounded
+    uniformly in ε ∈ [0, 1]:
+  - **Numerator.** |X^ε(t*)|⁵ ≤ 2^(5/2)(√E₀ + √2·Q·π)^(5/2), by BRI1-R1(i)'s energy
+    estimate, and this is Gibbs-integrable.
+  - **Denominator.** σ_ε² > 0 for every ε ∈ [0, 1] by T3's density argument (the
+    time-t* map is a C¹ diffeomorphism), and ε ↦ σ_ε² is continuous. So
+    σ_min² := min over [0, 1] of σ_ε² > 0.
+- **(iii) The skewness.**
+  - κ₃(F) = N_B^(−1/2)·κ₃(X^ε) = K/N_B + O(N_B⁻²), by BRI1-R1(iv).
+  - Var F = Var X^ε = m₂ + O(ε²): σ²(ε) is even in ε by parity, C² by BRI1-R1(iii), and
+    σ²(0) = m₂ by stationarity.
+  - So γ₁ = κ₃(W₁) = K/(N_B m₂^(3/2)) + O(N_B⁻²).
+- **(iv) Positivity.** E_φ[f_c H₃] > 0, because x·tanh(cx) ≥ 0, with strict inequality
+  on a set of positive measure.
+- **(v) Combine.** Apply Theorem F (F3): ε_R ≥ |E f|/(2‖f‖_BL). For N_B ≥ N₁ the
+  remainder is at most half the main term. ∎
+
+**Checks (evidence only).**
+- An exact lattice triangular array, where Cramér's condition fails, confirms
+  N·E f(W) → (N·γ₁/6)·E_φ[f H₃] with remainder × N^(3/2) bounded.
+- WO-001 C1's N_B·γ₁ matches BRI1's symbolic series to its truncation error.
+
+**Not covered.**
+- **k ≥ 2 copula coordinates (M5).** Normal scores are law-dependent nonlinear
+  transforms, so neither Barbour nor Lemma A applies. M5 stays OPEN.
+- **An O(N_B⁻²) refinement.** It would need Barbour's k = 5 case and a 5-factor
+  extension of BRI1-R1(iii). Not claimed.
 
 ## 9. Coordinatewise monotone interfaces: the copula theorem (WO-002 freeze, ruling G2-07)
 
@@ -862,7 +935,7 @@ that identity is the common carrier; at the fundamental level, 𝒦 must generat
 | Item | Status |
 |---|---|
 | T scope (exit i) | **FROZEN** (§0). The commitment is priced: linear readout structure + common carrier + calibration protocol. |
-| d_op (exit iii) | **FROZEN**: BL quotient. Theorems A-BL and F are DERIVED here; external check pending (CHECKS). Prop. G: see §8.1. |
+| d_op (exit iii) | **FROZEN**: BL quotient. Theorems A-BL and F are DERIVED (checked in `82d311e`; v3.1 justification fixes pending check). **Prop. G is DERIVED** (§8.1): liminf N_B·ε_R ≥ abs(K)·V*/(12 m₂^(3/2)), via Barbour 1986 with triangular-array uniformity proved. External check pending. |
 | T_mono survival (exit ii) | Exact theorem (M1, M2) DERIVED. **WO-002 answer: YES**, outcome 1, escape at leading order, for P1 and P2 in both sectors (§11.1). Grade: numerical evidence at formal leading order. Theorem grade: OPEN (M5). |
 | D5 (exit iv) | Not started. It must discriminate A / B / C, including mode selection. |
 | D4 / C4 | OPEN; laboratory preparation; does not block Stage 3. |
@@ -916,5 +989,5 @@ copula invariants scale as **1/N_B**.
 **Remaining to the R1 terminal.**
 - (iii) The external check of the v3/v3.1 theorems (A-BL, F, M1–M3) and of Prop. G.
 - (iv) D5, the comparator audit, including mode selection.
-- M5 and Prop. G are proof obligations of rigour. They are not exit-gate items unless
-  the owner rules otherwise.
+- M5 is the remaining proof obligation of rigour; Prop. G is now DERIVED (§8.1). M5 is
+  not an exit-gate item unless the owner rules otherwise.
