@@ -753,6 +753,15 @@ convention, F = +ε·Σ_j X_j.
 - **(v) Combine.** Apply Theorem F (F3): ε_R ≥ |E f|/(2‖f‖_BL). For N_B ≥ N₁ the
   remainder is at most half the main term. ∎
 
+**Sharpness at k = 1 (D5 analysis; evidence grade, not externally checked).**
+- For BRI1 at k = 1, the Tier-1 ε_R appears asymptotically equal to the Prop. G
+  constant: ε_R = (V*/12)·|γ₁|·(1 + 0.235/N_B + …).
+- The ratio is 1.0307 at N_B = 8 and 1.0018 at N_B = 128
+  (`D5_evidence/d5c1_skeptic2/epsR_k1_bri1*`).
+- **D5 regime restatement.** K(t*,t*,t*) is a classical Kubo/FDT third-cumulant
+  response, fixed by P0's connected 4-point function. Three routes agree to ≤ 3.5e-12.
+  So the Tier-1 single-time calibration value is standard physics.
+
 **Checks (evidence only).**
 - An exact lattice triangular array, where Cramér's condition fails, confirms
   N·E f(W) → (N·γ₁/6)·E_φ[f H₃] with remainder × N^(3/2) bounded.
@@ -923,9 +932,11 @@ non-injective) make R1 trivial** (G2-01 item 3a).
   h_a#Law(Z) = P_a exactly, for every family.
   - No shifts, moments, independence or atomlessness are needed. The path-level and
     uncountable-A versions hold too.
-- **Relation to E_univ.** On BRI0 §4's admissible domain (environment causality, i.e.
-  non-anticipating families), the zero set of unrestricted linear-latent T coincides
-  with grid-level E_univ.
+- **Relation to E_univ** (wording made precise per D5, question D).
+  - With unrestricted linear readouts, the zero set is **every** family.
+  - Restricted to **causal** linear readouts: {families with a causal linear
+    representation} = {non-anticipating families} = grid-level E_univ (D5 Theorem
+    D2).
   - Every such family even has a causal linear representation: 0/1 selections from a
     latent indexed by the protocols' prefix tree.
   - So "the E_univ ceiling reached linearly" holds in this strong form.
@@ -971,7 +982,7 @@ that identity is the common carrier; at the fundamental level, 𝒦 must generat
 | T scope (exit i) | **FROZEN** (§0). The commitment is priced: linear readout structure + common carrier + calibration protocol. |
 | d_op (exit iii) | **FROZEN**: BL quotient. Theorems A-BL and F are DERIVED (checked in `82d311e`; v3.1 justification fixes pending check). **Prop. G is DERIVED** (§8.1): liminf N_B·ε_R ≥ abs(K)·V*/(12 m₂^(3/2)), via Barbour 1986 with triangular-array uniformity proved. External check pending. |
 | T_mono survival (exit ii) | Exact theorem (M1, M2) DERIVED. **WO-002 answer: YES**, outcome 1, escape at leading order, for P1 and P2 in both sectors (§11.1). Grade: numerical evidence at formal leading order. Theorem grade: OPEN (M5). |
-| D5 (exit iv) | Not started. It must discriminate A / B / C, including mode selection. |
+| D5 (exit iv) | **DONE** (governing audit against the preregistration at `891193a`; `D5_COMPARATOR_AUDIT.md`). Verdict: (M) and (P) both STANDARD MATHEMATICS, NEW OPERATIONAL DEFINITION; 10/10 comparators MID/MID; no RESTATED; no DISTINCTIVE; the kill condition does not fire. External check pending. |
 | D4 / C4 | OPEN; laboratory preparation; does not block Stage 3. |
 
 ### 11.1 WO-002 result (read after the boundary ruling G2-08 was on the remote)

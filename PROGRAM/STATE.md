@@ -8,6 +8,14 @@ checked.
 
 ## Where we are
 
+**R1 TERMINAL SYNTHESIS SUBMITTED — STOPPED FOR OWNER REVIEW (G2-10).**
+- File: `PROGRAM/RESULTS/R1/R1_SYNTHESIS.md`.
+- D5 is done. Both (M) and (P) are STANDARD MATHEMATICS, NEW OPERATIONAL DEFINITION,
+  and the kill condition does not fire.
+- Until the owner reviews: no Stage-3 card, no merge of `grut2` into `main`, and no
+  change to WO-002 or the frozen definition.
+- M5 continues as a theorem-grade upgrade only.
+
 **Stage 1 is COMPLETE. The next stage is Stage 2 (R1).**
 
 ## Last result — Stage 1, SD0 referendum: FAILED as a law → old F0 BANKED
@@ -103,8 +111,8 @@ law, so overlap with known machinery is acceptable here.
 - **Identifiability flag:** about 10¹¹ samples for BRI1's witness at these parameters
   (Review 2 and its erratum).
 - **Next (Claude Code):**
-  - D5, the comparator audit (A / B / C, including mode selection), which is the last
-    exit-gate item;
+  - D5 is DONE (`D5_COMPARATOR_AUDIT.md`). The R1 terminal synthesis is submitted; await
+    owner review;
   - the proof obligation M5 (Prop. G is done);
   - WO-001 C3, then C4 (laboratory preparation; does not block Stage 3).
 

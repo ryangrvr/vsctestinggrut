@@ -17,7 +17,11 @@ Controls:
          are in T (signed-affine) by construction, so eps_R = 0 exactly; the optimizer
          must return 0 to machine precision.
 
-  C2-F   Filtered non-Gaussian (non-Markovian): F_a = K_a @ xi, where xi is a shared
+  C2-F   Filtered non-Gaussian, COLORED: F_a = K_a @ xi, where xi is a shared
+         (Erratum, D5 audit 2026-10-07: with K_a[k,j] = r^(k-j) the records are exact
+         AR(1) Markov chains -- a Levy-driven OU in continuous time -- colored, not
+         non-Markovian. Numbers and verdicts are unchanged. A genuinely non-Markov
+         zero control, C2-F', is proposed in D5_COMPARATOR_AUDIT.md and was not run.)
          skewed i.i.d. driver vector and K_a are PROTOCOL-DEPENDENT linear filters
          (causal exponential smoothing with different time constants tau_1 != tau_2),
          calibrated (known) but NOT of the signed-affine form.

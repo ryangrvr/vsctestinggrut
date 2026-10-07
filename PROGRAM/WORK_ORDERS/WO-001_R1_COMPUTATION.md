@@ -56,6 +56,12 @@ differs from the provisional spec below, it governs.
 - **C2 — exogenous controls (must give ε_R = 0).**
   - (i) Colored Gaussian (Ornstein–Uhlenbeck) noise.
   - (ii) A non-Gaussian non-Markovian noise.
+    - *Erratum (D5, 2026-10-07):* C2-F as run is colored, not non-Markovian. Its
+      records are exact AR(1) Markov chains. So item (ii) is not literally met by the
+      committed controls.
+    - D1 (R1_DEFINITION) is a theorem that uses no Markov property, so the gap is
+      in the controls only.
+    - C2-F′ (D5 audit) is the proposed genuine non-Markov-record zero control.
   - In both, the protocol dependence enters only through M_a and G_a (that is,
     through T).
   - **Exact control:** for one case, build the protocol dependence analytically inside
