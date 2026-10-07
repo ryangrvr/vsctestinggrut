@@ -129,7 +129,7 @@ None. The owner reviews the Stage-3 charter before Card 1.
 |---|---|
 | `main` | Canonical after the G2-11 merge of `grut2`: an explicit merge commit, history preserved |
 | `grut2` | Historical working branch (Stage 1 close, R1). Kept after the merge |
-| `r1-terminal` (tag) | R1 terminal boundary `dbfd64b`. If a tag push is blocked, it is recorded here and in the merge commit message, for the owner to tag locally |
+| R1 terminal boundary | **`dbfd64b`**. The annotated tag `r1-terminal` was created locally, but **the tag push was blocked** (the git proxy disconnects on tag refs, three retries, 2026-10-07). Per G2-11 the boundary is recorded here and in the merge commit message; the owner tags it on the remote |
 | `record-integration-01` | Consolidated frozen TestingGRUT record: `record/`, `registry/`, `governance/` |
 | `bri1-manuscript` | BRI1 manuscript plus its byte-exact record (`92dc6bb`) |
 | `ggc0-f0-program-consolidation-0` | The governing requirements map |
