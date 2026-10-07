@@ -1,0 +1,29 @@
+{
+ "L1_Tcaus_innovation_equivariance_maxdev": 1.3209744409437008e-09,
+ "L1_maxdev_over_condcov_eps": 12.467491567280113,
+ "L2_Tlin_whitening_orthogonal_maxdev": 1.5844920930874196e-09,
+ "L2_maxdev_over_condcov_eps": 16.04938676885615,
+ "L2_Tlin_mardia_invariance_maxdev": 6.451498890669427e-09,
+ "L3_trials": 180,
+ "L3_max_lhs_over_rhs": 0.4325891396727535,
+ "L3_inequality_holds": true,
+ "L4_symmetric_image_max_abs_third_moment": 5.799457602519154e-13,
+ "L4_symmetric_image_sqrt_b1": 2.856361051704295e-13,
+ "L4_C2F_like_last_time_skewness_a_b": [
+  2.3249895090672923,
+  1.3467984590163873
+ ],
+ "L4_C2F_like_sqrt_b1_a_b": [
+  18.593279876183395,
+  18.5932798761834
+ ],
+ "L5_trials": 240,
+ "L5_max_lhs_over_rhs": 0.30555227644967675,
+ "L5_inequality_holds": true,
+ "L6_two_mode_skew_reference_driven": [
+  -6.272018935488217e-18,
+  0.7624008098436275
+ ],
+ "L6_two_mode_exact_skew_driven": 0.769800358919501,
+ "L6_two_mode_E2pm_witness_lower_bound": 0.08935907885629675
+}

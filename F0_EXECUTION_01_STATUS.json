@@ -1,0 +1,139 @@
+{
+  "campaign": "F0_EXECUTION_01",
+  "status": "REPAIRED",
+  "repair": {
+    "ruling": "F0 EXECUTION 01 — REPAIR REQUIRED BEFORE BANKING; F0-PHYS-OPEN RATIFIED; F0-B NOT AUTHORIZED",
+    "base_sha": "f45fb901746c76beb9cce7a7a1003a6a1aba97ec",
+    "base_branch": "ggc0-f0-kinematics-physicality-0",
+    "repair_branch": "ggc0-f0-exec01-repair-0",
+    "repairs": ["R1 K2 anti-correlated contextual calibration with exact rational global-extension checker",
+                 "R2 two-context gluing always extends; family (cyclic) extension is where obstruction lives",
+                 "R3 invalid redundant-presentation equivalence removed",
+                 "R4 outcome-relabel test added; negative controls added; results split positive/negative",
+                 "R5 P1/P3 wording precision (different operational interventions, not presentations; terminal unchanged)",
+                 "R6 NOT FOUND not DOES NOT EXIST",
+                 "R7 finite ordinary probability-valued empirical-model scope",
+                 "R8 statuses distinguished"]
+  },
+  "date": "2026-10-05",
+  "repository": "ryangrvr/vsctestinggrut",
+  "branch": "ggc0-f0-exec01-validator-final-0",
+  "validator_final_repair": {
+    "base_sha": "003ffcdd35822513be5f6e5aeeaa004331760b2b",
+    "commit": "e3f1ab473a6c8556a2daac92e26b765c8c366fbd",
+    "scope": "V1-V5 validator/source-precision repair only; no terminal change"
+  },
+  "frozen_parent": "bef8b9480c9f7569c70837c6ee5c4776fc2e0f3c",
+  "frozen_parent_branch": "ggc0-f0-influence-access-0",
+  "authorization_scope": ["F0-A", "F0-PHYS"],
+  "prohibited": ["R_Gamma", "A_Gamma", "Cl_Gamma", "S", "U", "access_transition_searches",
+                 "fixed_point_searches", "born_rule", "geometry", "gravity"],
+  "artifacts": [
+    "F0_EXECUTION_01_CHARTER.md",
+    "F0_EXECUTION_01_LEDGER.md",
+    "F0_A_KINEMATIC_FORMULATION_01.md",
+    "f0_kinematic_validator.py",
+    "F0_PHYSICALITY_OF_ACCESS_01.md",
+    "F0_PHYS_BASELINE_AUDIT_01.md",
+    "F0_FUTURE_LAW_REQUIREMENTS_01.md",
+    "F0_EXECUTION_01_RESULT.md",
+    "F0_EXECUTION_01_STATUS.json"
+  ],
+  "f0_a": {
+    "well_defined": true,
+    "representation_invariance": "VERIFIED (declared moves only)",
+    "composition": "DEFINED, NON-AUTOMATIC (gluing != physical joint accessibility)",
+    "validator": {
+      "file": "f0_kinematic_validator.py",
+      "result": "13/13 PASS (positive) + 5/5 PASS (negative controls, all reject)",
+      "positive_tests_passed": [
+        "test_downward_closure",
+        "test_maximal_contexts",
+        "test_overlaps",
+        "test_presheaf_functoriality",
+        "test_gamma_wellformed",
+        "test_overlap_compatibility",
+        "test_relabel_invariance",
+        "test_outcome_relabel",
+        "test_combined_relabel",
+        "test_hypergraph_roundtrip",
+        "test_gluing",
+        "test_global_extension",
+        "test_suites_k0_k3"
+      ],
+      "negative_controls_passed": [
+        "malformed downward closure rejected",
+        "non-normalized Gamma rejected",
+        "negative probability rejected (sums exactly to 1; positivity branch isolated, V3)",
+        "overlap-incompatible Gamma rejected",
+        "contextual K2: local compatible, global NOT extendable (exact rational check)"
+      ],
+      "mutation_verification_V5": "with relabel replaced by identity, the intervention, outcome, and combined relabel tests all FAIL (non-vacuity verified programmatically); all relabel tests use the asymmetric calibration p_ab=(1/10,2/10,3/10,4/10)",
+      "suites": ["K0 path/tree", "K1 Bell four-cycle", "K2 Specker triangle (anti-correlated, genuinely nonextendable)", "K3 complete context"]
+    },
+    "unresolved_kinematic_ambiguities": [
+      "empty-context convention (excluded here)",
+      "deeper representation equivalences (not assumed without proof)",
+      "non-distributional event scopes (not defined)",
+      "canonical maximal-context presentation"
+    ],
+    "status": "CONSTRUCTED (definitions); DERIVED (equivalences); validator-verified"
+  },
+  "f0_phys": {
+    "strongest_observer_independent_candidate": "physical co-instantiability (Meaning 3)",
+    "strongest_hostile_counterexample": "P1 apparatus dependence + P3 operational specification: operational C depends on the physically/operationally specified intervention (apparatus, sharpness, noise, coarse-graining) and cannot automatically be identified with a deeper structure-free access relation; survives relabeling quotient (P2); does NOT prove one physical intervention has two incompatible fundamental C's",
+    "structures_required_as_input": [
+      "measurement theory (states/effects)",
+      "subsystem/tensor-factor decomposition",
+      "spacetime structure",
+      "process algebra / dynamics",
+      "sharpness notion (P7 requirement)"
+    ],
+    "information_price": "all five are SUPPLIED; none derived by this campaign",
+    "comparators": "F0_PHYS_BASELINE_AUDIT_01.md B1-B10 (targeted, not exhaustive)",
+    "restated_verdicts": {
+      "operational_layer": "RESTATED (GPTs, joint measurability, effect algebras)",
+      "kinematic_layer": "RESTATED in content (sheaf/empirical-models machinery; F0-A adds governance discipline, not new math)"
+    },
+    "terminal": "F0-PHYS-OPEN",
+    "failure_mode_documented": "F0-PHYS-RELOCATED (every current candidate buys precision with supplied structure)",
+    "operational_layer_status": "F0-OPERATIONAL-ONLY (for meanings 1-2)"
+  },
+  "not_earned": [
+    "no access-transition law (R_Gamma/A_Gamma/Cl_Gamma)",
+    "no positive selection (S)",
+    "no dynamics (U)",
+    "no quantum-set derivation",
+    "no Born rule",
+    "no geometry",
+    "no gravity",
+    "no claim of a theory of reality"
+  ],
+  "supplied_inputs": [
+    "measurement theory (for operational meanings 1-2)",
+    "subsystem/tensor decomposition (P5 route)",
+    "spacetime structure (P6 route)",
+    "process algebra/dynamics (commutation route)",
+    "sharpness notion (P7 requirement)"
+  ],
+  "postulated_inputs": [
+    "finite ordinary probability-valued empirical-model scope for Gamma (declared scope restriction, not a claim that probability is fundamental or globally noncontextual)"
+  ],
+  "unresolved_issues": [
+    "existence of an observer-independent physical access notion (the gate itself)",
+    "structure needed to distinguish simultaneous/sequential/commuting/jointly-measurable/jointly-realizable (P6)",
+    "sharpness for interventions without a measurement theory (P7)",
+    "deeper representation equivalences for K",
+    "empty-context and non-distributional-scope conventions"
+  ],
+  "literature_baseline_findings": "no comparator supplying an observer-independent structure-free joint-realizability notion was found in this targeted audit (NOT FOUND, not DOES NOT EXIST); F0-A kinematics restates standard sheaf/empirical-models content with added governance; interpretive four-way separation is the campaign's genuine discipline-level addition",
+  "firewall_confirmation": {
+    "no_R_Gamma_implemented": true,
+    "no_transition_classified": true,
+    "no_searches_or_optimizations": true,
+    "requirements_recorded_no_law": true,
+    "frozen_charter_unmodified": true,
+    "frozen_branch_untouched": true
+  },
+  "stop": "STOP FOR OWNER REVIEW; no F0-B; no second campaign; no merge into main"
+}

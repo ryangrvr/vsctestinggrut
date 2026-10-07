@@ -1,0 +1,34 @@
+{
+ "K1_nonanticipating_first_marginal_equal": true,
+ "K1_mu_total_mass": "1",
+ "K1_tree_selection_exact_for_all_protocols": true,
+ "K1_row1_shared_by_prefix_class": true,
+ "K2_product_projection_exact": true,
+ "K2_row1_differs_between_a1_a2_despite_shared_prefix": true,
+ "K3_common_marginal": true,
+ "K3_P0_third_central_moments": [
+  "0",
+  "0"
+ ],
+ "K3_P1_third_central_moments": [
+  "0",
+  "-405/32"
+ ],
+ "K3_latent_dim": 3,
+ "K3_mass": "1",
+ "K3_h0_exact": true,
+ "K3_h1_exact": true,
+ "K3_kernels_differ": true,
+ "K4_atoms_h_a_vs_h_b": [
+  2,
+  1
+ ],
+ "K5_symmetric_latent_records_symmetric": [
+  true,
+  true
+ ],
+ "K5_E2_records_symmetric": [
+  true,
+  false
+ ]
+}

@@ -1,0 +1,133 @@
+{
+  "campaign": "F0_I0_TASK_CONTEXT_INTERFACE",
+  "date": "2026-10-05",
+  "repository": "ryangrvr/vsctestinggrut",
+  "branch": "ggc0-f0-i0-source-native-repair-0",
+  "parent_bank_sha": "1a1edd53ec82b1f6c9231edbcb907d020f69172c",
+  "bank_lineage": "1a1edd5 (PHYS-02 bank seal) -> 986fbfc (final record repair) -> 6e9b5d6 (interface repair) -> 6a97712 (PHYS-02 campaign) -> aa9c2b3 (banked exec01) -> e3f1ab4 -> f45fb90 -> bef8b948 (frozen charter)",
+  "authorization": "F0-I0 only (static interface)",
+  "prohibited": [
+    "R_Gamma",
+    "A_Gamma",
+    "Cl_Gamma",
+    "S",
+    "U",
+    "access_evolution",
+    "fixed_points",
+    "gamma_statistics_coupling",
+    "born_rule",
+    "geometry",
+    "gravity",
+    "fitting_quantum_data",
+    "merge_to_main"
+  ],
+  "artifacts": {
+    "governing": [
+      "F0_I0_CT_MEASUREMENT_BASELINE_REPAIRED.md",
+      "F0_I0_INTERFACE_DEFINITION_REPAIRED.md",
+      "F0_I0_COMPARATOR_AUDIT_REPAIRED.md",
+      "F0_I0_RESULT_REPAIRED.md",
+      "F0_I0_STATUS.json"
+    ],
+    "audit_trail_only": [
+      "F0_I0_CT_MEASUREMENT_BASELINE_01.md",
+      "F0_I0_INTERFACE_DEFINITION_01.md",
+      "F0_I0_COMPARATOR_AUDIT_01.md",
+      "F0_I0_RESULT.md",
+      "F0_I0_LEDGER.md",
+      "F0_I0_CHARTER.md"
+    ]
+  },
+  "central_question": "When does a family of constructor-theoretic measurer tasks define exactly a contextual compatibility complex?",
+  "terminal": "F0-I0-SUBSIDIARY-REQUIRED",
+  "decisive_answers": {
+    "what_is_a_ct_measurer": "a constructor that, for a measurable variable X={X_j} of a substrate, outputs a substrate carrying the information that S had X_j (the task {X_j->X'_j} over all j is possible, X'_j distinguishable)",
+    "what_is_a_ct_joint_measurer": "NOT defined in the audited CT paper (only implicit in 'simultaneous measurement'); the I0 working definition — one possible measurement task with joint output variable and allowed coarse-grainings recovering each measurement — is CONSTRUCTED for I0, mirroring parent measurement",
+    "joint_measurer_in_ct_or_constructed": "CONSTRUCTED/SUPPLIED (priced)",
+    "downward_closed_complex": "YES — proved as a theorem of the declared interface definition; mechanically verified on every control instance; NOT a new physical prediction",
+    "specker_triangle_representable": "YES at the interface, but ONLY via declared subsidiary-theory possibility facts (general POVM-type); base CT alone cannot represent it",
+    "ct_prohibition_or_subsidiary_absence": "absence of subsidiary-theory detail, not a CT prohibition — the same interface yields pairwise=>triple under projective-type facts (I0-K4) and the triangle under POVM-type facts (I0-K2)",
+    "subsidiary_must_supply": "joint-measurability possibility facts for the relevant measurement families (the content quantum joint-measurability theory already computes)",
+    "novel_or_standard": "standard joint measurability at the declared scope (RESTATED there); the subsidiary-dependence is the genuinely new architectural finding",
+    "originality_burden_moves_to": [
+      "downstream Gamma coupling (prohibited until owner authorizes)",
+      "a possible CT-internal unsharp-measurement extension (not attempted, not authorized by I0)"
+    ]
+  },
+  "ct_source_findings": {
+    "theorem_used": "complementary information observables in superinformation media cannot be simultaneously measured (pairwise incompatibility statement about constructors)",
+    "non_sharp_input_measurement": "SOURCE-NATIVE: paper section 6(a) 'Measurement of non-sharp variables' with bar operation and Principle VIII; observables for non-sharp inputs (previous 'no unsharp calculus in base CT' claim WITHDRAWN)",
+    "higher_order_joint_measurability_calculus": "no general higher-order joint-measurability hypergraph calculus FOUND in the audited paper (NOT FOUND, not categorical; set-level principles like Principle IV exist)",
+    "specker_K2_at_base_CT_scope": "UNRESOLVED (neither CT prohibition nor CT construction found)",
+    "native_interface": "common-fine-graining/coarse-graining interface SUFFICIENT (necessity unresolved); sharp/fine-graining overlap with standard parent-measurement structure precise; generalized scope UNRESOLVED",
+    "controls": "transport supplied possibility facts only (essentially definitional); K2/K4 external results used as subsidiary benchmarks"
+  },
+  "finite_controls": {
+    "file": "f0_i0_controls.py",
+    "results": {
+      "I0-K0 complete complex": true,
+      "I0-K1 incompatible pair": true,
+      "I0-K2 specker triangle (pairs, no triple)": true,
+      "I0-K3 four-cycle": true,
+      "I0-K4 sharp control (pairwise=>triple)": true,
+      "K2/K4 contrast (same interface, different subsidiary facts => different complexes)": true
+    },
+    "downward_closure_theorem_mechanically_verified": true,
+    "not_done": [
+      "Gamma coupling",
+      "probabilities",
+      "dynamics",
+      "fitting",
+      "born rule"
+    ]
+  },
+  "not_earned": [
+    "no access-transition law",
+    "no positive selection",
+    "no dynamics",
+    "no Gamma/statistics coupling",
+    "no quantum mechanics derivation",
+    "no born rule",
+    "no geometry",
+    "no gravity",
+    "no GRUT novelty claim",
+    "no theory of reality"
+  ],
+  "supplied_or_postulated": [
+    "coarse-graining/relabeling of measurer outputs: CT-NATIVE (previous wholesale SUPPLIED classification WITHDRAWN)",
+    "the remaining supplied information is chiefly WHICH relevant variables/fine-grainings/joint measurers are physically possible in the subsidiary theory",
+    "per-control possibility facts: declared model inputs standing in for subsidiary-theory facts"
+  ],
+  "unresolved": [
+    "whether a CT-internal unsharp-measurement extension could generate the joint-measurability hierarchy (new campaign, not attempted)",
+    "the downstream Gamma coupling (prohibited until owner authorization)",
+    "other subsidiary theories through the same interface (open, not pursued)"
+  ],
+  "firewall_confirmation": {
+    "no_gamma_coupling_built": true,
+    "no_f0_b_law_implemented": true,
+    "no_probabilities_in_controls": true,
+    "no_searches_or_fixed_points": true,
+    "banked_phys02_branch_untouched": true
+  },
+  "stop": "STOP FOR OWNER REVIEW; no Gamma coupling; no F0-B; no merge to main",
+  "source_native_repair": {
+    "branch": "ggc0-f0-i0-source-native-repair-0",
+    "parent_sha": "0a75c5241fe2521314267ffe5aa7a02936279731",
+    "ruling": "I0 repository/governance PASS; static interface direction PROMISING; scientific result SOURCE/INTERFACE REPAIR REQUIRED; provisional terminal not banked; Gamma coupling NOT authorized",
+    "repairs": {
+      "R1": "CT definitions rebuilt source-faithfully (variable = mutually disjoint attributes; variable-level distinguishability via task to records; measurer per Eq 5.2; observable via Principle VIII unique variable Z; information observable = observable that is also an information variable; exact set-level superinformation medium definition)",
+      "R2": "non-sharp claim corrected: paper has section 6(a) 'Measurement of non-sharp variables' with bar operation and Principle VIII; distinct from quantum unsharp/POVM measurement; NOT equated",
+      "R3": "'base CT is pairwise-only' withdrawn (Principle IV is set-level); replaced by the open question whether CT determines an arbitrary higher-order joint-measurability complex (NOT FOUND in audited paper)",
+      "R4": "native coarse-graining/re-labelling recognized as CT-native; strongest source-native interface = common fine-graining Z; sufficiency for simultaneous measurement YES; necessity UNRESOLVED",
+      "R5": "sharp common-refinement scope separated from generalized joint measurement; Specker question in source-native terms UNRESOLVED; no POVM import as answer",
+      "R6": "control evidential status weakened: controls only transport supplied facts (essentially definitional); K2/K4 external results used as subsidiary benchmarks only",
+      "R7": "citations corrected: Kunjwal-Heunen-Fritz arXiv:1311.5948 (PRA 89, 052126); Andrej-Kunj arXiv:2003.00785 (PRR 2, 043147); Deutsch-Marletto Proc. R. Soc. A 471, 20140540, DOI 10.1098/rspa.2014.0540",
+      "R8": "novelty claim withdrawn; permissible statement: the audit classifies contextual joint-compatibility facts as likely subsidiary-theory-dependent within a CT framing (program classification, not new physics)",
+      "R9": "terminal re-evaluated: F0-I0-SUBSIDIARY-REQUIRED provisionally stronger (native interface covers sharp/fine-graining scope, narrowing what subsidiary must supply to the generalized facts); secondary finding revised from blanket RESTATED to precise sharp-scope overlap + UNRESOLVED generalized scope"
+    }
+  },
+  "terminal_narrow_meaning": "CT-native common-fine-graining gives a SUFFICIENT interface (with native downward closure via coarse-graining/relabeling); complete generalized compatibility facts remain SUBSIDIARY-DEPENDENT / UNRESOLVED at base-CT scope. Does NOT mean: CT forbids Specker K2; CT lacks non-sharp measurement; CT is pairwise-only; the generalized hierarchy is impossible inside CT. Those remain unresolved where stated.",
+  "secondary_scope_finding": "sharp/fine-graining scope RESTATED precisely (native CT coarse-graining = parent-measurement structure there); generalized scope UNRESOLVED; blanket RESTATED withdrawn",
+  "bank_boundary": "set after this seal commit"
+}

@@ -1,0 +1,24 @@
+C1 reproduction vs archived pf4q_results.json: all_match = True
+  P1(pi,pi,pi): archived -1.487849e-01 ours -1.487849e-01 rel 1.12e-15
+  P1(pi,pi,3pi/2): archived -4.432639e-02 ours -4.432639e-02 rel 3.76e-15
+  P1(pi,pi,2pi): archived -2.861432e-02 ours -2.861432e-02 rel 3.88e-15
+  P1(pi,3pi/2,3pi/2): archived 6.894372e-02 ours 6.894372e-02 rel 0.00e+00
+
+C1 witness lower bound on eps_R^{E2+-} along the N_B ladder
+N_B   witness(max_t spread/2)   witness*sqrt(N_B)   ratio
+    4  7.636886e-01          1.527377e+00      1.0000
+    8  5.400094e-01          1.527377e+00      1.0000
+   16  3.818443e-01          1.527377e+00      1.0000
+   32  2.700047e-01          1.527377e+00      1.0000
+   64  1.909222e-01          1.527377e+00      1.0000
+  128  1.350024e-01          1.527377e+00      1.0000
+
+raw third cumulant of averaged force (1/N_B^2 scaling check):
+  N_B=   4  k3_avg=-9.299056e-03  k3_avg*N_B^2=-1.487849e-01
+  N_B=   8  k3_avg=-2.324764e-03  k3_avg*N_B^2=-1.487849e-01
+  N_B=  16  k3_avg=-5.811910e-04  k3_avg*N_B^2=-1.487849e-01
+  N_B=  32  k3_avg=-1.452978e-04  k3_avg*N_B^2=-1.487849e-01
+  N_B=  64  k3_avg=-3.632444e-05  k3_avg*N_B^2=-1.487849e-01
+  N_B= 128  k3_avg=-9.081110e-06  k3_avg*N_B^2=-1.487849e-01
+
+wrote PROGRAM/RESULTS/WO-001/c1_witness.json
