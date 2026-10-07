@@ -1,6 +1,6 @@
 # STATE
 
-**Updated:** 2026-10-07 (Stage-3 charter CR-1 re-freeze, evaluation kit, CR-3).
+**Updated:** 2026-10-07 (G2-13: NR-4 kit fix, CR-4).
 - **Branch:** `grut2`, forked from the SD0 execution tip `a25d1be`, so the full F0 record
   is in the tree. Per ruling G2-11 it is merged into `main` with history preserved, and
   `grut2` is kept as a historical branch.
@@ -16,17 +16,22 @@
 **Stage 1 (SD0): COMPLETE.** **Stage 2 (R1): TERMINAL, ACCEPTED** (G2-11, at `dbfd64b`).
 
 **Stage 3: CHARTER FROZEN ALONE at `0bc125a`, re-frozen with CR-1 at `0b414e6` (ruling
-G2-12); evaluation kit at `f6ba47f`; CR-3 kit hostile defaults at `5aef9a4` (branch
-`grut2-stage3`). STOP before Card 1.**
+G2-12); evaluation kit at `f6ba47f`; CR-3 kit hostile defaults at `5aef9a4`; NR-4 kit
+fix at `608d72f` and CR-4 at `c1275a8` (ruling G2-13) (branch `grut2-stage3`). STOP before
+Card 1 (G2-13 item 5).**
 - Charter: `PROGRAM/STAGE3/STAGE3_CHARTER.md`. Working record and audit dispositions:
   `PROGRAM/STAGE3/charter_workings/` (`FREEZE_VERIFICATION.md`).
 - The §5 residual items were ruled in G2-12 (items 1–6) and applied as CR-1. Seventeen
   too-strict fixes were also applied; loopholes are queued in `CR2_QUEUE.md`, unapplied.
 - Kit (`PROGRAM/STAGE3/kit/`): (a) price coder, (b) NR-4 harness, (c) partial, (d) SEL
   reproduced. The rest takes the CR-3 hostile defaults. It needs an external check before the first draft.
-- No 𝒦 card is generated, frozen, scored or optimized. The owner decides when Card 1
-  opens, and whether to apply the CR-2 queue and rule on the NR-4 harness readings
-  (`kit/README.md`).
+- G2-13 rulings:
+  - The owner's external check found an NR-4 kit defect; it is fixed.
+  - The NR-4 readings are accepted, and the auditor builds the ablation variants.
+  - The CR-2 queue (Q-1…Q-7) is binding as a design constraint and applied on first dependence.
+- Kit external-check status: SEL and the tests were checked by the owner. Still pending: the price coder against Appendix B, the HB controls, and the NR-4 fix.
+- Open owner questions are listed in FREEZE_VERIFICATION §13: the undefined K-image at decoupling, and the NR-17(b) cross-reference.
+- No 𝒦 card is generated, frozen, scored or optimized. Card 1 is not opened.
 
 ## Last results
 
@@ -129,7 +134,7 @@ differentiation and makes interface/response structure non-independent:
 
 ## Blockers
 
-None. STOP before Card 1: waiting on owner review of CR-1 (`0b414e6`), the kit (`f6ba47f`) and CR-3 (`5aef9a4`).
+None. STOP before Card 1: waiting on the owner (external check of `608d72f`, price coder, HB controls; two open questions; Card 1 opening).
 
 ## Branch map
 
