@@ -301,3 +301,76 @@ read.
 - `PROGRAM/RESULTS/R1/D5_PREREGISTRATION.md`, committed before the governing D5 audit.
 - The labeling block in `R1_T_LADDER.md` §0.
 - The D5 audit, then `R1_SYNTHESIS.md` as the R1 TERMINAL SYNTHESIS.
+
+---
+
+## G2-11 — R1 TERMINAL ACCEPTED / STAGE-3 OPENING (with additions) · 2026-10-07
+
+**Owner text (verbatim; the ruling block followed by the additions block):**
+
+> OWNER RULING — R1 TERMINAL / STAGE-3 OPENING
+> R1 TERMINAL SYNTHESIS at `dbfd64b` is ACCEPTED.
+> Scientific ruling:
+> R1 TERMINAL — ACCEPT.
+> R1 earns:
+> a conditional operational reciprocity observable, built from standard mathematics, with an explicit identifying assumption and a calibrated BRI1 realization.
+> R1 does NOT earn:
+> new mathematics, a fundamental GRUT law, a distinctive physical relation, a confirmed prediction, or CROSS-SECTOR status.
+> D5's governing classification is accepted at its stated grade:
+>
+> * mathematics: STANDARD MATHEMATICS, NEW OPERATIONAL DEFINITION;
+> * physical identification rule: STANDARD MATHEMATICS, NEW OPERATIONAL DEFINITION;
+> * DISTINCTIVE: not earned;
+> * R1 kill condition: does not fire.
+>
+> The following remain open upgrades and do not block Stage 3 unless they uncover a contradiction:
+>
+> * M5 theorem-grade Tier-2 expansion;
+> * D4 finite-sample testing;
+> * Tier-2 carrier-necessity question;
+> * remaining external theorem checks.
+>
+> Before merge, make one housekeeping repair only:
+>
+> * clean stale `PROGRAM/STATE.md` language that still says Stage 2 is next / D5 is not started;
+> * update CHECKS to record this owner review and any external-check status justified by it;
+> * do not alter the scientific contents or grading of the R1 terminal.
+>
+> Then freeze/tag the R1 terminal boundary and merge `grut2` into `main` with history preserved. Do not squash the scientific provenance. Keep `grut2` as a historical branch after merge.
+> STAGE 3 — AUTHORIZED TO OPEN.
+> However, do NOT generate, freeze, score or optimize a 𝒦 candidate yet.
+> First write and freeze a Stage-3 charter ALONE.
+> The charter must fix, before any candidate exists:
+>
+> 1. the ordinary baseline freedom spaces for: 𝒜_Π, 𝒜_T, 𝒜_ε, 𝒜_Γ;
+> 2. the success criterion: nontrivial freedom reduction + positive compression + measurable consequence;
+> 3. the compression accounting and information-price rules;
+> 4. the nonrelocation rule: carrier, partition, interface class, readout class, Gibbs/FDT structure and target relation may not be hidden in inputs;
+> 5. the maximum candidate budget: at most three genuinely distinct 𝒦 cards;
+> 6. the required contents of every card: exact law, information price, generated structures, measurable target, hostile baseline comparison and kill condition;
+> 7. the Stage-3 originality rule: familiar component theories are allowed and expected; novelty is judged only at the assembled-law level;
+> 8. the cross-sector gold standard: parameter transfer — quantities fixed in sector A must predict sector B without a new GRUT-specific fit;
+> 9. the stopping rule: if the authorized candidate budget fails to produce a law meeting the frozen gates, this generative route terminates. Do not create a new "deeper prerequisite" staircase.
+>
+> The central Stage-3 task is: Find a compact selective law 𝒦 that generates persistent differentiation and makes interface/response structure non-independent.
+> A successful candidate should eventually produce something schematically like 𝒦 → Π → [h]_{T_Π} → T_Π → Γ_Π → ε_R and force at least one measurable relation ℛ(Π, T_Π, ε_R, Γ_Π) = 0 that existing frameworks do not independently impose.
+> R1's identifying assumption becomes a Stage-3 target: derive objective persistent carrier/readout structure rather than supplying it.
+> Do not assume a unique coordinate formula for h; derive physical structure modulo representation.
+> Do not presume any monotonic identity–response tradeoff. If 𝒦 forces such a relation, its sign and functional form must come from the law.
+> After the Stage-3 charter is frozen, STOP for owner review before generating Card 1.
+> Operational housekeeping:
+> Disable the two-hourly "review VS Code" routine. VS Code is paused and repeated checks are no longer informative. Do not replace it with another recurring review routine unless the role becomes active again.
+>
+> FOR CLAUDE CODE — additions to the R1 TERMINAL / STAGE-3 OPENING ruling (adopt with ChatGPT's text)
+>
+> 1. Merge = provenance, not endorsement. After merge, every DERIVED item marked "external check pending" (A-BL, F, M1–M3, Prop. G, D5 analyses) keeps that status and its `CHECKS.md` line stays pending. If tag pushes are blocked (403), record the R1 boundary `dbfd64b` in `STATE.md` and the merge commit message instead; the owner will tag locally.
+> 2. Stage 3 charter — ε_R is derived. ε_R = ε[Γ_Π, T_Π] by definition. The baseline freedom spaces are 𝒜_Π, 𝒜_T, 𝒜_Γ; ε_R is not an independent axis. Definitional relations do not count. A qualifying relation ℛ must restrict the jointly realized (Π, T_Π, Γ_Π) beyond the definition of ε_R.
+> 3. Stage 3 charter — baseline after standard theory. Baseline freedom spaces are computed after imposing causality, positivity, KMS/FDT, Onsager reciprocity, and conservation laws. Relations implied by these earn no credit (D5: BRI1's Tier-1 value is a standard Kubo/FDT quantity).
+> 4. Stage 3 charter — response scope. Each target relation declares whether it concerns quotient-irreducible (nonlinear / non-Gaussian) back-reaction detected by ε_R, or response in general, since ε_R is blind to linear response (R1-NULL ≠ no response).
+> 5. Disable the two-hourly "review VS Code" routine (owner decision, as ChatGPT ruled).
+
+**Owner context (verbatim excerpts):** "R1 is its own observable, but not yet its own physics." … "Stage 3 should not begin by inventing a 𝒦 card immediately. First freeze the Stage-3 null space and scoring charter … before any candidate is generated. Otherwise the candidate itself can redefine what counts as impressive freedom reduction." … "With those in the charter, Stage 3 can't win on a definition or on the fluctuation-dissipation theorem — it has to find a relation that standard physics genuinely leaves free."
+
+**Reconciliation note (Claude Code).**
+- The ruling block lists 𝒜_ε among the baseline spaces. Addition 2 (owner) rules that ε_R is derived and not an independent axis.
+- The charter therefore treats 𝒜_ε as the **image** of 𝒜_Γ × 𝒜_T under ε, not as a free axis. This satisfies both texts.
