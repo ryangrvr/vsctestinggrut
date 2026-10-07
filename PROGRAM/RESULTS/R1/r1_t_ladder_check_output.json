@@ -19,5 +19,11 @@
  ],
  "L5_trials": 240,
  "L5_max_lhs_over_rhs": 0.30555227644967675,
- "L5_inequality_holds": true
+ "L5_inequality_holds": true,
+ "L6_two_mode_skew_reference_driven": [
+  -6.272018935488217e-18,
+  0.7624008098436275
+ ],
+ "L6_two_mode_exact_skew_driven": 0.769800358919501,
+ "L6_two_mode_E2pm_witness_lower_bound": 0.08935907885629675
 }

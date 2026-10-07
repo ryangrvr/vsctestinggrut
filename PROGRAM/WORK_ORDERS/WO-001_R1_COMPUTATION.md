@@ -1,6 +1,6 @@
 # WO-001 — R1 computational package (for VS Code)
 
-**Status: IN PROGRESS — C1 redone (REVIEWED-PENDING on the redo), C2 next.** · Issued 2026-10-06 by Claude Code · Stage 2.
+**Status: IN PROGRESS — executed by Claude Code from 2026-10-07 (VS Code paused).** C1 redo ACCEPTED (Review 2). C2 done, with the Amendment A process fixes (`RESULTS/WO-001/C2_REPORT.md`). C3 next. External checks: `PROGRAM/CHECKS.md`. · Issued 2026-10-06 by Claude Code · Stage 2.
 **Reopened after review (2026-10-06):** C1 = REVIEWED — REVISE. The witness scaling was
 inserted analytically and contradicts BRI1. See `PROGRAM/REVIEW.md`. C2–C4 are not run.
 

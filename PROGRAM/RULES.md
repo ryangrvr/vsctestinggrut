@@ -6,6 +6,8 @@
   `PROGRAM/WORK_ORDERS/`, before doing anything else.
 - End: update `STATE.md` (where we are, what changed, what's next, what's blocked),
   commit, push, and verify the push from the remote.
+- **Builder (from 2026-10-07): Claude Code.** VS Code is paused. Its role in
+  `DIVISION_OF_LABOR.md` is kept but inactive.
 - Work at forest level: every step moves one of the six stages. Target about 80%
   physics and mathematics, about 20% governance. No charter per step; no ruling per
   commit.
@@ -32,6 +34,15 @@
      hand-transcribed numbers.
    - Include at least one exact identity or conserved quantity as a control.
 7. **No novelty claims without the comparator audit.**
+8. **External checking (`PROGRAM/CHECKS.md`).**
+   - Every push that contains a result, a proof or a status change gets one line in
+     `CHECKS.md`: SHA, what it claims, status. Status is `pending`,
+     `checked: ChatGPT`, `checked: Claude` or `issue found`.
+   - Add the line only after the push is verified from the remote, because the
+     checkers read only the remote.
+   - Nothing is banked on `SCOREBOARD.md` (BANK / KILL / status change, including
+     `GRAVEYARD.md` entries) until its `CHECKS.md` line shows at least one external
+     check with no open issue.
 
 **Checkpoints.** Stop and report to the owner after:
 - (a) the continuity files exist;

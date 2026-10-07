@@ -3,6 +3,13 @@
 **Added 2026-10-06 at the owner's direction.** Where this file and the Stage-2 task
 list in `STATE.md` differ, this file governs.
 
+> **STATUS 2026-10-07 (owner): VS Code is PAUSED. Its role is kept but inactive.**
+> - Claude Code builds: it executes the open work orders itself, as well as the
+>   definitions, proofs and audits.
+> - The gate for the scoreboard is now external checking via `PROGRAM/CHECKS.md`
+>   (RULES rule 8), not Claude Code's own review.
+> - Everything below applies again if VS Code is reactivated.
+
 ## Who does what
 
 | | **VS Code** (long autonomous runs) | **Claude Code** (reasoning and review) |

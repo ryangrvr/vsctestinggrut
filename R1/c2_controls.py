@@ -19,8 +19,9 @@ Controls:
          (causal exponential smoothing with different time constants tau_1 != tau_2),
          calibrated (known) but NOT of the signed-affine form.
          - Under T = signed-affine: the per-time standardized skewness differs between
-           protocols (exact formula below), so the witness is NONZERO (false positive:
-           the difference is a calibrated linear filter, not back-reaction).
+           protocols (exact formula below), so the witness is NONZERO. This is the
+           correct value under E2+-, not a false positive: E2+- is not closed under
+           calibrated linear filters (R1_T_LADDER.md), and there is no back-reaction.
          - Under T enlarged to include the calibrated filters K_a: F_a = t_a(xi) with
            t_a = K_a in T by construction -> eps_R = 0 to machine precision
            (demonstrated by exact deconvolution: K_a^{-1} F_a recovers the same xi).
@@ -35,8 +36,12 @@ Scale references:
   - BRI1 witness at the same t* (N_B = 4): |gamma1| = 5.338286e-06 (from C1 redo,
     PROGRAM/RESULTS/WO-001/c1_redo_results.json).
   - Numerical noise floor: exact quantities reproduce to machine precision (two runs
-    identical); a sampled variant (N = 2 x 10^6, fixed seed) calibrates the empirical
-    gamma1 noise floor for judgment of "zero" at finite sample size.
+    identical). A sampled variant calibrates the empirical gamma1 noise floor for
+    judging "zero" at finite sample size. It uses two independent batches of
+    n_sample // m = 31,250 path samples each (2 x 10^6 driver draws per batch, fixed
+    seeds). The floor reported is the max over the 64 grid times of |g_A - g_B|.
+    (Corrected 2026-10-07 by Claude Code: an earlier docstring said N = 2 x 10^6 and
+    the printout said 2 x 20000; neither was the per-time sample size.)
 """
 import json
 import numpy as np
@@ -114,8 +119,8 @@ def c2_ng_affine(n_t=64, m=64, M=(0.0, 0.3), G=(1.0, 2.0)):
 
 def c2_f_filtered(n_t=64, m=64, dt=0.01, taus=(0.05, 0.20), n_sample=2_000_000):
     """C2-F: filtered non-Gaussian control. Two runs:
-       (a) T = signed-affine: witness NONZERO (false positive), eps_R > 0 with the
-           Prop-2a lower bound;
+       (a) T = signed-affine: witness NONZERO (the correct value under E2+-, not a
+           false positive), eps_R > 0 with the Prop-2a lower bound;
        (b) T enlarged with the calibrated filters: eps_R = 0 to machine precision."""
     g1_xi = gamma_skew(2.0)
     Ks = filters(n_t, dt, taus)
@@ -158,7 +163,9 @@ def c2_f_filtered(n_t=64, m=64, dt=0.01, taus=(0.05, 0.20), n_sample=2_000_000):
                        "recovered_xi_rel_dev": rel_dev,
                        "method": "exact deconvolution K_a^{-1} F_a = xi (both protocols "
                                  "recover the identical driver vector)"},
-        "sampled_noise_floor_1e6": floor,
+        "sampled_noise_floor_max_over_times": floor,
+        "sampled_noise_floor_paths_per_batch": n_sample // m,
+        "sampled_noise_floor_batches": 2,
         "g1_xi": g1_xi,
     }
 
@@ -195,13 +202,15 @@ if __name__ == "__main__":
     print(f"      gamma1 P1(k*) = {r_f['gamma1_P1_at_kmax']:+.6f}, P2(k*) = {r_f['gamma1_P2_at_kmax']:+.6f} "
           f"(k* = {r_f['k_max']})")
     print(f"      witness signed max = {r_f['witness_signed_max']:.6f}, |.| max = {r_f['witness_abs_max']:.6f}"
-          f"  -> NONZERO (false positive: calibrated filter, not back-reaction)")
+          f"  -> NONZERO: correct value under E2+- (calibrated filter, not back-reaction)")
     print(f"      Prop-2a scale: witness is {r_f['witness_abs_max']/bri1_w:.2e} x the BRI1 witness")
     print(f"  (b) T enlarged with calibrated filters K_a:")
     print(f"      eps_R = {r_f['enlarged_T']['eps_R']:.1e} to machine precision "
           f"(deconvolution max dev {r_f['enlarged_T']['recovered_xi_max_dev']:.2e}, "
           f"rel {r_f['enlarged_T']['recovered_xi_rel_dev']:.2e})")
     print(f"\nNoise floor: exact quantities reproduce to machine precision; sampled "
-          f"gamma1 floor at 2x{20000}: {r_f['sampled_noise_floor_1e6']:.2e}")
+          f"gamma1 floor (max over times, 2 batches x "
+          f"{r_f['sampled_noise_floor_paths_per_batch']} paths): "
+          f"{r_f['sampled_noise_floor_max_over_times']:.2e}")
     json.dump(out, open(OUT + "c2_controls_results.json", "w"), indent=1, default=str)
     print(f"\nwrote {OUT}c2_controls_results.json")

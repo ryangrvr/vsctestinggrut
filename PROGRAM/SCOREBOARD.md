@@ -7,6 +7,11 @@ Prices are in L₀ (finite sets, maps, interventions, conditional response,
 composition, logic). Target-encoding vocabulary is priced explicitly. Banked F0
 entries keep their record wording.
 
+**Gate (from 2026-10-07, RULES rule 8).** No BANK, KILL or status change is entered
+here, or in `GRAVEYARD.md`, until its `CHECKS.md` line shows at least one external
+check with no open issue. Rows 1–8 predate the gate and carry their record
+provenance.
+
 | # | Claim / commitment | Status | Information price | Source |
 |---|---|---|---|---|
 | 1 | **BRI1:** a finite Duffing bath escapes the shared signed-affine class E₂± (ladder 𝓗 ⊂ E₁ ⊊ E₂± ⊊ E_univ). Quantifiers: ∃δ, ∀t∈(0,δ), ∃N₀(t), ∀N_B ≥ N₀(t). Witness O(1/N_B). | DERIVED | Supplied bath model (Duffing, finite N_B) | `bri1-manuscript` @ `92dc6bb` |

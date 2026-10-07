@@ -20,6 +20,12 @@ not results. A failure means a bug in the note or in this script.
   (L5) Normal-score witness inequality (Prop D3):
          | |E_P N_i^2 N_j| - |E_Q N_i^2 N_j| | <= 3 m^2 * W3(N_P, s N_Q)
        for every sign vector s, where N are normal scores and m = ||N_i||_3.
+  (L6) Mode selection (Prop E2, owner ruling G2-01 item 3b): a two-mode exogenous
+       environment (S symmetric, U skewed, independent; law protocol-independent).
+       Protocol 0 reads S, protocol 1 reads S + U. The maps are linear but not
+       injective (R^2 -> R^1). The reference is exactly symmetric, the driven law is
+       skewed, and the Mardia/skewness witness is > 0, with no back-reaction. This is
+       outside Theorem C's hypothesis, not a counterexample to it.
 """
 import json
 
@@ -182,6 +188,23 @@ for _ in range(60):
 out["L5_trials"] = trials5
 out["L5_max_lhs_over_rhs"] = worst5
 out["L5_inequality_holds"] = bool(worst5 <= 1 + 1e-12)
+
+def m3s(x):
+    z = (x - x.mean()) / x.std()
+    return float((np.abs(z) ** 3).mean() ** (1 / 3))
+
+
+# (L6) two-mode mode selection: symmetric reference, skewed driven, no back-reaction
+n = 200000
+S = rng.standard_normal(n)
+S = np.concatenate([S, -S])                       # exactly symmetric mode
+U = rng.gamma(2.0, 1.0, 2 * n) - 2.0              # skewed mode, independent of S
+F0, F1 = S, S + U                                  # projections (1,0) and (1,1) of (S,U)
+g = lambda x: float(((x - x.mean()) ** 3).mean() / x.std() ** 3)
+out["L6_two_mode_skew_reference_driven"] = [g(F0), g(F1)]
+out["L6_two_mode_exact_skew_driven"] = 4.0 / 3.0 ** 1.5   # kappa3(U)=2k=4, Var = 1 + 2 = 3
+out["L6_two_mode_E2pm_witness_lower_bound"] = abs(abs(g(F0)) - abs(g(F1))) / (
+    2 * (m3s(F0) ** 2 + m3s(F0) * m3s(F1) + m3s(F1) ** 2))
 
 print(json.dumps(out, indent=1))
 json.dump(out, open(__file__.replace(".py", "_output.json"), "w"), indent=1)

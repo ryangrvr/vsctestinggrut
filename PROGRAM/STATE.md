@@ -1,7 +1,10 @@
 # STATE
 
-**Updated:** 2026-10-06 · **Branch:** `grut2` (forked from the SD0 execution tip
+**Updated:** 2026-10-07 · **Branch:** `grut2` (forked from the SD0 execution tip
 `a25d1be`, so the full F0 record is in the tree).
+**Builder:** Claude Code. VS Code is paused (role kept, inactive; `DIVISION_OF_LABOR.md`).
+**External checking:** `PROGRAM/CHECKS.md` (RULES rule 8). Nothing is banked until it is
+checked.
 
 ## Where we are
 
@@ -51,22 +54,58 @@ Kill condition: R1 is killed only if the object is trivial, unidentifiable, or r
 to non-Markovianity or to generic nonlinear response. ε_R is an observable, not the
 law, so overlap with known machinery is acceptable here.
 
-**Stage 2 progress (2026-10-06).**
-- **R1 definition v1 (E₂±):** `PROGRAM/RESULTS/R1/R1_DEFINITION.md`.
-- **v2 interface ladder:** `R1_T_LADDER.md`.
-  - BRI1 escapes every linear interface class, causal or not, at the path level too.
-  - Per-time nonlinear interfaces absorb it at a single time.
-  - The multi-time case is OPEN (WO-002).
-  - Unrestricted T makes R1 trivial.
-- **WO-001 (VS Code):** C1 ACCEPTED. C2 numbers reproduced, with process cleanup
-  pending (Amendment A). Next are C3, then C4.
-- **WO-002 (VS Code):** BRI1's multi-time leading-order channels under T_mono. OPEN.
-- **Identifiability flag:** BRI1's witness at these parameters needs about 10¹¹ samples
-  (Review 2).
+**Stage 2 progress (2026-10-07).** Rulings G2-01 … G2-07 are in
+`PROGRAM/OWNER_RULINGS.md`.
+- **R1 definition, FROZEN** (`PROGRAM/RESULTS/R1/R1_T_LADDER.md` §0).
+  - **T:** T_R1 = GL(k) with translations, plus calibrated nonlinearities removed by
+    known maps.
+  - **Common-carrier / mode-stability commitment:** arbitrary latent dimension, one
+    latent-to-record map h, no h_a.
+  - **d_op:** the bounded-Lipschitz quotient (center, whiten, then O(k)).
+  - **Empirical rule:** a mode-stability certificate is required; otherwise NO
+    RECIPROCITY VERDICT.
+  - **D5 must separate:** (A) calibrated interface, (B) mode selection, (C) a
+    responding environment.
+- **Derived in v3** (pending external check):
+  - Theorem A-BL.
+  - Theorem F: the distance to the symmetric orbit is ≥ |E f_odd|/‖f‖_BL (constant 1,
+    sharp). For two protocols ε_R = ½·d_q exactly, so ε_R ≥ ½·|E f_odd|/‖f‖_BL.
+  - The copula theorem M1 (exact quotient) and M2 (symmetry certificate).
+  - M3: rank J = k.
+  - Mode-selection trivialization E1 and counterexample E2.
+- **WO-001 (Claude Code builds):** C1 ACCEPTED; C2 done, including the process fixes;
+  C3 next. C4 is laboratory preparation and does not block Stage 3.
+- **WO-002 (Claude Code builds; frozen by G2-07):**
+  - **The question:** does BRI1 change its copula class modulo reflections?
+  - **Status:** computation running, with an independent re-implementation as a
+    cross-check.
+  - **Preregistered outcomes:**
+    1. leading-order nonzero → escape at leading order;
+    2. zero → exact finite-N_B radial asymmetry before any verdict;
+    3. exactly one orbit → this branch KILLED.
+- **R1 boundary (G2-08):**
+  - Tier 1, calibrated-readout (GL(k) plus common carrier): BRI1 is **R1-PASS**,
+    banked by ruling; its SCOREBOARD entry waits for the external check.
+  - Tier 2, T_mono with reflections only, is the declared top of R1.
+  - Stopping rule: if BRI1 lies in one copula reflection orbit, the spine ends and Tier 1
+    stays banked.
+- **R1 exit gate:**
+  - (i) T fixed — done;
+  - (ii) WO-002 yes/no;
+  - (iii) d_op frozen with the proved inequality — derived, awaiting check;
+  - (iv) D5, including mode selection — not started.
+  - Then R1 is terminal and Stage 3 opens.
+  - **No Stage-3 candidate is frozen, scored or optimized before then.**
+- **Identifiability flag:** about 10¹¹ samples for BRI1's witness at these parameters
+  (Review 2 and its erratum).
 
 ## Stage definitions 3–6 (pointer)
 
-- **Stage 3.** Ξ ≠ Γ, with Γ_Π = Obs_Π(Ξ). At most three 𝒦 cards. Each card states:
+- **Stage 3** (limits per ruling G2-08 item 8).
+  - **Success criterion:** freedom reduction relative to baseline spaces frozen before
+    any card, plus positive compression, plus a measurable relation.
+  - **Cross-sector** means parameter transfer.
+- Ξ ≠ Γ, with Γ_Π = Obs_Π(Ξ). At most three 𝒦 cards. Each card states:
   - the law;
   - its price in L₀;
   - what it is meant to generate;
@@ -91,11 +130,13 @@ law, so overlap with known machinery is acceptable here.
 ## Blockers
 
 None blocking.
-
-**Owner decision pending: freeze T for R1** (`R1_T_LADDER.md` §6).
-- Recommended: protocol-dependent linear interfaces, with independently calibrated
-  nonlinearities inverted, not fitted.
-- This does not block WO-001 C3/C4 or WO-002.
+- **"Owner decision pending: freeze T" is CLOSED** by rulings G2-01 … G2-08.
+  - The two-tier T, the verdict logic and the stopping rule are in
+    `PROGRAM/OWNER_RULING_R1_BOUNDARY.md`.
+  - `grut2` is not merged into `main` until the R1 terminal.
+- Open proof obligations, all Claude Code's:
+  - M5: the theorem-grade BRI1 copula expansion;
+  - the theorem-grade BRI1 rate for a bounded odd surrogate (`R1_T_LADDER.md` §8.1).
 
 ## Branch map (read-only references)
 

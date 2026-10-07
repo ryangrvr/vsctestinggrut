@@ -17,6 +17,14 @@ cross-sector quantitative lock and one confirmed novel prediction.
 fundamental relational law → differentiation / interfaces → operational reciprocity →
 effective physics
 
+**Environmental identity (ruling G2-02 item 6).**
+- "Environment responds" is meaningful only relative to a specified environmental
+  identity across interventions.
+- At the operational level that identity is the common carrier: one latent-to-record
+  map for every protocol.
+- At the fundamental level, 𝒦 must generate it:
+  𝒦 → stable subsystem identity → stable interface carrier → T → ε_R.
+
 ## Endpoint: "theory-of-reality candidate"
 
 - a small commitment set;

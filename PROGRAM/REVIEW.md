@@ -123,3 +123,20 @@ correction.**
 - Resolving BRI1's effect would therefore need about 10¹¹ samples.
 - The escape is real analytically, but not identifiable from realistic finite data at
   these parameters. Record this before BRI1 is considered as part of any Stage-5 lock.
+
+## Review 2 — erratum (Claude Code, 2026-10-07)
+
+- Review 2 said the sampled skewness noise floor was "0.074 at 2×20,000 samples". The
+  value 0.0738 is right, but the sample size is not.
+- The run (`R1/c2_controls.py`, `c2_f_filtered`) uses two independent batches of
+  2,000,000 / 64 = **31,250 path samples each**. The reported floor is the **maximum
+  over the 64 grid times** of |γ̂_A − γ̂_B|.
+- The "2×20,000" came from a hard-coded print string, which Review 2 repeated without
+  checking it against the code.
+- **Fixed:** the docstring, the JSON keys (`sampled_noise_floor_max_over_times`,
+  `sampled_noise_floor_paths_per_batch`) and the printout now state the actual design.
+  The C2 process items (results JSON, generated `C2_REPORT.md`, "false positive"
+  wording) are done. Claude Code did them, because VS Code is paused.
+- **The identifiability flag is unchanged.** Resolving |Δγ| ≈ 5.3×10⁻⁶ needs
+  n ≈ 6/(5.3×10⁻⁶)² ≈ 2×10¹¹ samples. That is order 10¹¹, as stated, and does not
+  depend on the floor's sample size.
