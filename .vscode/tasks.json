@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Session start: sync grut2-stage3",
+      "type": "shell",
+      "command": "git fetch origin && git checkout grut2-stage3 && git pull origin grut2-stage3 && git log --oneline -5",
+      "problemMatcher": []
+    },
+    {
+      "label": "Kit: run tests",
+      "type": "shell",
+      "command": "python3 test_l0_code.py && python3 test_kit.py",
+      "options": { "cwd": "${workspaceFolder}/PROGRAM/STAGE3/kit" },
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Kit: SEL reproduction (~3 min)",
+      "type": "shell",
+      "command": "python3 sel222.py",
+      "options": { "cwd": "${workspaceFolder}/PROGRAM/STAGE3/kit" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Verify push on remote",
+      "type": "shell",
+      "command": "git fetch origin grut2-stage3 && git rev-parse HEAD origin/grut2-stage3",
+      "problemMatcher": []
+    }
+  ]
+}

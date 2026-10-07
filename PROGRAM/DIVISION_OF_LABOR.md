@@ -3,7 +3,13 @@
 **Added 2026-10-06 at the owner's direction.** Where this file and the Stage-2 task
 list in `STATE.md` differ, this file governs.
 
-> **STATUS 2026-10-07 (owner): VS Code is PAUSED. Its role is kept but inactive.**
+> **STATUS 2026-10-07, later (owner): VS Code is REACTIVATED for the rest of the week; Claude Code is
+> PAUSED (weekly limit at 99%).**
+> - VS Code works from `PROGRAM/HANDOFF_VSCODE.md` and open work orders (now WO-003) only.
+> - The DRAFT rule below applies in full: every proof, verdict or comparator judgment VS Code writes waits for
+>   Claude Code review; the CHECKS gate (RULES 8) still governs banking.
+>
+> *Superseded status (kept for the record):* **STATUS 2026-10-07 (owner): VS Code is PAUSED. Its role is kept but inactive.**
 > - Claude Code builds: it executes the open work orders itself, as well as the
 >   definitions, proofs and audits.
 > - The gate for the scoreboard is now external checking via `PROGRAM/CHECKS.md`

@@ -1,6 +1,6 @@
 # STATE
 
-**Updated:** 2026-10-07 (G2-13: NR-4 kit fix, CR-4).
+**Updated:** 2026-10-07 (handoff to VS Code for the rest of the week; Claude Code paused).
 - **Branch:** `grut2`, forked from the SD0 execution tip `a25d1be`, so the full F0 record
   is in the tree. Per ruling G2-11 it is merged into `main` with history preserved, and
   `grut2` is kept as a historical branch.
@@ -32,6 +32,9 @@ Card 1 (G2-13 item 5).**
 - Kit external-check status: SEL and the tests were checked by the owner. Still pending: the price coder against Appendix B, the HB controls, and the NR-4 fix.
 - Open owner questions are listed in FREEZE_VERIFICATION §13: the undefined K-image at decoupling, and the NR-17(b) cross-reference.
 - No 𝒦 card is generated, frozen, scored or optimized. Card 1 is not opened.
+- **Builder: VS Code** (Claude Code paused, weekly limit). Brief: `PROGRAM/HANDOFF_VSCODE.md`.
+  Open order: `WORK_ORDERS/WO-003_STAGE3_KIT_SUPPORT.md` (computational support for the pending
+  external checks; outputs DRAFT — pending Claude Code review).
 
 ## Last results
 
