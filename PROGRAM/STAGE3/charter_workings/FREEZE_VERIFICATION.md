@@ -268,3 +268,13 @@ resumed later from its cache (workflow run `wf_959efb57-3b2`).
 | 16 | IP-5 infinite price for exact values | Zero-width windows priced at L_stmt of the value's expression (IP-5) |
 | 17 | R_card summed over Evaluator-controlled runs; T_audit clock | R_card over the minimum list only; T_audit from S0–S8 clearance (DC-2, OR-6, App. A) |
 
+## 12. Kit session (G2-12 item 3) and CR-3
+- **Built** (`PROGRAM/STAGE3/kit/`, one session):
+  - (a) the L₀ normalizer and price coder;
+  - (b) the NR-4 ablation harness, with the decoupled-corner exclusion and the excluded fraction reported;
+  - (c), partially: exact ε^{T_lin} zeros on affine-entry HB-3/HB-4 instances, and the static-map witness on HB-4;
+  - (d), the SEL part only: the §2.4 counts reproduced with the SD0 code.
+- **Not built:** every other item. These take the hostile defaults KD-1 to KD-5 of CR-3 (Appendix H). No extension was taken.
+- **Not externally checked.** §19.3 requires that check before the first draft is logged.
+- **NR-4 readings.** The harness's readings of NR-4 are listed in `kit/README.md` for owner ruling.
+
