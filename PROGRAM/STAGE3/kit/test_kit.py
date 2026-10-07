@@ -5,7 +5,7 @@ import os
 import sys
 from fractions import Fraction as Fr
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from nr4_ablation import nr4, appearance  # noqa: E402
+from nr4_ablation import nr4, appearance, exclusion_mask  # noqa: E402
 from hb_controls import eps_tlin_affine_entry, static_map_control  # noqa: E402
 
 PTS = [{'xi': g, 'w': 1, 'fiber': 'A' if g % 2 else 'B'} for g in range(4)]
@@ -48,13 +48,57 @@ def test_decoupled_corner_excluded_and_reported():
 
 
 def test_undefined_image_is_not_appearance():
-    r = appearance(frozenset(), PTS, lambda law, g: None, DEC, HOLDS, W)
+    pipe = lambda law, g: None  # noqa: E731
+    mask = exclusion_mask(FULL, PTS, pipe, DEC, W)
+    r = appearance(frozenset(), PTS, pipe, HOLDS, W, mask)
     assert r['fraction'] == 0 and r['excluded_fraction'] == 0
 
 
+def test_g2_13_constant_law_free_image_relocated():
+    # G2-13 item 1 regression: K varies with coupling; every ablated variant is a constant,
+    # coupling-insensitive image satisfying ℛ★. A per-variant exclusion set emptied K_empty's
+    # denominator and returned NOT-RELOCATED; the K-computed set must return RELOCATED
+    pipe = lambda law, g: {'o': (0 if g else 7) if 'c1' in law else 0}  # noqa: E731
+    r = run(pipe)
+    assert r['verdict'] == 'RELOCATED'
+    assert r['runs']['K_empty']['fraction'] == 1
+    # one exclusion set for every variant and the responsibility map
+    assert len(set(r['excluded_fraction_reported'].values())) == 1
+    assert r['responsibility'] == {'c1': False, 'c2': False}
+
+
+def test_g2_13_deletion_cannot_empty_its_denominator():
+    # a single-clause deletion that becomes coupling-insensitive and still satisfies ℛ★
+    # must not be scored 0 (which would falsely mark the clause responsible)
+    pipe = lambda law, g: {'o': (0 if g else 7) if {'c1', 'c2'} <= law  # noqa: E731
+                           else (0 if 'c1' in law else 3 * g + 3)}
+    r = run(pipe)
+    assert r['verdict'] == 'NOT-RELOCATED-BY-NR-4'
+    assert r['responsibility'] == {'c1': True, 'c2': False}
+
+
 def test_all_excluded_is_void():
-    r = run(lambda law, g: {'o': 0})
-    assert r['verdict'].startswith('VOID')
+    # ℛ★ everywhere ({'o': 0}) and nowhere ({'o': 5}): every point is a corner under K, so
+    # the verdict is VOID and no fraction or responsibility entry is reported over 0/0
+    for c in (0, 5):
+        r = run(lambda law, g: {'o': c})
+        assert r['verdict'].startswith('VOID')
+        assert all(v['fraction'] is None for v in r['runs'].values())
+        assert set(r['responsibility'].values()) == {'VOID'}
+        assert set(r['responsibility_lock_fiber'].values()) == {'VOID'}
+
+
+def test_responsibility_reported_per_lock_fiber():
+    # points off the lock fiber dilute the overall fraction; the per-fiber report keeps Q4's
+    # "on some lock-fiber instance" readable
+    pts = [{'xi': g, 'w': 1, 'fiber': 'A' if g == 1 else None} for g in range(1, 5)]
+    pipe = lambda law, g: ({'o': 0 if g else 7} if {'c1', 'c2'} <= law  # noqa: E731
+                           else {'o': 0 if g == 1 else 9} if 'c1' in law else {'o': 9})
+    r = nr4(points=pts, pipeline=pipe, decouple=DEC, holds=HOLDS, W_width=W, Q_min=2,
+            **VARIANTS)
+    assert r['verdict'] == 'NOT-RELOCATED-BY-NR-4'
+    assert r['responsibility'] == {'c1': True, 'c2': True}
+    assert r['responsibility_lock_fiber'] == {'c1': ['A'], 'c2': []}
 
 
 def test_hb3_hb4_exact_zero_tlin():
