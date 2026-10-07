@@ -7,7 +7,9 @@ block, additions 1–4, and the reconciliation note on 𝒜_ε) · **Working rec
 
 > **Status: CHARTER FROZEN ALONE** (`0bc125a`), **re-frozen with charter repair CR-1**
 > (owner ruling G2-12; Appendix H), plus **CR-3**: hostile defaults for the kit items
-> left unfinished (G2-12 item 3; Appendix H; `kit/README.md`).
+> left unfinished (G2-12 item 3; Appendix H; `kit/README.md`), and **CR-4**: the NR-4
+> exclusion set computed once under 𝒦, auditor-built ablation variants, and the CR-2
+> queue as a binding design constraint (owner ruling G2-13; Appendix H).
 > - This file contains **no candidate law**. No 𝒦 is proposed, sketched, named,
 >   exemplified or optimized here. Every construction in §24 is an abstract gaming
 >   pattern labelled **CHARTER TEST**; the self-tests use only known textbook objects.
@@ -1200,7 +1202,12 @@ calibrations; scope declarations; imports, unfolded.
   item 5):** every point at which all lock observables are within ρ_abl of their values
   on the S–E-decoupled family (the same Ξ with every S–E coupling set to zero) is
   excluded from both numerator and denominator, and the excluded fraction is reported
-  with the NR-4 verdict. Any internal copy of a law clause inside a component (PC-6) is
+  with the NR-4 verdict. **The excluded set is computed once, under the full law 𝒦, and
+  the identical set is removed for 𝒦_∅, 𝒦_𝒮, every single-clause deletion and the
+  responsibility map** (G2-13 item 1); if it is all of Dom_gate, NR-4 is VOID and ℛ★ is not
+  GENERATED. **The ablated variants are constructed by the auditor, never by the card
+  author** (G2-13 item 2); the four numbered kit readings of `kit/README.md` (accepted,
+  G2-13 item 2) govern the harness. Any internal copy of a law clause inside a component (PC-6) is
   ablated together with 𝒦. The responsibility map is recorded and feeds Q4, Q11, D_sel, JN and the
   GRAVEYARD return test.
 - **NR-5 Symmetric-input probe** (mandatory). On AI-2 instances (Aut transitive on V
@@ -2460,6 +2467,10 @@ before any scoring; every field is mandatory.
 Every field, battery prediction and the lock register are frozen before the card's
 evaluation. Authors never see that card's sealed holdouts, seeds or intake results
 before it is frozen (earlier cards' verdicts are visible under BU-6). Lock preregistration follows MC-5, MC-8 and G5-LOCK.
+Card authors design as if each of the seven items Q-1 to Q-7 of the CR-2 queue
+(`charter_workings/CR2_QUEUE.md`) applies (G2-13 item 3); an item is skeptic-verified and
+applied, tightening only and rescoring toward failure, the first time a card's verdict
+depends on it.
 
 ---
 
@@ -2935,4 +2946,5 @@ them in either direction (§19.2). "v1" is `charter_workings/CHARTER_V1_WITH_LED
 |---|---|---|---|
 | CR-1 | G2-12 (pre-Card-1, §19.2) | Items 1–6 of G2-12: N_cred = 100 confirmed; sequential evaluation, with each card's C1 listing the earlier rulings and verdicts it used; the kit authorized after this re-freeze (priority a–d, T_kit one session); scope-Q accepted; NR-4 decoupled-corner exclusion, with the ablation tolerance set to the chart cell instead of σ_pre; DEF-14 kept, with the catalogue-class workaround. Plus the 17 confirmed too-strict fixes of the CR-1 audit round: NR-12(b)/(d) for generated non-KMS stationary laws; §2.2 fixed values; Q1 exception for selectivity embeddings; the Appendix G reading in MC-6; SC1 nontrivial reduction for SCOPE-G; the decoupled-corner exclusion in Q3(c) and NR-17(b); AI-2 inside the domain; the persistence granularity allowance; HB-5 with filters removed; G5-HOLD prospective holdouts; MC-4 power against a separated rival; 𝓗 in ℛ★-coordinates; HB composition ranges; E_std and ℛ★ pricing; IP-5 exact values; DC-2 resources and T_audit timing. The record is `charter_workings/FREEZE_VERIFICATION.md` §11 | Loosening only (as G2-12 scoped); loopholes queued in `charter_workings/CR2_QUEUE.md`, unapplied |
 | CR-3 | G2-12 item 3 (kit unfinished items; tightening, §19.2) | The kit (`PROGRAM/STAGE3/kit/`) built (a) the price coder, (b) the NR-4 harness, part of (c) (exact ε^{T_lin} zeros for affine-entry HB-3/HB-4 instances; the static-map witness on HB-4) and the SEL part of (d) (2961 / 1721 / 1232 / 8, 240, 2721, the 8 PR boxes). Everything else on the §19.3 validation list takes these hostile defaults. **KD-1** (ε ≡ 0 on single-protocol families; the zeros on HB-1, on HB-5 with calibrated filters, and at T_Π; HB-9 MODE SELECTION; the sign of BRI1's Tier-1 PASS on HB-2; STD-1 on every HB family; anything more in the PR-forcing lemma): the Evaluator builds the check with charter code at the stage that needs it, inside R_card, and it is externally checked before that card's verdict is banked; a check not built, validated and checked in time fails for that card, and the claim it gates is not GENERATED and earns no credit (SCOPE-Q is unavailable unless the §2.5 zeros at the card's T_Π are verified). **KD-2** (B-CF vectors): consistency collapse is presumed (D_sel = 0, selectivity a KNOWN SECTOR, SFP-10 comparators mandatory) unless the Evaluator computes the B-CF vectors with charter code inside R_card and they are externally checked. **KD-3** (ST-6 to ST-9 not computed): they stand as the §24 paper derivations; no card may cite their uncomputed status in its favour, and a dispute that turns on what one would return is resolved by CV-1. **KD-4** (rejection tests not built, including the DIF-5(e) wiring of the HB-4 static map): the auditor applies the rules from the charter text; the absence of a kit test never counts in a card's favour; CV-1 governs. **KD-5** (decoder battery RB/SPS; transplant, W-pipe and substitution harnesses; regime surrogates; VB checklists; ε witness enclosures): built per card by the Evaluator inside R_card; one not built and validated in time means the gate it serves is not passed (the X it would certify is not GENERATED; a Q3(c) transplant that cannot be run is presumed to succeed). The NR-4 harness readings are listed in `kit/README.md` for owner ruling; CV-1 governs disputes until then | Tightening only |
+| CR-4 | G2-13 (kit review, pre-Card-1, §19.2) | (1) NR-4: the decoupled-corner set is computed once under the full law 𝒦 and the identical set is applied to 𝒦_∅, 𝒦_𝒮, every single-clause deletion and the responsibility map; the kit had recomputed it per variant, so a coupling-insensitive 𝒦_∅ emptied its own denominator and returned a false NOT-RELOCATED (owner's external check). Kit fixed, with regression tests. (2) The four numbered NR-4 kit readings of `kit/README.md` are accepted (its builder notes are not); the ablated variants are constructed by the auditor, never by the card author (NR-4). (3) The CR-2 queue is not applied now; it is a binding design constraint: card authors design as if all seven items apply, and an item is skeptic-verified and applied (tightening only, rescoring toward failure) the first time a card's verdict depends on it (§19.4; `CR2_QUEUE.md`). (4) The external-check status is recorded in `PROGRAM/CHECKS.md` (RULES 8) once the push is verified. Card 1 is not opened | Items (2)–(3) tighten only. Item (1) is a kit fix made before Card 1 (§19.2) that can move an NR-4 verdict in either direction |
 

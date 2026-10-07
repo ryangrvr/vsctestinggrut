@@ -278,3 +278,34 @@ resumed later from its cache (workflow run `wf_959efb57-3b2`).
 - **Not externally checked.** §19.3 requires that check before the first draft is logged.
 - **NR-4 readings.** The harness's readings of NR-4 are listed in `kit/README.md` for owner ruling.
 
+## 13. Owner review of the kit (G2-13) and CR-4
+- **External check (owner).**
+  - The SEL values were reproduced independently with non-SD0 code.
+  - The kit tests pass.
+  - **NR-4 defect found:** the exclusion set was recomputed per law variant, so a coupling-insensitive K_∅ emptied its own denominator and returned a false NOT-RELOCATED.
+- **Fix.** The exclusion set is now computed once under K and shared by every variant and by the responsibility map. Two regression tests were added; both fail on the pre-fix harness and pass on the fix. `test_kit.py` gives 10 ok and `test_l0_code.py` gives 10 ok.
+- **CR-4.** Records G2-13 items 1–3 in the NR-4 text, in §19.4, in Appendix H and in the `CR2_QUEUE.md` status.
+- **Still pending external check:**
+  - the price coder against Appendix B;
+  - the HB controls;
+  - the G2-13 NR-4 fix and its post-review hardening.
+- **Adversarial check of the fix before push** (workflow `wf_f46f253f-8eb`; three lenses: card-favouring gaps, too-strict effects, conformance; a skeptic re-ran each serious finding).
+  - 14 findings; 11 survived. All 11 were applied, except G213-TS-2/G213-8, which goes to the owner (second open question below).
+  - **Fixed in the kit.**
+    - VOID case: the responsibility map had marked every clause responsible from 0/0. Every run fraction is now None and every responsibility entry is 'VOID' (G213-A, G213-3).
+    - A zero-weight lock fiber had been scored 0/0 = 0. It is now skipped (G213-C).
+    - A per-lock-fiber responsibility report was added for Q4 (G213-B; additive).
+  - **Fixed in the text.**
+    - README reading 3 got back its accepted sentence "never a fraction of 0 over an empty domain".
+    - The fiber-skip and responsibility semantics moved to builder notes, which are not part of the accepted readings (G213-D, G213-2).
+    - The CR-4 direction cell is corrected: item 1 can move a verdict either way (G213-4).
+    - The CR-4 CHECKS wording is corrected (G213-5).
+    - The pending lists now include the fix itself (G213-6).
+    - §19.4 now names the seven items Q-1 to Q-7 and says "rescoring toward failure" (G213-7).
+  - **Refuted.**
+    - G213-1: the overall responsibility flag matches the NR-4 text.
+    - G213-TS-1: the K-once set with undefined K-images is the ruled behaviour.
+- **Open questions for the owner (CV-1 governs meanwhile):**
+  1. **Undefined K-image at the decoupled family (G213-TS-1).** Where K's image at decouple(Ξ) is undefined, no point is excluded for any variant. The weak-corner protection of G2-12 item 5 then lapses at those points, so a variant whose two sides vanish together there can be counted as an appearance. This is the ruled behaviour under G2-13 item 1 with reading 1. Restoring the protection would need a new pre-Card-1 ruling, for example defining the decoupled value as a limit.
+  2. **NR-17(b) cross-reference (G213-TS-2, G213-8).** NR-17(b) takes the "S–E-decoupled value (as defined for NR-4)". It is open whether that value is computed under 𝒦, as in the new NR-4 sentence, or under the split 𝒦₂. Under 𝒦 it tightens and may kill. Under 𝒦₂ it partly leaves the G2-13 pattern open. The text is left unchanged for the owner to rule.
+

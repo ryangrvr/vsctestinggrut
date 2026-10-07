@@ -414,3 +414,38 @@ back clean."
   seven of its findings are loopholes; they go to the CR-2 queue, unapplied.
 - For CR-1's too-strict scope, the hidden-kill and feasibility lenses are run once on
   the frozen text. The other lenses are not re-run, to conserve the owner's budget.
+
+## G2-13 — KIT REVIEW, PRE-CARD-1 · 2026-10-07
+
+**Owner text (verbatim ruling block):**
+
+> OWNER RULING G2-13 — kit review, pre-Card-1
+>
+> 1. NR-4 kit defect (external check): the decoupled-corner set is recomputed per
+>    law variant, so a coupling-insensitive K_∅ excludes every point and scores
+>    fraction 0 over an empty domain → false NOT-RELOCATED (reproduced on a toy).
+>    FIX: compute the excluded set ONCE under the full law K; apply the identical
+>    set to K_∅, K_𝒮 and every single-clause deletion (and the responsibility map).
+>    Add a regression test: constant law-free image satisfying ℛ★ → RELOCATED.
+>    Rerun test_kit.py; push; this is a kit fix before any draft (§19.2).
+> 2. NR-4 readings 1–4: accepted. Ablation variants are constructed by the auditor,
+>    not the card author.
+> 3. CR-2 queue: not applied now. It is preregistered as a binding design
+>    constraint: card authors design as if all seven items apply. An item is
+>    skeptic-verified and applied (tightening only, rescoring toward failure) the
+>    first time a card's verdict depends on it.
+> 4. External check status: SEL values independently reproduced with
+>    non-SD0 code (pNS 2961, local 1721, logical 1232, strong 8 = PR boxes,
+>    realizable 2721, gap 240). Kit tests pass. Price coder vs App. B and the HB
+>    controls remain pending external check.
+> 5. Card 1 is not opened by this ruling. STOP after the fix.
+
+**Owner context (verbatim excerpts):** "Claude Code's 'never report a fraction of 0 over
+an empty domain' rule only guards the full law K, not the ablations." … "Otherwise a
+variant could be written to fail, return nothing, and dodge the test, which is the same
+pattern as loophole Q-4 in the queue." … "Anything applied now can't be loosened once
+Card 1 exists, so a fix that turns out too strict would kill an honest card for good."
+
+**Builder notes (Claude Code).**
+- Item 1 is a kit fix. Items 2 and 3 are recorded in the charter as CR-4 (Appendix H; NR-4 text; `CR2_QUEUE.md` status). Both are tightening only.
+- The `r1-terminal` tag push remains with the owner (the proxy blocks tag pushes from the builder side).

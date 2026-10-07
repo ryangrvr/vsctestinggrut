@@ -1,7 +1,10 @@
 # CR-2 queue — loopholes found after the freeze (UNAPPLIED)
 
-**Status:** recorded and not applied, per owner ruling G2-12 ("Record loopholes in a
-CR-2 queue, unapplied (tightening stays available under §19.2)"). Each item tightens a
+**Status (G2-13 item 3, binding):** not applied now, and preregistered as a binding
+design constraint. Card authors design as if all seven items apply. An item is
+skeptic-verified and applied (tightening only, rescoring toward failure) the first time a
+card's verdict depends on it. Recorded originally under owner ruling G2-12 ("Record
+loopholes in a CR-2 queue, unapplied (tightening stays available under §19.2)"). Each item tightens a
 rule, so it can be applied at any time, including after Card 1 (rescoring moves only
 toward failure). Every pattern below is an abstract CHARTER TEST; none is a candidate
 law. The §24.1 presumption already covers them as working-record patterns.
