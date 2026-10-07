@@ -1,6 +1,6 @@
 # STATE
 
-**Updated:** 2026-10-07.
+**Updated:** 2026-10-07 (Stage-3 charter frozen).
 - **Branch:** `grut2`, forked from the SD0 execution tip `a25d1be`, so the full F0 record
   is in the tree. Per ruling G2-11 it is merged into `main` with history preserved, and
   `grut2` is kept as a historical branch.
@@ -15,10 +15,17 @@
 
 **Stage 1 (SD0): COMPLETE.** **Stage 2 (R1): TERMINAL, ACCEPTED** (G2-11, at `dbfd64b`).
 
-**Stage 3: AUTHORIZED TO OPEN — charter phase.**
-- The Stage-3 charter is written and frozen **alone**, before any 𝒦 candidate exists.
-- Then STOP for owner review before Card 1.
-- No 𝒦 card is generated, frozen, scored or optimized before that review.
+**Stage 3: CHARTER FROZEN ALONE at `0bc125a` (branch `grut2-stage3`). STOP — owner
+review before the evaluation kit or Card 1.**
+- Charter: `PROGRAM/STAGE3/STAGE3_CHARTER.md`. Working record and audit dispositions:
+  `PROGRAM/STAGE3/charter_workings/` (`FREEZE_VERIFICATION.md`).
+- No 𝒦 card is generated, frozen, scored or optimized, and the §19.3 kit is not built,
+  before that review.
+- Residual items for the owner: FREEZE_VERIFICATION §5 (credit bar at c_J = 1;
+  sequential vs batch evaluation; kit authorization; scope-Q practicality; NR-4
+  weak-coupling corner; DEF-14 with injective T_Π). The loop-until-dry audit was stopped
+  to conserve budget; resuming it and applying its fixes as CR-1 before Card 1 is
+  recommended.
 
 ## Last results
 
@@ -121,7 +128,7 @@ differentiation and makes interface/response structure non-independent:
 
 ## Blockers
 
-None. The owner reviews the Stage-3 charter before Card 1.
+None. Waiting on owner review of the frozen Stage-3 charter (`0bc125a`).
 
 ## Branch map
 
