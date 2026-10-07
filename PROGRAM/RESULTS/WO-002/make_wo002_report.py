@@ -21,15 +21,20 @@ for row in d["rho_free"]:
     L.append("    " + "  ".join(f"{x:+.10f}" for x in row))
 L += ["", "## Odd sector: A_abc (third-order normal-score tensor off span{T^(m)}), formal leading "
       "order; copula coordinate = A/N_B", "",
-      "| Protocol(component) | A (primary: method A, h = 0.06) | quadrature spread | |A|/spread | GH192 |",
+      "| Protocol(component) | A (primary: method A, h = 0.06) | quadrature spread | abs(A)/spread | GH192 (weak rule) |",
       "|---|---|---|---|---|"]
 for k, v in d["odd_channel_A"].items():
     r = v["ratio_to_spread"]
     L.append(f"| {k} | {v['value']:+.10e} | {v['spread']:.2e} | {r:.2e} | {v['GH192']:+.6e} |"
              if r is not None else f"| {k} | {v['value']:+.10e} | 0 | — | {v['GH192']:+.6e} |")
+L += ["", "GH192 is the PF4Q archive's Gauss–Hermite rule with exp(−x⁴/4) folded into the "
+      "weights. That rule converges slowly: the cross-check measures max abs(K − primary) = "
+      "6.6e−4 at n = 192 and 1.1e−14 at n = 3072, and a true Gauss rule for the full weight "
+      "agrees to 8e−15. It is listed for continuity with the archive and is not used in the "
+      "spreads."]
 L += ["", "## Even sector: Δρ_ab (normal-score correlation change, formal leading order; "
       "copula coordinate = Δρ/N_B; read via |ρ^N| modulo reflections)", "",
-      "| Protocol(pair) | Δρ (primary) | quadrature spread | |Δρ|/spread | GH192 |",
+      "| Protocol(pair) | Δρ (primary) | quadrature spread | abs(Δρ)/spread | GH192 (weak rule) |",
       "|---|---|---|---|---|"]
 for k, v in d["even_channel_drho"].items():
     r = v["ratio_to_spread"]
@@ -55,8 +60,21 @@ for p, rows in d["finite_NB"].items():
         L.append(f"| {r['N_B']} | " + " | ".join(f"{r['N_B_times_drho'][c]:+.6e}" for c in pairs) + " |")
     L.append("")
 if xc is not None:
-    L += ["## Independent cross-check (separate implementation)", "", "```",
-          json.dumps(xc.get("summary", xc), indent=1)[:6000], "```", ""]
+    L += ["## Independent cross-check (separate implementation, `xcheck/`)", "",
+          "Written from the spec alone, without reading `wo002_copula_channels.py` or "
+          "`pf4q_core.py`. Its own quadrature rules and fixed-step RK8 integrator; "
+          f"primary rule: {xc['primary_rule']}.", "",
+          f"- max abs(K − archived K_A06) = {xc['max_abs_dev_K_vs_archive_K_A06']:.2e}",
+          f"- m₂ − exact (mpmath) = {xc['m2_exact_minus_quad']:.1e}", "",
+          "| Quantity | max abs(primary − cross-check) |", "|---|---|"]
+    for p in (1, 2):
+        dA = max(abs(d["odd_channel_A"][f"P{p}{k}"]["value"] - v)
+                 for k, v in xc[f"P{p}"]["A"].items() if f"P{p}{k}" in d["odd_channel_A"])
+        dR = max(abs(d["even_channel_drho"][f"P{p}{k}"]["value"] - v)
+                 for k, v in xc[f"P{p}"]["drho"].items())
+        L.append(f"| P{p} A_abc (7 off-diagonal) | {dA:.2e} |")
+        L.append(f"| P{p} Δρ_ab (3 pairs) | {dR:.2e} |")
+    L.append("")
 L += ["## Preregistered reading (applied mechanically; G2-07)", "",
       f"- P1: {', '.join(d['reading_P1'])}",
       f"- P2: {', '.join(d['reading_P2'])}", "",

@@ -30,7 +30,7 @@ Methods:
      The cumulant-level coordinates of F are then multiplied by N_B.
 
 Exact controls (each can fail):
-  - A_aaa = 0;
+  - A_aaa = 0 (exact on stationarity-preserving rules; reported per rule);
   - marginal-only synthetic control gives A = 0;
   - parity: Cov(x0, y1) = 0;
   - stationarity: E x0(t)^2 = m2 at every t in tau;
@@ -223,12 +223,16 @@ def main():
               "tau": NAMES, "m2": prim["m2"], "rho_free": prim["rho"],
               "controls": {}, "odd_channel_A": {}, "even_channel_drho": {}, "finite_NB": {}}
     ctl = report["controls"]
-    ctl["A_aaa_max_abs"] = max(abs(runs[r]["proto"][p]["A"][(i, i, i)])
-                               for r in runs if r.startswith("A_") for p in (1, 2) for i in range(3))
+    # A_aaa = Kt_aaa (1 - rho_aa^2): exact zero iff rho_aa = 1, i.e. iff the rule preserves
+    # stationarity. Reported per rule: GH192 is a cross-check rule with a known ~1e-6
+    # stationarity error (PF4Q treats it the same way).
+    ctl["A_aaa_max_abs_by_rule"] = {r: max(abs(runs[r]["proto"][p]["A"][(i, i, i)])
+                                           for p in (1, 2) for i in range(3))
+                                    for r in runs if r.startswith("A_")}
     ctl["marginal_only_control_max_abs_A"] = marginal_only_control()
     ctl["parity_cov_x0_y1_max"] = max(runs[r]["proto"][p]["parity_cov_x0_y1_max"]
                                       for r in runs if r.startswith("A_") for p in (1, 2))
-    ctl["stationarity_maxdev"] = max(runs[r]["stationarity_maxdev"] for r in runs if r.startswith("A_"))
+    ctl["stationarity_maxdev_by_rule"] = {r: runs[r]["stationarity_maxdev"] for r in runs if r.startswith("A_")}
     ctl["gibbs_m2_plus_m4_minus_1"] = {r: runs[r]["m2_plus_m4_minus_1"] for r in runs if r.startswith("A_")}
     ctl["harmonic_control"] = harmonic_control()
     kdev = 0.0

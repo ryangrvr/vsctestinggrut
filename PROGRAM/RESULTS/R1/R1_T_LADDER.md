@@ -16,10 +16,36 @@ and govern where they differ.*
   invariant, so laws with different ranks lie in different orbits.
 
 **Common-carrier / mode-stability commitment** (replaces G2-01's "latent dimension").
-- **The model:** Z ~ P★ on any latent space, of arbitrary dimension; W := h(Z), with
-  **one** latent-to-record map h for all protocols; and Y_a = t_a(W) with t_a ∈ T_R1.
-- **What is excluded:** protocol-dependent mode selection, h ↦ h_a.
-- **Consequence:** Theorem C applies verbatim with P★ = Law(W) (§10).
+
+*Precise form, v3.1, after workflow verification; see "Why instantaneous" below.*
+- **Environment state process.** Z = (Z(t))_t is the environment's state process. Its
+  state space may have any dimension.
+- **Common carrier.** **One** fixed readout channel h is applied to the environment's
+  **instantaneous** state, W(t) := h(Z(t)), on **one** fixed time base and sampling
+  grid, for every protocol. A calibrated fixed filter of h(Z) also counts. Then
+  Y_a = t_a(W), with t_a ∈ T_R1.
+- **Exogenous null:** Law(Z) does not depend on the protocol.
+- **Back-reaction:** the protocol changes Law(Z) through the system.
+- **Mode selection** (excluded by the commitment): the protocol changes the readout
+  channel h ↦ h_a. That includes channel weights, time windows or trigger phases,
+  sampling grids, and filter memory reaching outside the record.
+- **Consequence:** under the null, P★ = Law(W) is shared, and Theorem C applies verbatim
+  (§10).
+
+**Why instantaneous.** If h could be any functional of the *initial* environment state,
+then every closed system would be "exogenous with mode selection". For example, BRI1's
+X1 can be written F_q = 𝔉_t[q, z₀], with z₀ ~ Gibbs independent of q (BRI-UPPER:
+X1 ∈ E_univ). The applicability test would then exclude the very model it is meant to
+certify. With the instantaneous definition, X1 has carrier PASS (one readout,
+N_B^(−1/2)·Σ_j x_j(t)), and its protocol dependence is back-reaction.
+
+**Record completeness (design check).**
+- If interfaces are filters of one driver, the record must contain the full support of
+  every interface kernel, past **and** future, at driver resolution, with every K_a
+  invertible on the record.
+- This is **sufficient** for a common read subspace, not equivalent to it.
+- Injectivity is required **into the observed record**: a path-level bijective filter
+  whose memory falls outside the grid is mode selection at the grid level.
 
 **Distance.**
 - d_op is the bounded-Lipschitz quotient distance:
@@ -42,6 +68,28 @@ and govern where they differ.*
   that (i) the interface nonlinearity is known, and (ii) the protocols do not change
   which environmental modes couple.
 - Without a certificate the verdict is **NO RECIPROCITY VERDICT**, not ε_R > 0.
+- **What the certificate must cover.** Each item is tied to a mechanism that a loophole
+  hunt found NOT excluded by the earlier wording. Workflow verification is recorded in
+  CHECKS.
+  1. **Interface is deterministic, invertible and calibrated.** Residual uncalibrated
+     curvature must be below the witness: 3σ·|φ″_res/φ′| < |witness| at every
+     operating point. For BRI1 at N_B = 4 that is about 1.8×10⁻⁶/σ.
+  2. **Readout noise is protocol-independent and calibrated.** Calibrated nonlinearities
+     must be removed on noise-free data or with a noise model. Additive noise is a
+     kernel, not a map, so "removed by known maps" does not cover it.
+  3. **No random (run-to-run) interface gains or offsets** beyond a calibrated
+     stationary model. Mixtures of affine images of a symmetric law can be skewed.
+  4. **One fixed time base, sampling grid and trigger phase.** No protocol-dependent
+     clock jitter, latency, window or phase of a nonstationary environment.
+  5. **One readout channel with fixed weights.** No push-pull reweighting of
+     environmental sources.
+  6. **Record completeness**, as above.
+  7. **No outcome-dependent selection:** no vetoes, cuts or lock-loss rejection.
+  8. **Only invertible calibrated nonlinearities.** Saturation, clipping and
+     quantization are excluded unless provably inactive.
+  9. **The protocol acts on the environment only through the system.** No actuator
+     heating, EMI, vibration or other cross-talk.
+  10. **Estimation is controlled:** equal or modelled per-protocol sample sizes (D4).
 
 **D5 must discriminate three explanations:**
 - (A) an unchanged environment plus a calibrated interface transformation;
@@ -106,10 +154,15 @@ equilibrium ensemble and readout; protocols change only the forcing.
 interface maps; C2-F showed this. Does BRI1's escape survive once T is enlarged?
 
 **Answer.**
-- **Against every linear interface class: yes, BRI1 still escapes.** This holds causal
-  or not, calibrated or not, at the grid level and at the path level. The reason is
-  structural: P0 is exactly sign-symmetric, and no linear map can create an odd
-  cumulant (Theorem C).
+- **Against every linear interface acting on a common carrier: yes, BRI1 still
+  escapes.**
+  - That means interfaces injective on the shared environment record (v3.1 wording).
+  - This holds causal or not, calibrated or not, at the grid level and at the path
+    level.
+  - The reason is structural: P0 is exactly sign-symmetric, and an **injective** linear
+    map cannot create an odd cumulant (Theorem C).
+  - **Without injectivity (mode selection) the claim is false:** see §10 E2. The v2
+    wording "every linear interface class" overclaimed and is corrected here.
 - **Against per-time nonlinear interfaces at a single time: no, it is absorbed**
   (Prop. D1).
 - **Against per-time nonlinear interfaces across times: OPEN.** The question reduces to
@@ -199,7 +252,9 @@ The first innovation is Y₁ standardized, so the first-time skewness is a T_cau
 Later times enter only through their innovations.
 
 **(B2) T_lin (Mardia skewness).** Let W = s_lin(P) and
-√β₁(P) := ‖E W^⊗3‖_F (Mardia's multivariate skewness). Let μ_P := (E|W|³)^(1/3),
+√β₁(P) := ‖E W^⊗3‖_F. This is Mardia's multivariate skewness β₁,k = E[((X−μ)ᵀΣ⁻¹(Y−μ))³]
+for independent copies, as quoted in Koizumi–Okamoto–Seo, TR08-14 §2.1. The primary text
+(Biometrika 57:519, 1970) was not inspected. The tensor identity is proved directly. Let μ_P := (E|W|³)^(1/3),
 with Euclidean |·|. Then:
 
 | √β₁(P) − √β₁(Q) | ≤ d_q^lin(P, Q)·Λ_PQ, where Λ_PQ = μ_P² + μ_Pμ_Q + μ_Q².
@@ -250,7 +305,23 @@ Since A^⊗3 has smallest singular value σ_min(A)³:
   moment and κ₃ ≠ 0. A symmetric law with a finite third moment has κ₃ = 0.
   Contradiction. ∎
 
-**Remarks on (C1).**
+**Remarks on (C1), with v3.1 corrections from workflow verification.**
+- **Measurability, not continuity.** Step 2 needs ℓ to be measurable, not continuous.
+  For a finite-dimensional record it is automatic, via a left inverse.
+- **First-kind Volterra filters are not bijections of C[0, 2π].** For example,
+  (Ky)(t) = ∫₀ᵗ τ⁻¹e^(−(t−s)/τ)y(s)ds maps onto {g ∈ C¹ : g(0) = 0}.
+  - "C2-F's filters are an instance" holds for the discretized, unit-diagonal
+    lower-triangular filters actually run (`R1/c2_controls.py`). Those are bijective on
+    ℝ⁶⁴.
+  - For continuous-time first-kind filters, replace "bijective" with "injective, with a
+    measurable inverse on the range".
+- **Strengthening: only the reference interface must be injective.**
+  - Suppose t₀ is injective with a measurable inverse on its range. Then for **any**
+    measurable affine t₁, every t_a#P★ is centrally symmetric whenever P0 is. In finite
+    dimensions the sharp condition is ker K₀ ⊆ ker K_a.
+  - This is a strengthening of the theorem, **not** a licence to weaken the commitment:
+    ε_R is reference-free, and Theorem A's quotient form needs T to be a group. T_R1
+    keeps every K_a invertible.
 - **Why C2-F differs.** C2-F is absorbed because its protocols are linear images of one
   *skewed* law. BRI1 is not absorbed because its reference law is exactly *symmetric*,
   and the driven law has acquired an odd cumulant.
@@ -379,11 +450,18 @@ the lattice, not both.
 
 **(E) Unrestricted interfaces trivialize R1.**
 - **Claim.** If T contains every bimeasurable bijection (per protocol), then any family
-  of atomless laws lies in one T-orbit, mod null sets. So ε_R ≡ 0 for every d_op that
-  vanishes on equal laws.
-- **Source.** The isomorphism theorem for measures on standard Borel spaces (Kechris,
-  *Classical Descriptive Set Theory*, Thm 17.41; cited from memory — primary-text check
-  pending).
+  of atomless laws lies in one T-orbit, exactly (see the source below). So ε_R ≡ 0 for
+  every d_op that vanishes on equal laws.
+- **Source.** The isomorphism theorem for measures (Kechris, *Classical Descriptive Set
+  Theory*, GTM 156, 1995, Thm 17.41).
+  - Every continuous (atomless) Borel probability measure on a standard Borel space is
+    carried to Lebesgue measure on [0, 1] by a Borel isomorphism.
+  - So the isomorphism is **exact**, not merely "mod null sets". Number and statement
+    were confirmed by the workflow literature check.
+- **Atomlessness is essential.** Under Borel bijections, the multiset of atom masses is
+  an orbit invariant.
+- **If non-injective Borel maps are allowed,** every family is absorbed: every Borel
+  probability on a standard Borel space is a Borel image of Lebesgue measure.
 - **Consequence.** That is R1's kill condition "trivial". "Maximal" in STATE.md cannot
   mean unrestricted, which is consistent with "no unrestricted per-protocol maps".
 
@@ -446,7 +524,7 @@ is a COMMITMENT priced in L₀ plus vocabulary.
 |---|---|
 | D1 — ε_R = 0 on exogenous processes factoring through T | **DERIVED for every grid-level class on the ladder** (Theorem A(i)). Path-level linear filters: zero when the grid contains the filter support; a path-space d_op is OPEN. |
 | D2 — BRI1 as a special case | **Lower bounds DERIVED for E₂±, T_caus and T_lin** (v1 Cor. 4; C2). Path-level linear non-factorization DERIVED (C1). Per-time nonlinear interfaces: single time absorbed (D1); multi-time OPEN (D4, two channels, WO-002). Rate, upper bound and reservoir limit OPEN. |
-| D3 — invariance and coarse-graining | As in v1, plus: zero sets are monotone along the ladder. |
+| D3 — invariance and coarse-graining | As in v1 for **E₂±**. Zero sets are monotone along the ladder. **Correction (v3.1):** monotonicity under time-marginalization **fails for T_lin**: a swap counterexample takes ε_R from 0 on {1, 2} to ≥ 0.0518 on {1}. It also fails for T_caus on non-initial subgrids. It holds for E₂±, and for T_caus on initial segments, under both W₃ and BL. |
 | D4 — finite-data identifiability | **OPEN.** Review 2 flag: BRI1's witness at these parameters needs about 10¹¹ samples. |
 | D5 — comparator audit | Not started. Kill-condition flag above. |
 
@@ -489,8 +567,10 @@ Let 𝒮 be the set of laws on ℝ^k that are centrally symmetric about 0, and R
   *Proof.*
   - **(≥)** For S ∈ 𝒮: d_BL(P, R#P) ≤ d_BL(P, S) + d_BL(S, R#P)
     = d_BL(P, S) + d_BL(R#S, R#P) = 2·d_BL(P, S).
-  - **(≤)** S₀ := ½P + ½R#P lies in 𝒮. Since d_BL is an integral probability metric,
-    it is affine in each argument, so d_BL(P, S₀) = ½·d_BL(P, R#P).
+  - **(≤)** S₀ := ½P + ½R#P lies in 𝒮. Since d_BL(μ, ν) is a **seminorm of the signed
+    measure** μ − ν, and P − S₀ = ½(P − R#P), we get d_BL(P, S₀) = ½·d_BL(P, R#P).
+    *(v3.1 correction: the earlier justification "d_BL is affine in each argument" is
+    false. Counterexample: P = ½δ₁ + ½δ₋₁ with Q₁ = δ₁, Q₂ = δ₋₁.)*
   - **The sup over odd f.** For any admissible f, E_P f − E_{R#P} f = 2·E_P f_odd, with
     f_odd(y) = (f(y) − f(−y))/2. Moreover ‖f_odd‖_∞ ≤ ‖f‖_∞ and
     Lip(f_odd) ≤ Lip(f). So d_BL(P, R#P) = 2·sup over odd admissible f of |E_P f|. ∎
@@ -503,8 +583,10 @@ Let 𝒮 be the set of laws on ℝ^k that are centrally symmetric about 0, and R
   - **(≥)** Theorem A-BL (ii).
   - **(≤)** Let O be optimal and Q := ½·Law(P̃1) + ½·Law(O·W̃0). Both components have
     mean 0 and covariance I, so Q has mean 0 and covariance I, and Q̃ = Q.
-  - Then d_BL(P̃1, Q) = ½·d_BL(P̃1, O#P̃0) and d_BL(O#P̃0, Q) = the same, by
-    affinity. ∎
+  - Then P̃1 − Q = ½(P̃1 − O#P̃0) and O#P̃0 − Q = −½(P̃1 − O#P̃0). By the seminorm
+    property, both distances equal ½·d_BL(P̃1, O#P̃0).
+  - The lower bound needs only central symmetry of P0. The exactness of (F2) needs both
+    covariances nonsingular. ∎
 
 - **(F3) The witness-to-bound theorem.** Let P0 be centrally symmetric about its mean,
   and take any P1.
@@ -525,8 +607,12 @@ Let 𝒮 be the set of laws on ℝ^k that are centrally symmetric about 0, and R
 
 - **(F4) Why the route fails under T_mono in raw coordinates, and where it survives.**
   - **It fails in raw coordinates.** Coordinatewise monotone maps do not commute with
-    R. For example, with k = 1, Y ~ N(0,1) is symmetric but e^Y is skewed. So P0's
-    T_mono-orbit is not contained in 𝒮.
+    R.
+    - Example: k = 1, Y ~ N(0,1), and φ(y) = y for y ≤ 0, φ(y) = 2y for y > 0. This φ
+      is a T_mono element; the earlier example e^Y was not, because it is not a
+      bijection of ℝ.
+    - φ#N(0,1) has exact skewness 0.7595. So P0's T_mono-orbit is not contained in 𝒮.
+    - The **conclusion** fails as well as the proof route, by D1.
   - **It survives in normal-score (copula) coordinates.** There the T_mono-orbit acts by
     coordinate sign flips, which commute with R. A centrally symmetric P0 has a
     radially symmetric copula (§9), so (F1)–(F3) apply verbatim with the normal-score
@@ -535,9 +621,41 @@ Let 𝒮 be the set of laws on ℝ^k that are centrally symmetric about 0, and R
     ε_R^(mono,BL) ≥ ½·sup over odd g of |E g(N₁)| / ‖g‖_BL.
 
   - **At a single time,** N₁ ~ N(0,1) exactly, so this is 0. That is D1 again.
+  - **Hypotheses.** Only "C₀ radially symmetric" is needed. (F2) holds verbatim for
+    T_mono, because a mixture of laws with N(0,1) margins has N(0,1) margins.
+  - **This is a sufficient condition only.** Exactly, it is positive if and only if C₁
+    is radially asymmetric. A nonzero E[N_aN_bN_c] is sufficient for that but not
+    necessary.
+  - **Choose bounded-Lipschitz odd witnesses for k ≥ 2.**
+    - tanh(c·n_a·n_b·n_c) is **not** globally Lipschitz.
+    - Use products of bounded odd Lipschitz functions instead, e.g.
+      g = tanh(n_a)·tanh(n_b)·tanh(n_c), with ‖g‖_∞ ≤ 1 and Lip ≤ √3.
+    - In 1-D, tanh(c·H₃) is fine.
+  - **"Rotations" means all of O(k), reflections included.** Under SO(k) at k = 1 the
+    quotient would not absorb y ↦ −y, which is in T_lin.
 
-**Prop. G (BRI1: rate of a bounded odd surrogate)** — see §8.1. Its status is set by
-the workflow verification recorded in CHECKS.
+**Prop. G (BRI1: rate of a bounded odd surrogate)** — see §8.1 below.
+
+### 8.1 Prop. G — BRI1 rate of a bounded odd surrogate (G2-02 item 4, second part)
+
+**Claim, at a single time t*.**
+- **Witness.** f_c := tanh(c·H₃), with H₃(z) = z³ − 3z. It is odd, C^∞ with bounded
+  derivatives, and has ‖f_c‖_∞ ≤ 1 and finite Lip.
+- **Expansion.** E_{P1} f_c(W₁) = (γ₁(P1)/6)·E_φ[f_c H₃] + o(N_B⁻¹), where
+  - γ₁(P1) = K(t*,t*,t*)/(N_B m₂^(3/2)) + O(N_B⁻²);
+  - E_φ[f_c H₃] > 0, because x·tanh(cx) ≥ 0.
+- **The constant.** C = K·E_φ[f_c H₃]/(6m₂^(3/2)) ≠ 0, negative, by BRI1 T1–T2, under
+  BRI1's quantifiers. No numerical δ or N₀ is claimed.
+- **Consequence.** By (F3), ε_R^(T_R1) ≥ |C|/(2‖f_c‖_BL N_B) + o(N_B⁻¹).
+
+**Status: under verification.**
+- The leading structure is confirmed by the workflow verification so far: odd f
+  annihilates the κ₄ and κ₃² Hermite terms, and E_φ[f_c H₃] > 0.
+- The remainder needs a smooth-function expansion whose constants are **uniform over
+  BRI1's triangular array** (the summand law depends on ε = N_B^(−1/2)). The source
+  (Barbour 1986 / Bhattacharya–Rao) and that uniformity are being checked.
+- This is not claimed as DERIVED until the check closes. The result is recorded in
+  CHECKS.
 
 ## 9. Coordinatewise monotone interfaces: the copula theorem (WO-002 freeze, ruling G2-07)
 
@@ -640,6 +758,17 @@ the workflow verification recorded in CHECKS.
   - At formal order 1/N_B, the change in normal-score correlation equals the Pearson
     change Δρ_ab/N_B computed from C2. Marginal corrections enter at O(N_B⁻²).
   - |ρ^N_ab| then changes by sign(ρ⁰_ab)·Δρ_ab/N_B when ρ⁰_ab ≠ 0.
+- **Bounded even witness (v3.1).** ρ^N is an unbounded moment, so it does not directly
+  lower-bound d_BL; the reflection route of F4 sees only odd asymmetry.
+  - Take g_ab(n) := tanh(n_a)·tanh(n_b). Then ‖g_ab‖_∞ ≤ 1 and Lip ≤ √2.
+  - Every R_S ∈ ℛ multiplies g_ab by ±1, so |E g_ab| is ℛ-invariant.
+  - Hence | |E_P g| − |E_Q g| | ≤ |E_P g − E_{R_S Q} g| ≤ ‖g‖_BL·d_BL(N_P, R_S N_Q) for
+    every S. Minimizing over S, and using Theorem A-BL (ii):
+
+    **ε_R^(mono) ≥ max_ab | |E_{P1} g_ab(N)| − |E_{P0} g_ab(N)| | / (2‖g_ab‖_BL).**
+
+  - At formal leading order, E g_ab(N) moves by (∂/∂ρ)E_ρ[tanh(Z_a)tanh(Z_b)]·Δρ_ab/N_B.
+    That derivative is nonzero for |ρ| < 1.
 
 **M4 — BRI1 computation and preregistered outcomes (fixed before the numbers are read).**
 - **The question.** Does BRI1's intervention family move to a different copula
@@ -680,27 +809,49 @@ the workflow verification recorded in CHECKS.
 - **Theorem C** (C1 path level, C2 grid level) then applies verbatim with P★ = Law(W).
   The latent space of Z may have any dimension.
 
-**(E1) Protocol-dependent carriers make linear T trivial** (G2-01 item 3a).
+**(E1) Linear interfaces from a latent space of unrestricted dimension (necessarily
+non-injective) make R1 trivial** (G2-01 item 3a).
 - **Construction.** Let Z = (Z_a)_{a∈A} have independent coordinates with Z_a ~ P_a, on
-  ℝ^{k|A|}. Let h_a := π_a, the projection onto copy a, which is linear. Then
+  (ℝ^k)^A. Let h_a := π_a, the projection onto copy a, which is linear. Then
   h_a#Law(Z) = P_a exactly, for every family.
-- **Consequence.** Every intervention family is absorbed with identity interfaces and
-  M_a = 0. This is the universal-exogenous ceiling, reached linearly. The exact
-  relation to BRI0's E_univ is in CHECKS (workflow verification).
-- **What fails.** The maps h_a differ across protocols, which is mode selection, so the
-  common-carrier commitment fails. In the grid setting each h_a is also non-injective.
+  - No shifts, moments, independence or atomlessness are needed. The path-level and
+    uncountable-A versions hold too.
+- **Relation to E_univ.** On BRI0 §4's admissible domain (environment causality, i.e.
+  non-anticipating families), the zero set of unrestricted linear-latent T coincides
+  with grid-level E_univ.
+  - Every such family even has a causal linear representation: 0/1 selections from a
+    latent indexed by the protocols' prefix tree.
+  - So "the E_univ ceiling reached linearly" holds in this strong form.
+  - The plain product projections are causal only for prefix-separated protocols. That
+    does not cover X1's P1 and P2, which agree on [0, π].
+- **What blocks absorption.** Per-map conditions do **not** block it (full rank,
+  surjectivity, nondegenerate output). A **cross-protocol** kernel condition does:
+  equal kernels on the latent fluctuation span. Equivalently, the interfaces are
+  injective after quotienting the common kernel. For Theorem C alone,
+  ker K₀ ⊆ ker K_a suffices (§4 remarks).
+- **The excess-dimension dichotomy.**
+  - Theorem C is protected at excess 0, where excess := dim ker K₀ on the direction
+    space of aff supp P★.
+  - It breaks at excess 1, for every k with nondegenerate laws.
+  - The excess needed to *absorb* a given family can be larger: k(|A| − 1) always
+    suffices.
 
 **(E2) The physical counterexample outside the commitment** (G2-01 item 3b; check L6).
-- **Construction.** Take S symmetric and U skewed, independent; the environment's law is
-  protocol-independent. Protocol 0 reads S; protocol 1 reads S + U.
+- **Construction.** Take S symmetric with nonsingular Cov S, and U skewed, independent;
+  the environment's law is protocol-independent. Protocol 0 reads S; protocol 1 reads
+  S + U.
+- **What "exogenous" requires physically.** U's law must not depend on the protocol.
+  That needs a one-way (skew-product) or non-reciprocal readout of U, or the limit in
+  which U's response vanishes. A reciprocal Hamiltonian coupling A(q)·U would drive U,
+  and that is back-reaction.
 - **Result.** The reference is exactly symmetric and the driven law is skewed (exact
   γ = 4/3^(3/2) ≈ 0.770 in L6), and there is no back-reaction.
 - **What it shows.** The maps (1, 0) and (1, 1) from ℝ² to ℝ are linear but select
   modes. So E2 lies outside Theorem C's hypothesis; it does not contradict Theorem C. It
   is why the mode-stability certificate is mandatory.
 
-**(E) The unrestricted ceiling** — as in §5. It stays a cited standard theorem until the
-primary-text check closes.
+**(E) The unrestricted ceiling** — as in §5 (Kechris Thm 17.41; exact Borel
+isomorphism; atomless laws).
 
 **North-star consequence (G2-02 item 6).** "Environment responds" is meaningful only
 relative to a specified environmental identity across interventions. Operationally,
@@ -712,6 +863,58 @@ that identity is the common carrier; at the fundamental level, 𝒦 must generat
 |---|---|
 | T scope (exit i) | **FROZEN** (§0). The commitment is priced: linear readout structure + common carrier + calibration protocol. |
 | d_op (exit iii) | **FROZEN**: BL quotient. Theorems A-BL and F are DERIVED here; external check pending (CHECKS). Prop. G: see §8.1. |
-| T_mono survival (exit ii) | Exact theorem (M1, M2) DERIVED. BRI1 leading-order coordinates: WO-002 results below. Theorem-grade BRI1 copula escape: OPEN (M5). |
+| T_mono survival (exit ii) | Exact theorem (M1, M2) DERIVED. **WO-002 answer: YES**, outcome 1, escape at leading order, for P1 and P2 in both sectors (§11.1). Grade: numerical evidence at formal leading order. Theorem grade: OPEN (M5). |
 | D5 (exit iv) | Not started. It must discriminate A / B / C, including mode selection. |
 | D4 / C4 | OPEN; laboratory preparation; does not block Stage 3. |
+
+### 11.1 WO-002 result (read after the boundary ruling G2-08 was on the remote)
+
+`PROGRAM/RESULTS/WO-002/REPORT.md` is generated from `wo002_results.json` and
+cross-checked by an independent implementation in `xcheck/`.
+
+**Controls.** Every exact control passes on both primary trapezoid rules:
+- A_aaa: 9×10⁻¹⁶ and 3×10⁻¹³;
+- stationarity: 3×10⁻¹⁶ and 1×10⁻¹³;
+- m₂ + m₄ − 1: −2×10⁻¹⁶ and 0;
+- marginal-only control: 2×10⁻¹⁵;
+- parity: 4×10⁻¹⁶;
+- harmonic bath: 1×10⁻¹⁴;
+- K against the archive: 3×10⁻¹⁶.
+
+The archive's GH192 rule is weak, with a stationarity error of 1.2×10⁻⁶. It is
+reported per rule and excluded from the spreads.
+
+**Odd sector (radial asymmetry, M2).** All 7 off-diagonal A_abc are nonzero for P1
+and for P2, at 2×10⁶ to 3×10⁸ times the quadrature spread. Examples:
+- P1(π, 3π/2, 2π) = +0.37602;
+- P2(π, 3π/2, 2π) = +0.56381.
+
+**Even sector (M3 witnesses, read modulo ℛ).** All 3 Δρ_ab are nonzero, at 3×10⁶ to
+3×10⁹ times the spread. Example: P2(π, 2π) = +0.96390.
+- **Base correlations** on τ: ρ = −0.609, −0.154, −0.609. None is near 0, as the G2-08
+  item 7 check requires. So reflections cannot absorb the change.
+
+**N_B scaling.** The finite-N_B cumulant-level coordinates, times N_B, converge to the
+leading-order values with O(1/N_B) corrections. For example, P1 A(π,π,3π/2):
+−0.175, −0.202, −0.217, −0.225, −0.230, −0.232 → −0.2338. So the first detectable
+copula invariants scale as **1/N_B**.
+
+**Cross-check.** The independent implementation agrees to ≤ 2×10⁻¹⁴ on every A and Δρ.
+
+**Preregistered reading, applied mechanically.**
+- **P1:** ESCAPE-ODD and ESCAPE-EVEN.
+- **P2:** ESCAPE-ODD and ESCAPE-EVEN.
+- That is **outcome 1: escape at leading order**.
+
+**Verdict under G2-08.**
+- The carrier is PASS, and the protocol classes under Tier 2 (T_mono) are different at
+  leading order.
+- So: **Tier 2, readout-robust reciprocity: R1-PASS at evidence grade (formal leading
+  order).** The theorem grade remains OPEN (M5).
+- Finite-witness asymmetry: an escape on this finite grid is a process-level escape.
+
+**Remaining to the R1 terminal.**
+- (iii) The external check of the v3/v3.1 theorems (A-BL, F, M1–M3) and of Prop. G.
+- (iv) D5, the comparator audit, including mode selection.
+- M5 and Prop. G are proof obligations of rigour. They are not exit-gate items unless
+  the owner rules otherwise.

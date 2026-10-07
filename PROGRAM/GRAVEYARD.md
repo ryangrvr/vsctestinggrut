@@ -31,3 +31,11 @@ automatically.
   QUANTITATIVE PREDICTIONS". bridge-1 (`record-integration-01`).
 - **Selector campaign at current screen:** "NO-GO AT CURRENT SCREEN — REQUIRES A NEW
   NAMED CANDIDATE TO REOPEN". selector-screen-1.
+- **"Maximal" interface class T read literally:** that is, unrestricted bimeasurable
+  bijections, or linear maps from a latent space of unrestricted dimension /
+  protocol-dependent carriers. Either trivializes ε_R: every family of atomless laws is
+  absorbed exactly (Kechris Thm 17.41), and linear projections from a product latent
+  reach the E_univ ceiling. `R1_T_LADDER.md` Prop. E, §10 E1 @ `82d311e` (checked).
+- **"Latent dimension ≤ k" as the T commitment:** physically dubious for multimode baths.
+  It was replaced by the common-carrier / mode-stability commitment (G2-02), which
+  allows arbitrary latent dimension.

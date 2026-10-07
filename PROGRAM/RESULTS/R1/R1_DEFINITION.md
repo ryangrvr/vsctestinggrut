@@ -95,6 +95,10 @@ Then:
   - The bound on ε_R follows from Prop. 1(ii).
 - **(2b).** E[U_iU_j − V_iV_j] = E[(U_i − V_i)U_j + V_i(U_j − V_j)]
   ≤ ‖U_i − V_i‖₂ + ‖U_j − V_j‖₂ ≤ 2W₂ ≤ 2W₃. Here we used ‖U‖₂ = ‖V‖₂ = 1. ∎
+  - *Correction (2026-10-07, workflow verification).* Under the fixed W₃-optimal
+    coupling, the step "≤ 2W₂" is not justified, because ‖U − V‖₂ for that coupling is
+    ≥ W₂. The conclusion is still correct: ‖U − V‖₂ ≤ ‖U − V‖₃ = W₃, so the bound is
+    ≤ 2W₃. Alternatively, choose a W₂-optimal coupling to get 2W₂.
 
 **Proposition 3 (total variation, W₁ and W₂ cannot support a skewness bound).**
 Take P_η = (1−η)·N(0,1) + η·δ_c with c = η^(−1/3). As η → 0:

@@ -1,6 +1,8 @@
 # WO-002 — BRI1 against coordinatewise monotone interfaces (T_mono): copula class modulo reflections
 
-**Status: IN PROGRESS — executed by Claude Code (VS Code paused).**
+**Status: DONE — PENDING EXTERNAL CHECK.** Outcome 1: escape at leading order for P1 and
+P2, in both sectors (`PROGRAM/RESULTS/WO-002/REPORT.md`; `R1_T_LADDER.md` §11.1).
+Executed by Claude Code (VS Code paused).
 - **Freeze:** owner ruling **G2-07** (2026-10-07). It supersedes v1 of this file, issued
   2026-10-06; v1 is in git history.
 - **Stage:** 2, R1 exit-gate item (ii).

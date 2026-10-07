@@ -75,10 +75,14 @@ law, so overlap with known machinery is acceptable here.
   - Mode-selection trivialization E1 and counterexample E2.
 - **WO-001 (Claude Code builds):** C1 ACCEPTED; C2 done, including the process fixes;
   C3 next. C4 is laboratory preparation and does not block Stage 3.
-- **WO-002 (Claude Code builds; frozen by G2-07):**
-  - **The question:** does BRI1 change its copula class modulo reflections?
-  - **Status:** computation running, with an independent re-implementation as a
-    cross-check.
+- **WO-002 (Claude Code builds; frozen by G2-07): DONE — pending external check.**
+  - **Answer: YES — outcome 1, escape at leading order.**
+  - The odd sector (7 components) and the even sector (3 pairs) are nonzero for P1 and
+    P2, at ≥ 10⁶ times the quadrature spread. They scale as 1/N_B.
+  - An independent re-implementation agrees to 2×10⁻¹⁴.
+  - **Tier 2: R1-PASS at evidence grade** (formal leading order). Theorem grade OPEN
+    (M5).
+  - Report: `PROGRAM/RESULTS/WO-002/REPORT.md`. Note: `R1_T_LADDER.md` §11.1.
   - **Preregistered outcomes:**
     1. leading-order nonzero → escape at leading order;
     2. zero → exact finite-N_B radial asymmetry before any verdict;
@@ -91,13 +95,18 @@ law, so overlap with known machinery is acceptable here.
     stays banked.
 - **R1 exit gate:**
   - (i) T fixed — done;
-  - (ii) WO-002 yes/no;
+  - (ii) WO-002 — YES, at evidence grade;
   - (iii) d_op frozen with the proved inequality — derived, awaiting check;
   - (iv) D5, including mode selection — not started.
   - Then R1 is terminal and Stage 3 opens.
   - **No Stage-3 candidate is frozen, scored or optimized before then.**
 - **Identifiability flag:** about 10¹¹ samples for BRI1's witness at these parameters
   (Review 2 and its erratum).
+- **Next (Claude Code):**
+  - D5, the comparator audit (A / B / C, including mode selection), which is the last
+    exit-gate item;
+  - the proof obligations M5 and Prop. G (§8.1);
+  - WO-001 C3, then C4 (laboratory preparation; does not block Stage 3).
 
 ## Stage definitions 3–6 (pointer)
 

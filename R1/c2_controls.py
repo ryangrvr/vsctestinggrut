@@ -5,9 +5,12 @@ class T; there is no back-reaction (the drivers are not influenced by the system
 
 Controls:
   C2-G   Gaussian colored (OU-style) baseline. Per-time law is Gaussian under every
-         protocol -> gamma1 = 0 identically. Labeled: unable to fire under any linear
-         processing (Gaussianity is preserved by linear maps, so no affine/filter
-         enlargement can create a skewness witness).
+         protocol -> gamma1 = 0 identically. The SKEWNESS witness cannot fire under any
+         linear processing, because Gaussianity is preserved by linear maps.
+         (Corrected 2026-10-07: under E2+- with k >= 2 time points, protocol-dependent
+         filters of a Gaussian driver DO fire the cross-time correlation witness of
+         R1_DEFINITION Prop. 2b. They are absorbed only under T_lin, because
+         nonsingular Gaussians form one GL(k) orbit.)
 
   C2-NG  Non-Gaussian shared noise entering ONLY through M_a, G_a (affine per protocol):
          F_a = M_a + G_a * xi, xi shared. EXACT CONTROL: the maps t_a(x) = M_a + G_a*x
