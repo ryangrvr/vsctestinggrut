@@ -1,0 +1,12 @@
+{
+  "pNS": 2961,
+  "local": 1721,
+  "logical": 1232,
+  "strong": 8,
+  "logical_realizable": 992,
+  "gap": 240,
+  "realizable_supports": 2721,
+  "local_all_realizable": true,
+  "strong_realizable_equals_PR_boxes": true,
+  "matches_frozen": true
+}
