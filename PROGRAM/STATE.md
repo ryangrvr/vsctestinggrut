@@ -1,6 +1,6 @@
 # STATE
 
-**Updated:** 2026-10-07 (Stage-3 charter frozen).
+**Updated:** 2026-10-07 (Stage-3 charter CR-1 re-freeze, evaluation kit, CR-3).
 - **Branch:** `grut2`, forked from the SD0 execution tip `a25d1be`, so the full F0 record
   is in the tree. Per ruling G2-11 it is merged into `main` with history preserved, and
   `grut2` is kept as a historical branch.
@@ -15,17 +15,18 @@
 
 **Stage 1 (SD0): COMPLETE.** **Stage 2 (R1): TERMINAL, ACCEPTED** (G2-11, at `dbfd64b`).
 
-**Stage 3: CHARTER FROZEN ALONE at `0bc125a` (branch `grut2-stage3`). STOP — owner
-review before the evaluation kit or Card 1.**
+**Stage 3: CHARTER FROZEN ALONE at `0bc125a`, re-frozen with CR-1 at `0b414e6` (ruling
+G2-12); evaluation kit at `f6ba47f`; CR-3 kit hostile defaults at `5aef9a4` (branch
+`grut2-stage3`). STOP before Card 1.**
 - Charter: `PROGRAM/STAGE3/STAGE3_CHARTER.md`. Working record and audit dispositions:
   `PROGRAM/STAGE3/charter_workings/` (`FREEZE_VERIFICATION.md`).
-- No 𝒦 card is generated, frozen, scored or optimized, and the §19.3 kit is not built,
-  before that review.
-- Residual items for the owner: FREEZE_VERIFICATION §5 (credit bar at c_J = 1;
-  sequential vs batch evaluation; kit authorization; scope-Q practicality; NR-4
-  weak-coupling corner; DEF-14 with injective T_Π). The loop-until-dry audit was stopped
-  to conserve budget; resuming it and applying its fixes as CR-1 before Card 1 is
-  recommended.
+- The §5 residual items were ruled in G2-12 (items 1–6) and applied as CR-1. Seventeen
+  too-strict fixes were also applied; loopholes are queued in `CR2_QUEUE.md`, unapplied.
+- Kit (`PROGRAM/STAGE3/kit/`): (a) price coder, (b) NR-4 harness, (c) partial, (d) SEL
+  reproduced. The rest takes the CR-3 hostile defaults. It needs an external check before the first draft.
+- No 𝒦 card is generated, frozen, scored or optimized. The owner decides when Card 1
+  opens, and whether to apply the CR-2 queue and rule on the NR-4 harness readings
+  (`kit/README.md`).
 
 ## Last results
 
@@ -128,7 +129,7 @@ differentiation and makes interface/response structure non-independent:
 
 ## Blockers
 
-None. Waiting on owner review of the frozen Stage-3 charter (`0bc125a`).
+None. STOP before Card 1: waiting on owner review of CR-1 (`0b414e6`), the kit (`f6ba47f`) and CR-3 (`5aef9a4`).
 
 ## Branch map
 
