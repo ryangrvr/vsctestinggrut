@@ -194,3 +194,20 @@ Pre-GRUT-2 rulings stay on their F0 branches (`F0_OWNER_RULING_0X.md`).
 Recorded verbatim in its own file, as the owner directed:
 `PROGRAM/OWNER_RULING_R1_BOUNDARY.md`. It was committed before the WO-002 result was
 read.
+
+---
+
+## G2-09 — WO-002 external check and R1 closeout · 2026-10-07
+
+**Owner text (verbatim directive block; preceded by the owner's remote verification of `cb81a3b`):**
+
+> FOR CLAUDE CODE — WO-002 external check and R1 closeout
+>
+> 1. CHECKS: `cb81a3b` → checked: Claude (external), no issues. Verified on remote: preregistered reading applied correctly (odd 7/7, even 3/3, both protocols; ratios ≥ 2×10⁶ against a 10² threshold); all exact controls pass (diagonal A, marginal-only control, parity, Gibbs identity, harmonic control, K reproduction); base correlations not near zero, so reflections cannot absorb Δρ; N_B·A converges to the leading coefficients. Note: P2(π, 2π) has |Δρ| ≫ |ρ|, so the leading-order formula is stretched at small N_B; this is consistent with the evidence-grade label.
+> 2. Scoreboard: enter Tier 2 R1-PASS (readout-robust reciprocity), evidence grade, with the grading: odd channel = dual-branch escape (T_lin and T_mono separately); even channel = T_mono-only; no claim about the generated join; conditional on the carrier certificate; theorem grade pending M5.
+> 3. R1 synthesis must state four things: (i) the observable ε_R^(T)(S:E) as failure of protocol separability modulo a declared calibrated interface class; (ii) the identification limit — with unrestricted protocol-dependent readouts, the test records admit an exact mode-selection representation, so reciprocity is not identifiable from them alone; (iii) conditional inference — R1-PASS requires both an independently established carrier/readout invariance (the dynamical analog of measurement invariance) and quotient separation; (iv) the BRI1 calibration with its tiers and grades.
+> 4. Remaining gate: D5, the comparator audit, now explicitly including generic nonlinear response, measurement non-invariance, process non-Markovianity, causal-identification quantities, and mode selection. After D5: R1 terminal, then the `grut2` → `main` merge decision, then Stage 3 (evidence-grade R1 is sufficient to open it, clearly labeled).
+
+**Owner context (verbatim excerpt):** "the measurement-invariance analogy is the established name for exactly the identification issue we found, and Stage 3 should aim to derive an objective equivalence class of readouts, [h]_T, rather than a unique formula." … "This is the first result in the program's history that is both genuinely positive and fully checked … It isn't new fundamental physics yet — but it's a real, defensible operational object, which is exactly what Stage 3 needed to start from."
+
+**Implemented in:** the SCOREBOARD #11 / CHECKS commit after `eb980f1`; `PROGRAM/RESULTS/R1/R1_SYNTHESIS.md`; D5 (`PROGRAM/RESULTS/R1/D5_COMPARATOR_AUDIT.md`).
