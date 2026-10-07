@@ -230,3 +230,41 @@ resumed later from its cache (workflow run `wf_959efb57-3b2`).
 - Before the first 𝒦 draft, the owner may amend any rule in either direction (§19.2).
   The recommended next step, budget permitting, is to resume the loop and apply its
   confirmed fixes as a numbered charter repair (CR-1) before Card 1.
+
+## 11. CR-1 (owner ruling G2-12) — too-strict repairs before Card 1
+- **Scope (G2-12).** Apply only findings that make a rule too strict. Record loopholes in
+  `CR2_QUEUE.md`, unapplied. No loop-until-dry.
+- **Round run.** The hidden-kill and feasibility lenses ran once over the frozen text
+  (`0bc125a`), and each BLOCKER/MAJOR finding was checked by an independent skeptic.
+  Workflow run `wf_2f4534e0-697`; full results in `AUDIT_CR1_too_strict.json`.
+- **Result.** 17 findings were confirmed as too strict, with verified final wording;
+  none was refuted. All 17 were applied in the skeptics' final wording, which corrects
+  the original proposals so that they open no loophole. Two MINOR findings:
+  - IP-4 "no longer" is now measured in L_stmt bits (applied).
+  - Dimension certificates for sets outside Im (noted for the kit; no text change).
+- **G2-12 items 1–6.** Applied: §1.5, C1, §19.3, Appendix A, §14, DEF-14 and NR-4 (with
+  the r_lock/σ_pre decoupling).
+- **Round A loopholes lens.** Seven loopholes, queued in CR-2 unapplied.
+- **Not run.** Round A's consistency, self-test, conformance and remaining lenses were
+  not re-run (G2-12 scope; budget). The CR-1 edits were not re-audited.
+
+| # | Too-strict defect | Fix (where) |
+|---|---|---|
+| 1 | Generated stationary law poisoned every stationary card (NR-12(b)); NR-12(d) existential | Poison only steps that use an FDR, fluctuation theorem, regression or Onsager form derived from a certified non-KMS stationary law; NR-12(d) needs presence on a KMS instance (NR-12) |
+| 2 | Inputs outside the HB ranges emptied 𝔐_std, so b_J = 0 | Values fixed by θ_dict or BP-5 inputs are taken even outside the ranges (§2.2, §15.4, §15.5) |
+| 3 | Q1 undefined on selectivity embeddings | Exception: Q1 is not evaluated on Emb(Σ) items (Q1) |
+| 4 | Appendix G absolutes are unsatisfiable on any platform | Magnitude clauses bounded and propagated; design clauses exact; discrete records (MC-6) |
+| 5 | SC1's {ε > r_lock} killed SCOPE-G | Applies to SCOPE-Q only (§2.5) |
+| 6 | Weak-coupling draws made Q3(c) and NR-17(b) fire | Decoupled-corner exclusion (Q3(c), NR-17(b)) |
+| 7 | AI-2 outside the domain killed threshold-symmetric cards | AI-2 inside the domain, or admitting a zero-mean perturbation (§1.5, NR-5, DIF-7) |
+| 8 | Persistence thresholds below one relatum at n = 8–16 | 1/abs(V) floors and the single-relatum allowance (§1.3, §15.7, App. A) |
+| 9 | HB-5 exact zero failed every T_Π without filters | Filters removed with their known maps first (§15.3, DIF-5(e)) |
+| 10 | G5-HOLD unsatisfiable for card-specific templates | Prospective holdouts allowed; a search shortfall is an auditor-side void (G5-HOLD) |
+| 11 | MC-7 power unreachable against a rival near 3σ | Power computed against a rival at least (z_obs + 2)σ_pre outside J_K (MC-4) |
+| 12 | 𝓗 required B-HB models to reproduce every chart coordinate | 𝓗 taken in the ℛ★-coordinates; standard consequence of a single-axis property assessed as P (§2.5, Q3(a)) |
+| 13 | Composition N_B ≤ 8 blocked instances with more than 8 relata | Per-member ranges; compositions up to abs(V_ι) members (§15.4, App. A) |
+| 14 | Q3(c) transplant over-fired near decoupling | As 6, with replacement draws (Q3(c)) |
+| 15 | E_std and ℛ★ priced into infeasibility | E_std recorded but not charged unless used; ℛ★ choice priced as a forced-family selection (Q3(c), IP-4, App. A) |
+| 16 | IP-5 infinite price for exact values | Zero-width windows priced at L_stmt of the value's expression (IP-5) |
+| 17 | R_card summed over Evaluator-controlled runs; T_audit clock | R_card over the minimum list only; T_audit from S0–S8 clearance (DC-2, OR-6, App. A) |
+

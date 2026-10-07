@@ -374,3 +374,43 @@ read.
 **Reconciliation note (Claude Code).**
 - The ruling block lists 𝒜_ε among the baseline spaces. Addition 2 (owner) rules that ε_R is derived and not an independent axis.
 - The charter therefore treats 𝒜_ε as the **image** of 𝒜_Γ × 𝒜_T under ε, not as a free axis. This satisfies both texts.
+
+## G2-12 — STAGE-3 §5 RESIDUAL ITEMS (pre-Card-1, §19.2) · 2026-10-07
+
+**Owner text (verbatim ruling block):**
+
+> OWNER RULING — STAGE-3 §5 RESIDUAL ITEMS (pre-Card-1, §19.2)
+>
+> 1. Credit bar: N_cred = 100, no rescaling.
+> 2. Evaluation order: sequential (D-3 as frozen). Each later card's preregistration
+>    lists which earlier rulings/verdicts it used.
+> 3. Kit (OD-12): AUTHORIZED after CR-1 re-freeze. T_kit = one session.
+>    Priority: (a) L0 normalizer + price coder on App. B; (b) NR-4 ablation harness;
+>    (c) B-HB rejection tests; (d) SEL/B-CF reproductions. Unfinished items take
+>    hostile defaults by CR; no extension.
+> 4. Scope-Q: accepted unchanged. Card authors target a platform where RH-KMS is
+>    certified to fail.
+> 5. NR-4: adopt R2-A m11 — exclude from numerator and denominator every point where
+>    all lock observables are within r_lock of their S–E-decoupled values. Report the
+>    excluded fraction with the NR-4 verdict.
+> 6. DEF-14: kept. If T_Π is injective in Π, state ℛ★ at a catalogue class (default
+>    T_mono); T_Π enters through generation gates only.
+>
+> CR-1 SCOPE: one round over cached Round A (wf_959efb57-3b2). Apply ONLY findings
+> that make a rule too strict (hidden kills, infeasible arithmetic, an honest card
+> failing), including the NR-4 r_lock/σ_pre coupling. Record loopholes in a CR-2
+> queue, unapplied (tightening stays available under §19.2). No loop-until-dry.
+> Then re-freeze → kit → STOP before Card 1.
+
+**Owner context (verbatim excerpts):** "Under §19.2, once the first 𝒦 draft is logged,
+repairs can only tighten. A loophole found later can still be closed, and Card 1 gets
+rescored toward failure. A rule that is too strict, one that kills an honest card, can
+never be loosened after that point. So before Card 1, only the too-strict defects have to
+be fixed." … "I wouldn't resume loop-until-dry. On a 2,800-line charter it may never come
+back clean."
+
+**Builder notes (Claude Code).**
+- Only one of round A's six finding lenses (loopholes) completed before the stop. All
+  seven of its findings are loopholes; they go to the CR-2 queue, unapplied.
+- For CR-1's too-strict scope, the hidden-kill and feasibility lenses are run once on
+  the frozen text. The other lenses are not re-run, to conserve the owner's budget.
